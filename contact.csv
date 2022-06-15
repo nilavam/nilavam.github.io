@@ -1,2 +1,3 @@
-Name,Roll Number,CMI email,s1,c1,s2,c2,TOTAL
-Nilava Metya,BMC201930,nilava@cmi.ac.in,5,"Addition mistake. 2+2 is not 4, it's 5. See https://en.wikipedia.org/wiki/2_%2B_2_%3D_5.",10,Correct.,15
+,,Email address,TA assigned,Quiz 1,Quiz1 mark deductions
+BMC202101,Aakash Yadav,nilavam@cmi.ac.in,Arpoitri,5,"1:-0.5 (So you have shown here that for V={0,v_2}, 0 is not the additive inverse of v_2. Also need to show that v_2 is not the additive inverse of itself), 3:-4.5 (Part 1: Need to explicitly show what kernel is, try to think what happens when p'=0. Part 2: Need to explicitly show what the image is, try to think about P_{n-1}. Part 3: Need to show counter-example. Part 4: Need to prove linearity)"
+BMC202103,Abdul Aleem,nilavam@cmi.ac.in,Arpoitri,8.75,"1:-0.5 (Need to explain why it's a contradiction), 3:-0.75 (Part 1: Need to explain why the two sets mentioned in your solution are equal. Part 2: Provided preimage does not work)"
