@@ -1,0 +1,143 @@
+1.
+Number the gives rules (i)-(v) as given.
+
+(a) 
+We induct on the size of M in M -> N. Base case is clear. Take cases for the induction step:
+• The rule of beta reduction was 'substitution'. Then M = (\x -> P) Q with N = P [x:=Q]. But P=>P and Q=>Q give (from (v)) that M => N.
+• The rule was (cong1) (or (cong2)). Then M = PQ with N = P'Q (resp N = PQ') such that P -> P' (resp Q -> Q'). By IH, P => P' (resp Q => Q') and by rule (iv) we conclude that M => N (because P => P and Q => Q).
+• The rule of the beta reduction was the fourth rule. So M = (\x -> P), N = (\x -> P') with P -> P'. By IH, P => P'. So we conclude using rule (iii) that M => N.
+
+Alternately, we can also say that these rules are a subset of the beta reduction rules, and hence the result follows.
+
+(b) 
+Call a rule non-trivial if it is not (i).
+Induct on derivation of M=>N, by taking cases (base case clear) based on the last nontrivial rule applied:
+• All rules were trivial. So M = N. Clearly, M --> M = N.
+• The last nontrivial rule was (ii). So M = (\x -> P) Q and N = P [x := Q]. Then trivially by the substitution rule of beta reduction, we have M --> N.
+• The last nontrivial rule was (iii). So M = (\x -> P), N = (\x -> P') where P => P'. By IH, P --> P'. By repeated usage of the last rule of beta reduction, (\x -> P) --> (\x -> P'), so that M --> N.
+• The last nontrivial rule was (iv). Then M = PQ with N = P'Q' where P => P' and Q => Q'. By IH, P --> P' and Q --> Q'. By repeated usage of congruence rules of beta reduction, M = PQ --> P'Q --> P'Q' = N so M --> N.
+• The last nontrivial rule was (v). Then M = (\x -> P) Q, N = P' [x := Q'] where P => P' and Q => Q'. By IH, P --> P' and Q --> Q'. By all rules in beta reduction, we get M = (\x --> P) Q --> (\x -> P') Q' -> P' [x := Q'] = N and thus we get M --> N.
+
+(c)
+Assume M --> N. We can find {M_i}_{i=0}^n such that M = M_0 -> M_1 -> ... -> M_n = N whence by (a) we have, M = M_0 => M_1 => ... => M_n = N so that M ==> N. (We write ==> for =>*).
+Assume M ==> N. We can find {M_i}_{i=0}^n such that M = M_0 => M_1 => ... => M_n = N whence by (b) we have, M = M_0 --> M_1 --> ... --> M_n = N so that M --> N.
+
+(d)
+It is not hard to see by induction that M => M*.
+(Substitution lemma:) If P=>P' and Q=>Q' then P [x := Q] => P' [x := Q']. This is seen by induction on the number of steps in the derivation fo P => P'.
+Again we induct by taking cases (and base case clear):
+• Last rule was (i). So M = N. So, N = M => M*.
+• Last rule was (ii). So M = (\x -> P) Q and N = P [x := Q]. Then by substitution lemma, we have N = P [x := Q] => P* [x := Q*] = M* because P => P* and Q => Q*.
+• Last rule was (iii). So M = (\x -> P), N = (\x -> P') where P => P'. By IH, P' --> P*. So, (\x -> P') => (\x => P*) = M* by (iii).
+• The last rule was (iv). Then M = P Q with N = P' Q' where P => P' and Q => Q'. By IH, P' --> P* and Q' --> Q*. By rule (iv), N = P' Q' => P* Q* = M*.
+• The last rule was (v). Then M = (\x -> P) Q, N = P' [x := Q'] where P => P' and Q => Q'. By IH, P' --> P* and Q' --> Q*. By substitution lemma, P' [x := Q'] => P* [x := Q*] = M*.
+
+(e)
+If M => P and M => Q then P => M* and Q => M* by (d). So taking N = M* does the job.
+
+---------------------------------------------------------------------------------------------
+
+2. 
+We apply the type inference algorithm on each. parametrize the type and equation for expression P as t[P] and E[P] respectively.
+
+(a)
+(\f g x -> f (gx)).
+
+•	A = gx. gx : b. 
+	E[A] = {t[g] = t[x]->b}.
+•	B = f A. f(gx) : a. 
+	E[B] = {t[g] = t[x]->b, t[f] = b->a}.
+•	C = (\x -> B). C : p->a[t[x]:=p] = p->a[t[x]:=p] = p->a. 
+	E[C] = E[B][t[x]:=p] = {t[g] = p->b, t[f] = b->a}.
+•	D = (\g -> C). D : q->t[C][t[g]:=q] = q->t[C] = q->p->a.
+	E[D] = E[C][t[g]:=q] = {q = p->b, t[f] = b->a}.
+•	F = (\f -> D). F : r->t[D][t[f]:=r] = r->t[D] = r->q->p->a.
+	E[F] = E[D][t[f]:=r] = {q = p->b, r = b->a}.
+	
+F is out final expression and has type r->q->p->a. A minimal solution of E[F] is 
+	a	= 	a
+	p	=	p
+	b	=	b
+	q	=	p -> b
+	r	=	b -> a
+So (\f g x -> f (gx)) : (b -> a) -> (p -> b) -> p -> a.
+
+(b)
+(\x y -> y x)
+
+•	A = yx. yx : a. 
+	E[A] = {t[y] = t[x]->a}.
+•	B = (\y -> A). B : p->a[t[y]:=p] = p->a.
+	E[B] = E[A][t[y]:=p] = {p = t[x]->a}.
+•	C = (\x -> B). C : q->t[B][t[x]:=q] = q->p->a.
+	E[C] = E[B][t[x]:=q] = {p = q->a}.
+	
+C is our final expression and has type q->p->a. A minimal solution of E[C] is
+	 a	=	a
+	 q	=	q
+	 p	=	q -> a
+So (\x y -> y x) : q -> (q -> a) -> a
+
+(c)
+(\f g x -> g (f x))
+This is the same as (\g f x -> f (g x)). It is enough to change the order of the first two arguments in the type obtained in part (a). The type inference algorithm will give exactly the same (if we look at the working, type of f and g will be interchanged simply because their orders are changed). So the most general type is
+(\f g x -> g (f x)) : (p -> b) -> (b -> a) -> p -> a.
+
+---------------------------------------------------------------------------------------------
+
+3.
+
+[0] = (\f x -> x). Clearly this has type p -> q -> q.
+[1] = (\f x -> f x). Using type inference algorithm, [1] : (p -> q) -> p -> q.
+We apply the typing algorithm on (\f x -> f^{n} x) for n>1. Let t[x] = p, t[f] = q.
+•	A_1 = f x. t[A_1] : a_1.
+	E[A_1] = {q = p -> a_1}.
+•	A_2 = f A_1. t[A_2] : a_2.
+	E[A_2] = {q = p -> a_1, q = a_1 -> a_2}.
+•	A_3 = f A_2. t[A_3] : a_3.
+	E[A_3] = {q = p -> a_1, q = a_1 -> a_2, q = a_2 -> a_3}.
+	
+	.
+	.
+	.
+	
+•	A_{n} = f A_{n-1}. t[A_{n}] : a_n.
+	E[A_{n}] = {q = p -> a_1, q = a_1 -> a_2, q = a_2 -> a_3, ... , q = a_{n-1} -> a_{n}}.
+•	B = (\x -> A_{n}). t[B] : s -> a_n.
+	E[B] = E[A_n][p:=s] = {q = s -> a_1, q = a_1 -> a_2, q = a_2 -> a_3, ... , q = a_{n-1} -> a_{n}}.
+•	C = (\f -> B). t[C] : t -> s -> a_n.
+	E[C] = E[B][q:=t] = {t = s -> a_1, t = a_1 -> a_2, t = a_2 -> a_3, ... , t = a_{n-1} -> a_{n}}.
+	
+A minimal solution is 
+	s	=	s
+	a_1	=	a_2	=	...	=	a_n	=	s
+	t	=	s -> s
+	
+Therefore the most general types are:
+	[0] : p -> q -> q
+	[1] : (p -> q) -> p -> q
+	[n] : (s -> s) -> s -> s		for n>1.
+	
+	
+	
+<true> = (\x y -> x). From above it is clear that <true> : a -> b -> a.
+
+<false> = (\x y -> y). From above it is clear that <false> : a -> b -> b.
+
+<pair> = (\x y w -> w x y). By using type inference algorithm <pair> : a -> b -> (a -> b -> c) -> c.
+
+<fst> = (\p -> p <true>) = (\p -> p (\x y -> x)). (\x y -> x) : a -> b -> a. So, <fst> : ((a -> b -> a) -> c) -> c.
+
+Similarly <snd> = (\p -> p <false>) = (\p -> p (\x y -> y)) : ((a -> b -> b) -> c) -> c.
+
+<ite> = (\b x y -> b x y). Similar to <pair>, we can say that <ite> : (p -> q -> r) -> p -> q -> r.
+
+<iszero> = (\x -> (x (\z -> <false>))<true>).
+M := (\z -> <false>) : (t -> a -> b -> b).
+<true> : (p -> q -> p).
+So x : (t[M] -> t[<true>] -> s) = ((t -> a -> b -> b) -> (p -> q -> p) -> s).
+And thus, <iszero> : ((t -> a -> b -> b) -> (p -> q -> p) -> s) -> s.
+
+
+
+

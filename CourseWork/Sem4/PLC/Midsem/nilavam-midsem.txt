@@ -1,0 +1,120 @@
+/**
+Name:       Nilava Metya
+Roll No:    BMC201930
+Problem:    1
+**/
+
+public class SuperClass
+{
+    public void method(String str)
+    {
+        System.out.println(str);
+    }
+}
+
+public class SubClass extends SuperClass
+{
+    public void method(String str)
+    {
+        System.out.println(str);
+        System.out.println(str);
+    }
+}
+
+public class TestClass 
+{
+    public void testing(String string)
+    {
+        SuperClass obj;
+        if ((string.length()) % 2 == 0)
+            obj = new SubClass();
+        else 
+            obj = new SuperClass();
+        obj.method("test"); //printed twice if 'string' has even length
+    }
+}
+
+
+
+
+
+
+/**
+Name:       Nilava Metya
+Roll No:    BMC201930
+Problem:    2
+**/
+
+public class SalesPerson
+{
+    private int acc, item;
+    public static final int rate = 10;
+    
+    public SalesPerson(int a, int i)
+    {
+        acc = a;
+        item = i;
+    }
+    
+    public int getAcc()
+    {
+        return acc;
+    }
+    
+    public void setAcc(int a)
+    {
+        acc = a;
+    }
+    
+    public int getItem()
+    {
+        return item;
+    }
+    
+    public void setItem(int it)
+    {
+        item = it;
+    }
+    
+    public int compute_payment()
+    {
+        int pay = rate * item;
+        return pay;
+    }
+}
+
+public class RuralSalesPerson extends SalesPerson
+{
+    private int km;
+    public RuralSalesPerson(int account, int items, int kilom)
+    {
+        super(account, items);
+        km = kilom;
+    }
+    public int compute_payment()
+    {
+        int pay = (rate * getItem()) + (3 * km);
+        return pay;
+    }
+}
+
+/*
+We assume that class 'BankUtils' has a method 'transfer' which takes parameters 
+'int acc_number' and 'int amt' in this order
+Signature: public static void transfer(int acc_number, int amt)
+*/
+
+
+public class SalesUtils
+{
+    public static void transferAmount(SalesPerson[] sp)
+    {
+        int len = sp.length;
+        for(int i = 0 ; i < len ; i++)
+        {
+            SalesPerson s = sp[i];
+            int pay_due = s.compute_payment();
+            BankUtils.transfer(s.getAcc() , pay_due);
+        }
+    }
+}

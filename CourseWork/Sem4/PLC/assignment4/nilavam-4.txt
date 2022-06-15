@@ -1,0 +1,224 @@
+**
+Name:		Nilava Metya
+Roll No:	BMC201930
+Course: 	Programming language concepts
+Assignment:	4
+**
+
+1.
+
+(a)
+Let g := (\z -> x^{k} z). Fix arbitrary k ≥ 0. (This g is just for part (a)).
+To show (make claim): g^{l} y --> x^{kl}y for all l ≥ 0.
+We will induct on l ≥ 0. 
+For l = 0: g^{0}y = y by definition. And y = x^{k0}y. Therefore, true for base case l = 0.
+Assume claim is true for l = t, for some integer t >= 0 (Induction Hypothesis, or, IH).
+Then for l = t+1 we have: g^{t+1} y := g (g^t y) -->_{IH} g (x^{tk}y) := (\z -> x^{k}z) (x^{kt}y) --> x^{k}x^{kt}y = x^{k(t+1)}y.
+This completes the induction step.
+
+(b)
+Let h := (\g y -> g^{m}y). Fix arbitrary m ≥ 0. 
+To show (make claim): h^{n} x --> (\y -> x^{m^{n}}y)) for all n ≥ 1.
+We will induct on n ≥ 1. 
+For n = 1: h^{1}x = hx = (\g y -> g^{m}y) x --> x^{m}y = x^{m^{1}}y. Therefore, true for base case n = 1.
+Assume claim is true for n = r, for some integer r >= 1 (Induction Hypothesis, or, IH).
+Then for n = r+1 we have: h^{r+1} x = h (h^r x) -->_{IH} h (\y ->  x^{m^{r}} y) = h (\z ->  x^{m^{r}}z) = (\g y -> g^{m} y) (\z ->  x^{m^{r}}z) --> (\y -> (\z ->  x^{m^{r}} z)^{m} y) -->_{(a)} (\y -> x^{m^{r}m} y) = (\y -> x^{m^{r+1}} y).
+This completes the induction step.
+
+(c)
+Let m ≥ 0 and n ≥ 1. By definition, 
+<n> <m> --> (\f x -> f^{n} x) (\f x -> f^{m} x) = (\f x -> f^{n} x) (\g y -> g^{m} y) --> (\x -> (\g y -> g^{m} y)^{n} x) -->_{(b)} (\x -> (\y -> x^{m^{n}} y)) = (\x y -> x^{m^{n}} y) = (\f y -> f^{m^{n}} y) = <m^{n}>.
+
+(d)
+exp <n> <m> = (\p q -> pq) <n> <m> --> <n> <m> -->_{(c)} <m^{n}>.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+2.
+
+	<5> ( exp<2> ) <2> = (\f x -> f^{5} x) ( exp<2> ) <2>
+-->	( exp<2> )^{5} <2> = exp<2> ( exp<2> ( exp<2> ( exp<2> ( exp<2><2> ) ) ) )
+-->	exp<2> ( exp<2> ( exp<2> ( exp<2><2^{2}> ) ) )
+-->	exp<2> ( exp<2> ( exp<2><2^{4}> ) )
+-->	exp<2> ( exp<2><2^{8}> )
+-->	exp<2><2^{16}>
+-->	<2^{32}>
+
+We know that <n> has exactly n applications. Thus the given form has exactly 2^{32} applications.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+3.
+
+(a)
+Consider the expression G := (\g y -> gg). Define F := GG. Notice that F = GG = (\g y -> gg) (\f x -> ff) --> (\y -> (\f x -> ff)(\f x -> ff)) = (\y -> GG) = (\y -> F).
+This implies that FM --> (\y -> F) M --> F for all expressions M.
+
+(b)
+Consider the expression G := (\g y -> y(gg)). Define F := GG. Notice that F = GG = (\g y -> y(gg)) (\f x -> x(ff)) --> (\y -> y ((\f x -> xff)(\f x -> xff))) = (\y -> y(GG)) = (\y -> yF).
+This implies that FM --> (\y -> yF) M --> MF for all expressions M.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+4.
+
+We will induct on the number of ``atoms'' present in M. An atom is (definition here) simply a variable. For example, \x -> x has two atoms, namely, x and x. 
+
+Base case: M is a single variable y. Then there is nothing to show, and we are done.
+
+Induction Hypothesis (IH): Suppose the statement is true for all expressions M in normal form having ≤ m atoms. 
+Induction step: Let M be in normal form with m+1 atoms. Then we can have one of the following two cases:
+• M looks like (\x -> N). Clearly N has ≤ m atoms. By IH, N must be of the form (\x_{1} x_{2} ... x_{n} -> y M_{1} M_{2} ... M_{l}). So M is of the form (\x x_{1} x_{2} ... x_{n} -> y M_{1} M_{2} ... M_{l}). This gives the desired form.
+• M looks like AB. A, B are in normal form and both have atleast one atom. So each A,B has ≤ m atoms. By IH, A is of the form (\x_{1} x_{2} ... x_{n} -> y M_{1} M_{2} ... M_{l}). But if P is of the form \x -> N, then M = (\x -> N) B --> B [x <- N], whence M can be beta-reduced (contradicting the fact that M is in normal form). It follows that n = 0. So, A = (y M_{1} M_{2} ... M_{l}) and thus M = (y M_{1} M_{2} ... M_{l})Q = y M_{1} M_{2} ... M_{l} Q. Since each of M_{i} and Q are in normal form, we have the desired form.
+
+Thus we conclude that the statement is true.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5.
+
+First define F := (\x -> <pair> (<succ> (<fst> x)) (<fst> x)). 
+The intuition is: We want to take successor at each step, starting from 0, but want to stop just one step before n. To keep track of (k+1)-1 at each step, we shall store it as <pair> <k+1> <k>.
+
+It is clear that F^{0} (<pair> <0> <0>) = <pair> <0> <0>.
+
+We claim: F^{n} (<pair> <0> <0>) = <pair> <n> <n-1> for all integers n > 0.
+Proof by induction: For n = 1, we have F^{1} (<pair> <0> <0>) --> <pair> (<succ> <0>) <0> --> <pair> <1> <0>.
+Assume that the claim is true for n = r for some integer r > 0. Then
+F^{r+1} (<pair> <0> <0>) = F (F^{r} (<pair> <0> <0>)) -->_{IH} F (<pair> <r> <r-1>) --> <pair> (<succ> <r>) <r> --> <pair> <r+1> <r>.
+This completes the induction step, and hence the claim is proven.
+
+It follows that F^{n} (<pair> <0> <0>) --> <pair> <n> <pred <n>> (here we use ``pred'' as the function in the `required' sense). And therefore we define <pred> := (\n -> <snd> (n F (<pair> <0> <0>))).
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+6.
+
+We can now define the following:
+• <minus>	:=	(\a b -> b <pred> a)				[gives a-b is a ≥ b, and 0 otherwise]
+• <true>		:=	(\a b -> a)							[already defined in class]
+• <false>	:=	(\a b -> b)							[already defined in class]
+• <iszero>	:=	(\x -> x (\z -> <false>) <true>)	[already defined in class]
+• <and>		:=	(\a b -> ab<false>)					[defined and verified in notes by Peter Selinger, page 19]
+• <leq>		:=	(\a b -> <iszero> (<minus> a b)))
+• <geq>		:=	(\a b -> <leq> b a)
+• <equals>	:=	(\a b -> <and> (<geq> a b) (<leq> a b))
+
+Intuition: We will find the least exponent k ≥ 0 for which m^{k} ≥ n and then check if m^{k} = n.
+
+Consider the expression W := (\y -> if ([geq] (<exp> <y> <m> ) <n>) then (\w -> y) else (\w -> w (<succ> y) w)). Define F := \m n -> W <0> W.
+Clearly, (k =) F <m> <n> is the least non-negative exponent for which m^{k} ≥ n.
+So it makes sense to define <Pow> = (\x y -> if (<equals> x <0>) then (<equals> y 0) else (<equals> (<exp> <F x y> x) y)).
+This can have inputs m,n ≥ 0.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+7.
+
+(a) Define I := S K K. We shall verify that this works. 
+	I x = S K K x 
+-->	K x (Kx) 
+-->	x
+
+(b) Define T := S (K(SI)) K. We shall verify that this works. 
+	T x y = S (K(SI)) K x y 
+-->	(K (SI))x (Kx) y = K (SI) x (Kx) y 
+-->	(SI) (Kx) y = S I (Kx) y 
+-->	I y (K x y) 
+-->	y (K x y) 
+-->	y x
+
+(c) Define B = S (KS) K. We shall verify that this works. 
+	B x y z 
+-->	S (KS) K x y z
+-->	(KS) x (Kx) y z
+-->	S (Kx) y z
+-->	K x z (y z)
+-->	x (y z)
+
+(d) Define M := S I I. We shall verify that this works. 
+	M x = S I I x
+-->	I x (I x)
+-->	x x
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+8. 
+
+Every CL term is either a variable or constant S or constant K or an application of term t to t'. Therefore, every CL term is a well-bracketed sequence consisting of variables and S and K. Define an atom to be either a variable or the constant S or the constant K. Then every CL term is a well-bracketed sequence of atoms. 
+
+
+We shall induct on the number of atoms in a CL term to show that [x]M does not have any occurrence of x in it, for any CL term M.
+
+Base case: Say M has one atom. Then M is either x or y with y != x. Then [x]M = I or [x]M = Ky, respectively. Thus the statement is true for terms with one atom.
+Inductive step: Say, the statement is true for expressions with ≤ m atoms, for some positive integer m. Let M be a CL term with m+1 atoms. Clearly m+1 ≥ 2. We can write M = AB where A and B are themselves CL terms having at least one atom each. Clearly, A and B have at most m atoms each. Then [x]M = [x](AB) = S([x]A)([x]B). By induction hypothesis, [x]A and [x]B both do not have any occurrence of x, because both A and B have ≤ m atoms, each. S also does not have any occurrence of x as it is a constant. It follows that S([x]A)([x]B) does not have any occurrence of x. This completes the inductive step, and hence the given statement is true.
+
+
+To show that ([x]M)N --> M[x <- N], we do a similar induction as above.
+
+Base case: Say M has one atom. Then M = x or M = y (for some y != x). We respectively have, ([x]M)N = ([x]x)N = IN --> N = x[x <- N] = M[x <- N] and ([x]M)N = ([x]y)N = K y N --> y = y[x <- N] = M[x <- N].
+Inductive step: Say, the statement is true for expressions with ≤ m atoms, for some positive integer m. Let M be a CL term with m+1 atoms. Clearly m+1 ≥ 2. We can write M = AB where A and B are themselves CL terms having at least one atom each. Clearly, A and B have at most m atoms each. Then ([x]M)N = ([x]AB)N = (S([x]A)([x]B))N = S ([x]A) ([x]B) N --> ([x]A)N (([x]B)N) -->_{IH} (A[x<-N]) (B[x<-N]) = M[x<-N]. The last equality follows from the fact that M = AB. This completes the inductive step, and hence the given statement is true.
+
+
+
+Instead of CL, we shall simply write C for the transformation described. In what follows, M will stand for SII (from problem 7(d)).
+
+Let us first find some CL terms.
+•[x]I = [x](SKK) = S ([x]SK) ([x]K) = S (S ([x]S) ([x]K)) (KK) = S (S (KS) (KK)) (KK)
+•[x]M = [x](SII) = S ([x]SI) ([x]I) = S (S ([x]S) ([x]I)) ([x]I) = S (S (KS) (S (S (KS) (KK)) (KK))) (S (S (KS) (KK)) (KK))
+
+First consider the lambda term X := (\f -> (\x -> f(xx)) (\x -> f(xx))). Define E := (\x -> f(xx)). So X = (\f -> EE).
+C(X) = C(\f -> EE) = [f](C(EE)) = [f] (C(E) C(E)).
+But 
+	C(E)	= C(\x -> f(xx)) 
+		= [x] (C(f(xx))) 
+		= [x] (f(xx)) 
+		= S ([x] f) ([x](xx)) 
+		= S (K f) (M)
+Define F := (S (K f) M).
+Also, 
+	[f]F	= [f] (S (K f) M) 
+		= S ([f] (S (K f))) ([f] M) 
+		= S (S ([f] S) ([f] (K f))) ([f]M) 
+		= S (S (K S) (S (K K) I)) ([f]M) 
+		= S (S (KS) (S (KK) I)) (S (S (KS) (S (S (KS) (KK)) (KK))) (S (S (KS) (KK)) (KK)))
+Then 
+	C(X)	= [f] (F F) 
+		= S ([f] F) ([f] F)
+		= S (S (S (KS) (S (KK) I)) (S (S (KS) (S (S (KS) (KK)) (KK))) (S (S (KS) (KK)) (KK)))) (S (S (KS) (S (KK) I)) (S (S (KS) (S (S (KS) (KK)) (KK))) (S (S (KS) (KK)) (KK))))
+
+Now consider the lambda term Y := (\f -> (\x -> f(fx))). Define G := (\x -> f(fx)). So Y = (\f -> G).
+C(X) = C(\f -> E) = [f](C(E)) = [f] (C(E)).
+But 
+	C(G)	= C(\x -> f(fx)) 
+		= [x] (C(f(fx))) 
+		= [x] (f(fx)) 
+		= S ([x]f) ([x](fx)) 
+		= S (Kf) (S ([x]f) ([x]x))
+		= S (Kf) (S (Kf) I)
+Define H := (S (Kf) (S (Kf) I)).
+Also, 
+	[f]H	= [f] (S (Kf) (S (Kf) I)) 
+		= S ([f] (S (Kf))) ([f](S (Kf) I)) 
+		= S ([f] (S (Kf))) (S ([f] (S (Kf))) ([f]I) )
+From the previous calculation of [f]F, we see that ([f] (S (Kf))) = (S (KS) (S (KK) I)).
+So
+	[f]H	= S ([f] (S (Kf))) (S ([f] (S (Kf))) ([f]I))
+		= S (S (KS) (S (KK) I)) (S (S (KS) (S (KK) I)) ([f]I))
+		= S (S (KS) (S (KK) I)) (S (S (KS) (S (KK) I)) (S (S (KS) (KK)) (KK)))
+Then 
+	C(Y)	= [f] H
+		= S (S (KS) (S (KK) I)) (S (S (KS) (S (KK) I)) (S (S (KS) (KK)) (KK)))
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
