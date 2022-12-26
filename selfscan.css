@@ -84,4 +84,41 @@ div.thanks{text-align:left; margin-left:10%; font-size:80%; font-style:italic; }
 div.author{white-space: nowrap;}
 .quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
 .abstract p {margin-left:5%; margin-right:5%;}
+
+.topnav {
+	display: flex;
+  	background-color: #ddd;
+  	overflow: hidden;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	z-index: 999;
+  	position: fixed;
+  	text-align: center;
+  	justify-content: space-evenly;
+}
+.topnav a {
+	align-content: center;
+	background-color: #04AA6D;
+  	float: center;
+  	color: #990000;
+  	text-align: center;
+  	padding: 0 16px;
+  	text-decoration: none;
+  	font-size: 20px;
+  	justify-content: center;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 /* end css.sty */
