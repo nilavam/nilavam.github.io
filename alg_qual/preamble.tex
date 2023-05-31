@@ -1,0 +1,272 @@
+%!TEX TS-program =  xelatexmk
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage[standard]{ntheorem} % Theorem environments
+\usepackage{amsmath} % Generally useful
+\usepackage{amsfonts}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{prooftree}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+%\usepacakge{calligra, mathrsfs}
+%\usetikzlibrary{matrix}
+\usepackage{multicol}
+\usepackage{titletoc}
+\usepackage{mathtools}
+\usepackage{bookmark}
+\usepackage[dvips,xetex]{graphicx}
+\usepackage[letterpaper, total={6.5in, 9in}]{geometry}
+\usepackage{parskip}
+\usepackage{wrapfig}
+\makeatletter
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareMathAlphabet{\mathscr}{LS1}{stixscr}{m}{n}
+\makeatother
+\hypersetup{colorlinks = true,citecolor = blue}
+\usepackage{BOONDOX-calo}
+\renewcommand{\textscr}[1]{%
+  \text{\usefont{LS1}{stixscr}{m}{n}#1}%
+}
+\newcommand*{\shom}{\mathscr{H}\kern -3pt o \kern -2pt m}
+
+% Font definitions
+%
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage[cal=scr,adobe-garamond,greekfamily=didot]{mathdesign}
+%\usepackage[small,euler-digits]{eulervm}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text,Numbers={OldStyle,Proportional}}
+%\setmainfont[Numbers,StylisticSet={3,5,6},AutoFakeBold=2]{Essay Text}
+\setmainfont{Garalda}
+%\setsansfont[Scale=MatchLowercase]{Alegreya Sans Medium}
+\setmonofont[Scale=MatchLowercase]{Monaco}
+%\setmathrm{Essay Text}
+\setmathrm{Garalda}
+\renewcommand{\baselinestretch}{1.07}
+%
+%\renewcommand{\varphi}{\phi}
+%\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\emptyset}{\varnothing}
+%\renewcommand{\in}{\smallin}
+%\renewcommand{\notin}{\notsmallin}
+%
+
+\newtheorem*{previouslyseen}{As previously seen}
+\newtheorem*{note}{Note}
+\newtheorem*{exer}{Exercise}
+\newtheorem*{notation}{Notation}
+\newtheorem*{problem}{Problem}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+\newtheorem*{recall}{Recall}
+
+\renewtheorem{lemma}{{Lemma}}
+\renewtheorem{theorem}[lemma]{{Theorem}}
+\renewtheorem{definition}[lemma]{{Definition}}
+\renewtheorem{proposition}[lemma]{{Proposition}}
+\renewtheorem{corollary}[lemma]{{Corollary}}
+\newtheorem{claim}[lemma]{{Claim}}
+\renewtheorem{remark}[lemma]{{Remark}}
+\def\qedsymbol{\mbox{$\blacktriangleleft$}}	% It is usually $\square$. 
+\def\qed{{		% set up
+ \parfillskip=0pt	% so \par doesnt push \qedsymbol to left
+ \widowpenalty=10000	% so we dont break the page before \qedsymbol 
+ \displaywidowpenalty=10000 % ditto
+ \finalhyphendemerits=0 % TeXbook exercise 14.32 
+ %
+ %		horizontal
+ \leavevmode		% \nobreak means lines not pages 
+ \unskip		% remove previous space or glue
+ \nobreak		% don't break lines
+ \hfil			% ragged right if we spill over
+ \penalty50		% discouragement to do so
+ \hskip.2em		% ensure some space
+ \null			% anchor following \hfill
+ \hfill			% push \qedsymbol to right
+ \qedsymbol		% the end-of-proof mark
+ %
+ %		vertical
+ \par}}			% build paragraph
+
+%
+%
+
+\definecolor{dg}{RGB}{10, 100, 10}
+
+\newcommand{\cA}{{\mathcal{A}}}   \newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cC}{{\mathcal{C}}}   \newcommand{\cD}{{\mathcal{D}}}
+\newcommand{\cE}{{\mathcal{E}}}   \newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\cG}{{\mathcal{G}}}   \newcommand{\cH}{{\mathcal{H}}}
+\newcommand{\cI}{{\mathcal{I}}}   \newcommand{\cJ}{{\mathcal{J}}}
+\newcommand{\cK}{{\mathcal{K}}}   \newcommand{\cL}{{\mathcal{L}}}
+\newcommand{\cM}{{\mathcal{M}}}   \newcommand{\cN}{{\mathcal{N}}}
+\newcommand{\cO}{{\mathcal{O}}}   \newcommand{\cP}{{\mathcal{P}}}
+\newcommand{\cQ}{{\mathcal{Q}}}   \newcommand{\cR}{{\mathcal{R}}}
+\newcommand{\cS}{{\mathcal{S}}}   \newcommand{\cT}{{\mathcal{T}}}
+\newcommand{\cU}{{\mathcal{U}}}   \newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cW}{{\mathcal{W}}}   \newcommand{\cX}{{\mathcal{X}}}
+\newcommand{\cY}{{\mathcal{Y}}}   \newcommand{\cZ}{{\mathcal{Z}}}
+
+\newcommand{\sA}{{\mathscr{A}}}   \newcommand{\sB}{{\mathscr{B}}}
+\newcommand{\sC}{{\mathscr{C}}}   \newcommand{\sD}{{\mathscr{D}}}
+\newcommand{\sE}{{\mathscr{E}}}   \newcommand{\sF}{{\mathscr{F}}}
+\newcommand{\sG}{{\mathscr{G}}}   \newcommand{\sH}{{\mathscr{H}}}
+\newcommand{\sI}{{\mathscr{I}}}   \newcommand{\sJ}{{\mathscr{J}}}
+\newcommand{\sK}{{\mathscr{K}}}   \newcommand{\sL}{{\mathscr{L}}}
+\newcommand{\sM}{{\mathscr{M}}}   \newcommand{\sN}{{\mathscr{N}}}
+\newcommand{\sO}{{\mathscr{O}}}   \newcommand{\sP}{{\mathscr{P}}}
+\newcommand{\sQ}{{\mathscr{Q}}}   \newcommand{\sR}{{\mathscr{R}}}
+\newcommand{\sS}{{\mathscr{S}}}   \newcommand{\sT}{{\mathscr{T}}}
+\newcommand{\sU}{{\mathscr{U}}}   \newcommand{\sV}{{\mathscr{V}}}
+\newcommand{\sW}{{\mathscr{W}}}   \newcommand{\sX}{{\mathscr{X}}}
+\newcommand{\sY}{{\mathscr{Y}}}   \newcommand{\sZ}{{\mathscr{Z}}}
+
+\newcommand{\fA}{{\mathfrak{A}}}   \newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}   \newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fE}{{\mathfrak{E}}}   \newcommand{\fF}{{\mathfrak{F}}}
+\newcommand{\fG}{{\mathfrak{G}}}   \newcommand{\fH}{{\mathfrak{H}}}
+\newcommand{\fI}{{\mathfrak{I}}}   \newcommand{\fJ}{{\mathfrak{J}}}
+\newcommand{\fK}{{\mathfrak{K}}}   \newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}   \newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}   \newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}   \newcommand{\fR}{{\mathfrak{R}}}
+\newcommand{\fS}{{\mathfrak{S}}}   \newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}   \newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fW}{{\mathfrak{W}}}   \newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}   \newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\fa}{{\mathfrak{a}}}   \newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}   \newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fe}{{\mathfrak{e}}}   \newcommand{\ff}{{\mathfrak{f}}}
+\newcommand{\fg}{{\mathfrak{g}}}   \newcommand{\fh}{{\mathfrak{h}}}
+%\newcommand{\fi}{{\mathfrak{i}}}   
+                                   \newcommand{\fj}{{\mathfrak{j}}}
+\newcommand{\fk}{{\mathfrak{k}}}   \newcommand{\fl}{{\mathfrak{l}}}
+\newcommand{\fm}{{\mathfrak{m}}}   \newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}   \newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fq}{{\mathfrak{q}}}   \newcommand{\fr}{{\mathfrak{r}}}
+\newcommand{\fs}{{\mathfrak{s}}}   \newcommand{\ft}{{\mathfrak{t}}}
+\newcommand{\fu}{{\mathfrak{u}}}   \newcommand{\fv}{{\mathfrak{v}}}
+\newcommand{\fw}{{\mathfrak{w}}}   \newcommand{\fx}{{\mathfrak{x}}}
+\newcommand{\fy}{{\mathfrak{y}}}   \newcommand{\fz}{{\mathfrak{z}}}
+
+
+\newcommand{\ta}{{\tilde{a}}}   \newcommand{\tb}{{\tilde{b}}}
+\newcommand{\tc}{{\tilde{c}}}   \newcommand{\td}{{\tilde{d}}}
+\newcommand{\te}{{\tilde{e}}}   \newcommand{\tf}{{\tilde{f}}}
+\newcommand{\tg}{{\tilde{g}}}   
+\newcommand{\ti}{{\tilde{i}}}   \newcommand{\tj}{{\tilde{j}}}
+\newcommand{\tk}{{\tilde{k}}}   \newcommand{\tl}{{\tilde{l}}}
+\newcommand{\tm}{{\tilde{m}}}   \newcommand{\tn}{{\tilde{n}}}
+                    \newcommand{\tp}{{\tilde{p}}}
+\newcommand{\tq}{{\tilde{q}}}   \newcommand{\tr}{{\tilde{r}}}
+\newcommand{\ts}{{\tilde{s}}}   
+\newcommand{\tu}{{\tilde{u}}}   \newcommand{\tv}{{\tilde{v}}}
+\newcommand{\tw}{{\tilde{w}}}   \newcommand{\tx}{{\tilde{x}}}
+\newcommand{\ty}{{\tilde{y}}}   \newcommand{\tz}{{\tilde{z}}}
+
+
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\dd}{\mathrm{d}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\PDer}{PDer}
+\DeclareMathOperator{\Sheaves}{Sheaves}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\alt}{Alt}
+\DeclareMathOperator{\sym}{Sym}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\End}{End}
+%\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ordp}{ord}
+\DeclareMathOperator{\orbit}{Or}
+\DeclareMathOperator{\stab}{Stab}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\fix}{Fix}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ord}{Ord}
+\DeclareMathOperator{\mspec}{mSpec}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\frob}{Frob}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\ch}{char}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\area}{area}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\rk}{rank}
+\DeclareMathOperator{\diag}{diag}
+%\DeclareMathOperator{\det}{det}
+%\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\d}{\diff}
+\let\oldend\endlinechar
+\renewcommand{\endlinechar}{\oldend}
+\newcommand{\open}{\underset{\text{open}}{\subset}}
+\newcommand{\divides}{\mathbin{|}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sett}{\coloneqq}
+\newcommand{\pord}[1]{\ordp_p\left(#1\right)}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+%\newcommand{\st}{\;|\;}
+\newcommand{\st}{%
+  \nonscript\;
+  \ifnum\currentgrouptype=16
+    \;\middle|\;
+  \else
+    \;|\;
+  \fi
+  \nonscript\;}
+\newcommand{\sm}{\sum\limits}
+\newcommand{\ltr}{\par \noindent \framebox[1\width]{ $\implies$ } \hspace{.2cm}}
+\newcommand{\rtl}{\par \noindent \framebox[1\width]{ $\impliedby$ } \hspace{.2cm} }
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\adic}[2]{\left| #1 \right|_{#2}}
+\newcommand{\padic}[1]{\left| #1 \right|_{p}}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+%\newcommand{\norm}[2]{ \left|\left| #1 \right|\right|_{#2} }
+\newcommand{\norm}[2]{ \left\| #1 \right\|_{#2} }
+\newcommand{\sz}[1]{ \norm{#1}{}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%\renewenvironment{pf}{{\emph{Proof.} }}{\hfill $\blacksquare$} 
+
+\newcommand{\mychi}{\raisebox{2pt}[0pt][1ex]{$\chi$}}
+
