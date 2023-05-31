@@ -1,0 +1,128 @@
+\input{./preamble.tex}
+\usepackage{quiver}
+\usepackage{listings}
+\usepackage{fancyvrb,xcolor}
+\usepackage{tcolorbox}
+\usepackage{tabto}
+\usepackage{wrapfig}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{graay}{rgb}{0.8,0.8,0.8}
+\definecolor{dg}{rgb}{0.1,0.4,0.1}
+\definecolor{skybl}{rgb}{0.85,0.92,0.95}
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\Set}{\catname{\sffamily Set }}
+\newcommand{\Ring}{\catname{\sffamily Ring }}
+\newcommand{\Group}{\catname{\sffamily Group }}
+%\newcommand{\inner}[2]{
+%\left<#1,#2\right>
+%}
+\newcommand{\pb}[2]{
+\begin{tcolorbox}[
+width=\textwidth,
+colback={skybl},
+title={#1},
+%outer arc=0mm,
+%colbacktitle=dg,
+%coltitle=black,
+%colupper=white
+]  
+#2
+\end{tcolorbox} 
+}
+\newcommand{\w}{\wedge}
+%\usepackage{ifpdf,mla}
+%\graphicspath{ {./} }
+\title{\vspace{-1in}\textbf{Algebra Qualifying Exams}\\
+{\large{Rutgers - the State University of New Jersey}}\\
+{\small{\href{https://www.math.rutgers.edu/docman-lister/math-main/academics/graduate/qualifying-exam/1266-syl2014/file}{Syllabus}
+}}}
+
+\author{\vspace{-2in}Nilava Metya}
+\date{\vspace{-0.2in}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+
+\section*{\href{https://www.math.rutgers.edu/docman-lister/math-main/2630-wq-jan-2023-all-3/file}{Spring 2023}}
+\addcontentsline{toc}{section}{Spring 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Groups}{ 
+Classify all groups of order 309, up to isomorphism.
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Groups}{ 
+Let $A$ be the abelian group with generators $x,y,z$ and the relations
+$$4x+3y+z=0, x+2y+3z=0, 3x+2y+5z=0$$ Show that $A$ is a cyclic abelian group, and determine its order.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Linear Algebra}{ 
+Let $A$ be a complex $n \times n$ matrix. Prove that there is an invertible complex $n \times n$ matrix $B$ such that $AB = BA^t$. ($A^t$ is the transpose of $A$.)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Rings}{ 
+Prove that the subring $Z[3i]$ of $\C$ is not a Principal Ideal Domain.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Rings}{ 
+If $R = Z[x]$, show that the sequence $R\stackrel{f}{\to} R^2\stackrel{g}{\to} R$ is exact, where $ f(a) = (ax, -2a)$ and $g(c,d) = 2c+dx$.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{\href{https://www.math.rutgers.edu/docman-lister/math-main/2630-wq-jan-2023-all-3/file}{Fall 2022}}
+\addcontentsline{toc}{section}{Fall 2022}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Groups}{ 
+Let $G$ be a finite simple group. Prove that $G \times G$ has exactly $4$ normal subgroups (including $G \times G$) if and only if $G$ is non-abelian.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Rings}{ 
+Let $R$ be a principal ideal domain and $I,J$ be ideals of $R$. Show that
+$I \cap J = IJ$ holds if and only if $I =0$ or $J = 0$ or $I + J = R$.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Linear Algebra}{ 
+Let $A \in M_n(\R)$ be a symmetric matrix with real coefficients. Show that all eigenvalues of $A$ are non-negative if and only if $A = P^T P$ for some matrix $P \in M_n(\R)$.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Rings}{ 
+Let $R$ be an integral domain and $R[x,y,z]$ the polynomial ring in three variables over $R$. Show that $I = \left<x^3 ,y^2, y^3 -z^2y\right> \subseteq R[x, y, z]$ is a prime ideal. \\
+Hint: Show that $I$ is the kernel of a ring homomorphism $R[x, y, z] \to R[t]$.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{\textwidth}{2pt}
+\pb{Linear Algebra}{ 
+Let $A$ and $B$ be commuting complex matrices. Assume that $B \notin \C[A]$, that is, $B$ cannot be written as a polynomial in $A$. Show that some eigenspace of $A$ has dimension at least two.
+}
+
+
+
+
+
+\end{document}
