@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  1 JUN 2023 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  1 JUN 2023 14:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (./preamble.tex
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
 \c@section=\count168
@@ -1129,12 +1129,12 @@ LaTeX Font Info:    ... okay on input line 43.
 * \topmargin=-58.68121pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=95.0pt
+* \marginparwidth=113.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1202,11 +1202,11 @@ LaTeX Font Info:    Trying to load font information for FML+futmi on input line
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 45.
+(Font)              scaled to size 11.03998pt on input line 45.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 45.
+(Font)              scaled to size 8.27998pt on input line 45.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 45.
+(Font)              scaled to size 6.43999pt on input line 45.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
@@ -1220,11 +1220,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 45.
+(Font)              scaled to size 11.03998pt on input line 45.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 45.
+(Font)              scaled to size 8.27998pt on input line 45.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 45.
+(Font)              scaled to size 6.43999pt on input line 45.
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 45
 .
 
@@ -1239,34 +1239,34 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 64.
+(Font)              scaled to size 10.07397pt on input line 64.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 64.
+(Font)              scaled to size 7.63599pt on input line 64.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 64.
+(Font)              scaled to size 5.51999pt on input line 64.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 64.
+(Font)              scaled to size 10.07397pt on input line 64.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 64.
+(Font)              scaled to size 7.63599pt on input line 64.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 64.
+(Font)              scaled to size 5.51999pt on input line 64.
 
 [2] [3] [4] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 943397B497C9B2EE6273A32EEF88E2DB;184.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
  ) 
 Here is how much of TeX's memory you used:
  25551 strings out of 480608
- 489277 string characters out of 5903631
- 736522 words of memory out of 5000000
+ 489264 string characters out of 5903631
+ 737523 words of memory out of 5000000
  40907 multiletter control sequences out of 15000+600000
- 610790 words of font info for 110 fonts, out of 8000000 for 9000
+ 610807 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,10n,88p,941b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1276,7 +1276,7 @@ xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/tex
 live/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/20
 20/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texm
 f-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (5 pages, 66615 bytes).
+Output written on main.pdf (5 pages, 66602 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
