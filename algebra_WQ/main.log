@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  1 JUN 2023 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  1 JUN 2023 19:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1239,33 +1239,33 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 64.
+(Font)              scaled to size 10.07397pt on input line 68.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 64.
+(Font)              scaled to size 7.63599pt on input line 68.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 64.
+(Font)              scaled to size 5.51999pt on input line 68.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 64.
+(Font)              scaled to size 10.07397pt on input line 68.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 64.
+(Font)              scaled to size 7.63599pt on input line 68.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 64.
+(Font)              scaled to size 5.51999pt on input line 68.
 
 [2] [3] [4] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 260.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 260.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 260.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 943397B497C9B2EE6273A32EEF88E2DB;184.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 260.
  ) 
 Here is how much of TeX's memory you used:
- 25551 strings out of 480608
- 489264 string characters out of 5903631
+ 25550 strings out of 480608
+ 489259 string characters out of 5903631
  737523 words of memory out of 5000000
- 40907 multiletter control sequences out of 15000+600000
+ 40906 multiletter control sequences out of 15000+600000
  610807 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,10n,88p,941b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1276,7 +1276,7 @@ xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/tex
 live/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/20
 20/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texm
 f-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (5 pages, 66602 bytes).
+Output written on main.pdf (5 pages, 66749 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
