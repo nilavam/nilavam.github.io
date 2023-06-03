@@ -1,0 +1,11 @@
+\begin{sol}
+Since $F$ has order $2^n$ (with $n$ odd, say $2k+1$), we have $x^{2^n-1} = 1$ for $x\in F^\times$ because $F^\times$ is a multiplicative group. Further note that $2^{n}-1 = 2\times4^k - 1 \equiv 1\pmod 3 \implies (3,2^n-1) = 1$. There are integers $u,v$ such that $3u+(2^n-1)v = 1$. Note that 
+\begin{align*}
+a^2+ab+b^2 &= 0\\
+\implies a^3-b^3 = (a-b)(a^2+ab+b^2) &= 0\\
+\implies a^3 &= b^3\\
+\implies a = (a)^{3u} \cdot (a)^{(2^n-1)v} = (b)^{3u} \cdot (b)^{(2^n-1)v} &= b\\
+\implies a &= b
+\end{align*}
+But $0=a^2+ab+b^2 = 3a^2 \implies a^2 = 0$ as $F$ has characteristic $2$, whence $3$ is invertible. Finally, $a^2=0$ means $a=0$.
+\end{sol}

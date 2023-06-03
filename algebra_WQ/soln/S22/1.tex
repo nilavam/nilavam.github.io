@@ -1,0 +1,6 @@
+\begin{sol}
+Note that $x^2-1 = (x-1)(x+1)$. Consider the ideals $I=(x-1), J = (x+1)$. Then $(x+1)/2 + (x-1)/(-2) = 1$ means that $I+J = \Q[x]$. By Chinese Remainder theorem, we have $\frac{\Q[x]}{I\cap J} \cong \frac{\Q[x]}{I} \oplus \frac{\Q[x]}{J}$. But $I\cap J = (x^2-1)$. Finally note that $\Q[x]/(x-a)\cong \Q$ for any $a\in \Q$. Putting these together, $$\frac{\Q[x]}{(x^2-1)} \cong \Q\oplus \Q.$$
+
+\textit{Alternate:}
+Consider the map $\phi: \Q[x] \to \Q\oplus \Q$ given by $f\mapsto \left(f(1), f(-1)\right)$. Clearly this is a ring map. Then note that $f(x) = (0,0)\iff f(1) = f(-1) = 0 \iff x-1\divides f(x) \text{ and } x+1\divides f(x) \stackrel{(x-1,x+1)=1}{\iff} x^2-1 \divides f(x)$. This means $\ker\phi = \left(x^2-1\right)$. Further we note that $\phi$ is surjective. Indeed, given $(a,b)\in \Q\oplus\Q$, consider the polynomial $g(x)\sett (x+1)\cdot\frac{a}{2} + (x-1)\cdot\frac{-b}{2}$ maps to $(a,b)$. This comes from the observation that $(x+1)/2 + (x-1)/(-2) = 1$ whence $(x\pm1)/(\pm2)\equiv 1\pmod{x\mp1}$ whence $g(x) \equiv a\pmod{x-1}, g(x) \equiv b\pmod{x+1}$.
+\end{sol}

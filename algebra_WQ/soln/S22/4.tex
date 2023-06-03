@@ -1,0 +1,8 @@
+\begin{sol}
+Consider $S=AB, T=BA$. Then $ST = AB^2A = A^2 = \id = B^2 = BA^2B = TS$. Thus $S,T$ are commuting operators on finite dimensional vector spaces. This means they have a common eigenvector, say $v$. Then there are scalars $\lambda_S, \lambda_T\in\C$ such that $Sv= \lambda_Sv, T v = \lambda_Tv$. Consider $W = \left<v,Av\right>\subseteq V$. We show $W$ is stable under $A,B$:\begin{itemize}
+\item $A v \in W$ by definition.
+\item $B v = A^2 B v = A(AB) v = AS\cdot v = \lambda_S Av \in W$.
+\item $A(Av) = A^2 v = v \in W$.
+\item $B(Av) = BA v = Tv = \lambda_T v \in W$.
+\end{itemize}
+\end{sol}

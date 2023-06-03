@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  1 JUN 2023 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  4 JUN 2023 03:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -87,6 +87,9 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/01/22  v 6.0
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -1070,45 +1073,45 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 44.
 LaTeX Font Info:    Trying to load font information for FML+futm on input line 
-43.
+44.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for FMS+futm on input line 
-43.
+44.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-43.
+44.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1167,7 +1170,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box127
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 44.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1181,9 +1184,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1192,40 +1195,40 @@ LaTeX Info: Redefining \nameref on input line 43.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 43.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 43.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 44.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 44.
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line
- 45.
+ 46.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 45.
+(Font)              scaled to size 11.03998pt on input line 46.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 45.
+(Font)              scaled to size 8.27998pt on input line 46.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 45.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+(Font)              scaled to size 6.43999pt on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 45.
+(Font)              scaled to size 11.03998pt on input line 46.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 45.
+(Font)              scaled to size 8.27998pt on input line 46.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 45.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 45
+(Font)              scaled to size 6.43999pt on input line 46.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -1239,47 +1242,55 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 68.
+(Font)              scaled to size 10.07397pt on input line 69.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 68.
+(Font)              scaled to size 7.63599pt on input line 69.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 68.
+(Font)              scaled to size 5.51999pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 68.
+(Font)              scaled to size 10.07397pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 68.
+(Font)              scaled to size 7.63599pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 68.
+(Font)              scaled to size 5.51999pt on input line 69.
 
 [2] [3] [4] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 260.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 260.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 260.
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
+259.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
+) [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
+
+(./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 943397B497C9B2EE6273A32EEF88E2DB;184.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 260.
+(rerunfilecheck)             Checksum: 856492A736FBE0851739D38DD8CE9CA1;231.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
- 25550 strings out of 480608
- 489259 string characters out of 5903631
- 737523 words of memory out of 5000000
- 40906 multiletter control sequences out of 15000+600000
- 610807 words of font info for 110 fonts, out of 8000000 for 9000
+ 25618 strings out of 480608
+ 490295 string characters out of 5903631
+ 738876 words of memory out of 5000000
+ 40954 multiletter control sequences out of 15000+600000
+ 611277 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,10n,88p,941b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texm
-f-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (5 pages, 66749 bytes).
+live/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (6 pages, 73348 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
