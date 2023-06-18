@@ -1,0 +1,16 @@
+\begin{sol}
+Nullity of $A$ is same as the same as the nullity of the matrix for the Jordan canonical form of $A$. Say the $A$ looks like $\diag(J_1,\cdots, J_t)$, where $J_i$ are the Jordan blocks, then $A^k$ looks like $\diag\left(J_1^k,\cdots, J_t^k\right)$. So it is enough to show the problem for an irreducible Jordan block.\\
+
+Say $A = J$ is a Jordan block of size $n\times n$ with eigenvalue $\lambda$. Then $a_0=0$. 
+
+Suppose $\lambda\neq 0$, then each $A^k$ is non-singular. This means that each $a_k = 0$. So the result holds trivially.
+
+Suppose $\lambda = 0$. So $A$ looks like $\begin{bmatrix}
+0 & 1 &0&\cdots&0\\
+ & 0 & 1 & \ddots&\vdots\\
+ & & \ddots & \ddots &0\\
+&&&0&1\\
+&&&&0
+\end{bmatrix}$. We can show that $\left(A^k\right)_{i,i+k} = 1\forall i$ and $0$ otherwise. Clearly $a_i = i\forall i\leq n$ and $a_i=n\forall i> n$. The rest follows clearly.
+
+\end{sol}

@@ -1,0 +1,3 @@
+\begin{sol}
+Given that $A,B,A+B$ are projections. That is, they satisfy $x^2=x$. Then $A+B = A^2 + B^2 + AB+BA = A + B + AB + BA \implies AB = -BA$. But $AB = A^2B = - ABA = BAA = BA^2 = BA$. It follows that $AB = BA = -AB \implies AB = 0 = BA$. (Where is $\text{char}K\neq 2$ used?)
+\end{sol}
