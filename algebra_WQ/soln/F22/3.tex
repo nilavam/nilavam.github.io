@@ -1,3 +1,5 @@
 \begin{sol}
+Suppose $A=P^TP$. Then $P\in M_n(\R)\implies A=P^\dagger P$ where $P^\dagger$ is the conjugate transpose.. Let $(\pmb x,\lambda)\in\C^n\times \C$ be an eigenvector-eigenvalue pair for $A$. Clearly $\pmb x^\dagger A \pmb x = (P\pmb x)^\dagger (P\pmb x) = \sz{P\pmb x}^2 \geq 0$. But also $\pmb x^\dagger A \pmb x = \lambda \pmb x^\dagger \pmb x = \lambda \sz{\pmb x}^2$ and $\sz{\pmb x}^2> 0$. This shows that $\lambda \in \R_{\geq 0}$.
 
+Suppose $A$ is symmetric real matrix with non-negative eigenvalues. So $A$ is Hermitian, and by the spectral theorem of real symmetric matrices, we can write it as $A=UD U^T$ where $D$ comprises of eigenvalues of $A$, and $U$ is orthogonal (comprising of an eigenbasis of $A$). Since eigenvalues are non-negative, $D$ has all non-negative entries $\lambda_1,\cdots,\lambda_n$ in its diagonal ($0$ elsewhere). Consider $E = \diag(\sqrt{\lambda_1},\cdots,\sqrt{\lambda_n})$ so that $D = E^2 = EE^T$. Then $A = A = (UE)(UE)^T$. Taking $P =(UE)^T\in M_n(\R)$ gives $A=P^TP$ as desired.
 \end{sol}
