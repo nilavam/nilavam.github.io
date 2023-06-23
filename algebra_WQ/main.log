@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  23 JUN 2023 09:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  23 JUN 2023 10:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1273,13 +1273,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 25662 strings out of 480608
- 490869 string characters out of 5903631
- 742877 words of memory out of 5000000
- 40965 multiletter control sequences out of 15000+600000
+ 25664 strings out of 480608
+ 490920 string characters out of 5903631
+ 741877 words of memory out of 5000000
+ 40967 multiletter control sequences out of 15000+600000
  612625 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,10n,88p,1232b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,10n,88p,1232b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/local/te
@@ -1290,7 +1290,7 @@ l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/t
 exlive/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (8 pages, 101465 bytes).
+Output written on main.pdf (8 pages, 101404 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams
