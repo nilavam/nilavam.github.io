@@ -1,3 +1,17 @@
 \begin{sol}
-
+\begin{enumerate}[label=(\alph*)]
+\item A commutative ring $R$ is said to be Noetherian if $R$ satisfies one of the folowing:
+\begin{enumerate}[label=(\roman*)]
+	\item $R$ satisfies the \textit{ascending chain condition} on ideals: Every increasing chain  $I_1\subseteq I_2\subseteq\cdots$ of ideals of $R$ stabilizes, that is, there is some $N$ such that $I_i = I_N\forall i\geq N$.
+	\item Every ideal of $R$ is finitely generated.
+	\item Every set of ideals contains a maximal element.
+\end{enumerate}
+Hilbert's basis theorem states that if $R$ is a Noetherian (commutative) ring, so is the polynomial $R[x]$ in one variable.
+\item The polynomial ring $\Z\left[x_1,x_2,\cdots\right]$ in countably many variables with coefficients in $\Z$ is not Noetherian. We reason as follows, depending on the above three defintions:
+\begin{enumerate}[label=(\roman*)]
+	\item $\left(x_1\right) \subsetneq \left(x_1,x_2\right)\subsetneq \left(x_1,x_2,x_3\right)\subsetneq \cdots$ is a strictly increasing chain of ideals (hence never stabilizes).
+	\item The ideal $\left(x_1,x_2,\cdots\right)$ is not finitely generated.
+	\item The set of ideals $\set{\left(x_1,\cdots,x_n\right): n\geq 1}$ has no maximal element.
+\end{enumerate}
+\end{enumerate}
 \end{sol}

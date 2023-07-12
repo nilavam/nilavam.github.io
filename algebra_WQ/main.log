@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  23 JUN 2023 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.9)  11 JUL 2023 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1262,7 +1262,11 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )) [4] [5]
-[6] (./soln/F20/4.text) [7] [8]
+(./soln/S21/1.tex) (./soln/S21/2.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7] (./soln/F20/4.text) [8] [9]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
  (./main.aux)
@@ -1273,13 +1277,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 25664 strings out of 480608
- 490920 string characters out of 5903631
+ 25684 strings out of 480608
+ 491121 string characters out of 5903631
  741877 words of memory out of 5000000
- 40967 multiletter control sequences out of 15000+600000
- 612625 words of font info for 116 fonts, out of 8000000 for 9000
+ 40968 multiletter control sequences out of 15000+600000
+ 616742 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,10n,88p,1232b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,10n,88p,1232b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/local/te
@@ -1290,10 +1294,10 @@ l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/t
 exlive/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (8 pages, 101404 bytes).
+Output written on main.pdf (9 pages, 105860 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
