@@ -1,0 +1,664 @@
+\input{pre.tex}
+\usepackage{tabto}
+\usepackage{setspace}
+%\usepackage{makecell}
+\usepackage{xcolor}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt, line width=1.1pt] (char) {#1};}}
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Nilava Metya} \\ \vspace{1pt}
+    %$110$ N $2^{nd}$ Ave $\#1$, 
+    Highland Park, NJ - $08904$, USA\\
+    DOB: December $30$, $2001$ (Age: $21$)\\ \vspace{1pt}
+{\small 
+%\circled{\scriptsize\faPhone} %$+1~(732)~522-9460$ ~ 
+\href{mailto:nilava.metya@rutgers.edu}{\circled{\scriptsize\faEnvelope}  \underline{nilava.metya@rutgers.edu}} ~ 
+%\href{https://www.cmi.ac.in/~nilavam}
+{\circled{\scriptsize\faHome} \underline{\url{nilavam.github.io}}}}
+%\href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/username}}  ~
+%\href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/username}}
+%\vspace{-15pt}
+\end{center}
+
+
+%\makeatletter{\renewcommand*{\@makefnmark}{}\footnotetext{{\em*} marked courses are ongoing}\makeatother}
+%\makeatletter{\renewcommand*{\@makefnmark}{}\footnotetext{$^{\#}$ marked courses were taken unofficially}\makeatother}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubheading
+{Rutgers, the State University of New Jersey - New Brunswick}{Sep '22 -- (expected) '27}
+{\begin{minipage}{15cm} \color{grey}\textbf{Doctor of Philosophy in Mathematics}  $|$ \textbf{CGPA: $4.0/4.0$}\\
+$\phantom{\qquad}$(passed written qualifying exams in first attempt just before program started) \end{minipage}
+}{Piscataway, New Jersey, USA}
+\vspace{-5pt}
+
+\resumeSubheading
+{Chennai Mathematical Institute}{Aug '19 -- May '22}
+{\begin{minipage}{15cm} \color{grey}\textbf{Bachelor of Science (Honours) in Mathematics and Computer Science} $|$ \textbf{CGPA: $9.72/10$} \\
+$\phantom{\qquad}$Position: \textbf{Third} (out of $55$ students) \end{minipage}
+}{Chennai, Tamil Nadu, India}
+\vspace{-5pt}
+      
+\resumeSubheading
+{Don Bosco School, Liluah}{Apr '06 -- Mar '19}
+{\begin{minipage}{15cm} \color{grey}\textbf{Indian School Certificate (ISC)} 2019 $|$ \textbf{Percentage: $97.25\%$} \\
+$\phantom{\qquad}$Position: \textbf{First} in science stream ($\sim55$ students), \textbf{second} overall ($\sim180$ students) \\ 
+\textbf{Indian Certificate of Secondary Education (ICSE)} 2017 $|$ \textbf{Percentage: $96.6\%$} \\
+$\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{minipage}
+}{Howrah, West Bengal, India}
+%\vspace{-15pt}
+
+%------RELEVANT COURSEWORK-------
+\section{Coursework}
+
+\begin{multicols}{3}
+\begin{itemize}
+\setlength\itemsep{-0.5em}
+\item Quantum Computation
+\item Matrix Computations
+\item (Measure theoretic) Probability
+\item Statistics with R
+\item Data Mining
+\item Topological Data Analysis
+\item Differential Equations
+\item Smooth Manifolds
+\item Algebraic Topology
+\item Basic Functional Analysis
+\item Complex Analysis
+\item Quiver Representations
+\item Algebraic Number Theory
+\item Sheaves and Schemes
+\item Topics in Algebraic geometry
+\item Homological Algebra
+\item Haskell
+\item Python
+\item Object Oriented Programming
+\item Algorithm Design and Analysis
+\item Discrete Mathematics
+\item Automata Theory
+\item Lambda Calculus
+\item Formal Security Analysis (applied pi calculus, ProVerif, CryptoVerif, F*)
+\item Newtonian, Lagrangian, Hamiltonian mechanics
+\item Mechanics, Relativity, Dynamical Systems
+\item Convex/Conic Optimization$^{soon}$
+\item ML for inverse problems$^{soon}$
+\end{itemize}
+\end{multicols}
+
+
+%\vspace{-15pt}
+
+
+%-----------Research-----------
+%\section{Current Research}
+%\resumeSubHeadingListStart
+
+%\resumeProjectHeading
+%{\textbf{Weingarten calculus and integration on compact groups}}
+%{}
+%{}
+%\vspace{-20pt}
+
+%\resumeProjectHeading
+%{\textbf{Young bitableaux and bi-immanants}}
+%{}
+%{}
+%\vspace{-20pt}
+
+%\resumeProjectHeading
+%{\textbf{Invariant theory and scaling algorithms for MLE}}
+%{}
+%{}
+%\vspace{-5pt}
+
+
+%\resumeSubHeadingListEnd
+
+
+%-----------INTERNSHIPS-----------
+\section{Research Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Characterizing Acyclicity in DAGs} $|$ \textit{upcoming}}
+{Jan '24 -- ~~~~~~~}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Based on the work of Bryon Aragam et. al. related to causal inference, closely related to DAGs in the context \\of ML, more specifically structure learning}}
+\resumeItemListEnd }
+\vspace{-13pt}
+
+\resumeProjectHeading
+{\textbf{Algebraic Theory of Deep Learning} $|$ \textit{upcoming}}{Jan '24 -- ~~~~~~~}
+\resumeItemListStart
+\resumeItem {\emph{\color{grey}
+Based on the recent work of Matthew Trager, Kathlen Kohn, Joe Kileel, Joan Bruna related to the theory of \\
+deep learning and algebraic geometry
+}}
+\resumeItemListEnd 
+
+\resumeProjectHeading
+{\textbf{Sampling uniformly from $0-1$ tensors} $|$ \textit{upcoming} $|$ Prof Guanyang Wang}{Jan '24 -- ~~~~~~~}
+\resumeItemListStart
+\resumeItem {\emph{\color{grey}
+The project is about developing efficient algorithms to uniformly sample from the space of $0-1$ tensors with given marginal sums.
+}}
+\resumeItemListEnd 
+
+\resumeProjectHeading
+{\textbf{Wasserstein distance to various statistical models} $|$ \textit{current}}{Jun -- Dec '23}
+\resumeItemListStart
+\resumeItem {\emph{\color{grey}
+The project is about developing efficient algorithms to uniformly sample from the space of $0-1$ tensors with given marginal sums.
+}}
+\resumeItemListEnd 
+\resumeSubHeadingListEnd
+
+
+
+
+
+
+
+
+%-----------INTERNSHIPS-----------
+\section{Relevant Reading Projects}
+\resumeSubHeadingListStart
+
+%\resumeProjectHeading
+%{\color{grey}\textbf{Online learning of optimal pulses for quantum control} $|$ \textbf{\emph{Gabriel Perdue}} $|$ FermiLab}
+%{\color{grey}Jun -- Sep '23}
+%{\resumeItemListStart
+%\resumeItem {\emph{\color{grey}planned upcoming research internship}}
+%\resumeItemListEnd }
+%\vspace{-13pt}
+
+\resumeProjectHeading
+{\textbf{Quantum information (representation theory)} $|$ \textbf{\emph{Siddhartha Sahi}} $|$ Rutgers University}
+{Sep -- Dec '22}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Read a part of Dr. Christandl's thesis titled `The Structure of Bipartite Quantum States - Insights from \\Group Theory and Cryptography'; weekly discussions}}
+\resumeItemListEnd }
+\vspace{-13pt}
+
+\resumeProjectHeading
+{\textbf{Quiver representations and invariants} $|$ \textbf{\emph{Anne-Marie Aubert}} $|$ Sorbonne University}
+{Jun '22}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Read a paper on quivers by Daniele Faenzi, and learnt relevant topics in algebraic geometry}}
+\resumeItemListEnd }
+\vspace{-13pt}
+
+\resumeProjectHeading
+{\textbf{Markov Chain and Monte Carlo} $|$ \textbf{\emph{R V Ramamoorthi}} }
+{Aug - Sep '21}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}A paper on MCMC by KB Athreya, M Delampady, T Krishnan from Resonance, Volume 8, 2003}}
+\resumeItemListEnd }
+\vspace{-13pt}
+
+
+\resumeProjectHeading
+{\textbf{$p$-adic analysis} $|$ \textbf{\emph{Anup Dixit}} $|$ IMSc, Chennai}{May - Jul '21}
+\resumeItemListStart
+\resumeItem {\emph{\color{grey}Neal Koblitz's book `$p$-adic Numbers, $p$-adic Analysis, and Zeta-Functions' and the paper `The Derivative of\\
+p-adic Dirichlet Series at $s=O$' by H M Stark}}
+\resumeItemListEnd 
+\vspace{-13pt}
+
+\resumeProjectHeading
+{\textbf{Representation theory of Lie algebras} $|$ \textbf{\emph{Apoorva Khare }}$|$ IISc, Bangalore}{May - Jul '21}
+\resumeItemListStart
+\resumeItem {\emph{\color{grey}
+James E Humphreys's book `Introduction to Lie Algebras and Representation Theory' 
+}}
+\resumeItemListEnd 
+\resumeSubHeadingListEnd
+
+%-----------PARTICIPATIONS-----------
+\section{Attendance in conferences/workshops}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\color{grey}\textbf{Representation Theory and Topological Data Analysis} (online) $|$ \textit{Workshop} $|$ BIRS, Oaxaca}
+{Apr '24}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\color{grey}\textbf{Bayesian Statistics and Statistical Learning} $|$ \textit{Workshop} $|$ IMSI, Chicago}
+{Dec '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Algebraic Statistics for Ecological and Biological Systems} $|$ \textit{Workshop}  $|$ IMSI, Chicago}
+{Oct '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Apprenticeship Week: Varieties from Statistics} $|$ IMSI, Chicago}
+{{Oct '23}}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Invitation to Algebraic Statistics and Applications}   $|$ IMSI, Chicago}
+{{Sep '23}}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Permutation and Causal Inference: Connections and Applications} $|$ IMSI, Chicago}
+{{Aug '23}}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Algebraic Methods in Biochemical Reaction Networks}  $|$ MPI, Leipzig}
+{{Jun '23}}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Computations and Data in Algebraic Statistics} (online) $|$ BIRS, Oaxaca}
+{May '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Joint Mathematics Meetings}   $|$ Boston }
+{Jan '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{AlGeCom-XII (Algebra Geometry and Combinatorics day)}  $|$ UIUC}
+{Oct '22}
+{}
+%\vspace{-20pt}
+
+%\resumeProjectHeading
+%{\textbf{International conference on class groups on number fields and related topics}  (online) $|$ KSoM}
+%{Oct '21}
+%{}
+%\vspace{-20pt}
+
+%\resumeProjectHeading
+%{\textbf{Conference on modular forms (honor of Prof Ramakrishnan)}  (online) $|$ \textit{Workshop} $|$ IMSc, Chennai}
+%{Sep '21}
+%{}
+%\vspace{-20pt}
+
+%\resumeProjectHeading
+%{\textbf{Elliptic curves and the special values of L-functions}  (online) $|$ \textit{Workshop} $|$ ICTS, Bangalore}
+%{Aug '21}
+%{}
+%\vspace{-5pt}
+
+%\resumeProjectHeading
+%{\textbf{Subbarao Symposium on Number theory} (online)$|$ IISER, Pune}
+%{Jul '21}
+%{}
+%\vspace{-5pt}
+\resumeSubHeadingListEnd
+%\vspace{-15pt}
+
+
+
+
+%-----------PROJECTS-----------
+\section{Teaching and Grading}
+%2\vspace{-5pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Workshop leader for Calculus II} $|$ Rutgers}
+{Sep -- Dec '23}
+\vspace{-15pt}
+
+\resumeProjectHeading
+{\textbf{Head Counselor at \href{https://promys-india.org}{PROMYS India}} $|$ IISc Bangalore}
+{May -- Jun '23}
+\vspace{-15pt}
+
+\resumeProjectHeading
+{\textbf{Grader} $|$ Rutgers University}
+{}
+{\resumeItemListStart
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Linear Algebra and Applications}} }}{\hfill Sep -- Dec '23}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Analysis II}} }}{\hfill Jan -- Apr '23}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Topics in Applied Algebra}} }}{\hfill Jan -- Apr '23}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Topology}} }}{\hfill Sep -- Dec '22}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Theory of Numbers}}}}{\hfill Sep -- Dec '22}
+\resumeItemListEnd }
+\vspace{-10pt}
+
+
+\resumeProjectHeading
+{\textbf{Teaching Assistant} $|$ Chennai Mathematical Institute }
+{}
+{\resumeItemListStart
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Algebra II (Group theory)}} \hspace{20.5mm} BSc 1st year  \hspace{32mm}  {\textbf{Prof Manoj Kummini}}}}{\hfill Jan -- May '22}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Algebra I (Linear algebra)}} \hspace{20mm} BSc 1st year - head tutor \hspace{13.3mm}  {\textbf{Prof T R Ramadas}}}}{\hfill Sep -- Dec '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Functional Programming in Haskell}}\hspace{5.5mm}  BSc and MSc Comp. Sci. 1st year \hspace{1mm}  {\textbf{Prof S P Suresh}}}}{\hfill Sep -- Dec '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Probability Theory}} \hspace{32.3mm}  BSc 1st year \hspace{32mm}  {\textbf{Prof P Sankaran}}}}{\hfill Apr -- Jul '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Discrete Mathematics}} \hspace{27.4mm} BSc 1st year \hspace{31.8mm}  {\textbf{Prof K V Subrahmanyam}}}}{\hfill Apr -- Jul '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Design and Analysis of Algorithms}} \hspace{6.7mm}  MSc Data Science 1st year \hspace{11.3mm} {\textbf{Prof G Philip}}}}{\hfill Apr -- Jul '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Algebra I (Linear algebra)}} \hspace{20mm} BSc 1st year \hspace{32mm}  {\textbf{Prof T R Ramadas}}}}{\hfill Dec '20 -- Mar '21}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Functional Programming in Haskell}}\hspace{5.5mm}  BSc and MSc Comp. Sci. 1st year \hspace{1mm}  {\textbf{Prof S P Suresh}}}}{\hfill Dec '20 -- Mar '21}
+\resumeItemListEnd }
+\vspace{-10pt}
+
+\resumeProjectHeading
+{\textbf{Counselor at \href{https://promys.org}{PROMYS}} $|$ Boston University }
+{Jul -- Aug '20, '21}
+%\vspace{-15pt}
+
+%\resumeProjectHeading
+%{\textbf{Counselor at \href{https://promys.org}{PROMYS}} $|$ Boston University }
+%{Jul -- Aug '20}
+%\vspace{-5pt}
+
+\resumeSubHeadingListEnd
+%\vspace{-15pt}
+
+
+
+%-----------TALKS-----------
+\section{Talks Delivered}
+\resumeSubHeadingListStart
+
+%\resumeProjectHeading
+%{\color{grey}\textbf{GCT III: deciding positivity of LR coefficients} $|$ \emph{$1$ talk} $|$ Rutgers \textit{CS Theory Reading Seminar}}
+%{\color{grey}Sep '23}
+%{}
+%\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Representations as sections of Line Bundles} $|$ \emph{$1$ talk} $|$ Princeton \textit{(topics in Algebraic Geometry)}}
+{Dec '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Complexity of Optimization} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Pizza Seminar}}
+{Oct '23}
+{}
+\vspace{-20pt}
+
+
+\resumeProjectHeading
+{\textbf{Quiver Reps -  geometry \& invariants} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Algebra `N' Geometry Learning Seminar}}
+{Apr '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Quiver Reps - Intro} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Graduate Algebra and Representation Theory Seminar}}
+{Dec '22}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Burnside $p^aq^b$ theorem} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Graduate Number Theory Learning Seminar}}
+{Nov '22}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Very basic Lie Theory} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Graduate Geometry and Topology Learning Seminar}}
+{Oct '22}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Kneser graph coloring} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Graduate Combinatorics Seminar}}
+{Oct '22}
+{}
+\vspace{-20pt}
+
+
+\resumeProjectHeading
+{\textbf{Well definedness of Brauer group} $|$ \emph{$1$ talk} $|$ Rutgers \textit{Algebra `N' GEometry Learning Seminar}}
+{Sep '22}
+{}
+\vspace{-20pt}
+
+
+\resumeProjectHeading
+{\textbf{Fiedler vector method} $|$ \emph{$1$ talk} $|$ Project in a course on matrix computations}
+{May '22}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Derivative of $p$-adic Dirichlet series at $s=0$ (Stark)} $|$ \emph{$1$ talk} $|$ Internship with \textit{Prof Dixit}}
+{Nov '21}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Dehn's proof of Hilbert's $3^{rd}$ problem} $|$ \emph{$1$ talk} $|$ CMI Student Seminar}
+{Nov '21}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Markov Chain Monte Carlo} $|$ \emph{$1$ talk} $|$ Internship with \textit{Prof Ramamoorthi}}
+{Sep '21}
+{}
+\vspace{-20pt}
+
+
+\resumeProjectHeading
+{\textbf{Lie Algebras and Representation Theory} $|$ \emph{$3$ talks} $|$ Counselor Seminar at \textit{PROMYS}}
+{Jul -- Aug '21}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Introduction to Hyperbolic Geometry} $|$ \emph{$1$ talk} $|$ Counselor Seminar at \textit{PROMYS}}
+{Jul '21}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Introduction to Quantum Computing} $|$ \emph{$4$ talks} $|$ Counselor Seminar at \textit{PROMYS}}
+{Jul -- Aug '20}
+{}
+\resumeSubHeadingListEnd
+%\vspace{-20pt}
+
+%\vspace{-15pt}
+
+
+
+
+
+
+
+
+
+
+%-----------Honours----------
+\section{Honours and Awards}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Academic Excellence Award} at Rutgers}
+{Sep '22}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Received a certificate and \$100 based on performance in Written Qualifying Exams.
+}}
+\resumeItemListEnd}
+
+
+
+\vspace{-12pt}
+\resumeProjectHeading
+{\textbf{Shriram Scholarship} at CMI}
+{'19 -- '22}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Received institutional fee waiver and monthly stipend (based on entrance exam).
+}}
+\resumeItemListEnd}
+
+\vspace{-12pt}
+
+\resumeProjectHeading
+{\textbf{Ranked $4^{th}$ nationally at the  \emph{Bachelor of Statistics} (B.Stat.) entrance examination}}
+{'19}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Indian Statistical Institute (ISI)}}
+\resumeItemListEnd}
+
+
+
+\vspace{-12pt}
+\resumeProjectHeading
+{\textbf{Informatics Olympiad}}
+{'17, '18, '19}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Selected among (approx) top 100-130 school students in India in \textbf{Zonal Informatics Olympiad} (ZIO).}}
+\resumeItemListEnd}
+
+\vspace{-12pt}
+\resumeProjectHeading
+{\textbf{Mathematical Olympiad}}
+{Jan '18}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Selected for \textbf{Indian National Mathematical Olympiad} (INMO) \textbf{Training Camp} | top 30 school students in West Bengal.}}
+\resumeItemListEnd}
+
+
+\vspace{-12pt}
+\resumeProjectHeading
+{\textbf{Program in Mathematics for Young Scientists (PROMYS)}}
+{'18, '19, '20, '21}
+{\resumeItemListStart
+\resumeItem {\emph{\color{grey}Awarded the \textbf{Tara and Jasubhai Mehta Fellowship} to PROMYS (among 5 Indian school students in 2018) based on a competitive process. Participated twice as a student ('18, '19) and twice as a counselor ('20, '21).
+}}
+\resumeItemListEnd}
+
+
+
+\vspace{-12pt}
+\resumeProjectHeading
+{\textbf{Others}}
+{}
+{
+\vspace{-13pt}\item 
+\begin{itemize}[itemsep=-5pt, parsep=5pt, leftmargin=0.5cm]
+\item \setstretch{0.9}  Qualified for \textbf{International Collegiate Programming Contest} (ICPC) Kharagpur regionals and Amritapuri regionals in 2019 and secured rank $35$ among (approx) $90$ university teams at Kharagpur.
+        \item Selected among top $30$ students in India to participate in \textbf{Scholastic Test of Excellence in Mathematical Sciences} (STEMS) camp at CMI in 2018, based on a competitive exam (across grades $9-12$ and across Math, Physics, Computer Science).
+        \item Secured the \textbf{third position} in \textbf{Mathematics Talent Reward Programme} (MTRP) 2016, organized by ISI Kolkata, based on a competitive exam and quizzes at a camp.
+\end{itemize}}
+\resumeSubHeadingListEnd
+
+\vspace{-15pt}
+
+
+
+
+
+
+
+
+%-----------SERVICE-----------
+\section{Service}
+\resumeSubHeadingListStart
+
+%\resumeProjectHeading
+%{\textbf{Diversity, Equity, and Inclusion Grad Advisory Committee} $|$ \textit{Member} $|$ SGS, Rutgers University}
+%{Jan - Dec '23}
+%{}
+%\vspace{-20pt}
+
+
+\resumeProjectHeading
+{\textbf{Algebra `N' Geometry Learning Seminar (ANGeLS)} $|$ \textit{Organizer} $|$ Rutgers Math Department}
+{Jan - Apr '23}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Student Seminar} $|$ \textit{Organizer} $|$ Chennai Mathematical Institute}
+{Oct - Dec '22}
+{}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{ICO Camp}  (online) $|$ \textit{Combinatorics teacher} $|$ CodeChef}
+{Nov '20}
+{}
+%\vspace{-20pt}
+
+
+\resumeSubHeadingListEnd
+%\vspace{-5pt}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%-----------SKILLS----------
+\section{Skills}
+
+\begin{tabular*}{\textwidth}{l @{\hskip 0.5in} l}
+\textbf{Languages} & Bengali (mother tongue), English (fluent), Hindi (fluent)\\
+\textbf{Programming}  & {JAVA, C++, Python, Haskell, R, HTML, SageMath, Maple, Macaulay2, R} \\
+\textbf {Documentation} & {\LaTeX, Microsoft Word} \\
+%\textbf {Subject skills} &
+%{\begin{minipage}{15cm} 
+%Linear algebra (on general structures like groups, directed graphs, algebras), Matrix Computation, Calculus on Manifolds,
+%(algebraic and point-set) Topology, Probability, Analysis, Data Structures and Algorithms, Quantum Computing (theory), theory of computing, Functional Programming (Haskell), Lambda Calculus, Mechanics \end{minipage}
+%}
+%\\
+%\textbf{Tools} & {ProVerif, CryptoVerif} 
+\end{tabular*}
+
+
+
+
+
+
+
+
+\end{document}
