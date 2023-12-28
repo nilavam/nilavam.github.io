@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Applied Mathematician | Your Name</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Applied Mathematician</p>
+        <img src="https://nilavam.github.io/mine.jpg" alt="Your Image">
+    </header>
+
+    <label class="switch" id="dark-mode-toggle">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#courses">Courses Taken</a></li>
+            <li><a href="#talks">Talks/Write-ups</a></li>
+            <li><a href="#misc">Miscellaneous</a></li>
+            <li><a href="#cv">CV</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Welcome to my academic page! I am a passionate applied mathematician with expertise in [your specific areas of focus]. My research interests include [mention some specific topics].
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>
+            Here, you can provide details about your educational background, degrees earned, and any significant achievements.
+        </p>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <p>
+            Share your experience in teaching, including courses taught, methodologies, and any innovative approaches you've used.
+        </p>
+    </section>
+
+    <section id="courses">
+        <h2>Courses Taken</h2>
+        <p>
+            List some of the key courses you've taken during your academic journey, highlighting their relevance to your expertise.
+        </p>
+    </section>
+
+    <section id="talks">
+        <h2>Talks/Write-ups</h2>
+        <p>
+            Showcase your participation in conferences, talks, and any write-ups or publications you've contributed to.
+        </p>
+    </section>
+
+    <section id="misc">
+        <h2>Miscellaneous</h2>
+        <p>
+            Include any additional information or achievements that don't fit neatly into other sections.
+        </p>
+    </section>
+
+    <section id="cv">
+        <h2>CV</h2>
+        <p>
+            Provide a link or downloadable version of your Curriculum Vitae (CV) for interested visitors.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('change', () => {
+            body.classList.toggle('dark-mode', darkModeToggle.checked);
+        });
+    </script>
+</body>
+
+</html>
