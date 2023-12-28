@@ -208,18 +208,22 @@ section:hover {
 
 /* Responsive adjustments for smaller screens */
 @media only screen and (max-width: 768px) {
+    body {
+        margin: 0; /* Add this rule to remove the default body margin */
+    }
+
     section {
         margin-left: 10px; /* Adjust this value as needed */
     }
 
     nav {
-        width: 100%; /* Take full width on smaller screens */
+        width: 100%;
         padding-top: 2em;
         display: none;
     }
 
     nav.show-mobile-nav {
-        display: block; /* Show when toggled on */
+        display: block;
     }
 
     .mobile-nav-toggle {
@@ -233,16 +237,5 @@ section:hover {
 
     .mobile-nav-toggle:hover {
         background-color: #ddd;
-    }
-
-    /* Adjust width for horizontal sections on smaller screens */
-    .horizontal-sections {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    section {
-        width: 100%;
-        margin-left: 0;
     }
 }
