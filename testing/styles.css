@@ -84,9 +84,9 @@ body.dark-mode {
 }
 
 header.dark-mode {
-    background-color: #2c3e50; /* New Darker Blue Header in Dark Mode */
-    color: #ecf0f1; /* White Text in Dark Mode */
-    border-bottom: 4px solid #3498db; /* Border color around name and picture */
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-bottom: 4px solid #3498db;
 }
 
 nav.dark-mode {
@@ -134,7 +134,7 @@ footer:hover {
     display: inline-block;
     width: 60px;
     height: 34px;
-    z-index: 1000; /* Higher z-index for the toggle switch */
+    z-index: 999; /* Ensure it stays on top */
 }
 
 .switch input {
@@ -153,6 +153,7 @@ footer:hover {
     background: linear-gradient(to right, #8899ff 50%, #776600 50%);
     background-size: 200% 100%;
     transition: background-position 0.3s ease;
+    z-index: 1; /* Ensure it stays on top */
 }
 
 .slider:before {
@@ -187,8 +188,62 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+
 /* Hover effect on sections */
 section:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hide Navigation on Small Screens */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul {
+        padding: 10px;
+        margin: 0;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    body.mobile-nav-open nav {
+        display: block;
+    }
 }
