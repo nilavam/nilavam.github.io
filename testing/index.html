@@ -5,32 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nilava Metya | Applied Mathematician</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
 
     <header>
+        <img src="https://nilavam.github.io/mine.jpg" alt="Nilava Metya">
         <h1>Nilava Metya</h1>
         <p>Applied Mathematician</p>
-        <img src="https://nilavam.github.io/mine.jpg" alt="Nilava Metya">
+        <label for="darkModeToggle" class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
     </header>
 
-    <div class="mobile-nav-toggle">&#9776; Menu</div>
-
-    <nav class="dark-mode">
+    <nav>
         <ul>
-            <li><a href="#about">About Me</a></li>
+            <li><a href="#aboutMe">About Me</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#courses">Courses Taken</a></li>
-            <li><a href="#talks">Talks/Writeups</a></li>
+            <li><a href="#coursesTaken">Courses Taken</a></li>
+            <li><a href="#talksWriteups">Talks/Write-ups</a></li>
             <li><a href="#miscellaneous">Miscellaneous</a></li>
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
 
-    <section id="about">
+    <section id="aboutMe">
         <h2>About Me</h2>
         <p>
             Welcome to my academic page! I am a passionate applied mathematician with expertise in [your specific areas of focus]. My research interests include [mention some specific topics].
@@ -39,56 +41,39 @@
 
     <section id="education">
         <h2>Education</h2>
-        <p>
-            Insert information about your educational background here.
-        </p>
+        <!-- Add your education details here -->
     </section>
 
     <section id="teaching">
         <h2>Teaching</h2>
-        <p>
-            Include details about your teaching experience and approach.
-        </p>
+        <!-- Add your teaching details here -->
     </section>
 
-    <section id="courses">
+    <section id="coursesTaken">
         <h2>Courses Taken</h2>
-        <p>
-            List the courses you have taken during your academic journey.
-        </p>
+        <!-- Add the courses you have taken here -->
     </section>
 
-    <section id="talks">
-        <h2>Talks/Writeups</h2>
-        <p>
-            Highlight any talks you've given or writeups you've authored.
-        </p>
+    <section id="talksWriteups">
+        <h2>Talks/Write-ups</h2>
+        <!-- Add details about your talks and write-ups here -->
     </section>
 
     <section id="miscellaneous">
         <h2>Miscellaneous</h2>
-        <p>
-            Include any other relevant information or achievements.
-        </p>
+        <!-- Add any additional miscellaneous information here -->
     </section>
 
     <section id="cv">
         <h2>CV</h2>
-        <p>
-            Provide a link to your CV or upload it directly here.
-        </p>
+        <p><a href="https://nilavam.github.io/cv/cv.pdf" target="_blank">Download CV</a></p>
     </section>
 
-    <footer class="dark-mode">
+    <footer>
         <p>&copy; 2023 Nilava Metya. All rights reserved.</p>
     </footer>
 
-    <div class="switch">
-        <input type="checkbox" id="toggle" />
-        <label class="slider round" for="toggle"></label>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 
 </html>

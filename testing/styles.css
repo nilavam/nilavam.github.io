@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
@@ -36,7 +37,7 @@ nav {
     height: 100vh;
     width: 200px;
     padding-top: 1em;
-    transition: background-color 0.5s, color 0.5s, width 0.5s;
+    transition: background-color 0.5s, color 0.5s, width 0.5s, transform 0.5s; /* Added transition property */
 }
 
 nav ul {
@@ -188,62 +189,38 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-
 /* Hover effect on sections */
 section:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+    section {
+        margin-left: 10px; /* Adjust this value as needed */
+    }
 
-/* Mobile Navigation Toggle */
-.mobile-nav-toggle {
-    display: none;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-}
-
-/* Hide Navigation on Small Screens */
-@media screen and (max-width: 768px) {
     nav {
+        width: 100%; /* Take full width on smaller screens */
+        padding-top: 2em;
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
     }
 
-    nav ul {
-        padding: 10px;
-        margin: 0;
-    }
-
-    nav li {
-        margin-bottom: 10px;
-    }
-
-    nav a {
-        font-size: 18px;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        padding: 10px;
-    }
-
-    nav a:hover {
-        background-color: #555;
+    nav.show-mobile-nav {
+        display: block; /* Show when toggled on */
     }
 
     .mobile-nav-toggle {
         display: block;
+        cursor: pointer;
+        text-align: right;
+        padding: 10px;
+        color: #333;
+        background-color: #f8f8f8;
     }
 
-    body.mobile-nav-open nav {
-        display: block;
+    .mobile-nav-toggle:hover {
+        background-color: #ddd;
     }
 }
