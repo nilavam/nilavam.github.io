@@ -8,12 +8,23 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #bdc3c7;
+}
+
 header {
     text-align: center;
     padding: 3em;
     background-color: #4285f4;
     color: #fff;
     transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-mode header {
+    background-color: #1a1a1a; /* Change this color for the header in dark mode */
+    color: #fff;
+    border-bottom: 4px solid #3498db;
 }
 
 header img {
@@ -37,7 +48,7 @@ nav {
     height: 100vh;
     width: 200px;
     padding-top: 1em;
-    transition: background-color 0.5s, color 0.5s, width 0.5s, transform 0.5s; /* Added transition property */
+    transition: background-color 0.5s, color 0.5s, width 0.5s, transform 0.5s;
 }
 
 nav ul {
@@ -222,5 +233,16 @@ section:hover {
 
     .mobile-nav-toggle:hover {
         background-color: #ddd;
+    }
+
+    /* Adjust width for horizontal sections on smaller screens */
+    .horizontal-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 100%;
+        margin-left: 0;
     }
 }

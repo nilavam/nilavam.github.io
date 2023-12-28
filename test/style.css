@@ -1,0 +1,40 @@
+/* Increased visual hierarchy */
+h1 {
+    font-size: 3em; /* Larger heading */
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* More refined typography */
+p {
+    line-height: 1.6; /* Increased readability */
+}
+
+/* Subtler hover effects */
+header nav a:hover,
+section h2:hover {
+    opacity: 0.9; /* Less dramatic opacity change */
+    transform: translateY(1px); /* Subtle upward movement */
+}
+
+/* Enhanced borders and shadows */
+section {
+    border: 3px solid #ccc; /* Thicker border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+/* Visually appealing section dividers */
+section:not(:last-child) {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Footer styling */
+footer {
+    border-top: 1px solid #ccc;
+    padding: 30px 20px;
+}
