@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Mathematician Website</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #2d3142;
+            color: #edf2f4;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4f5d75;
+            color: white;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #2d3142;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #edf2f4;
+        }
+
+        h2 {
+            color: #2d3142;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .math {
+            font-family: 'KaTeX_Main', 'Times New Roman', serif;
+        }
+    </style>
+    <!-- Include KaTeX library for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" integrity="sha384-Wj8Hgj5Pqek5LGG7CYCy4C6h7Jb8N4r+s4aRyFm6/55w+lw/z/lFlvLIrYpzJtuj" crossorigin="anonymous">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" integrity="sha384-6K+5uErjiZyV1/XaAqpO3P7PIpaM39xP2NK89tXR/0UQYo9z9tT1WYgAA7g/oUq8" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Your Mathematician Title</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to My Mathematician Website</h2>
+        <p>This is a brief introduction about yourself and your passion for mathematics.</p>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        <p>Explore my latest discoveries in the realm of <span class="math">\(x^2 + y^2 = r^2\)</span>.</p>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <p>Discover my groundbreaking papers on topics such as <span class="math">\(e^{i\pi} + 1 = 0\)</span>.</p>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <p>Delve into the beauty of mathematics through my teaching endeavors.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Reach out to discuss mathematical ideas, collaborations, or just to say hello!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Mathematician Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        setInterval(changeHeaderColor, 5000); // Change color every 5 seconds
+
+        function changeHeaderColor() {
+            var body = document.body;
+            var header = document.querySelector('header');
+            body.style.backgroundColor = getRandomColor();
+            header.style.backgroundColor = getRandomColor();
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+
+</body>
+
+</html>
