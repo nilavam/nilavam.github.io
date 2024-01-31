@@ -1,0 +1,126 @@
+\input{pre.tex}
+\newcommand{\eto}{\stackrel{=}{\to}}
+\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{The Probabilistic Method}
+\usepackage{quiver}
+\author{Instructor: Noga Alon\\Notes by Nilava Metya}
+\date{Spring 2024}
+\makeatletter
+\renewcommand{\@chapapp}{Lecture}
+\makeatother
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{01/30/2024}
+
+\section{Philosophy}
+Main philosophy of the probabilistic method: To prove existence of a structure (or a substructure of a given one), define a probability space of structures, and show that a random point in it satisfies the required properties with positive (often high) probability.
+
+We will look at two examples today.
+
+\section{Example: Graph Theory}
+
+\begin{defn}[Ramsey numbers]
+For $k,\l\geq 1$, let $r=r(k,\l)$ be the smallest integer, if there exists any, satisfying the following property: for every coloring of edges of $G=K_r$ (the complete graph on $r$ nodes) by \red~and \blue, either $\exists$ a  blue $K_k\subseteq G$ or a red $K_{\l}\subseteq G$.
+\end{defn}
+\begin{ex}
+$r(3,3)=6$.
+\end{ex}
+
+A special case of Ramsey's theorem says that $\exists r(k,l)<\infty\forall k,l$. The proof, by induction (using Erd\"os-Szekeres theorem), gives $\ds r(k,\l)\leq\binom{k+\l-2}{k-1}$. In particular, $r(k,k) \leq \binom{2k-2}{k-1} <4^k$.
+
+\begin{rmk}
+The following are easy to observe: $r(k,\l)=r(l,k), r(1,\l)=1, r(2,\l)=\l$.
+\end{rmk}
+
+All the exactly known Ramsey numbers for $\l\geq k\geq 3$ are
+$r(3,3)=6, r(3,4)=9, r(3,5)=14, r(3,6)=18, r(3,7)=23, r(3,8)=28, r(3,9)=36, r(4,4)=18, r(4,5)=25$. It is only known that $41\leq r(3,10)\leq 42, 36\leq r(4,6)\leq 40, 43\leq r(5,5)\leq 48$, and some similar bounds for other Ramsey numbers.
+
+\begin{thm}[Erdos '47]
+If $\ds\binom n k 2^{1-\binom k 2} < 1$ then $r(k,k)>n$. Therefore $r(k,k)\geq \left[1-o(1)\right]\frac{k}{e} 2^{\frac{k-1}2}$.
+\end{thm}
+\begin{pf}
+Take the complete graph on $n$ labelled vertices $[n] = \set{1,\cdots,n}$. Color each edge $\set{i,j}$ (for $1\leq i<j\leq n$) randomly uniformly and independently either \red~or \blue. For fixed $K\subseteq[n]$ with $k=\abs K$, the probability that the graph induced by $K$ is monochromatic is $\ds{\color{red}2^{-\binom k 2}} + {\color{blue}2^{-\binom k 2}} = 2^{1-\binom k 2}$. So 
+\begin{align*}
+\ds\P{\exists \text{ such monochromatic }K} &\leq \sum_{\substack{K\subseteq [n]\\ \abs K = k}} \P{K \text{ induces a monochromatic graph}} \\
+&= \binom n k 2^{1-\binom k 2} \stackrel{\text{given}}{<} 1.
+\end{align*}
+Therefore, $\ds\P{\not\exists \text{ such monochromatic }K} >0$. This means $r(k,k)>n$, which proves the first part.
+
+Now, \begin{align*}
+\binom n k 2^{1-\binom k 2} \leq 2 \left(\frac{en}{k}\right)^k\cdot 2^{-\binom k2} = 2\left(\frac{en}{2^{ \frac{k-1}{2}}\cdot k }\right)^k
+\end{align*}
+where the first inequality is due to $\ds\binom a b \leq \left(\frac{ea}{b}\right)^b$. If $\frac{en}{2^{ \frac{k-1}{2}}\cdot k }<1-\epsilon$ then for $k>k_0(\epsilon)$ for some $k_0(\epsilon)$, the RHS is $<1$. This implies that $r(k,k) \geq \left[1-o(1)\right]\frac{k}{e} 2^{\frac{k-1}2}$.\footnote{
+Explanation for the last `implies': We note that for every $n$ satisfying the given condition, we have $r(k,k)>n$. Now for any $n<\left[1-\epsilon\right]\frac{k}{e} 2^{\frac{k-1}2}$, the condition is satisfied. Thus, $r(k,k)$ is more than all such $n$'s, which is written as $\left[1-o(1)\right]\frac{k}{e} 2^{\frac{k-1}2}$.
+}
+\qed\end{pf}
+
+\rmk{
+The lower bound was improved only by a factor of two since $1947$.\\
+The upper bound was improved several times, last time in $2023$ by Campos, Griffiths, Morris, Sahasrabudhe to $(4-\epsilon)^k$, for an absolute constant $\epsilon>0$.\\
+Open: Does $\lim r(k,k)^{1/k}$ exist (for USD 100)? If exists, find it (for USD 250).
+}
+
+\rmk{
+Open problem: Find an explicit coloring showing $r(k,k)>1.0001^k$.
+}
+
+\rmk{This proof provides a randomized algorithm for finding a coloring that shows  $r(k,k) > \left\lfloor\sqrt{2^k}\right\rfloor$. But given such a coloring, we don't know how to efficiently check that $\not\exists$ a monochromatic $K_k$.
+}
+
+\section{Example: Dominating Sets}
+
+\begin{defn}
+If $G=(V,E)$ is a graph, we say $S\subseteq V$ is dominating if $\forall v\in V\smallsetminus S\exists u\in S$ such that $ \set{u,v}\in E$.
+\end{defn}
+
+\ex{
+The set of bold vertices in \begin{tikzcd}
+	\circ & \bullet & \circ \\
+	\bullet & \circ
+	\arrow[no head, from=1-1, to=1-2]
+	\arrow[no head, from=1-2, to=1-3]
+	\arrow[no head, from=1-2, to=2-2]
+	\arrow[no head, from=1-1, to=2-1]
+	\arrow[no head, from=2-1, to=2-2]
+	\arrow[no head, from=1-1, to=2-2]
+\end{tikzcd} form a dominating set.
+}
+
+\begin{thm}
+If $G=(V,E)$ is a graph with $\abs V = n$ and minimum degree $\delta$, then it has a dominating set of size at most $\ds n\cdot \frac{1+\ln(1+\delta)}{1+\delta}$.
+\end{thm}
+
+\begin{pf}
+Let $p=\frac{\ln(1+\delta)}{1+\delta}$. Clearly $p\in [0,1]$. Let $X\subseteq V$
+ be a random subset of $V$ obtained by choosing each $v\in V$ to randomly and independently lie in $X$ with probability $p$. Since $X$ is not necessarily a dominating set, we can \textit{alter} it by $$Y_X\sett\set{v\in V\smallsetminus X\st \not\exists u\in X \text{ with } \set{u,v}\in E}.$$
+By construction, $X\sqcup Y_X$ is a dominating set (note that they are disjoint).
+
+Let's estimate the expected size of $X\cup Y_X$. First observe that $\E{\abs{X\cup Y_X}} = \E{\abs X + \abs {Y_X}}$ due to disjointness, and this is further equal to $\E{\abs X} + \E{\abs {Y_X}}$ by linearity of expectation.\\
+$\abs X$ is a sum of independent indicators, one for each vertex which takes $1$ with probability $p$ and $0$ with probability $1-p$. So $\E{\abs X} = np$.\\
+Note that $\P{v\in Y_X} = \P{v\notin X}\cdot \P{\text{no neighbor of } v \text{ is in } X} = (1-p)^{d_v} \leq (1-p)^{1+\delta} =\frac{1}{1+\delta}$ where $d_v$ is the degree of $v$ in $G$. Again $\abs{Y_X} = \sum_{v\in V} \pmb 1_{v\in Y_X}$ whence $\E{\abs {Y_X}} \leq \frac n {1+\delta}$. \\
+This means $\E{\abs{X\cup Y_X}} \leq n\left[\frac{1+\ln(1+\delta)}{1+\delta}\right]$. Since the `average size' of a dominating set is less than or equal to the given quantity, $\exists$ a choice of $X$ such that $X\cup Y_X$ is a dominating set of size at most $\ds n\cdot \frac{1+\ln(1+\delta)}{1+\delta}$.
+\qed\end{pf}
+
+\rmk{We used \textit{linearity of expectation}: $\E{X+Y} = \E X + \E Y$. We also used \textit{alteration}: making a change after initial random choice, in this case we added $Y_X$ to $X$. (To be discussed more)}
+
+\rmk{Here $\exists$ an efficient algorith to find such a dominating set. Start with $\varnothing$ and keep adding vertices that dominate maximum of yet non-dominated vertices.}
+
+\rmk{Estimate is essentially that for $n\gg\delta\gg1$.}
+
+\end{document}
