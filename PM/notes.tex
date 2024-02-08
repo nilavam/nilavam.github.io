@@ -33,7 +33,7 @@ Main philosophy of the probabilistic method: To prove existence of a structure (
 
 We will look at two examples today.
 
-\section{Example: Graph Theory}
+\section{Example: Ramsey Theory}
 
 \begin{defn}[Ramsey numbers]
 For $k,\l\geq 1$, let $r=r(k,\l)$ be the smallest integer, if there exists any, satisfying the following property: for every coloring of edges of $G=K_r$ (the complete graph on $r$ nodes) by \red~and \blue, either $\exists$ a  blue $K_k\subseteq G$ or a red $K_{\l}\subseteq G$.
@@ -122,5 +122,90 @@ This means $\E{\abs{X\cup Y_X}} \leq n\left[\frac{1+\ln(1+\delta)}{1+\delta}\rig
 \rmk{Here $\exists$ an efficient algorith to find such a dominating set. Start with $\varnothing$ and keep adding vertices that dominate maximum of yet non-dominated vertices.}
 
 \rmk{Estimate is essentially that for $n\gg\delta\gg1$.}
+
+
+
+\chapter{02/01/2024}
+
+Examples continued from last lecture.
+
+\section{Example: Hypergraph $2-$coloring}
+
+\begin{defn}
+A \textit{hypergraph} is a pair $H=(V,E)$ of (finitely many) vertices $V$ and edges $E\subseteq 2^V$.
+
+We say a hypergraph is \textit{$n-$uniform} if $\abs e=n\forall e\in E$. In particular, graphs are $2-$uniform hypergraphs.
+
+We say a hypergraph is said to be \textit{$2-$colorable} if there exists a coloring of $V$ with \red~and \blue~with no monochromatic edge.
+\end{defn}
+
+We define the quantity $$m(n)\sett \min \set{\abs E \st (V,E) \text{ is } n- \text{uniform hypergraph and not } 2-\text{colorable}}$$ and interested in its asymptotics.
+
+It is known that $m(1)=1, m(2)=3, m(3)=17, m(4)=23$ and for $n\geq 5$, $m(n)$ are unknown.
+
+\begin{prop}
+$m(n)\geq 2^{n-1}$ for $n\geq 2$.
+\end{prop}
+
+\pf{
+For the sake of contradiction, let $H=(V,E)$ be $n-$uniform with $\abs E < 2^{n-1}$. We will show that $H$ is $2-$colorable. Color randomly each vertex independently either red or blue with probability half for each color. For each edge $e\in E$, let $A_e$ be the event that $e$ is monochromatic. Then $\P{A_e} = 2\cdot \left(\frac{1}{2}\right)^n = 2^{1-n}$. This means that $\P{\cup_{e\in E}A_e} \leq \sum_{e\in E}\P{A_e} = \abs E \cdot 2^{1-n}$ which is less than $1$ by assumption. This means that the event that no edge is monochromatic has positive probability, implying that there is a coloring for which there is no monochromatic edge. By definition, this is a $2-$coloring. 
+\qed}
+
+\rmk{The proof for lower bound of $r(k,k)$ is a special case. Take $n={k\choose 2}$. Vertices of the hypergraph are $E(K_n)$ and hyperedges are collections of $k\choose 2$ edges of $K_n$ that form a $k-$clique. So number of hyperedges is $n\choose k$.
+}
+
+\rmk{It can be shown that $m(n)\leq \cO(n^22^{n-1})$, that is $\exists c>0$ such that $m(n)\leq cn^22^{n-1}$ for all large $n$. Indeed if we take $2n^2$ vertices and $cn^22^{n-1}$ random subsets of size $n$, then with positive probability, every set of $n^2$ vertices contains an edge. So not $2-$colorable.\\
+Note that the interesting quantity here is $\frac{m(n)}{2^{n-1}}$ which is the expected number of monochromatic edges in a random coloring. Thus $\ds1\leq \frac{m(n)}{2^{n-1}}\leq \cO(n^2)$.
+}
+
+
+Lower bound for $\frac{m(n)}{2^{n-1}}$ has been improved by Beck, by Radhakrishnan + Srinivasan. Best (short) proof is by Cherkashin and Kozik which is the following.
+
+\begin{thm}
+If $\exists k\geq 1, 0\leq p\leq 1$ such that $k(1-p)^n+k^2p<1$ then $m(n)>k\cdot 2^{n-1}$.
+\end{thm}
+
+\pf{
+Let $n,k,p$ be as in the hypothesis of the theorem we're proving. Let $H=(V,E)$ be an $n-$uniform graph with $\abs E=k\cdot 2^{n-1}$. For each $v\in V$ pick $x_v\in [0,1]$ uniformly randomly. (We can assume that these $x_v$'s are unique because any two of them are equal with $0$ probability). These $x_v$'s define an ordering on the vertices, that is, we say $v<u$ iff $x_v<x_u$.
+
+Now go over the vertices in increasing order and color each vertex \blue~ unless forced to color it \red~(namely, the vertex appears as the last vertex in an otherwise blue edge). By construction, there is no blue edge. But there can be a red edge. Let's look at probability that such a thing happens.
+
+Define $L=\left[0,\frac{1-p}{2}\right), M=\left[\frac{1-p}2,\frac{1+p}2\right), R=\left[\frac{1+p}2,1\right]$. Let $A_e$ be the event that edge $e\in E$ is fully contained in $L$ or fully contained in $R$, and define $A\sett \bigcup_{e\in E}A_e$. Then $\P{A_e} = \P{x_v\in L\forall v\in e} + \P{x_v\in R\forall v\in e} = 2\P{x_v\in L\forall v\in e} = 2 \cdot\left(\frac{1-p}{2}\right)^n$. Thus \begin{align*}
+\P A &\leq \sum_{e\in E} \P{A_e} \\
+&\leq k\cdot 2^{n-1} \cdot 2 \cdot \left(\frac{1-p}{2}\right)^n \\
+&= k(1-p)^n.
+\end{align*}
+Suppose the event $\ds\bigcup_{e\in E} A_e$ does not happen and there is a red edge. The former means every edge has one vertex each in at least two of $L,M,R$. Consider the first red edge $\color{red} e_0$, that is, the edge $\color{red} e$ with lowest value of $\ds\min_{v\in {\color{red}e}}x_v$ among red edges. Let $\color{red}v_0$ be the first vertex in $\color{red} e_0$. Clearly ${\color{red} v_0}\notin R$, else $\color{red} e_0$ would be completely in $R$. Also, ${\color{red} v_0}\notin L$ because otherwise $\color{red} v_0$ is the last edge of some otherwise blue edge which would hence completely be in $L$. Thus ${\color{red}v_0}\in M$. Say $\color{red} v_0$ is the last vertex of ${\color{blue} f_0}\in E$. Altogether, we care that there are two edges ${\color{red}e_0},{\color{blue}f_0}$ with $e_0\cap f_0 = \set{v_0}$ and $v_0\in M$, also called a \textit{conflicting} pair of edges. Also in this case, the probability that $v_0$ is the last vertex of ${\color{blue}f_0}$ is $\P{x_u \leq x_{v_0} \forall u\in f_0\smallsetminus\set{v_0}} = x_{v_0}^{n-1}$, and the probability that $v_0$ is the first vertex of ${\color{red}e_0}$ is $\P{x_u \geq x_{v_0} \forall u\in e_0\smallsetminus\set{v_0}} = (1-x_{v_0})^{n-1}$, because $\abs{e_0} = \abs{f_0} = n$ (by $n-$regularity of $H$). Thus 
+\begin{align*}
+\P{A^c\cap \set{\exists\text{ red edge}}} &\leq \P{\text{there is a conflicting pair of edges}}\\
+&\leq \sum_{\substack{(e,f)\in E\times E\\ \abs {e\cap f}=1}} \P{(e,f)\text{ is a conflicting pair}} \\
+&= \sum_{\substack{(e,f)\in E\times E\\ \abs {e\cap f}=1}} \P{\left(e\cap f \subseteq M\right)\cap \left(e\smallsetminus(e\cap f) \subseteq L\right) \cap \left(f\smallsetminus(e\cap f) \subseteq R\right)}\\
+&= \sum_{\substack{(e,f)\in E\times E\\ \abs {e\cap f}=1}} \P{e\cap f \subseteq M} \cdot\P{e\smallsetminus(e\cap f) \subseteq L} \cdot\P{f\smallsetminus(e\cap f) \subseteq R}\\
+&=\sum_{\substack{(e,f)\in E\times E\\ \abs {e\cap f}=1}} p \cdot x_{e\cap f}^{n-1}\cdot (1-x_{e\cap f})^{n-1} \\
+&\leq \sum_{\substack{(e,f)\in E\times E\\ \abs {e\cap f}=1}} p \cdot \max_{x\in M}\left[x(1-x)\right]^{n-1} \\
+&\leq (k\cdot 2^{n-1})^2 \cdot p \cdot \max_{x\in M}\left[x(1-x)\right]^{n-1}\\
+&= k^2 \cdot 4^{n-1}\cdot p\cdot \frac{1}{4^{n-1}} = pk^2
+\end{align*}
+So $\P{\exists\text{ red edge}} \leq \P A + \P{A^c\cap \set{\exists\text{ red edge}}} \leq k(1-p)^n + kp^2$. This quantity is $<1$, whence $\P{\not\exists\text{ red edge}} >0$. This means that there is a coloring such that there is no red edge (there was no blue edge by construction). By definition, this is a $2-$coloring. So $m(n)$ must be greater than the number of edges of this graph, namely $k\cdot 2^{n-1}$.
+\qed}
+
+\begin{cor}
+$m(n) > 2^{n-2}\cdot \sqrt{\frac{n}{\ln n}}$.
+\end{cor}
+\pf{
+If $k=\frac{1}{2}\sqrt{\frac{n}{\ln n}}$ and $p = \frac{\ln n}{n}$. Then $1-p\leq e^{-p}\implies k(1-p)^n\leq ke^{-pn} = \frac{k}{n}$. Therefore $k^2p+k(1-p^n) \leq \frac{n}{4\ln n}\cdot\frac{\ln n}{n} + \frac{\sqrt{n}}{2n\sqrt{\ln n}} = \frac{1}{4} + \frac{1}{2\sqrt{n \ln n}} < 1$. By the above theorem, $m(n)>k\cdot 2^{n-1} = 2^{n-2}\cdot\sqrt{\frac{n}{\ln n}}$.\qed
+}
+
+
+\section{Example: Set Pairs}
+\begin{thm}[Bollobas] Let $(A_i,B_i)$ for $1\leq i\leq h$ be pairs of subsets of $\Z$ satisfying that $\ds A_i\cap B_i=\varnothing\forall i, A_i\cap B_j\neq \varnothing \forall i\neq j$ and $\abs{A_i}=k,\abs{B_i}=\ell\forall i$. Then $h\leq {k+\ell\choose k}$. \\
+(This is tight: Take $\abs{X}=k+\ell$ and $(A_i,B_i)$ are partitions of $X$ to disjoint sets of sizes $k,\ell$.)
+\end{thm}
+
+\begin{pf}
+Order $\ds\bigcup_{i=1}^h A_i\cup B_i$ randomly. Let $E_i$ be the event that $A_i$ precedes $B_i$, that is, $\max A_i < \min B_i$. Note that $\P{E_i} = {k+\ell\choose k}^{-1}$. Also, events are pairwise disjoint, since if both $E_i,E_j$ occur together and (WLOG) $\max A_i \geq \max A_i$ then $\min B_i > \max A_i \geq \max A_j$ so $A_j\cap B_i=\varnothing$ which cannot happen. This means that $h\cdot {k+\ell\choose k}^{-1}=\sum_i\P{E_i} = \P{\bigcup_i E_i} \leq 1.$
+\qed\end{pf}
+
+
 
 \end{document}
