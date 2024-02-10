@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  5 FEB 2024 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 FEB 2024 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,6 +1247,49 @@ Package: xparse 2023-02-02 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box121
+)
+\tc@llx=\dimen318
+\tc@lly=\dimen319
+\tc@urx=\dimen320
+\tc@ury=\dimen321
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen322
+\adjbox@Height=\dimen323
+\adjbox@Depth=\dimen324
+\adjbox@Totalheight=\dimen325
+\adjbox@pwidth=\dimen326
+\adjbox@pheight=\dimen327
+\adjbox@pdepth=\dimen328
+\adjbox@ptotalheight=\dimen329
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count480
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box122
+\sift@deathcycles=\count481
+\@vwid@loff=\dimen330
+\@vwid@roff=\dimen331
+))
 (./quiver.sty
 Package: quiver 2021/01/11 quiver
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
@@ -1259,10 +1302,10 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen318
-\pgfarrowlength=\dimen319
-\pgfarrowwidth=\dimen320
-\pgfarrowlinewidth=\dimen321
+\pgfarrowinset=\dimen332
+\pgfarrowlength=\dimen333
+\pgfarrowwidth=\dimen334
+\pgfarrowlinewidth=\dimen335
 )))
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
@@ -1274,70 +1317,70 @@ s/tikzlibrarydecorations.pathmorphing.code.tex
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen322
-\pgfdecoratedremainingdistance=\dimen323
-\pgfdecoratedinputsegmentcompleteddistance=\dimen324
-\pgfdecoratedinputsegmentremainingdistance=\dimen325
-\pgf@decorate@distancetomove=\dimen326
-\pgf@decorate@repeatstate=\count480
-\pgfdecorationsegmentamplitude=\dimen327
-\pgfdecorationsegmentlength=\dimen328
+\pgfdecoratedcompleteddistance=\dimen336
+\pgfdecoratedremainingdistance=\dimen337
+\pgfdecoratedinputsegmentcompleteddistance=\dimen338
+\pgfdecoratedinputsegmentremainingdistance=\dimen339
+\pgf@decorate@distancetomove=\dimen340
+\pgf@decorate@repeatstate=\count482
+\pgfdecorationsegmentamplitude=\dimen341
+\pgfdecorationsegmentlength=\dimen342
 )
-\tikz@lib@dec@box=\box121
+\tikz@lib@dec@box=\box123
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathmorphing.code.tex)))
-\@quotelevel=\count481
-\@quotereset=\count482
+\@quotelevel=\count483
+\@quotereset=\count484
  (./notes.aux)
 \openout1 = `notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 24.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 25.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 24.
+ 25.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-24.
+25.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 24.
+ 25.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 24.
+e 25.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1375,16 +1418,16 @@ LaTeX Font Info:    ... okay on input line 24.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count483
-\scratchdimen=\dimen329
-\scratchbox=\box122
-\nofMPsegments=\count484
-\nofMParguments=\count485
+\scratchcounter=\count485
+\scratchdimen=\dimen343
+\scratchbox=\box124
+\nofMPsegments=\count486
+\nofMParguments=\count487
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count486
-\MPscratchDim=\dimen330
-\MPnumerator=\count487
-\makeMPintoPDFobject=\count488
+\MPscratchCnt=\count488
+\MPscratchDim=\dimen344
+\MPnumerator=\count489
+\makeMPintoPDFobject=\count490
 \everyMPtoPDFconversion=\toks55
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1395,15 +1438,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 24.
-LaTeX Info: Command `\ddddot' is already robust on input line 24.
-Package hyperref Info: Link coloring OFF on input line 24.
+LaTeX Info: Command `\dddot' is already robust on input line 25.
+LaTeX Info: Command `\ddddot' is already robust on input line 25.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (./notes.out) (./notes.out)
 \@outlinefile=\write5
 \openout5 = `notes.out'.
 
-\c@lstlisting=\count489
+\c@lstlisting=\count491
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
@@ -1421,42 +1464,42 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'notes.bbl' not found.
 
 No file notes.bbl.
-Package biblatex Info: Reference section=0 on input line 24.
-Package biblatex Info: Reference segment=0 on input line 24.
+Package biblatex Info: Reference section=0 on input line 25.
+Package biblatex Info: Reference segment=0 on input line 25.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 27.
+(Font)              size <10.95> substituted on input line 28.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-27.
+28.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-27.
+28.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-27.
+28.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 27
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 28
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -1464,7 +1507,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 27.
+(Font)              size <10.95> substituted on input line 28.
 
 [1
 
@@ -1480,66 +1523,222 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 \chapter
-             {01/30/2024} [1
+l.30 \chapter
+             {Examples\hfill\small$01/30/2024\qquad$} [1
 
 ]
 Lecture 1.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 30.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 30.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 23.49426pt
+(hyperref)                replaced by space on input line 30.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 30.
+
 [2
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 71.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 71.
 
 [3] [4]
 Lecture 2.
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 23.49426pt
+(hyperref)                replaced by space on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 129.
+
+
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <12.5> not available
-(Font)              size <12> substituted on input line 132.
+(Font)              size <12> substituted on input line 133.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <12.5> not available
-(Font)              size <12> substituted on input line 132.
+(Font)              size <12> substituted on input line 133.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 132.
+(hyperref)                removing `math shift' on input line 133.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 132.
+(hyperref)                removing `math shift' on input line 133.
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 154.
+(amsmath)                 on input line 155.
 
 [5
 
-] [6] [7] [8] (./notes.aux)
+] [6] [7] [8]
+Lecture 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 23.49426pt
+(hyperref)                replaced by space on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 212.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 212.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 212.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 212.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 212.
+
+[9
+
+] [10] [11]
+Lecture 4.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 23.49426pt
+(hyperref)                replaced by space on input line 276.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 276.
+
+[12
+
+] (./notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.5pt have occurred.
+(Font)              up to 0.92pt have occurred.
 
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 729A0FD05ED77704AA042E5066F0E022;1000.
+(rerunfilecheck)             Checksum: 8B068A119D3BCEEF133597F18F28455B;1765.
 Package logreq Info: Writing requests to 'notes.run.xml'.
 \openout1 = `notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38127 strings out of 476025
- 721192 string characters out of 5790017
- 1871388 words of memory out of 5000000
- 57927 multiletter control sequences out of 15000+600000
- 580043 words of font info for 201 fonts, out of 8000000 for 9000
+ 39591 strings out of 476025
+ 750422 string characters out of 5790017
+ 1882388 words of memory out of 5000000
+ 59336 multiletter control sequences out of 15000+600000
+ 606633 words of font info for 269 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,15n,99p,1330b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,99p,1330b,1092s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/loc
 al/texlive/2023/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/local/te
@@ -1565,10 +1764,10 @@ x/txmiaX.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txs
 ya.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on notes.pdf (9 pages, 306456 bytes).
+Output written on notes.pdf (13 pages, 339356 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

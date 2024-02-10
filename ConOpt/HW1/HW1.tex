@@ -31,6 +31,9 @@ sorting=ynt
 
 \maketitle
 
+$\boxed{
+B(x,r), B^o(x,r) \text{ respectively denote the closed and open balls of radius } r \text{ around }x.}$
+
 \pb
 Let $A$ be a real $m \times n$ matrix of rank $r$.
 \begin{enumerate}[leftmargin=*]
@@ -145,21 +148,37 @@ Since at least one of $X(g,U^\top q), Y(g,U^\top q)$ is false, we conclude that 
 
 
 \item \textbf{False}.\\
-It is true (as seen in class) that if $p$ has a local minima at $\overline x$, then there is no descent direction of $p$ at $\overline x$. We show a counterexample for the converse. Consider the function $p:\R^2\to \R$ given by $p(x,y)=y(y-x^2)$. We prove that $p$ has no descent direction at $\overline x = (0,0)$, yet isn't a local minima. 
+It is true (as seen in class) that if $p$ has a local minima at $\overline x$, then there is no descent direction of $p$ at $\overline x$. We show a counterexample for the converse. Consider the function $p:\R^2\to \R$ given by $p(x_1,x_2)=x_2(x_2-x_1^2)$. We prove that $p$ has no descent direction at $\overline x = (0,0)$, yet isn't a local minima. \textit{A wider class of examples can be found from \Cref{gen3} in the \href{sec3app}{Appendix} of this problem.}
 
 Let's see why it's \textit{not a local minima}. Indeed $p(\overline x) = 0$ and the sequence of points $\ds\set{q_k=\left(\frac{1}{k},\frac{1}{2k^2}\right)}_{k\in\N}$ converge to $\overline x = (0,0)$ (because their norm $\frac{1}{k}\cdot \sqrt{1+\frac{1}{2k^2}}$ converges to $0$ as $k\to\infty$) and yet $p(q_k) = \frac{-1}{4k^4}<0\forall k\in\N$, proving that there is no ball around $\overline x$ where all points have functional value (under $p$) at least $p(\overline x) = 0$.
 
 Now we show that there is \textit{no descent direction of $p$ at $\overline x$}. Suppose $(a,b)$ is a descent direction. Define $x_\alpha = (\alpha a,\alpha b)$ for $\alpha\in \R$. Then there is some $\overline \alpha>0$ such that $\alpha\in(0,\overline \alpha)\implies p(x_\alpha) = \alpha b(\alpha b-\alpha^2a^2)<0$. By positivity of $\alpha$, this is equivalent to saying $b(b-\alpha a^2)<0$. Note that $b\neq 0$ because the inequality is strict. If $b<0$ then $b-\alpha a^2 < -\alpha x^2 \leq 0$ implying that $p(x_\alpha) > 0$. If $b>0$, then taking $\alpha\in \left(0,\frac{1}{2}\min\set{\frac{b}{a^2},\overline \alpha}\right)$ we get $b-\alpha a^2 > b-\frac{b}{a^2}\cdot a^2 = 0$ whence $p(x_\alpha)>0$. This contradicts the fact that $(a,b)$ is a descent direction.
 
 \item \textbf{False}.\\
-Consider the set $\Omega = \set{(x,y)\in \R^2\st x\geq0, xy\geq 1}$ with $c=(0,1)$. \\
-$\Omega$ is closed because $\Omega$ is the intersection of inverse image of $[1,\infty)$ under the function $(x,y)\to xy$) and the inverse image of $[0,\infty)$ under the function $(x,y)\to x$), and both of these are continuous functions (we've used the fact that closed sets go to closed sets under inverses of continuous functions and that the intersection of two closed sets is closed). \\
+Consider the set $\Omega = \set{(x_1,x_2)\in \R^2\st x_1\geq0, x_1x_2\geq 1}$ with $c=(0,1)$. \\
+$\Omega$ is closed because $\Omega$ is the intersection of inverse image of $[1,\infty)$ under the function $(x_1,x_2)\to x_1x_2$) and the inverse image of $[0,\infty)$ under the function $(x_1,x_2)\to x_1$), and both of these are continuous functions (we've used the fact that closed sets go to closed sets under inverses of continuous functions and that the intersection of two closed sets is closed). \\
 This is also convex, which is seen as follows. Let $(a,b),(u,v)\in \Omega, \lambda\in[0,1]$. Note that $u,v\geq 0$. Then taking $\mu=1-\lambda\in[0,1]$ gives $\lambda a + \mu u \geq 0$ because $\lambda,a,u\geq 0$, and $(\lambda a + \mu u)(\lambda b + \mu v) = \lambda^2 a + \lambda\mu(bu+av) + \mu^2 v \geq \lambda^2 + \lambda\mu\left(\frac{u}{a} + \frac{a}{u}\right) + \mu^2 \ge \lambda^2 + 2\lambda\mu + \mu^2 = 1$. So $\lambda (a,b) + (1-\lambda)(u,v) \in\Omega$.\\
-Then the objective function is just $f(x,y) = (0,1)^\top(x,y) = y$. This gives $\ds\inf_{(x,y)\in\Omega} y = 0$ but there is no $(x,y)$ such that $y=0$ because of the given conditions. So optimal value exists, but optimal solution doesn't.
+Then the objective function is just $f(x_1,x_2) = (0,1)^\top(x_1,x_2) = x_2$. This gives $\ds\inf_{(x_1,x_2)\in\Omega} x_2 = 0$ but there is no $(x_1,x_2)$ such that $x_2=0$ because of the given conditions. So optimal value exists, but optimal solution doesn't.
 \end{enumerate}
 
+\subsection*{Appendix}\label{sec3app}
 
+\begin{thm}\label{gen3}
+Let $f,g:\R\to \R$ be $\sC^1$ functions such that  such that \begin{itemize}
+\item $\exists\epsilon>0$ such that $(f-g)^{-1}(0)\cap (0,\epsilon)=\varnothing$,
+%\item $f'',g''$ exists on $B^o(0,\epsilon)$,
+\item $f(0)=g(0)=0$, 
+\item $f'(0)=g'(0)$ (call it $d$), and
+\item $\exists \delta > 0$ such that $d$ does not lie strictly between $\frac{f(t)}{t}$ and $\frac{g(t)}{t}$ for every $t\in(0,\epsilon)$,
+\end{itemize}
+then $h:\R^2\to\R$ given by $h(x,y) = (y-f(x))(y-g(x))$ has no descent direction at $(0,0)$ and $(0,0)$ is not a local minima of $h$.
+\end{thm}
 
+\begin{pf}
+Suppose $(a,b)$ is a descent direction at $(0,0)$. So there is some $\overline\alpha$ such that $h(\alpha a,\alpha b) < h(0,0) \forall \alpha\in(0,\overline\alpha)$. We can assume, WLOG, that $0<a^2+b^2<\epsilon$ (for example, by replacing $(a,b)$ with $(\lambda a, \lambda b)$ such that $\lambda<\frac{\sqrt\epsilon}{\overline \alpha\sqrt{a^2+b^2}}$). One must have $f>g$ or $g>f$ on $(0,\epsilon)$ because otherwise, by continuity, there would be a non-zero point in $(0,\epsilon)\subset B^o(0,\epsilon)$ which is a zero for the function $f-g$. WLOG, assume $f>g$ on $(0,\epsilon)$. This implies $0 > h(a,b) = (b-f(a))(b-g(a))$, whence $g(a) < b < f(a)$. In fact, it is true that $0>h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b-g(\alpha a))\forall \alpha\in (0,\overline \alpha)$ by definition. From this it follows that $a\neq 0$ (because if $a=0$ then $h(0,\alpha b) = (\alpha b)^2 > 0$). We thus have $g(\alpha a)<\alpha b < f(\alpha a)$ which gives that $b = da$ by using the sandwich theorem. Then note that if $\alpha = \frac{1}{2}\min\set{\frac{\delta}{a},\overline \alpha}$ we have $h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b - g(\alpha a)) = (\alpha ad-f(\alpha a))(\alpha ad - g(\alpha a)) = t^2 \left(d-\frac{f(t)}{t}\right) \left(d-\frac{g(t)}{t}\right)$ where $t = \alpha a < \delta$ so this quantity is $\ge0$ by the assumption in the last bullet point, however this contradicts the fact that $h(\alpha a, \alpha b) < 0$.
+
+Now we show that $(0,0)$ not a local minima. Since $f>g$ on $(0,\epsilon)$, one can choose points $x_n=\frac{1}{n}$ and $y_n\in (g(x_n),f(x_n))$ and observe that $\lim y_n = 0$ by continuity of $f,g$ and sandwich theorem. Thus, for every $\varepsilon>0\exists N\in \N$ such that $k\geq N\implies \abs{y_k} < \varepsilon$. But $h(x_n,y_n) = (y_n-f(x_n))(y_n-g(x_n)) < 0$ by choice of $y_n$. This proves that $(0,0)$ cannot be a local minima of $h$, because $(x_n,y_n)\to (0,0)$ by each $h(x_n,y_n)<0$.
+\qed\end{pf}
 
 
 
@@ -176,8 +195,8 @@ Then the objective function is just $f(x,y) = (0,1)^\top(x,y) = y$. This gives $
 \soln
 $Q$ is symmetric positive definite, whence $Q=UDU^\top$ with $D$ being a diagonal matrix of positive diagonal entries (say $\lambda_1^2, \cdots,\lambda_n^2$), and $U$ a real orthogonal matrix. For a vector $x = (x_1,\cdots,x_n)$, we denote $\tilde x=U^\top x$ and its coordinates by $\tx=(\tx_1,\cdots,\tx_n)$.
 \begin{enumerate}[leftmargin=*]
-\item Note that $x^\top Qx = \tx^\top D \tx = \sum_i \lambda_i^2\tx_i^geq$ for any $x\in\R^n$. So \begin{itemize}
-\item (Positivity) $f(x) = \sqrt{\sum_i \lambda_i^2\tx_i^2} \geq 0$. And if $f(x) = 0$ then $\lambda_i^2x_i^2 = 0\forall i\stackrel{\lambda_i>0}{\implies} \tx_i = 0\forall i\implies x = 0$.
+\item Note that $x^\top Qx = \tx^\top D \tx = \sum_i \lambda_i^2\tx_i^geq$ for any $x\in\R^n$. So \begin{itemize}[leftmargin=*]
+\item (Positivity) $x^\top Q x \geq 0$ by definition of positive semi-definiteness (which is implied by $Q\succ 0$). And if $x \neq 0$ then $x^\top Qx > 0$ because $Q\succ 0$; so that if $x^\top Q x=0$ then $x=0$.
 \item (Triangle inequality) Observe $f(x+y)^2= \sum_i \lambda_i^2(\tx_i+\ty_i)^2 = f(x)^2 + f(y)^2 + 2\sum_i \lambda_i^2\tx_i\ty_i$.
 Thus \begin{align*}
 \left(\sum_i\lambda_i^2\tx_i^2\right)\left(\sum_j\lambda_j^2\ty_j^2\right)
@@ -191,6 +210,7 @@ Thus \begin{align*}
 \implies \left[f(x) + f(y)\right]^2 &\leq f(x+y)^2\\
 \implies f(x) + f(y) &\leq f(x+y).
 \end{align*}
+(One can alternately prove Cauchy-Schwarz inequality for real inner products, which it is in this case due to positive definiteness, from which the above inequality follows --- without the eigendecomposition)
 \item (Homogeneity) $f(\lambda x) = \sqrt{\lambda^2 x^\top Qx} = \abs{\lambda}\sqrt{x^\top Qx} = \abs\lambda f(x)$ for any $\lambda\in\R,x\in\R^n$.
 \end{itemize}
 \item  Note that $D$ is invertible, its inverse is simply given by the diagonal matrix with diagonal entries $\frac{1}{\lambda_i}>0$. Taking $P = UD^{-1}U^\top$ gives $PQ = UD^{-1}U^\top UDU^\top = UD^{-1}DU^\top = UU^\top = \pmb 1_n$ and this proves that $P$ is the inverse of $Q$ because $Q$ is a square matrix. 
@@ -200,7 +220,7 @@ Recall that the dual norm is given by $\left(\norm{x}{*}=\right)\norm{x}{*,f} = 
 Note that $y=\frac{Q^{-1}x}{\sqrt{x^\top Q^{-1}x}}$ satisfies $f(y)^2 = y^\top Q y = \frac{x^\top Q^{-1} Q Q^{-1}x}{x^\top Q^{-1}x} = \frac{x^\top Q^{-1}x}{x^\top Q^{-1}x} = 1$ and $y^\top x= \frac{x^\top Q^{-1}x}{\sqrt{x^\top Q^{-1}x}} = \sqrt{x^\top Q^{-1}x}$. This shows that $\norm{x}{*} \geq \sqrt{x^\top Q^{-1}x}$. But Cauchy Schwarz inequality gives 
 $$x^\top y = \left(\left(\sqrt Q\right)^{-1} x\right)^\top\left(\sqrt Qy\right)\leq \norm{\left(\sqrt Q\right)^{-1}x}{2}\norm{\sqrt Qy}{2} \leq \norm{\left(\sqrt Q\right)^{-1}x}{2}=\sqrt{x^\top Q^{-1}x}.$$ This proves that $\norm{x}* = \sqrt{x^\top Q^{-1}x}$.
 
-\item $A\in\R^{n\times n}$. $\ds\norm A 2 ^2 = \max_{\norm x 2 = 1}\norm{Ax}{2}^2 = \max_{\norm x 2 = 1} x^\top (A^\top A)x$. Say $\mu_i$ are the eigenvalues of $A^\top A$ with $\mu_1\geq\cdots\geq \mu_n$. By the previous problem, $\mu_i\geq 0$. And by the calculation shown above, $x^\top A^\top Ax = \sum_i\mu_i\tx_i^2$. Taking $\tx = (1,0,\cdots,0) \eqqcolon \tx_0$ gives $x^\top A^\top Ax = \mu_1$ which gives $\boxed{\norm A 2 ^2 \ge \mu_1}$ because $\norm{\tx_0}2=1$. Note that we can independently choose $\tx$ because $x,\tx$ are different only by unitary transformation (which is both invertible and preserves norm).
+\item $A\in\R^{n\times n}$. $\ds\norm A 2 ^2 = \max_{\norm x 2 = 1}\norm{Ax}{2}^2 = \max_{\norm x 2 = 1} x^\top (A^\top A)x$. Say $\mu_i$ are the eigenvalues of $A^\top A$ with $\mu_1\geq\cdots\geq \mu_n$. By the previous problem, $\mu_i\geq 0$. And by the calculation shown above, $x^\top A^\top Ax = \sum_i\mu_i\tx_i^2$. Taking $\tx = (1,0,\cdots,0) \eqqcolon \tx_0$ gives $x^\top A^\top Ax = \mu_1$, so $\boxed{\norm A 2 ^2 \ge \mu_1}$ because $\norm{\tx_0}2=1$. Note that we can independently choose $\tx$ because $x,\tx$ are different only by unitary transformation (both invertible and preserves norm: $\norm{Ux}{}^2 = x^\top U^\top U x = x^\top x = \norm x{}^2$).
 \\
 The observation that $\max\set{\mu_i}=\mu_1$ gives $\norm{Ax}{2}^2 = \sum_i\mu_i\tx_i^2 \leq \sum_i \mu_1 \tx_i^2 = \mu_1$ whence $\boxed{\norm A 2 ^2 \leq \mu_1}$.
 \end{enumerate}

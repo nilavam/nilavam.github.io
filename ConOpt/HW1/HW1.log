@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  7 FEB 2024 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 FEB 2024 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1294,7 +1294,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 33
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-5.
+8.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -1303,7 +1303,7 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2023
 /texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3]
-Overfull \hbox (5.32301pt too wide) in paragraph at lines 141--142
+Overfull \hbox (5.32301pt too wide) in paragraph at lines 144--145
 []\T1/bch/m/n/10.95 Since at least one of $\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10
 .95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; Y\OT1
 /cmr/m/n/10.95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )$ \T1/bch/m/n/10
@@ -1313,20 +1313,20 @@ OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p; q\OT1/cmr/m/n/10.95 )$
  []
 
 
-Overfull \hbox (26.58514pt too wide) in paragraph at lines 150--151
+Overfull \hbox (26.58514pt too wide) in paragraph at lines 153--154
 []\T1/bch/m/n/10.95 Let's see why it's \T1/bch/m/it/10.95 not a lo-cal min-ima\
 T1/bch/m/n/10.95 . In-deed $\OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 ([]) = 0$ \
 T1/bch/m/n/10.95 and the se-quence of points $[][]$
  []
 
-[4] [5]
+[4]
 LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-80.
+68.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-)
-[6]
-Overfull \hbox (5.16698pt too wide) in paragraph at lines 203--206
+) [5]
+[6] [7]
+Overfull \hbox (5.16698pt too wide) in paragraph at lines 223--226
 \T1/bch/m/n/10.95 The ob-ser-va-tion that $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/
 m/it/10.95 ^^V[]$ \T1/bch/m/n/10.95 gives $[][] \OT1/cmr/m/n/10.95 = [][] \OML/
 cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^^T [][] \OML/cmm/m/it/10.95 ^^V[][]
@@ -1334,7 +1334,7 @@ cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^^T [][] \OML/cmm/m/it/10.95 ^^V[][]
  
  []
 
-[7] [8] (./HW1.aux)
+[8] [9] (./HW1.aux)
 Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: 6D7198DD758655314577F0B82CAA29D8;312.
 Package logreq Info: Writing requests to 'HW1.run.xml'.
@@ -1342,13 +1342,13 @@ Package logreq Info: Writing requests to 'HW1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36148 strings out of 476025
- 698153 string characters out of 5790017
- 1872388 words of memory out of 5000000
- 56007 multiletter control sequences out of 15000+600000
+ 36154 strings out of 476025
+ 698206 string characters out of 5790017
+ 1871388 words of memory out of 5000000
+ 56011 multiletter control sequences out of 15000+600000
  553324 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,99p,1192b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,99p,1490b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
@@ -1366,11 +1366,12 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on HW1.pdf (8 pages, 241388 bytes).
+023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on HW1.pdf (9 pages, 253124 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

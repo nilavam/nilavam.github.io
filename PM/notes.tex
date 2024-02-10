@@ -12,6 +12,7 @@ maxnames=10,
 sorting=ynt
 ]{biblatex}
 \addbibresource{writeup/article/refs.bib}
+\usepackage{adjustbox}
 %\title{\vspace{-1cm}}
 \title{The Probabilistic Method}
 \usepackage{quiver}
@@ -26,7 +27,7 @@ sorting=ynt
 \maketitle
 \tableofcontents
 
-\chapter{01/30/2024}
+\chapter{Examples\hfill\small$01/30/2024\qquad$}
 
 \section{Philosophy}
 Main philosophy of the probabilistic method: To prove existence of a structure (or a substructure of a given one), define a probability space of structures, and show that a random point in it satisfies the required properties with positive (often high) probability.
@@ -125,7 +126,7 @@ This means $\E{\abs{X\cup Y_X}} \leq n\left[\frac{1+\ln(1+\delta)}{1+\delta}\rig
 
 
 
-\chapter{02/01/2024}
+\chapter{Examples\hfill\small$02/01/2024\qquad$}
 
 Examples continued from last lecture.
 
@@ -207,5 +208,110 @@ Order $\ds\bigcup_{i=1}^h A_i\cup B_i$ randomly. Let $E_i$ be the event that $A_
 \qed\end{pf}
 
 
+
+\chapter{$\mathbb E\Sigma = \Sigma\mathbb E$ or $\mathbb E\int = \int \mathbb E$\hfill \small $02/06/2024\qquad$}
+
+\begin{thm}[Linearity of Expectation(LoE)]\label{LOE}
+If $X_1,\cdots,X_n$ are random variables and $X =\sum c_iX_i$ for some $c_i\in\R$, then $\E X=\sum c_i\E {X_i}$.
+\end{thm}
+\pf{Follows from definition of expectation.\qed}
+
+The applications often try to define $X_i$ so that computing $\E{X_i}$ is simple: often $X_i$ are indicators. Usually one uses the fact that $\exists$ a point with $X>\E X$ (or $X<\E X$), unless each point takes equal value.
+
+\section{Example: Sum-free subsets}
+
+\begin{defn}
+$B\subseteq\text{some Abelian group}$ is said to be sumfree if $(B+B)\cap B=\varnothing$, that is, $\not\exists a,b,c\in B$ such that $a+b=c$.
+\end{defn}
+
+\begin{thm}
+$\forall A\subseteq \Z\smallsetminus \set0$ with $\abs A=n, \exists B\subseteq A$ such that $B$ is sumfree and has at least $\frac{n}{3}$ elements.
+\end{thm}
+\begin{pf}
+Let $p=3k+2$ be a prime such that $\prod_{a\in A} a$ is not divisible by $p$. Take $M = \set{k+1,\cdots,2k+1}$. Note that $M$ is sumfree modulo $p$. Pick $x\in \set{1,\cdots,p-1}$ uniformly randomly. Put $B_x=\set{a\in A\st (ax)\%p \in M}$. This implies that $\forall x, B_x$ is sumfree in $\Z$. Indeed if $(ax)\%p+(bx)\%p = (cx)\%p$ for some $a,b,c\in M$ then $(a+b)x\cong cx\pmod p$ whence $a+b\cong c\pmod p$ because $(x,p)=1$, contradicting the fact that $M$ is sumfree modulo $p$. We compute $\E{\abs{B_x}}$. $B_x$ comprises all those elements $a\in A$ such that $ax$ is some element in $M$ modulo $p$. So for each $a$ take an indicator $\pmb 1_{a\in B_x} = \pmb 1_{(ax)\%p\in M\st x}$. With this, $\ds\abs{B_x} = \sum_{a\in A} \pmb 1_{(ax)\%p\in M\st x}$ and $\P{(ax)\%p\in M\st x} = \frac{k+1}{p-1}>\frac{1}{3}$. Thus $\ds\E{\abs{B_x}} = \sum_{a\in A}\E{\pmb 1_{(ax)\%p\in M\st x}} = \sum_{a\in A}\P{(ax)\%p\in M\st x} > \abs A/3 = \frac{n}{3}$. So $\exists x$ for which $\abs{B_x} > \frac{1}{3}$.
+\qed\end{pf}
+
+\rmk{Eberhardt, Green+Manners showed that $\frac{1}{3}$ is tight. however it is conjectured that $\forall c>0\exists n_0=n_0(c)$ such that if $n>n_0$ then $\forall A\subseteq \Z\smallsetminus\set{0}$ and $\abs A=n$, $A$ contains a sumfree subset of size at least $\frac{n}{3}+c$.}
+
+\rmk{Proof gives an efficient deterministic algorithm to find such $B$, given $A$.}
+
+\rmk{Alon+Kleitman proved that $\forall$ Abelian group $H$ and $\forall A\subseteq H\smallsetminus\set{0}$ with $\abs A=n, \exists B\subseteq A$ such that $B$ is sumfree and has size $>\frac{2n}{7}$, where $\frac{2}{7}$ is tight as shown by $A=\left(\Z_7\right)^k\smallsetminus\set 0$.}
+
+\section{Hamilton paths}
+Historically the first application of the probabilistic method in combinatorics is considered to be a result of Szele ($1943$) on Hamilton paths in tournaments.
+
+\begin{defn}[Tournament, Hamilton path, Hamilton cycle]
+A \textit{tournament} $T$ on $n$ vertices is an oriented complete graph on $n$ vertices.\\
+A \textit{Hamilton path} in $T$ is a directed path passing through every vertex exactly once.\\
+A \textit{Hamilton cycle} in $T$ is a directed cycle passing through every vertex exactly once.
+\end{defn}
+
+$T$ is said to be \textit{transitive} if it contains no directed cycles (equivalently, $\exists \sigma\in S_n$ such that $(\sigma_i,\sigma_j)\in E\iff i<j$).\\
+Can prove by induction: Every tournament contains a Hamilton path.\\
+So, a transitive tournament has only one such path.
+
+Denote $P(n) =$ max possible number of Hamilton paths in a tournament on $n$ vertices.
+
+\begin{thm}[Szele] $P(n)\geq \frac{n!}{2^{n-1}}$.
+\end{thm}
+\begin{pf}
+Let $T$ be a random tournament on $n$ vertices $\set{1,\cdots, n}$, that is, for each pair $\set{i,j}$ pick randomly uniformly either $(i,j)$ or $(j,i)$ to be and edge in $T$. We count the number of Hamilton paths $i_1\to \cdots \to i_n$. So, for each permutation $\sigma\in S_n$ consider the indicator $X_{\sigma} = \pmb 1_{\sigma_1\to\cdots\to \sigma_n \text{ is Hamilton path in }T}$. Then number of Hamilton paths in $T$ is $X_T=\sum_{\sigma\in S_n}X_{\sigma}$. Then $\E{X_T} = \sum_{\sigma\in S_n} \E{X_\sigma} \stackrel{(*)}{=} n!\cdot\P{1\to \cdots \to n\text{ is Hamilton path in }T} = \frac{n!}{2^{n-1}}$, where $(*)$ holds because $\P{1\to \cdots \to n\text{ is Hamilton path in }T} = \P{\sigma_1\to \cdots \to \sigma_n\text{ is Hamilton path in }T}$ for any $\sigma\in S_n$. Thus there is some tournament on $[n]$ which has at least $\frac{n!}{2^{n-1}}$ Hamilton paths, which simply implies that $P(n)\geq \frac{n!}{2^{n-1}}$.
+\qed\end{pf}
+
+Szele also proved (without using probability) that $P(n)\leq \cO\left(\frac{n!}{2^{3n/4}}\right)$ and that $\lim_{n\to\infty}\left(\frac{P(n)}{n!}\right)^{\frac{1}{n}}$ exists (thus between $\frac12$ and $2^{-\frac{3}{4}}$). It's conjectured to be $\frac{1}{2}$. \\
+We'll see a proof of the above (proven) fact using some results on permanents of $0/1$ matrices and linearity of expectation.
+
+\begin{defn}[Permanent]
+The permanent of an $n\times n$ matrix $A=(a_{ij})$ is $\ds\per A = \sum_{\sigma\in S_n}\prod_{i=1}^n a_{i,\sigma(i)}$.
+\end{defn}
+
+If $T=(V,E)$ is a tournament on $V=[n]$, we can define its adjacency matrix $A=(a_{ij})$ where $a_{ij} = \pmb 1_{(i,j)\in E}$. Note that $\per A$ is equal to the number of spanning $1-$regular subgraphs of $T$, which is also equal to the number of subgraphs which are vertex disjoint unions of directed cycles. This quantity is at least as many as the number of Hamilton cycles in $T$. We will (prove and) use the following theorem:
+
+\begin{thm}[Minc conjecture, proved by Bregman]\label{perm}
+If $A=(a_{ij})\in\set{0,1}^{n\times n}$ then $$\ds\per A \leq \prod_{i=1}^n \left(r_i!\right)^{\frac{1}{r_i}}$$ where $\ds r_i = \sum_{1\leq j\leq n}a_{ij}$ is the number of $1$'s in row $i$.
+\end{thm}
+\rmk{This bound is tight for matrices with square blocks of $1's$. If $A$ is a square block containing only $1$'s, then $r_i=n$ whence the RHS of the above inequality is $n!$ which is precisely $\per A$, in this case. If $A = \begin{bmatrix}A_1\\&A_2\\&&\ddots\\&&&A_r\end{bmatrix}$ where $A_i\in \set{1}^{s_i\times s_i}$ then $\per A = \prod_{i=1}^r s_i!$ and the RHS is exactly this quantity.}
+
+
+\chapter{Continued: $\mathbb E\int = \int\mathbb E$\hfill \small $02/08/2024\qquad$}
+
+Last time we saw linearity of expectation and its application in Hamiltonian paths. 
+
+We had stated \Cref{perm}: If $A=(a_{ij})\in \set{0,1}^{n\times n}$ and $r_i = \sum_j a_{ij}$ then $\per A\leq (\prod_i r_i!)^{\frac{1}{r_i}}.$ 
+
+Assuming this theorem, we can upper bound $P(n) = $ maximum number of Hamiltonian paths in a tournament on $[n]$. Let's also define $H(n) = $ maximum number of Hamiltonian cycles in a tournament on $[n]$.
+
+\begin{lemma}
+$P(n)\leq H(n+1)\forall n$.
+\end{lemma}
+
+\begin{pf}
+Let $T$ be a tournament on $[n]$ with $P(n)$ Hamilton paths. Let $T'$ be $T$ with an additional vertex with all edges between $x$ and $V(T)$ oriented randomly. For each fixed Hamilton path $P$ in $T$, let $X_P$ be the indicator that $P$ is a part of a Hamilton cycle in $T'$. But $\E{X_P} = \frac{1}{4}$ because among the following situations, only the blue situation is possible (so one out of four).
+
+\begin{adjustbox}{width=\textwidth}
+\begin{tikzcd}
+	&& \bullet &&&&& \bullet &&&&& \bullet &&&&& \bullet \\
+	\vdots &&& {\bullet_x} && \vdots &&& {\bullet_x} && \vdots &&& {\bullet_x} && \vdots &&& {\bullet_x} \\
+	&& \bullet &&&&& \bullet &&&&& \bullet &&&&& \bullet
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, curve={height=18pt}, squiggly, from=1-3, to=2-1]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, curve={height=18pt}, squiggly, from=2-1, to=3-3]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, from=2-4, to=1-3]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, from=3-3, to=2-4]
+	\arrow[from=2-9, to=1-8]
+	\arrow[from=2-9, to=3-8]
+	\arrow[curve={height=18pt}, squiggly, from=1-8, to=2-6]
+	\arrow[curve={height=18pt}, squiggly, from=2-6, to=3-8]
+	\arrow[curve={height=18pt}, squiggly, from=1-13, to=2-11]
+	\arrow[curve={height=18pt}, squiggly, from=2-11, to=3-13]
+	\arrow[from=1-13, to=2-14]
+	\arrow[from=3-13, to=2-14]
+	\arrow[curve={height=18pt}, squiggly, from=1-18, to=2-16]
+	\arrow[curve={height=18pt}, squiggly, from=2-16, to=3-18]
+	\arrow[from=1-18, to=2-19]
+	\arrow[from=2-19, to=3-18]
+\end{tikzcd}
+\end{adjustbox}
+By linearity of expectation, expected number of Hamiltonian cycles in $T'$ is $\frac{P(n)}{4}$ and this quantity is bounded above by $H(n+1)$.
+\qed\end{pf}
 
 \end{document}
