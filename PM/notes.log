@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 FEB 2024 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 FEB 2024 22:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1720,7 +1720,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [12
 
-] (./notes.aux)
+] [13] (./notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.92pt have occurred.
@@ -1732,9 +1732,9 @@ Package logreq Info: Writing requests to 'notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39591 strings out of 476025
- 750422 string characters out of 5790017
- 1882388 words of memory out of 5000000
+ 39593 strings out of 476025
+ 750437 string characters out of 5790017
+ 1883388 words of memory out of 5000000
  59336 multiletter control sequences out of 15000+600000
  606633 words of font info for 269 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1764,10 +1764,10 @@ x/txmiaX.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txs
 ya.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on notes.pdf (13 pages, 339356 bytes).
+Output written on notes.pdf (14 pages, 341831 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

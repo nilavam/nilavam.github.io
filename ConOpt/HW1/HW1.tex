@@ -26,6 +26,7 @@ sorting=ynt
 \date{February $15$, $2024$}
 \newcommand{\pb}{\section{Problem}~\par}
 \newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
 
 \begin{document}
 
@@ -44,7 +45,7 @@ Let $A$ be a real $m \times n$ matrix of rank $r$.
 \end{enumerate}
 \item Consider the optimization problem: $$\min_{\substack{B\in\R^{m\times n}\\ \rk B\leq k} } \norm{A-B}{2}.$$
 Here $\norm{\cdot}2$ denotes the spectral norm of a matrix defined as $\ds\norm C 2 = \max_{\norm x 2 = 1} \norm {Cx}2$. Show that the matrix $A_{(k)}$ is an optimal solution to the optimization problem above.
-\item For $k = 40, 80, 120, 160$, use Matlab to compute $A_{(k)}$ as defined above. Report the value of $\norm{A - A(k)}F$ in each case. (Include your code for this part and the next.)
+\item For $k = 40, 80, 120, 160$, use Matlab to compute $A_{(k)}$ as defined above. Report the value of $\norm{A - A_{(k)}}F$ in each case. (Include your code for this part and the next.)
 \item Use the commands {\texttt{subplot}} and \texttt{imshow} (you need to import the matplotlib package in Python) to produce on the same figure the original image, as well as your compressed images $A_{(k)}$ for $k = 40,80,120,160$. Label your subplots. In addition, produce two separate plots demonstrating $(i)\norm{A-A_{(k)}}F$ versus $k$, and $(ii)$``total savings'' versus $k$. Total savings is to be interpreted as the answer to the question: How many fewer numbers do you need in order to store $A_{(k)}$ than you did to store $A$? Explain why this number is equal to $mn-(n+m+1)k$. How much are you saving for $k=160$? 
 \item Use the Matlab function \texttt{imwrite} or the Python command \texttt{image.save} to create two images from \texttt{imshow(A)} and \texttt{imshow(}$A_{(160)}$\texttt{)}. Can you tell them apart?
 \end{enumerate}
@@ -59,9 +60,41 @@ Here, $\overline u$ is the coordinate-wise complex conjugate, and $(Au)^\dagger$
 \item Suppose $A$ is an $n\times n$ real symmetric matrix. Then $A$ can be diagonalized via an orthonormal basis, that is, there is a real matrix $U$ such that $A=UDU^\top$, $U^\top U = UU^\top = \pmb 1_n$ and $D$ is a diagonal matrix comprising of eigenvalues of $A$. One can rearrange the columns of $U$ (the matrix of eigenvectors) such that their corresponding eigenvalues in $D$ are in order of decreasing magnitude. So one can assume without loss of generality that $D$ has entries $\lambda_1,\cdots,\lambda_n$ in this order where $\abs{\lambda_1}\geq \cdots \geq \abs{\lambda_n}$.\\
 So $A^\top A = UD^\top U^\top UDU^\top = UD^2U^\top$, whence the eigenvalues of $A^\top A$ are $\lambda_1^2\geq \cdots\geq \lambda_n^2$. By what is mentioned in the assignment, $\sigma_i$ is the square root of the $i^{\text{th}}$ eigenvalue of $A^\top A$. In other words, $\sigma_i = \sqrt{\lambda_i^2} = \abs{\lambda_i}$ in this case.
 \end{enumerate}
-\item 
-
-\item 
+\item Start with the SVD $A=U\Sigma V^\top$ where $U,V$ are orthogonal $m\times, n\times n$ (respectively) matrices. So $U^\top,V^\top$ are also orthogonal. Note that for any $m\times n$ matrix $C$ we have $$\norm{U^\top C}{} = \max_{\norm x{}=1}\norm{U^\top Cx}{} = \max_{\norm x{}=1}\sqrt{x^\top C^\top UU^\top Cx} = \max_{\norm x{}=1}\norm{Cx}{} = \norm{C}{}$$
+and 
+$$\norm{CV}{} = \max_{\norm x{}=1}\norm{CVx}{} = \max_{\norm{V x}{}=1}\norm{CVx}{} \stackrel{[y\sett Vx]}{=} \max_{\norm y{}=1}\norm{Cy}{} = \norm{C}{}$$
+where we used the facts that $V$ is invertible and that $\norm{Vx}{} = \sqrt{x^\top V^\top Vx} = \sqrt{x^\top x} = \norm x {}$.
+This proves that $$\min_{\substack{B\in\R^{m\times n}\\ \rk B\leq k} } \norm{A-B}{} = \min_{\substack{B\in\R^{m\times n}\\ \rk B\leq k} } \norm{\Sigma-U^\top BV}{} \stackrel{D\sett U^\top BV}{=} \min_{\substack{D\in\R^{m\times n}\\ \rk D\leq k} } \norm{\Sigma-D}{}$$
+because $U^\top, V$ are invertible and left or right multiplication (respectively) by them preserve rank. We are minimizing over the feasible set $$\Omega_k \sett \set{X\in \R^{m\times n}\st \rk X \leq k}.$$ Let $\set{e_i\in\R^n}_{i=1}^n, \set{f_i\in\R^m}_{i=1}^m$ be the standard basis vectors. Then $\Sigma e_i = \sigma_if_i$ for each $ 1\leq i\leq s\sett\min\set{m,n}$. Recall that we had ordered $\sigma_1\geq \cdots\geq \sigma_s$ (for $i>r=\rk A, \sigma_i=0$). Pick any $D\in\R^{m\times n}$ with at most rank $k$, whence $\ker D$ has dimension at least $n-k$. This means that $W\sett \text{span}\set{e_1,\cdots,e_{k+1}}$ nontrivially intersects $\ker D$ (otherwise their direct sum would have dimension $\geq n+1$ which is more than the dimension of the ambient space $\R^n$). Let $v\in W\cap\ker D$ with $v\neq 0$. Write $\ds v=\sum_{i=1}^{k+1}c_i e_i$. So \begin{align*}
+\norm{(\Sigma-D)v}{}^2 &= \norm{\Sigma v}{}^2 \\
+&= \norm{\sum_{i=1}^{k+1}c_i\sigma_i f_i}{}^2 \\
+&= \sum_{i=1}^{k+1}c_i^2\sigma_i^2 & [\because \set{f_i} \text{ are orthonormal}]\\
+&\geq \sigma_{k+1}^2 \sum_{i=1}^{k+1}c_i^2\\&=\sigma_{k+1}^2\norm v{}^2.
+\end{align*}
+This suggests that $\norm{\Sigma-D}{}\geq \sigma_{k+1}$ as $D$ varies over $\Omega_k$. And we see that for $D_k^*$ being the $m\times n$ matrix with $D_{ij}=\begin{cases} \sigma_i&\text{if } 1\leq i=j\leq k\\0&\text{otherwise}
+\end{cases}$, $\Sigma-D_k^*$ is the matrix with diagonal entries $\sigma_i$ at position $(i,i)$ for $i\geq k+1$, and $0$ everywhere else which has norm $\sigma_{k+1}$ (Problem 3(3) says that this norm is the maximum singular value, which is $\sigma_{k+1}$ in this case). So $D^*$ looks like $$ \begin{bmatrix}
+\Sigma_{(k)} & 0_{k\times(n-k)}\\0_{(m-k)\times k}&0_{(m-k)\times(n-k)}
+\end{bmatrix}=
+\begin{bmatrix}
+\pmb 1_{k} \\0_{(m-k)\times k}
+\end{bmatrix}
+\begin{bmatrix}
+\Sigma_{(k)} & 0_{k\times(n-k)}
+\end{bmatrix}
+={\color{blue}\begin{bmatrix}
+\pmb 1_{k} \\0_{(m-k)\times k}
+\end{bmatrix}}
+\Sigma_{(k)}
+{\color{magenta}\begin{bmatrix}
+\pmb 1_{k} & 0_{k\times(n-k)}
+\end{bmatrix}}
+$$ where $\pmb 1_k$ is the $k\times k$ identity matrix. But notice $U{\color{blue}\begin{bmatrix}
+\pmb 1_{k} \\0_{(m-k)\times k}
+\end{bmatrix}} = U_{(k)}$ and $V{\color{magenta}\begin{bmatrix}
+\pmb 1_{k} \\ 0_{(n-k)\times k}
+\end{bmatrix}} = V_{(k)}$.
+The corresponding minimizer for the original problem (corresponding to $D^*$) is $$B^*=UD^*V^\top = U_{(k)}\Sigma_{(k)}V_{(k)}^\top = A_{(k)}$$ which is what we wanted.
+\item See \href{imgcom}{code at end} or the .
 
 \item 
 
@@ -261,5 +294,6 @@ For a concrete example, take $A = \begin{bmatrix}1&0\\0&0\end{bmatrix}, B = \beg
 Consider $A = \begin{bmatrix}1&-1&0\\-1&1&1\\0&1&0\end{bmatrix}$. First observe that $A = \begin{bmatrix}0&0&0\\0&0&1\\0&1&0\end{bmatrix} + \begin{bmatrix}1&-1&0\\-1&1&0\\0&0&0\end{bmatrix}$ where the first summand is entry-wise non-negative and the second summand is symmetric positive semi-definite (with eigenvalues $0,2$). This shows that $x^\top Ax\geq 0\forall x\geq 0$. But neither does $A$ have all non-negative entries, nor is $A$ positive semi-definite (because $(e_2-e_3)^\top A(e_2-e_3) = -1$).
 \end{enumerate}
 
+{\label{imgcom}\includepdf[pages=-]{./image compression/image compression.pdf}}
 
 \end{document}

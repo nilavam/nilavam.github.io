@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 FEB 2024 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  10 FEB 2024 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1170,29 +1170,54 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 Package: titletoc 2021/07/05 v2.14 TOC entries
 \ttl@leftsep=\dimen334
 )
-\@quotelevel=\count476
-\@quotereset=\count477
- (./HW1.aux)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/12/19 v0.5x Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen335
+\ESO@tempdimb=\dimen336
+)
+\AM@pagewidth=\dimen337
+\AM@pageheight=\dimen338
+\AM@fboxrule=\dimen339
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count476
+\AM@pagebox=\box123
+\AM@global@opts=\toks50
+\AM@pagecnt=\count477
+\AM@toc@title=\toks51
+\AM@lof@heading=\toks52
+\c@AM@survey=\count478
+\AM@templatesizebox=\box124
+)
+\@quotelevel=\count479
+\@quotereset=\count480
+
+(./HW1.aux)
 \openout1 = `HW1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1230,17 +1255,17 @@ LaTeX Font Info:    ... okay on input line 30.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count478
-\scratchdimen=\dimen335
-\scratchbox=\box123
-\nofMPsegments=\count479
-\nofMParguments=\count480
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count481
-\MPscratchDim=\dimen336
-\MPnumerator=\count482
-\makeMPintoPDFobject=\count483
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count481
+\scratchdimen=\dimen340
+\scratchbox=\box125
+\nofMPsegments=\count482
+\nofMParguments=\count483
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count484
+\MPscratchDim=\dimen341
+\MPnumerator=\count485
+\makeMPintoPDFobject=\count486
+\everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1250,13 +1275,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 30.
+Package hyperref Info: Link coloring OFF on input line 31.
 
 (./HW1.out) (./HW1.out)
 \@outlinefile=\write5
 \openout5 = `HW1.out'.
 
-\c@lstlisting=\count484
+\c@lstlisting=\count487
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
@@ -1274,27 +1299,40 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'HW1.bbl' not found.
 
 No file HW1.bbl.
-Package biblatex Info: Reference section=0 on input line 30.
-Package biblatex Info: Reference segment=0 on input line 30.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+Package biblatex Info: Reference section=0 on input line 31.
+Package biblatex Info: Reference segment=0 on input line 31.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.st
+y
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 33
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 34
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-8.
+9.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -1302,8 +1340,8 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2023
-/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3]
-Overfull \hbox (5.32301pt too wide) in paragraph at lines 144--145
+/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4]
+Overfull \hbox (5.32301pt too wide) in paragraph at lines 177--178
 []\T1/bch/m/n/10.95 Since at least one of $\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10
 .95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; Y\OT1
 /cmr/m/n/10.95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )$ \T1/bch/m/n/10
@@ -1313,20 +1351,20 @@ OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p; q\OT1/cmr/m/n/10.95 )$
  []
 
 
-Overfull \hbox (26.58514pt too wide) in paragraph at lines 153--154
+Overfull \hbox (26.58514pt too wide) in paragraph at lines 186--187
 []\T1/bch/m/n/10.95 Let's see why it's \T1/bch/m/it/10.95 not a lo-cal min-ima\
 T1/bch/m/n/10.95 . In-deed $\OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 ([]) = 0$ \
 T1/bch/m/n/10.95 and the se-quence of points $[][]$
  []
 
-[4]
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-68.
+[5]
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 2
+01.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-) [5]
-[6] [7]
-Overfull \hbox (5.16698pt too wide) in paragraph at lines 223--226
+) [6]
+[7] [8]
+Overfull \hbox (5.16698pt too wide) in paragraph at lines 256--259
 \T1/bch/m/n/10.95 The ob-ser-va-tion that $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/
 m/it/10.95 ^^V[]$ \T1/bch/m/n/10.95 gives $[][] \OT1/cmr/m/n/10.95 = [][] \OML/
 cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^^T [][] \OML/cmm/m/it/10.95 ^^V[][]
@@ -1334,7 +1372,120 @@ cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^^T [][] \OML/cmm/m/it/10.95 ^^V[][]
  
  []
 
-[8] [9] (./HW1.aux)
+[9]
+<./image compression/image compression.pdf, id=115, 597.50829pt x 845.0471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf>
+Package pdftex.def Info: ./image compression/image compression.pdf  used on inp
+ut line 297.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf>
+Package pdftex.def Info: ./image compression/image compression.pdf  used on inp
+ut line 297.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<./image compression/image compression.pdf, id=118, page=1, 597.50829pt x 845.0
+471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 1>
+Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
+ on input line 297.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 1>
+Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [10]
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 1>
+Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 1>
+Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 1>
+Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [11 <./image compression/image compression.pdf>]
+<./image compression/image compression.pdf, id=185, page=2, 597.50829pt x 845.0
+471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 2>
+Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 2>
+Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 2>
+Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [12 <./image compression/image compression.pdf>]
+<./image compression/image compression.pdf, id=190, page=3, 597.50829pt x 845.0
+471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 3>
+Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 3>
+Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 3>
+Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [13 <./image compression/image compression.pdf>]
+<./image compression/image compression.pdf, id=199, page=4, 597.50829pt x 845.0
+471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 4>
+Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 4>
+Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 4>
+Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+
+[14 <./image compression/image compression.pdf>]
+<./image compression/image compression.pdf, id=207, page=5, 597.50829pt x 845.0
+471pt>
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 5>
+Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 5>
+Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: ./image compression/image compression.pdf Graphic file (type pdf)
+<use ./image compression/image compression.pdf, page 5>
+Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
+ on input line 297.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [15 <./image compression/image compression.pdf>] (./HW1.aux)
 Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: 6D7198DD758655314577F0B82CAA29D8;312.
 Package logreq Info: Writing requests to 'HW1.run.xml'.
@@ -1342,13 +1493,13 @@ Package logreq Info: Writing requests to 'HW1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36154 strings out of 476025
- 698206 string characters out of 5790017
+ 36921 strings out of 476025
+ 713175 string characters out of 5790017
  1871388 words of memory out of 5000000
- 56011 multiletter control sequences out of 15000+600000
+ 56747 multiletter control sequences out of 15000+600000
  553324 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,99p,1490b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,99p,1490b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
@@ -1367,11 +1518,15 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on HW1.pdf (9 pages, 253124 bytes).
+f-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist
+/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/cm-super/sftt1095.pfb>
+Output written on HW1.pdf (15 pages, 911340 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 229 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

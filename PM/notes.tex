@@ -281,12 +281,21 @@ We had stated \Cref{perm}: If $A=(a_{ij})\in \set{0,1}^{n\times n}$ and $r_i = \
 
 Assuming this theorem, we can upper bound $P(n) = $ maximum number of Hamiltonian paths in a tournament on $[n]$. Let's also define $H(n) = $ maximum number of Hamiltonian cycles in a tournament on $[n]$.
 
+We need a few lemmas before our main discussion.
+
+\begin{lemma}
+If $b>a+1>1$ are integers then $$(b!)^{\frac1b}(a!)^{\frac1a} < \left[(b-1)!\right]^{\frac1{b-1}}[(a-1)!]^{\frac1{a-1}}.$$
+\end{lemma}
+\begin{pf}
+Consider $\ds f(x) = \frac{[(x-1)!]^{\frac1{x-1}}}{(x!)^{\frac1x}}$ on the integers. Check that this function is strictly increasing.
+\qed\end{pf}
+
 \begin{lemma}
 $P(n)\leq H(n+1)\forall n$.
 \end{lemma}
 
 \begin{pf}
-Let $T$ be a tournament on $[n]$ with $P(n)$ Hamilton paths. Let $T'$ be $T$ with an additional vertex with all edges between $x$ and $V(T)$ oriented randomly. For each fixed Hamilton path $P$ in $T$, let $X_P$ be the indicator that $P$ is a part of a Hamilton cycle in $T'$. But $\E{X_P} = \frac{1}{4}$ because among the following situations, only the blue situation is possible (so one out of four).
+Let $T$ be a tournament on $[n]$ with $P(n)$ Hamilton paths. Let $T'$ be $T$ with an additional vertex with all edges between $x$ and $V(T)$ oriented randomly. For each fixed Hamilton path $P$ in $T$, let $X_P$ be the indicator that $P$ is a part of a Hamilton cycle in $T'$. But $\E{X_P} = \frac{1}{4}$ because among the following situations, only the blue situation is possible (so one out of four). 
 
 \begin{adjustbox}{width=\textwidth}
 \begin{tikzcd}
@@ -313,5 +322,7 @@ Let $T$ be a tournament on $[n]$ with $P(n)$ Hamilton paths. Let $T'$ be $T$ wit
 \end{adjustbox}
 By linearity of expectation, expected number of Hamiltonian cycles in $T'$ is $\frac{P(n)}{4}$ and this quantity is bounded above by $H(n+1)$.
 \qed\end{pf}
+
+
 
 \end{document}
