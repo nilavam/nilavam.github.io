@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  10 FEB 2024 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  11 FEB 2024 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"image compression.tex"
-(./image compression.tex
+**"Image Compression.tex"
+(./Image Compression.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -1162,43 +1162,43 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 )
 \Wrappedcontinuationbox=\box88
 \Wrappedvisiblespacebox=\box89
-Package hyperref Info: Option `breaklinks' set `true' on input line 385.
-Package hyperref Info: Option `colorlinks' set `true' on input line 385.
+Package hyperref Info: Option `breaklinks' set `true' on input line 382.
+Package hyperref Info: Option `colorlinks' set `true' on input line 382.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
 \l__pdf_internal_box=\box90
 )
-(./image compression.aux)
-\openout1 = `"image compression.aux"'.
+(./Image Compression.aux)
+\openout1 = `"Image Compression.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 392.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 389.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 3
-92.
+89.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 392.
-LaTeX Font Info:    ... okay on input line 392.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1236,16 +1236,16 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=452.9679pt
-* \textheight=700.50687pt
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
@@ -1253,7 +1253,7 @@ Package caption Info: End \AtBeginDocument code.
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1317,25 +1317,25 @@ File: alphabeta-lgr 2020/09/25 1.0 Composite definitions for 8-bit TeX
    defining Unicode char U+03DD (decimal 989)
    defining Unicode char U+03F1 (decimal 1009)
    defining Unicode char U+03F5 (decimal 1013)
-Package hyperref Info: Link coloring ON on input line 392.
-(./image compression.out) (./image compression.out)
+Package hyperref Info: Link coloring ON on input line 389.
+(./Image Compression.out) (./Image Compression.out)
 \@outlinefile=\write5
-\openout5 = `"image compression.out"'.
+\openout5 = `"Image Compression.out"'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 394
+LaTeX Font Info:    Trying to load font information for U+msa on input line 391
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 394
+LaTeX Font Info:    Trying to load font information for U+msb on input line 391
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39
-4.
+1.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1343,115 +1343,76 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-00.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+97.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 412.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 409.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-421.
+418.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
+) [1
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
-ocal/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<output_6_0.png, id=20, 260.8947pt x 1698.345pt>
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local
+/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<output_6_0.png, id=19, 260.8947pt x 1698.345pt>
 File: output_6_0.png Graphic file (type png)
 <use output_6_0.png>
-Package pdftex.def Info: output_6_0.png  used on input line 488.
+Package pdftex.def Info: output_6_0.png  used on input line 485.
 (pdftex.def)             Requested size: 260.89404pt x 1698.34087pt.
+ [2]
+Overfull \vbox (65.06868pt too high) has occurred while \output is active []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[2]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3 <./output_6_0.png>]
-<output_7_0.png, id=31, 406.8801pt x 327.3831pt>
+<output_7_0.png, id=30, 406.8801pt x 327.3831pt>
 File: output_7_0.png Graphic file (type png)
 <use output_7_0.png>
-Package pdftex.def Info: output_7_0.png  used on input line 504.
+Package pdftex.def Info: output_7_0.png  used on input line 502.
 (pdftex.def)             Requested size: 406.8791pt x 327.3823pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
 
  []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4 <./output_7_0.png>]
-<output_8_0.png, id=37, 416.2752pt x 327.3831pt>
+<output_8_0.png, id=36, 416.2752pt x 327.3831pt>
 File: output_8_0.png Graphic file (type png)
 <use output_8_0.png>
-Package pdftex.def Info: output_8_0.png  used on input line 520.
+Package pdftex.def Info: output_8_0.png  used on input line 518.
 (pdftex.def)             Requested size: 416.27419pt x 327.3823pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[5 <./output_8_0.png>] (./image compression.aux)
-Package rerunfilecheck Info: File `"image compression".out' has not changed.
+[5 <./output_8_0.png>] (./Image Compression.aux)
+Package rerunfilecheck Info: File `"Image Compression".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  27097 strings out of 476025
- 503481 string characters out of 5790017
- 1935388 words of memory out of 5000000
- 47069 multiletter control sequences out of 15000+600000
- 523399 words of font info for 67 fonts, out of 8000000 for 9000
+ 503491 string characters out of 5790017
+ 1957388 words of memory out of 5000000
+ 47070 multiletter control sequences out of 15000+600000
+ 522636 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,11n,104p,512b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,7n,104p,512b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
 usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on "image compression.pdf" (5 pages, 687440 bytes).
+r/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on "Image Compression.pdf" (5 pages, 681977 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  6 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

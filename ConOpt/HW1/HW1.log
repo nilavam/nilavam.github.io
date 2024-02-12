@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  10 FEB 2024 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  11 FEB 2024 17:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (../pre.tex
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -1194,30 +1194,67 @@ File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count478
 \AM@templatesizebox=\box124
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip95
+\f@nch@O@elh=\skip96
+\f@nch@O@erh=\skip97
+\f@nch@O@olh=\skip98
+\f@nch@O@orh=\skip99
+\f@nch@O@elf=\skip100
+\f@nch@O@erf=\skip101
+\f@nch@O@olf=\skip102
+\f@nch@O@orf=\skip103
+)
 \@quotelevel=\count479
 \@quotereset=\count480
+ (./HW1.aux
 
-(./HW1.aux)
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+)
 \openout1 = `HW1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1238,12 +1275,12 @@ LaTeX Font Info:    ... okay on input line 31.
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1275,7 +1312,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 35.
 
 (./HW1.out) (./HW1.out)
 \@outlinefile=\write5
@@ -1299,8 +1336,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'HW1.bbl' not found.
 
 No file HW1.bbl.
-Package biblatex Info: Reference section=0 on input line 31.
-Package biblatex Info: Reference segment=0 on input line 31.
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -1313,179 +1350,185 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 34
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-9.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+3.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2023
-/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4]
-Overfull \hbox (5.32301pt too wide) in paragraph at lines 177--178
-[]\T1/bch/m/n/10.95 Since at least one of $\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10
-.95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; Y\OT1
-/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 g; U[]q\OT1/cmr/m/n/10.95 )$ \T1/bch/m/n/10
-.95 is false, we con-clude that at least one of $\OML/cmm/m/it/10.95 X\OT1/cmr/
-m/n/10.95 (\OML/cmm/m/it/10.95 p; q\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; Y\
-OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p; q\OT1/cmr/m/n/10.95 )$
+)
+Overfull \hbox (7.80116pt too wide) in paragraph at lines 54--55
+[]\T1/bch/m/n/10 Use the Mat-lab func-tion \T1/cmtt/m/n/10 imwrite \T1/bch/m/n/
+10 or the Python com-mand \T1/cmtt/m/n/10 image.save \T1/bch/m/n/10 to cre-ate 
+two im-ages from \T1/cmtt/m/n/10 imshow(A)
  []
 
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
-Overfull \hbox (26.58514pt too wide) in paragraph at lines 186--187
-[]\T1/bch/m/n/10.95 Let's see why it's \T1/bch/m/it/10.95 not a lo-cal min-ima\
-T1/bch/m/n/10.95 . In-deed $\OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 ([]) = 0$ \
-T1/bch/m/n/10.95 and the se-quence of points $[][]$
- []
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] 
+[2]
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
+08.
 
-[5]
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 2
-01.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-) [6]
-[7] [8]
-Overfull \hbox (5.16698pt too wide) in paragraph at lines 256--259
-\T1/bch/m/n/10.95 The ob-ser-va-tion that $[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/
-m/it/10.95 ^^V[]$ \T1/bch/m/n/10.95 gives $[][] \OT1/cmr/m/n/10.95 = [][] \OML/
-cmm/m/it/10.95 ^^V[][] \OMS/cmsy/m/n/10.95 ^^T [][] \OML/cmm/m/it/10.95 ^^V[][]
- \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^V[]$ \T1/bch/m/n/10.95 whence $[]$.
- 
+) [3]
+Overfull \hbox (1.05313pt too wide) in paragraph at lines 155--156
+[]\T1/bch/m/it/10 Proof. []\T1/bch/m/n/10 For the sake of con-tra-dic-tion, as-
+sume $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 q \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]
+$ \T1/bch/m/n/10 is such that both $\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 p; q\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; Y\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 p; q\OT1/cmr/m/n/10 )$ \T1/bch/m/n/10 are true. $\OML/cmm/m/it/10 Y\OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 p; q\OT1/cmr/m/n/10 )  =[]\OMS/cmsy/m/n/10 )
  []
 
-[9]
-<./image compression/image compression.pdf, id=115, 597.50829pt x 845.0471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf>
-Package pdftex.def Info: ./image compression/image compression.pdf  used on inp
-ut line 297.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf>
-Package pdftex.def Info: ./image compression/image compression.pdf  used on inp
-ut line 297.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<./image compression/image compression.pdf, id=118, page=1, 597.50829pt x 845.0
-471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 1>
-Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
- on input line 297.
-(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 1>
-Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [10]
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 1>
-Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 1>
-Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 1>
-Package pdftex.def Info: ./image compression/image compression.pdf , page1 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [11 <./image compression/image compression.pdf>]
-<./image compression/image compression.pdf, id=185, page=2, 597.50829pt x 845.0
-471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 2>
-Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 2>
-Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 2>
-Package pdftex.def Info: ./image compression/image compression.pdf , page2 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [12 <./image compression/image compression.pdf>]
-<./image compression/image compression.pdf, id=190, page=3, 597.50829pt x 845.0
-471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 3>
-Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 3>
-Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 3>
-Package pdftex.def Info: ./image compression/image compression.pdf , page3 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [13 <./image compression/image compression.pdf>]
-<./image compression/image compression.pdf, id=199, page=4, 597.50829pt x 845.0
-471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 4>
-Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 4>
-Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 4>
-Package pdftex.def Info: ./image compression/image compression.pdf , page4 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+[4] [5] [6] [7] [8]
+<Image Compression/Image Compression.pdf, id=116, 614.295pt x 794.97pt>
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf>
+Package pdftex.def Info: Image Compression/Image Compression.pdf  used on input
+ line 306.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf>
+Package pdftex.def Info: Image Compression/Image Compression.pdf  used on input
+ line 306.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<Image Compression/Image Compression.pdf, id=119, page=1, 614.295pt x 794.97pt>
 
-[14 <./image compression/image compression.pdf>]
-<./image compression/image compression.pdf, id=207, page=5, 597.50829pt x 845.0
-471pt>
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 5>
-Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 5>
-Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
-File: ./image compression/image compression.pdf Graphic file (type pdf)
-<use ./image compression/image compression.pdf, page 5>
-Package pdftex.def Info: ./image compression/image compression.pdf , page5 used
- on input line 297.
-(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [15 <./image compression/image compression.pdf>] (./HW1.aux)
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 1>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 1>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [9]
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 1>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 1>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 1>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [10 <./Image Compression/Image Compression.pdf>]
+<Image Compression/Image Compression.pdf, id=179, page=2, 614.295pt x 794.97pt>
+
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 2>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 2>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 2>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+
+[11 <./Image Compression/Image Compression.pdf>]
+<Image Compression/Image Compression.pdf, id=184, page=3, 614.295pt x 794.97pt>
+
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 3>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 3>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 3>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [12 <./Image Compression/Image Compression.pdf>]
+<Image Compression/Image Compression.pdf, id=192, page=4, 614.295pt x 794.97pt>
+
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 4>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 4>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 4>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [13 <./Image Compression/Image Compression.pdf>]
+<Image Compression/Image Compression.pdf, id=201, page=5, 614.295pt x 794.97pt>
+
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 5>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 5>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Image Compression/Image Compression.pdf Graphic file (type pdf)
+<use Image Compression/Image Compression.pdf, page 5>
+Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
+n input line 306.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [14 <./Image Compression/Image Compression.pdf>]
+<A160.jpg, id=209, 693.792pt x 809.424pt>
+File: A160.jpg Graphic file (type jpg)
+<use A160.jpg>
+Package pdftex.def Info: A160.jpg  used on input line 310.
+(pdftex.def)             Requested size: 227.62204pt x 265.55455pt.
+<original.jpg, id=210, 693.792pt x 809.424pt>
+File: original.jpg Graphic file (type jpg)
+<use original.jpg>
+Package pdftex.def Info: original.jpg  used on input line 311.
+(pdftex.def)             Requested size: 227.62204pt x 265.55455pt.
+ [15 <./A160.jpg> <./original.jpg>]
+(./HW1.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: 6D7198DD758655314577F0B82CAA29D8;312.
 Package logreq Info: Writing requests to 'HW1.run.xml'.
@@ -1493,40 +1536,43 @@ Package logreq Info: Writing requests to 'HW1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36921 strings out of 476025
- 713175 string characters out of 5790017
- 1871388 words of memory out of 5000000
- 56747 multiletter control sequences out of 15000+600000
- 553324 words of font info for 93 fonts, out of 8000000 for 9000
+ 37133 strings out of 476025
+ 716138 string characters out of 5790017
+ 1876388 words of memory out of 5000000
+ 56948 multiletter control sequences out of 15000+600000
+ 553231 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,17n,99p,1490b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,99p,1529b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
-texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist
-/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/f
-onts/type1/public/cm-super/sftt1095.pfb>
-Output written on HW1.pdf (15 pages, 911340 bytes).
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/
+fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2023/texmf-dist/fo
+nts/type1/public/cm-super/sftt1095.pfb>
+Output written on HW1.pdf (15 pages, 1119513 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,6 +27,10 @@ sorting=ynt
 \newcommand{\pb}{\section{Problem}~\par}
 \newcommand{\soln}{\subsection*{Solution}}
 \usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
 
 \begin{document}
 
@@ -71,7 +75,7 @@ because $U^\top, V$ are invertible and left or right multiplication (respectivel
 &= \sum_{i=1}^{k+1}c_i^2\sigma_i^2 & [\because \set{f_i} \text{ are orthonormal}]\\
 &\geq \sigma_{k+1}^2 \sum_{i=1}^{k+1}c_i^2\\&=\sigma_{k+1}^2\norm v{}^2.
 \end{align*}
-This suggests that $\norm{\Sigma-D}{}\geq \sigma_{k+1}$ as $D$ varies over $\Omega_k$. And we see that for $D_k^*$ being the $m\times n$ matrix with $D_{ij}=\begin{cases} \sigma_i&\text{if } 1\leq i=j\leq k\\0&\text{otherwise}
+This suggests that $\norm{\Sigma-D}{}\geq \sigma_{k+1}$ as $D$ varies over $\Omega_k$ from definition of the $2-$norm. And we see that for $D_k^*$ being the $m\times n$ matrix with $D_{ij}=\begin{cases} \sigma_i&\text{if } 1\leq i=j\leq k\\0&\text{otherwise}
 \end{cases}$, $\Sigma-D_k^*$ is the matrix with diagonal entries $\sigma_i$ at position $(i,i)$ for $i\geq k+1$, and $0$ everywhere else which has norm $\sigma_{k+1}$ (Problem 3(3) says that this norm is the maximum singular value, which is $\sigma_{k+1}$ in this case). So $D^*$ looks like $$ \begin{bmatrix}
 \Sigma_{(k)} & 0_{k\times(n-k)}\\0_{(m-k)\times k}&0_{(m-k)\times(n-k)}
 \end{bmatrix}=
@@ -94,12 +98,19 @@ $$ where $\pmb 1_k$ is the $k\times k$ identity matrix. But notice $U{\color{blu
 \pmb 1_{k} \\ 0_{(n-k)\times k}
 \end{bmatrix}} = V_{(k)}$.
 The corresponding minimizer for the original problem (corresponding to $D^*$) is $$B^*=UD^*V^\top = U_{(k)}\Sigma_{(k)}V_{(k)}^\top = A_{(k)}$$ which is what we wanted.
-\item See \href{imgcom}{code at end} or the .
+\item See \hyperref[pdf:imgcom]{code at end} or the .
 
 \item 
+See \hyperref[pdf:imgcom]{code at end} or the .
 
-\item 
-
+We explain the total savings:
+Notice that fewer columns of $U,\Sigma,V$ are used for constructing $A_{(k)}$. Namely, one only uses \begin{itemize}
+\item $m$ rows and $k$ columns of $U$,
+\item $n$ rows and $k$ columns of $V$, and
+\item $k$ rows and $k$ columns of $\Sigma$, in which only the $k$ diagonal entries are useful.
+\end{itemize}
+Thus $A_{{(k)}}$ is determined by the sums of number of entries in $U_{(k)}, \text{ (diagonal of) }\Sigma_{(k)}, \text{ and }V_{(k)}$, which is $mk+k+nk = (m+n+1)k$. Initially, $A$ was described by $mn$ reals. So total savings is the difference, namely $mn-(m+n+1)k$. Total saving for $k=160$ is $1075200 - (2081)160 = 742240$.
+\item A comparison has been shown in \cref{fig:figr}.
 \end{enumerate}
 
 
@@ -193,24 +204,22 @@ $\Omega$ is closed because $\Omega$ is the intersection of inverse image of $[1,
 This is also convex, which is seen as follows. Let $(a,b),(u,v)\in \Omega, \lambda\in[0,1]$. Note that $u,v\geq 0$. Then taking $\mu=1-\lambda\in[0,1]$ gives $\lambda a + \mu u \geq 0$ because $\lambda,a,u\geq 0$, and $(\lambda a + \mu u)(\lambda b + \mu v) = \lambda^2 a + \lambda\mu(bu+av) + \mu^2 v \geq \lambda^2 + \lambda\mu\left(\frac{u}{a} + \frac{a}{u}\right) + \mu^2 \ge \lambda^2 + 2\lambda\mu + \mu^2 = 1$. So $\lambda (a,b) + (1-\lambda)(u,v) \in\Omega$.\\
 Then the objective function is just $f(x_1,x_2) = (0,1)^\top(x_1,x_2) = x_2$. This gives $\ds\inf_{(x_1,x_2)\in\Omega} x_2 = 0$ but there is no $(x_1,x_2)$ such that $x_2=0$ because of the given conditions. So optimal value exists, but optimal solution doesn't.
 \end{enumerate}
-
 \subsection*{Appendix}\label{sec3app}
-
 \begin{thm}\label{gen3}
 Let $f,g:\R\to \R$ be $\sC^1$ functions such that  such that \begin{itemize}
 \item $\exists\epsilon>0$ such that $(f-g)^{-1}(0)\cap (0,\epsilon)=\varnothing$,
 %\item $f'',g''$ exists on $B^o(0,\epsilon)$,
 \item $f(0)=g(0)=0$, 
 \item $f'(0)=g'(0)$ (call it $d$), and
-\item $\exists \delta > 0$ such that $d$ does not lie strictly between $\frac{f(t)}{t}$ and $\frac{g(t)}{t}$ for every $t\in(0,\epsilon)$,
+\item $\exists \delta > 0$ such that $d$ does not lie strictly between $\frac{f(t)}{t}$ and $\frac{g(t)}{t}$ for every $t\in(0,\delta)$,
 \end{itemize}
 then $h:\R^2\to\R$ given by $h(x,y) = (y-f(x))(y-g(x))$ has no descent direction at $(0,0)$ and $(0,0)$ is not a local minima of $h$.
 \end{thm}
 
 \begin{pf}
-Suppose $(a,b)$ is a descent direction at $(0,0)$. So there is some $\overline\alpha$ such that $h(\alpha a,\alpha b) < h(0,0) \forall \alpha\in(0,\overline\alpha)$. We can assume, WLOG, that $0<a^2+b^2<\epsilon$ (for example, by replacing $(a,b)$ with $(\lambda a, \lambda b)$ such that $\lambda<\frac{\sqrt\epsilon}{\overline \alpha\sqrt{a^2+b^2}}$). One must have $f>g$ or $g>f$ on $(0,\epsilon)$ because otherwise, by continuity, there would be a non-zero point in $(0,\epsilon)\subset B^o(0,\epsilon)$ which is a zero for the function $f-g$. WLOG, assume $f>g$ on $(0,\epsilon)$. This implies $0 > h(a,b) = (b-f(a))(b-g(a))$, whence $g(a) < b < f(a)$. In fact, it is true that $0>h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b-g(\alpha a))\forall \alpha\in (0,\overline \alpha)$ by definition. From this it follows that $a\neq 0$ (because if $a=0$ then $h(0,\alpha b) = (\alpha b)^2 > 0$). We thus have $g(\alpha a)<\alpha b < f(\alpha a)$ which gives that $b = da$ by using the sandwich theorem. Then note that if $\alpha = \frac{1}{2}\min\set{\frac{\delta}{a},\overline \alpha}$ we have $h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b - g(\alpha a)) = (\alpha ad-f(\alpha a))(\alpha ad - g(\alpha a)) = t^2 \left(d-\frac{f(t)}{t}\right) \left(d-\frac{g(t)}{t}\right)$ where $t = \alpha a < \delta$ so this quantity is $\ge0$ by the assumption in the last bullet point, however this contradicts the fact that $h(\alpha a, \alpha b) < 0$.
+Suppose $(a,b)\neq(0,0)$ is a descent direction at $(0,0)$, for the sake of contradiction. So there is some $\overline\alpha$ such that $h(\alpha a,\alpha b) < h(0,0) \forall \alpha\in(0,\overline\alpha)$. We can assume, WLOG, that $0<a^2+b^2<\epsilon$ (for example, by replacing $(a,b)$ with $(\lambda a, \lambda b)$ such that $\lambda<\frac{\sqrt\epsilon}{\overline \alpha\sqrt{a^2+b^2}}$). One must have $f>g$ or $g>f$ on $(0,\epsilon)$ because otherwise, by continuity, there would be a non-zero point in $(0,\epsilon)\subset B^o(0,\epsilon)$ which is a zero of the function $f-g$. WLOG, assume $f>g$ on $(0,\epsilon)$. This implies $0 > h(a,b) = (b-f(a))(b-g(a))$, whence $g(a) < b < f(a)$. In fact, it is true that $0>h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b-g(\alpha a))\forall \alpha\in (0,\overline \alpha)$ by definition. From this it follows that $a\neq 0$ (because if $a=0$ then $h(0,\alpha b) = (\alpha b)^2 > 0$). We thus have $g(\alpha a)<\alpha b < f(\alpha a)$ which gives that $b = da$ by using the sandwich theorem. Then note that if $\alpha = \frac{1}{2}\min\set{\frac{\delta}{a},\overline \alpha}$ we have $h(\alpha a, \alpha b) = (\alpha b-f(\alpha a))(\alpha b - g(\alpha a)) = (\alpha ad-f(\alpha a))(\alpha ad - g(\alpha a)) = t^2 \left(d-\frac{f(t)}{t}\right) \left(d-\frac{g(t)}{t}\right)$ where $t = \alpha a < \delta$ so this quantity is $\ge0$ by the assumption in the last bullet point, however this contradicts the fact that $h(\alpha a, \alpha b) < 0$.
 
-Now we show that $(0,0)$ not a local minima. Since $f>g$ on $(0,\epsilon)$, one can choose points $x_n=\frac{1}{n}$ and $y_n\in (g(x_n),f(x_n))$ and observe that $\lim y_n = 0$ by continuity of $f,g$ and sandwich theorem. Thus, for every $\varepsilon>0\exists N\in \N$ such that $k\geq N\implies \abs{y_k} < \varepsilon$. But $h(x_n,y_n) = (y_n-f(x_n))(y_n-g(x_n)) < 0$ by choice of $y_n$. This proves that $(0,0)$ cannot be a local minima of $h$, because $(x_n,y_n)\to (0,0)$ by each $h(x_n,y_n)<0$.
+Now we show that $(0,0)$ not a local minima. Since $f>g$ on $(0,\epsilon)$, one can choose points $x_n=\frac{1}{n}$ and $y_n\in (g(x_n),f(x_n))$ and observe that $\lim y_n = 0$ by continuity of $f,g$ and sandwich theorem. Thus, for every $\varepsilon>0\exists N\in \N$ such that $k\geq N\implies \abs{y_k} < \varepsilon$. However $$h(x_n,y_n) = (y_n-f(x_n))(y_n-g(x_n)) < 0$$ by choice of $y_n$. This proves that $(0,0)$ cannot be a local minima of $h$, because $(x_n,y_n)\to (0,0)$ but each $h(x_n,y_n)<0$.
 \qed\end{pf}
 
 
@@ -294,6 +303,15 @@ For a concrete example, take $A = \begin{bmatrix}1&0\\0&0\end{bmatrix}, B = \beg
 Consider $A = \begin{bmatrix}1&-1&0\\-1&1&1\\0&1&0\end{bmatrix}$. First observe that $A = \begin{bmatrix}0&0&0\\0&0&1\\0&1&0\end{bmatrix} + \begin{bmatrix}1&-1&0\\-1&1&0\\0&0&0\end{bmatrix}$ where the first summand is entry-wise non-negative and the second summand is symmetric positive semi-definite (with eigenvalues $0,2$). This shows that $x^\top Ax\geq 0\forall x\geq 0$. But neither does $A$ have all non-negative entries, nor is $A$ positive semi-definite (because $(e_2-e_3)^\top A(e_2-e_3) = -1$).
 \end{enumerate}
 
-{\label{imgcom}\includepdf[pages=-]{./image compression/image compression.pdf}}
+{\includepdf[pages=-,pagecommand={\label{pdf:imgcom}}]{Image Compression/Image Compression.pdf}}
+%{\label{a160}\includepdf[pages=-]{./A160.jpg}}
+%{\label{org}\includepdf[pages=-]{./original.jpg}}
+\begin{figure}[t]
+\includegraphics[width=8cm]{A160.jpg}
+\includegraphics[width=8cm]{original.jpg}
+\caption{$A_{(160)}$ vs $A$}
+\label{fig:figr}
+\centering
+\end{figure}
 
 \end{document}

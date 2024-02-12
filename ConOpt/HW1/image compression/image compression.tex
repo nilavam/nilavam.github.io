@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, oneside]{article}
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
@@ -164,16 +164,13 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Image Compression\\\small{Jupyter notebook}}
+    \title{Image Compression}
     \date{}
-    \pagenumbering{Roman} 
+    %\pagenumbering{Roman} 
     \usepackage{fancyhdr}
-	\pagestyle{fancyplain}
-	\fancyhf{}
-	\fancyhead[R]{\thepage}
-	%\renewcommand{\headrulewidth}{0pt}
-    
-    
+	\pagestyle{empty}
+%	\fancyhf{}
+%	\fancyhead{}
     
     
     
@@ -410,7 +407,7 @@
 \prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-\PY{k+kn}{from} \PY{n+nn}{PIL} \PY{k+kn}{import} \PY{n}{Image}
+\PY{k+kn}{from} \PY{n+nn}{PIL} \PY{k+kn}{import} \PY{n}{Image} \PY{k}{as} \PY{n}{im}
 \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
 \end{Verbatim}
 \end{tcolorbox}
@@ -418,7 +415,7 @@
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{image} \PY{o}{=} \PY{n}{Image}\PY{o}{.}\PY{n}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{conway.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{image} \PY{o}{=} \PY{n}{im}\PY{o}{.}\PY{n}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{conway.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{image}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)} \PY{o}{/} \PY{l+m+mf}{255.0} 
 \PY{n}{A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{p}{[}\PY{l+m+mf}{0.2989}\PY{p}{,} \PY{l+m+mf}{0.5870}\PY{p}{,} \PY{l+m+mf}{0.1140}\PY{p}{]}\PY{p}{)}
 \PY{n}{m}\PY{p}{,}\PY{n}{n} \PY{o}{=} \PY{n}{A}\PY{o}{.}\PY{n}{shape}
@@ -428,10 +425,10 @@
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{U}\PY{p}{,} \PY{n}{S}\PY{p}{,} \PY{n}{Vt} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{svd}\PY{p}{(}\PY{n}{A}\PY{p}{)} \PY{c+c1}{\PYZsh{}do the SVD}
-\PY{n}{K} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+m+mi}{80}\PY{p}{,}\PY{l+m+mi}{120}\PY{p}{,}\PY{l+m+mi}{160}\PY{p}{]}         \PY{c+c1}{\PYZsh{}storing values of k}
+\PY{n}{U}\PY{p}{,} \PY{n}{S}\PY{p}{,} \PY{n}{Vt} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{svd}\PY{p}{(}\PY{n}{A}\PY{p}{)}                         \PY{c+c1}{\PYZsh{}do the SVD}
+\PY{n}{K} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+m+mi}{80}\PY{p}{,}\PY{l+m+mi}{120}\PY{p}{,}\PY{l+m+mi}{160}\PY{p}{]}                                 \PY{c+c1}{\PYZsh{}storing values of k}
 \PY{n}{l} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{K}\PY{p}{)}
-\PY{n}{S} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{diag}\PY{p}{(}\PY{n}{S}\PY{p}{)}              \PY{c+c1}{\PYZsh{}original S is only a linear array, need to convert to matrix}
+\PY{n}{S} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{diag}\PY{p}{(}\PY{n}{S}\PY{p}{)}                                      \PY{c+c1}{\PYZsh{}original S is only a linear array, need to convert to matrix}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -440,7 +437,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{approx} \PY{o}{=} \PY{p}{[}\PY{p}{]}
 \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{p}{:}
-    \PY{n}{approx}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{U}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{@} \PY{n}{S}\PY{p}{[}\PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{@} \PY{n}{Vt}\PY{p}{[}\PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}   \PY{c+c1}{\PYZsh{}taking approximations}
+    \PY{n}{approx}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{U}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{@} \PY{n}{S}\PY{p}{[}\PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{@} \PY{n}{Vt}\PY{p}{[}\PY{p}{:}\PY{n}{K}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{p}{:}\PY{p}{]}\PY{p}{)}             \PY{c+c1}{\PYZsh{}taking approximations}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -449,7 +446,7 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}obtaining and printing a table for Frobeius norm of differences}
 \PY{n}{error} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0} \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{p}{]}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{k}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{|}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Frobenius norm}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{k}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{|}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Frobenius norm}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}+\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{K}\PY{p}{)}\PY{p}{)}\PY{p}{:}
     \PY{n}{error}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{norm}\PY{p}{(}\PY{n}{A}\PY{o}{\PYZhy{}}\PY{n}{approx}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
@@ -458,7 +455,7 @@
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-k       |       Frobenius norm
+k       |        Frobenius norm
 --------+--------------------------
 40      |       31.733288485394482
 80      |       19.016427727768185
@@ -471,7 +468,7 @@ k       |       Frobenius norm
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{K}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{figsize} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
 
-\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Original Image}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Original Picture}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{imshow}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{n}{cmap} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{off}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
@@ -485,10 +482,11 @@ k       |       Frobenius norm
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.8\paperheight}}{output_6_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_0.png}
     \end{center}
     %{ \hspace*{\fill} \\}
     \newpage
+    
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -503,8 +501,8 @@ k       |       Frobenius norm
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_0.png}
     \end{center}
-    { \hspace*{\fill} \\}
-\newpage    
+    { \hspace*{\fill} \\}\newpage
+    
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -521,6 +519,14 @@ k       |       Frobenius norm
     \end{center}
     { \hspace*{\fill} \\}
     
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plt}\PY{o}{.}\PY{n}{imsave}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A160.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{approx}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{n}{cmap} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{imsave}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{original.jpg}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n}{cmap} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gray}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
 
     % Add a bibliography block to the postdoc
     
