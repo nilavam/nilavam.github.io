@@ -282,7 +282,7 @@ The observation that $\max\set{\mu_i}=\mu_1$ gives $\norm{Ax}{2}^2 = \sum_i\mu_i
 \newpage
 \pb
 Prove or disprove the following statements. All matrices are \textit{symmetric, $n \times n$, and with real entries}.
-\begin{enumerate}[leftmargin=*]
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
 \item Suppose $A \succeq 0$. Then the largest entry in absolute value of $A$ must be on the diagonal.
 \item If $A \succeq 0$ and $\Tr(A) = 0$, then $A = 0$.
 \item If $A \succeq 0, B \succeq 0$, and $A + B = 0$, then $A = B = 0$.
@@ -290,7 +290,7 @@ Prove or disprove the following statements. All matrices are \textit{symmetric, 
 \item Suppose $x^\top Ax\ge0$ for all $x\ge0$, then either $A\ge0$ or $A\succeq0$. \end{enumerate}
 \soln 
 
-\begin{enumerate}[leftmargin=*]
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
 \item \textbf{True}.\\
 For the sake of contradiction, assume there are indices $i< j$ such that $\abs{A_{ji}}=\abs{A_{ij}}>\abs{A_{kk}}\forall 1\leq k\leq n$. First we see that each $e_k^\top Ae_k = A_{kk}\geq 0$ by positive semi-definiteness. Next $0\leq (e_i+e_j)^\top A (e_i+e_j) = A_{ii} + 2A_{ij} + A_{jj}\implies A_{ii}+ A_{jj} \ge-2A_{ij}$. But, $A_{ii}, A_{jj} < \abs{A_{ij}}\implies A_{ii}+A_{jj} < 2 \abs{A_{ij}}$. Putting these together, we have $2\abs{A_{ij}} > A_{ii} + A_{jj} \ge -2A_{ij}$ which suggests that $A_{ij}\ge 0$ and thus $\abs{A_{ij}}=A_{ij}$. Now $(e_i-e_j)^\top A(e_i-e_j) = A_{ii} + A_{jj} - 2A_{ij} = A_{ii} + A_{jj} - 2\abs{A_{ij}} < 0$, contradicting that $A$ is positive semi-definite.
 \item \textbf{True}.\\
