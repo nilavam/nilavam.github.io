@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  13 FEB 2024 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  14 FEB 2024 11:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1386,12 +1386,12 @@ ocal/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] 
 [2]
 LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-08.
+14.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [3]
-Overfull \hbox (1.05313pt too wide) in paragraph at lines 155--156
+Overfull \hbox (1.05313pt too wide) in paragraph at lines 161--162
 []\T1/bch/m/it/10 Proof. []\T1/bch/m/n/10 For the sake of con-tra-dic-tion, as-
 sume $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 q \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]
 $ \T1/bch/m/n/10 is such that both $\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 (\OML/cmm
@@ -1405,40 +1405,40 @@ r/m/n/10 (\OML/cmm/m/it/10 p; q\OT1/cmr/m/n/10 )  =[]\OMS/cmsy/m/n/10 )
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf>
 Package pdftex.def Info: Image Compression/Image Compression.pdf  used on input
- line 306.
+ line 312.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf>
 Package pdftex.def Info: Image Compression/Image Compression.pdf  used on input
- line 306.
+ line 312.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <Image Compression/Image Compression.pdf, id=119, page=1, 614.295pt x 794.97pt>
 
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 1>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 1>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [9]
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 1>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 1>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 1>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page1 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [10 <./Image Compression/Image Compression.pdf>]
 <Image Compression/Image Compression.pdf, id=179, page=2, 614.295pt x 794.97pt>
@@ -1446,17 +1446,17 @@ n input line 306.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 2>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 2>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 2>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page2 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 
 [11 <./Image Compression/Image Compression.pdf>]
@@ -1465,17 +1465,17 @@ n input line 306.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 3>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 3>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 3>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page3 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [12 <./Image Compression/Image Compression.pdf>]
 <Image Compression/Image Compression.pdf, id=192, page=4, 614.295pt x 794.97pt>
@@ -1483,17 +1483,17 @@ n input line 306.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 4>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 4>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 4>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page4 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [13 <./Image Compression/Image Compression.pdf>]
 <Image Compression/Image Compression.pdf, id=201, page=5, 614.295pt x 794.97pt>
@@ -1501,28 +1501,28 @@ n input line 306.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 5>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 5>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: Image Compression/Image Compression.pdf Graphic file (type pdf)
 <use Image Compression/Image Compression.pdf, page 5>
 Package pdftex.def Info: Image Compression/Image Compression.pdf , page5 used o
-n input line 306.
+n input line 312.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [14 <./Image Compression/Image Compression.pdf>]
 <A160.jpg, id=209, 693.792pt x 809.424pt>
 File: A160.jpg Graphic file (type jpg)
 <use A160.jpg>
-Package pdftex.def Info: A160.jpg  used on input line 310.
+Package pdftex.def Info: A160.jpg  used on input line 316.
 (pdftex.def)             Requested size: 227.62204pt x 265.55455pt.
 <original.jpg, id=210, 693.792pt x 809.424pt>
 File: original.jpg Graphic file (type jpg)
 <use original.jpg>
-Package pdftex.def Info: original.jpg  used on input line 311.
+Package pdftex.def Info: original.jpg  used on input line 317.
 (pdftex.def)             Requested size: 227.62204pt x 265.55455pt.
  [15 <./A160.jpg> <./original.jpg>]
 (./HW1.aux)
@@ -1569,7 +1569,7 @@ ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dis
 t/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/
 fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2023/texmf-dist/fo
 nts/type1/public/cm-super/sftt1095.pfb>
-Output written on HW1.pdf (15 pages, 1119487 bytes).
+Output written on HW1.pdf (15 pages, 1120250 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams

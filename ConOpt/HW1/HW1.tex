@@ -36,8 +36,8 @@ sorting=ynt
 
 \maketitle
 
-$\boxed{
-B(x,r), B^o(x,r) \text{ respectively denote the closed and open balls of radius } r \text{ around }x.}$
+%$\boxed{
+%B(x,r), B^o(x,r) \text{ respectively denote the closed and open balls of radius } r \text{ around }x.}$
 
 \pb
 Let $A$ be a real $m \times n$ matrix of rank $r$.
@@ -98,7 +98,13 @@ $$ where $\pmb 1_k$ is the $k\times k$ identity matrix. But notice $U{\color{blu
 \pmb 1_{k} \\ 0_{(n-k)\times k}
 \end{bmatrix}} = V_{(k)}$.
 The corresponding minimizer for the original problem (corresponding to $D^*$) is $$B^*=UD^*V^\top = U_{(k)}\Sigma_{(k)}V_{(k)}^\top = A_{(k)}$$ which is what we wanted.
-\item See \hyperref[pdf:imgcom]{code at end} or the .
+\item See \hyperref[pdf:imgcom]{code at end} or the . Here's the Frobenius norms:
+\begin{align*}
+\norm{A-A_{(40)}}{F} &= 31.733288485394482\\
+\norm{A-A_{(80)}}{F} &= 19.016427727768185\\
+\norm{A-A_{(120)}}{F} &= 13.055854194249326\\
+\norm{A-A_{(160)}}{F} &= 9.511015173570117
+\end{align*}
 
 \item 
 See \hyperref[pdf:imgcom]{code at end} or the .
@@ -110,7 +116,7 @@ Notice that fewer columns of $U,\Sigma,V$ are used for constructing $A_{(k)}$. N
 \item $k$ rows and $k$ columns of $\Sigma$, in which only the $k$ diagonal entries are useful.
 \end{itemize}
 Thus $A_{{(k)}}$ is determined by the sums of number of entries in $U_{(k)}, \text{ (diagonal of) }\Sigma_{(k)}, \text{ and }V_{(k)}$, which is $mk+k+nk = (m+n+1)k$. Initially, $A$ was described by $mn$ reals. So total savings is the difference, namely $mn-(m+n+1)k$. Total saving for $k=160$ is $1075200 - (2081)160 = 742240$.
-\item A comparison has been shown in \cref{fig:figr}.
+\item A comparison has been shown in \cref{fig:figr}. At first glance, one cannot compare at all. Only when one looks carefully, we can see the minor difference: towards the center of Conway's hair, a couple of hair strands can be seen in the original picture, which are `dissolved' in $A_{{(160)}}$.
 \end{enumerate}
 
 
