@@ -61,7 +61,7 @@ Here $\norm{\cdot}2$ denotes the spectral norm of a matrix defined as $\ds\norm 
 \begin{enumerate}
 \item Say $\lambda\in\C$ be an eigenvalue of $A^\top A$ with eigenvector $u\in\C^n$. Then $A^\top Au=\lambda u\implies \lambda \norm{u}{2}^2 =\overline{u}^\top A^\top Au = (\overline{Au})^\top Au = (Au)^\dagger Au = \norm{Au}{2}^2$. The non-negativity of $\norm{Au}{2}^2$ and $\norm{u}{2}^2$ proves the non-negativity of $\lambda$. \\
 Here, $\overline u$ is the coordinate-wise complex conjugate, and $(Au)^\dagger$ is the conjugate transpose. Note that we've used the fact that $\overline A = A$ because $A$ has real entries.
-\item Suppose $A$ is an $n\times n$ real symmetric matrix. Then $A$ can be diagonalized via an orthonormal basis, that is, there is a real matrix $U$ such that $A=UDU^\top$, $U^\top U = UU^\top = \pmb 1_n$ and $D$ is a diagonal matrix comprising of eigenvalues of $A$. One can rearrange the columns of $U$ (the matrix of eigenvectors) such that their corresponding eigenvalues in $D$ are in order of decreasing magnitude. So one can assume without loss of generality that $D$ has entries $\lambda_1,\cdots,\lambda_n$ in this order where $\abs{\lambda_1}\geq \cdots \geq \abs{\lambda_n}$.\\
+\item Suppose $A$ is an $n\times n$ real symmetric matrix. Then $A$ can be diagonalized via an orthonormal basis, that is, there is a real matrix $U$ such that $A=UDU^\top$, $U^\top U = UU^\top = \pmb 1_n$ and $D$ is a diagonal matrix comprising of eigenvalues of $A$. One can rearrange the columns of $U$ (the matrix of eigenvectors) such that their corresponding eigenvalues in $D$ are in order of decreasing magnitude (i.e., decreasing after taking absolute value). So one can assume without loss of generality that $D$ has entries $\lambda_1,\cdots,\lambda_n$ in this order where $\abs{\lambda_1}\geq \cdots \geq \abs{\lambda_n}$.\\
 So $A^\top A = UD^\top U^\top UDU^\top = UD^2U^\top$, whence the eigenvalues of $A^\top A$ are $\lambda_1^2\geq \cdots\geq \lambda_n^2$. By what is mentioned in the assignment, $\sigma_i$ is the square root of the $i^{\text{th}}$ eigenvalue of $A^\top A$. In other words, $\sigma_i = \sqrt{\lambda_i^2} = \abs{\lambda_i}$ in this case.
 \end{enumerate}
 \item Start with the SVD $A=U\Sigma V^\top$ where $U,V$ are orthogonal $m\times, n\times n$ (respectively) matrices. So $U^\top,V^\top$ are also orthogonal. Note that for any $m\times n$ matrix $C$ we have $$\norm{U^\top C}{} = \max_{\norm x{}=1}\norm{U^\top Cx}{} = \max_{\norm x{}=1}\sqrt{x^\top C^\top UU^\top Cx} = \max_{\norm x{}=1}\norm{Cx}{} = \norm{C}{}$$
@@ -69,14 +69,16 @@ and
 $$\norm{CV}{} = \max_{\norm x{}=1}\norm{CVx}{} = \max_{\norm{V x}{}=1}\norm{CVx}{} \stackrel{[y\sett Vx]}{=} \max_{\norm y{}=1}\norm{Cy}{} = \norm{C}{}$$
 where we used the facts that $V$ is invertible and that $\norm{Vx}{} = \sqrt{x^\top V^\top Vx} = \sqrt{x^\top x} = \norm x {}$.
 This proves that $$\min_{\substack{B\in\R^{m\times n}\\ \rk B\leq k} } \norm{A-B}{} = \min_{\substack{B\in\R^{m\times n}\\ \rk B\leq k} } \norm{\Sigma-U^\top BV}{} \stackrel{D\sett U^\top BV}{=} \min_{\substack{D\in\R^{m\times n}\\ \rk D\leq k} } \norm{\Sigma-D}{}$$
-because $U^\top, V$ are invertible and left or right multiplication (respectively) by them preserve rank. We are minimizing over the feasible set $$\Omega_k \sett \set{X\in \R^{m\times n}\st \rk X \leq k}.$$ Let $\set{e_i\in\R^n}_{i=1}^n, \set{f_i\in\R^m}_{i=1}^m$ be the standard basis vectors. Then $\Sigma e_i = \sigma_if_i$ for each $ 1\leq i\leq s\sett\min\set{m,n}$. Recall that we had ordered $\sigma_1\geq \cdots\geq \sigma_s$ (for $i>r=\rk A, \sigma_i=0$). Pick any $D\in\R^{m\times n}$ with at most rank $k$, whence $\ker D$ has dimension at least $n-k$. This means that $W\sett \text{span}\set{e_1,\cdots,e_{k+1}}$ nontrivially intersects $\ker D$ (otherwise their direct sum would have dimension $\geq n+1$ which is more than the dimension of the ambient space $\R^n$). Let $v\in W\cap\ker D$ with $v\neq 0$. Write $\ds v=\sum_{i=1}^{k+1}c_i e_i$. So \begin{align*}
+because $U^\top, V$ are invertible and left or right multiplication (respectively) by them preserve rank. We are minimizing over the feasible set $$\Omega_k \sett \set{X\in \R^{m\times n}\st \rk X \leq k}.$$ Let $\set{e_i\in\R^n}_{i=1}^n, \set{f_i\in\R^m}_{i=1}^m$ be the standard basis vectors. Then $\Sigma e_i = \sigma_if_i$ (reminder: $\Sigma$ is Sigma and not summation) for each $ 1\leq i\leq s\sett\min\set{m,n}$. Recall that we had ordered $\sigma_1\geq \cdots\geq \sigma_s$ ($\sigma_{i}=0$ for $i>r=\rk A$). Pick any $D\in\R^{m\times n}$ with at most rank $k$, whence $\ker D$ has dimension at least $n-k$. This means that $W\sett \text{span}\set{e_1,\cdots,e_{k+1}}$ nontrivially intersects $\ker D$ (otherwise their direct sum would have dimension $\geq n+1$ which is more than the dimension of the ambient space $\R^n$). Let $v\in W\cap\ker D$ with $v\neq 0$. Write $\ds v=\sum_{i=1}^{k+1}c_i e_i$. So \begin{align*}
 \norm{(\Sigma-D)v}{}^2 &= \norm{\Sigma v}{}^2 \\
 &= \norm{\sum_{i=1}^{k+1}c_i\sigma_i f_i}{}^2 \\
 &= \sum_{i=1}^{k+1}c_i^2\sigma_i^2 & [\because \set{f_i} \text{ are orthonormal}]\\
 &\geq \sigma_{k+1}^2 \sum_{i=1}^{k+1}c_i^2\\&=\sigma_{k+1}^2\norm v{}^2.
 \end{align*}
-This suggests that $\norm{\Sigma-D}{}\geq \sigma_{k+1}$ as $D$ varies over $\Omega_k$ from definition of the $2-$norm. And we see that for $D_k^*$ being the $m\times n$ matrix with $D_{ij}=\begin{cases} \sigma_i&\text{if } 1\leq i=j\leq k\\0&\text{otherwise}
-\end{cases}$, $\Sigma-D_k^*$ is the matrix with diagonal entries $\sigma_i$ at position $(i,i)$ for $i\geq k+1$, and $0$ everywhere else which has norm $\sigma_{k+1}$ (Problem 3(3) says that this norm is the maximum singular value, which is $\sigma_{k+1}$ in this case). So $D^*$ looks like $$ \begin{bmatrix}
+This suggests that $\norm{\Sigma-D}{}\geq \sigma_{k+1}$ as $D$ varies over $\Omega_k$ from definition of the $2-$norm. And we see that for $D^{*}\sett D_k^*$ being the $m\times n$ matrix with $D^{*}_{ij}=\begin{cases} \sigma_i&\text{if } 1\leq i=j\leq k\\0&\text{otherwise}
+\end{cases}$, $\Sigma-D_k^*$ is the matrix with diagonal entries $\sigma_i$ at position $(i,i)$ for $i\geq k+1$, and $0$ everywhere, thus having  norm $\sigma_{k+1}$ (Problem 3(3) says that this norm is the maximum singular value, which is $\sigma_{k+1}$ in this case). This proves that the abovementioned lower bound is achieved.
+
+Now, $D^*$ looks like $$ D^{*}=\begin{bmatrix}
 \Sigma_{(k)} & 0_{k\times(n-k)}\\0_{(m-k)\times k}&0_{(m-k)\times(n-k)}
 \end{bmatrix}=
 \begin{bmatrix}
@@ -97,8 +99,11 @@ $$ where $\pmb 1_k$ is the $k\times k$ identity matrix. But notice $U{\color{blu
 \end{bmatrix}} = U_{(k)}$ and $V{\color{magenta}\begin{bmatrix}
 \pmb 1_{k} \\ 0_{(n-k)\times k}
 \end{bmatrix}} = V_{(k)}$.
-The corresponding minimizer for the original problem (corresponding to $D^*$) is $$B^*=UD^*V^\top = U_{(k)}\Sigma_{(k)}V_{(k)}^\top = A_{(k)}$$ which is what we wanted.
-\item See \hyperref[pdf:imgcom]{code at end} or the . Here's the Frobenius norms:
+Because we had transformed $D=U^{\top} B V$, the corresponding minimizer for the original problem (corresponding to $D^*$) is $$B^*=UD^*V^\top = U_{(k)}\Sigma_{(k)}V_{(k)}^\top = A_{(k)}$$ which is what we wanted.
+
+\item See \hyperref[pdf:imgcom]{code at end} or the \href{https://github.com/nilavam/nilavam.github.io/blob/5552db4aab806c636c3de2188940259679bd212a/ConOpt/HW1/image%20compression.ipynb}{Jupyter notebook}. 
+The $A_{{(k)}}$ are computed in \texttt{[5]} of the code and stored in the \texttt{approx[]} array.
+Here're the Frobenius norms of the errors (which have computed in \texttt{[6]} of the code and stored in the \texttt{error[]} array):
 \begin{align*}
 \norm{A-A_{(40)}}{F} &= 31.733288485394482\\
 \norm{A-A_{(80)}}{F} &= 19.016427727768185\\
@@ -107,7 +112,8 @@ The corresponding minimizer for the original problem (corresponding to $D^*$) is
 \end{align*}
 
 \item 
-See \hyperref[pdf:imgcom]{code at end} or the .
+See \hyperref[pdf:imgcom]{code at end} or the \href{https://github.com/nilavam/nilavam.github.io/blob/5552db4aab806c636c3de2188940259679bd212a/ConOpt/HW1/image%20compression.ipynb}{Jupyter notebook}.
+The corresponding part for comparing the compressed images in the code is \texttt{[7]}. \texttt{[8]} produces a plot for the Frobenius norms of the error vs $k$, and \texttt{[9]} produces a plot for total savings $\left(=mn-(m+n-1)k\right)$ vs $k$.
 
 We explain the total savings:
 Notice that fewer columns of $U,\Sigma,V$ are used for constructing $A_{(k)}$. Namely, one only uses \begin{itemize}
@@ -115,8 +121,9 @@ Notice that fewer columns of $U,\Sigma,V$ are used for constructing $A_{(k)}$. N
 \item $n$ rows and $k$ columns of $V$, and
 \item $k$ rows and $k$ columns of $\Sigma$, in which only the $k$ diagonal entries are useful.
 \end{itemize}
-Thus $A_{{(k)}}$ is determined by the sums of number of entries in $U_{(k)}, \text{ (diagonal of) }\Sigma_{(k)}, \text{ and }V_{(k)}$, which is $mk+k+nk = (m+n+1)k$. Initially, $A$ was described by $mn$ reals. So total savings is the difference, namely $mn-(m+n+1)k$. Total saving for $k=160$ is $1075200 - (2081)160 = 742240$.
-\item A comparison has been shown in \cref{fig:figr}. At first glance, one cannot compare at all. Only when one looks carefully, we can see the minor difference: towards the center of Conway's hair, a couple of hair strands can be seen in the original picture, which are `dissolved' in $A_{{(160)}}$.
+Thus $A_{{(k)}}$ is determined by the entries in $U_{(k)}, \text{ (diagonal of) }\Sigma_{(k)}, \text{ and }V_{(k)}$, and this number of necessary entries is $mk+k+nk = (m+n+1)k$. Initially, $A$ was described by $mn$ reals. So total savings is the difference, namely $mn-(m+n+1)k$. Total saving for $k=160$ is $1075200 - (2081)160 = 742240$ which is approximately $69\%$.
+
+\item A comparison has been shown in \cref{fig:figr}. \texttt{[10]} of the code does this task. At first glance, one cannot compare at all. Only when one looks carefully, we can see the difference in sharpness of the two pictures the minor difference: towards the center of Conway's hair, a couple of hair strands can be seen in the original picture, which are `dissolved' in $A_{{(160)}}$.
 \end{enumerate}
 
 
@@ -155,13 +162,13 @@ Consider the following statements for each point $x\in \R^n$ and each function $
 \end{itemize}
 
 \begin{lemma}\label{diag}
-If $\nabla^2 p(x) = A = \text{diag}(\lambda_1,\cdots,\lambda_n)$ is diagonal (where $p$ is the above quadratic polynomial), there is no $q\in\R^n$ such that both $X(p,q),Y(p,q)$ are true.
+If $\frac{1}{2}\nabla^2 p(x) = A$ is diagonal (where $p$ is the above quadratic polynomial), say this is $\text{diag}(\lambda_1,\cdots,\lambda_n)$, then there is no $q\in\R^n$ such that both $X(p,q),Y(p,q)$ are true.
 \end{lemma}
 \begin{pf}
 For the sake of contradiction, assume $\exists q\in\R^n$ is such that both $X(p,q),Y(p,q)$ are true. $Y(p,q)\implies \nabla p(q) = 0\implies Aq=b\implies \lambda_iq_i=b_i\forall i$.
 
 \textit{Case $1$: Some eigenvalue of $A$ is negative.} WLOG, say $\lambda_1<0$. Then we claim that $e_1$ is a descent direction. Indeed, if $\alpha\in (0,1)$ then \begin{align*}
-f(q+\alpha e_1)-f(q) &= \alpha^2 e_1^\top Ae_1 + 2\alpha q^\top Ae_1 - 2\alpha b^\top e_1 \\
+p(q+\alpha e_1)-p(q) &= \alpha^2 e_1^\top Ae_1 + 2\alpha q^\top Ae_1 - 2\alpha b^\top e_1 \\
 &= \alpha^2 \lambda_1 + 2\alpha(\lambda_1 q_1 - b_1) \\
 &= \alpha^2 \lambda_1 < 0.\end{align*}
 [So $\overline \alpha=1$ here]. This proves $Y(p,q)$ false.
@@ -188,8 +195,8 @@ g(x) &= x^\top U^\top (UDU^\top) Ux - 2b^\top Ux + c\\
 where $\tb = U^\top b$. it satisfies that $\nabla^2 g(x)$ is diagonal for every $x\in\R^n$, so by \Cref{diag} there is no point $x$ such that $X(g,x), Y(g,x)$ are both true. 
 
 Fix a $q\in\R^n$. Then at least one of $X(g,U^\top q)$ or $Y(g,U^\top q)$ is false. Note $g(U^\top q) = p(q)$. \\
-\textit{If $X(g,U^\top q)$ is false,} then $U^\top q$ is a local minima of $g$. So $\exists\delta >0$ such that if $\norm{y-U^\top q}{} < \delta$ then $p(Uy)=g(y) \leq g(U^\top q) = p(q)$. So if $y\in \R^n$ satisfies $\norm{y-q}{} < \delta$ then using the fact that $\norm{U^\top y-U^\top q}{} = \norm{y-q}{}<\delta$ (orthogonal matrices preserve the $2-$norm) we get $p(y)=p(U(U^\top y)) \leq p(q)$ whence $q$ is a local minima for $p$, thus $X(p,q)$ is false.\\
-\text{If $Y(g,U^\top q)$ is false,} then there is a (descent) direction $d$ and $\overline\alpha>0$ such that $g(U^\top q+\alpha d) < g(U^\top q) = p(q)$. Noting that $g(U^\top q+\alpha d) = p(q + \alpha (Ud))$ and setting $\td \sett Ud$ gives $p(q + \alpha \td) < p(q)\forall \alpha\in(0,\alpha)$, whence $p$ has a descent direction $\td$ at $q$. This means $Y(p,q)$ is false.
+\textit{If $X(g,U^\top q)$ is false,} then $U^\top q$ is a local minima of $g$. So $\exists\delta >0$ such that if $\norm{y-U^\top q}{} < \delta$ then $p(Uy)=g(y) \geq g(U^\top q) = p(q)$. So if $y\in \R^n$ satisfies $\norm{y-q}{} < \delta$ then using the fact that $\norm{U^\top y-U^\top q}{} = \norm{y-q}{}<\delta$ (orthogonal matrices preserve the $2-$norm) we get $p(y)= g(U^{\top} y) \geq g(U^{\top} q)= p(q)$ whence $q$ is a local minima for $p$. So $X(p,q)$ is false.\\
+\textit{If $Y(g,U^\top q)$ is false,} then there is a (descent) direction $d$ and $\overline\alpha>0$ such that $g(U^\top q+\alpha d) < g(U^\top q) = p(q)$. Noting that $g(U^\top q+\alpha d) = p(q + \alpha (Ud))$ and setting $\td \sett Ud$ gives $p(q + \alpha \td) < p(q)\forall \alpha\in(0,\alpha)$, whence $p$ has a descent direction $\td$ at $q$. This means $Y(p,q)$ is false.
 
 Since at least one of $X(g,U^\top q), Y(g,U^\top q)$ is false, we conclude that at least one of $X(p,q), Y(p,q)$ is false.
 \qed\end{pf}
@@ -202,13 +209,13 @@ It is true (as seen in class) that if $p$ has a local minima at $\overline x$, t
 
 Let's see why it's \textit{not a local minima}. Indeed $p(\overline x) = 0$ and the sequence of points $\ds\set{q_k=\left(\frac{1}{k},\frac{1}{2k^2}\right)}_{k\in\N}$ converge to $\overline x = (0,0)$ (because their norm $\frac{1}{k}\cdot \sqrt{1+\frac{1}{2k^2}}$ converges to $0$ as $k\to\infty$) and yet $p(q_k) = \frac{-1}{4k^4}<0\forall k\in\N$, proving that there is no ball around $\overline x$ where all points have functional value (under $p$) at least $p(\overline x) = 0$.
 
-Now we show that there is \textit{no descent direction of $p$ at $\overline x$}. Suppose $(a,b)$ is a descent direction. Define $x_\alpha = (\alpha a,\alpha b)$ for $\alpha\in \R$. Then there is some $\overline \alpha>0$ such that $\alpha\in(0,\overline \alpha)\implies p(x_\alpha) = \alpha b(\alpha b-\alpha^2a^2)<0$. By positivity of $\alpha$, this is equivalent to saying $b(b-\alpha a^2)<0$. Note that $b\neq 0$ because the inequality is strict. If $b<0$ then $b-\alpha a^2 < -\alpha x^2 \leq 0$ implying that $p(x_\alpha) > 0$. If $b>0$, then taking $\alpha\in \left(0,\frac{1}{2}\min\set{\frac{b}{a^2},\overline \alpha}\right)$ we get $b-\alpha a^2 > b-\frac{b}{a^2}\cdot a^2 = 0$ whence $p(x_\alpha)>0$. This contradicts the fact that $(a,b)$ is a descent direction.
+Now we show that there is \textit{no descent direction of $p$ at $\overline x$}. Suppose $(a,b)$ is a descent direction. Define $x_\alpha \sett (\alpha a,\alpha b)$ for $\alpha\in \R$. Then there is some $\overline \alpha>0$ such that $\alpha\in(0,\overline \alpha)\implies p(x_\alpha) = \alpha b(\alpha b-\alpha^2a^2)<0$. Because $\alpha\neq 0$, this is equivalent to saying $b(b-\alpha a^2)<0$. Note that $b\neq 0$ because the inequality is strict. If $b<0$ then $b-\alpha a^2 < -\alpha a^2 \leq 0$ (by adding $-\alpha a^{2}$ on both sides of the inequality and noting that $\alpha,a^{2}\geq 0$) implying that $p(x_\alpha) > 0$. If $b>0$, then taking $\alpha\in \left(0,\frac{1}{2}\min\set{\frac{b}{a^2},\overline \alpha}\right)$ we get $b-\alpha a^2 > b-\frac{b}{a^2}\cdot a^2 = 0$ whence $p(x_\alpha)>0$. This contradicts the fact that $(a,b)$ is a descent direction.
 
 \item \textbf{False}.\\
 Consider the set $\Omega = \set{(x_1,x_2)\in \R^2\st x_1\geq0, x_1x_2\geq 1}$ with $c=(0,1)$. \\
-$\Omega$ is closed because $\Omega$ is the intersection of inverse image of $[1,\infty)$ under the function $(x_1,x_2)\to x_1x_2$) and the inverse image of $[0,\infty)$ under the function $(x_1,x_2)\to x_1$), and both of these are continuous functions (we've used the fact that closed sets go to closed sets under inverses of continuous functions and that the intersection of two closed sets is closed). \\
-This is also convex, which is seen as follows. Let $(a,b),(u,v)\in \Omega, \lambda\in[0,1]$. Note that $u,v\geq 0$. Then taking $\mu=1-\lambda\in[0,1]$ gives $\lambda a + \mu u \geq 0$ because $\lambda,a,u\geq 0$, and $(\lambda a + \mu u)(\lambda b + \mu v) = \lambda^2 a + \lambda\mu(bu+av) + \mu^2 v \geq \lambda^2 + \lambda\mu\left(\frac{u}{a} + \frac{a}{u}\right) + \mu^2 \ge \lambda^2 + 2\lambda\mu + \mu^2 = 1$. So $\lambda (a,b) + (1-\lambda)(u,v) \in\Omega$.\\
-Then the objective function is just $f(x_1,x_2) = (0,1)^\top(x_1,x_2) = x_2$. This gives $\ds\inf_{(x_1,x_2)\in\Omega} x_2 = 0$ but there is no $(x_1,x_2)$ such that $x_2=0$ because of the given conditions. So optimal value exists, but optimal solution doesn't.
+$\Omega$ is closed because $\Omega$ is the intersection of inverse image of $[1,\infty)$ under the function $(x_1,x_2)\mapsto x_1x_2$ and the inverse image of $[0,\infty)$ under the function $(x_1,x_2)\to x_1$, and both of these are continuous functions (we've used the fact that inverse of a closed set, under a continuous function, is a closed set; and that the intersection of two closed sets is closed). \\
+This is also convex, which is seen as follows. Let $(a,b),(u,v)\in \Omega, \lambda\in[0,1]$. Note that $a,b,u,v\geq 0$. Then taking $\mu=1-\lambda\in[0,1]$ gives $\lambda a + \mu u \geq 0$ because $\lambda,\mu,a,u\geq 0$, and $(\lambda a + \mu u)(\lambda b + \mu v) = \lambda^2 a + \lambda\mu(bu+av) + \mu^2 v \geq \lambda^2 + \lambda\mu\left(\frac{u}{a} + \frac{a}{u}\right) + \mu^2 \ge \lambda^2 + 2\lambda\mu + \mu^2 = 1$. So $\lambda (a,b) + (1-\lambda)(u,v) \in\Omega$.\\
+Then the objective function is just $f(x_1,x_2) = (0,1)^\top(x_1,x_2) = x_2$. This gives $\ds\inf_{(x_1,x_2)\in\Omega} x_2 = 0$ (each $x_{2}$ is non-negative and, for example, consider the sequence of points $(n,1/n)$) but there is no $(x_1,x_2)$ such that $x_2=0$ because of the given conditions (otherwise $1\leq x_{1}\cdot 0 = 0$). So optimal value exists, but optimal solution doesn't.
 \end{enumerate}
 \subsection*{Appendix}\label{sec3app}
 \begin{thm}\label{gen3}
@@ -241,10 +248,10 @@ Now we show that $(0,0)$ not a local minima. Since $f>g$ on $(0,\epsilon)$, one 
 \end{enumerate}
 
 \soln
-$Q$ is symmetric positive definite, whence $Q=UDU^\top$ with $D$ being a diagonal matrix of positive diagonal entries (say $\lambda_1^2, \cdots,\lambda_n^2$), and $U$ a real orthogonal matrix. For a vector $x = (x_1,\cdots,x_n)$, we denote $\tilde x=U^\top x$ and its coordinates by $\tx=(\tx_1,\cdots,\tx_n)$.
+$Q$ is symmetric positive definite, whence $Q=UDU^\top$ with $D$ being a diagonal matrix of positive diagonal entries (say $\lambda_1^2, \cdots,\lambda_n^2$ with $\lambda_{i}\geq 0$), and $U$ a real orthogonal matrix. For a vector $x = (x_1,\cdots,x_n)$, we denote $\tilde x=U^\top x$ and its coordinates by $\tx=(\tx_1,\cdots,\tx_n)$.
 \begin{enumerate}[leftmargin=*]
-\item Note that $x^\top Qx = \tx^\top D \tx = \sum_i \lambda_i^2\tx_i^geq$ for any $x\in\R^n$. So \begin{itemize}[leftmargin=*]
-\item (Positivity) $x^\top Q x \geq 0$ by definition of positive semi-definiteness (which is implied by $Q\succ 0$). And if $x \neq 0$ then $x^\top Qx > 0$ because $Q\succ 0$; so that if $x^\top Q x=0$ then $x=0$.
+\item Note that $x^\top Qx = \tx^\top D \tx = \sum_i \lambda_i^2\tx_i^{2}$ for any $x\in\R^n$. So \begin{itemize}[leftmargin=*]
+\item (Positivity) $x^\top Q x \geq 0$ by definition of positive semi-definiteness and if $x \neq 0$ then $x^\top Qx > 0$ because $Q\succ 0$; so that if $x^\top Q x=0$ then $x=0$.
 \item (Triangle inequality) Observe $f(x+y)^2= \sum_i \lambda_i^2(\tx_i+\ty_i)^2 = f(x)^2 + f(y)^2 + 2\sum_i \lambda_i^2\tx_i\ty_i$.
 Thus \begin{align*}
 \left(\sum_i\lambda_i^2\tx_i^2\right)\left(\sum_j\lambda_j^2\ty_j^2\right)
@@ -261,14 +268,14 @@ Thus \begin{align*}
 (One can alternately prove Cauchy-Schwarz inequality for real inner products, which it is in this case due to positive definiteness, from which the above inequality follows --- without the eigendecomposition)
 \item (Homogeneity) $f(\lambda x) = \sqrt{\lambda^2 x^\top Qx} = \abs{\lambda}\sqrt{x^\top Qx} = \abs\lambda f(x)$ for any $\lambda\in\R,x\in\R^n$.
 \end{itemize}
-\item  Note that $D$ is invertible, its inverse is simply given by the diagonal matrix with diagonal entries $\frac{1}{\lambda_i}>0$. Taking $P = UD^{-1}U^\top$ gives $PQ = UD^{-1}U^\top UDU^\top = UD^{-1}DU^\top = UU^\top = \pmb 1_n$ and this proves that $P$ is the inverse of $Q$ because $Q$ is a square matrix. 
+\item  Note that $D$ is invertible, its inverse is simply given by the diagonal matrix with diagonal entries $\frac{1}{\lambda_i^{2}}>0$. Taking $P = UD^{-1}U^\top$ gives $PQ = UD^{-1}U^\top UDU^\top = UD^{-1}DU^\top = UU^\top = \pmb 1_n$ and this proves that $P$ is the inverse of $Q$ because $Q$ is a square matrix. 
 
-Denote $\sqrt{Q}\sett U \sqrt D U^\top$ where $D=\text{diag}(\sqrt{\lambda_1},\cdots,\sqrt{\lambda_n})$ and observe that it is symmetric, invertible and satisfies $\sqrt Q^2 = Q$, because $\sqrt{D}$ is invertible (positive eigenvalues) and $\sqrt D^2=D$.
+Denote $\sqrt{Q}\sett U \sqrt D U^\top$ where $\sqrt D=\text{diag}({\lambda_1},\cdots,{\lambda_n})$ and observe that it is symmetric, invertible and satisfies $\sqrt Q^2 = Q$, because $\sqrt{D}$ is invertible (positive eigenvalues) and $\sqrt D^2=D$.
 Recall that the dual norm is given by $\left(\norm{x}{*}=\right)\norm{x}{*,f} = \sup\set{x^\top y : f(y)\leq 1}$. We start with the observation that $f(y) = \sqrt{y^\top Q y} = \sqrt{y^\top \sqrt Q \sqrt Q y} = \sqrt{y^\top \sqrt Q^\top \sqrt Q y} = \norm{\sqrt Qy}{2}$. 
 Note that $y=\frac{Q^{-1}x}{\sqrt{x^\top Q^{-1}x}}$ satisfies $f(y)^2 = y^\top Q y = \frac{x^\top Q^{-1} Q Q^{-1}x}{x^\top Q^{-1}x} = \frac{x^\top Q^{-1}x}{x^\top Q^{-1}x} = 1$ and $y^\top x= \frac{x^\top Q^{-1}x}{\sqrt{x^\top Q^{-1}x}} = \sqrt{x^\top Q^{-1}x}$. This shows that $\norm{x}{*} \geq \sqrt{x^\top Q^{-1}x}$. But Cauchy Schwarz inequality gives 
 $$x^\top y = \left(\left(\sqrt Q\right)^{-1} x\right)^\top\left(\sqrt Qy\right)\leq \norm{\left(\sqrt Q\right)^{-1}x}{2}\norm{\sqrt Qy}{2} \leq \norm{\left(\sqrt Q\right)^{-1}x}{2}=\sqrt{x^\top Q^{-1}x}.$$ This proves that $\norm{x}* = \sqrt{x^\top Q^{-1}x}$.
 
-\item $A\in\R^{n\times n}$. $\ds\norm A 2 ^2 = \max_{\norm x 2 = 1}\norm{Ax}{2}^2 = \max_{\norm x 2 = 1} x^\top (A^\top A)x$. Say $\mu_i$ are the eigenvalues of $A^\top A$ with $\mu_1\geq\cdots\geq \mu_n$. By the previous problem, $\mu_i\geq 0$. And by the calculation shown above, $x^\top A^\top Ax = \sum_i\mu_i\tx_i^2$. Taking $\tx = (1,0,\cdots,0) \eqqcolon \tx_0$ gives $x^\top A^\top Ax = \mu_1$, so $\boxed{\norm A 2 ^2 \ge \mu_1}$ because $\norm{\tx_0}2=1$. Note that we can independently choose $\tx$ because $x,\tx$ are different only by unitary transformation (both invertible and preserves norm: $\norm{Ux}{}^2 = x^\top U^\top U x = x^\top x = \norm x{}^2$).
+\item $A\in\R^{n\times n}$. $\ds\norm A 2 ^2 = \max_{\norm x 2 = 1}\norm{Ax}{2}^2 = \max_{\norm x 2 = 1} x^\top (A^\top A)x$. Say $\mu_i$ are the eigenvalues of $A^\top A$ with $\mu_1\geq\cdots\geq \mu_n$. By the previous problem, $\mu_i\geq 0$. And by the calculation shown above, $x^\top A^\top Ax = \sum_i\mu_i\tx_i^2$ (Here $\tx = U^{\top}x$ where $U$ is determined by the orthogonal diagonalization of $A^{\top}A$). Taking $\tx = (1,0,\cdots,0) \eqqcolon \tx_0,$ thus $x_{0}=U\tx_{0}$, gives $x_{0}^\top A^\top Ax_{0} = \mu_1$, so $\boxed{\norm A 2 ^2 \ge \mu_1}$ because $\norm{\tx_0}2=1$. Note that we can independently choose $\tx$ because $x,\tx$ are different only by unitary transformation (both invertible and preserves norm: $\norm{Ux}{}^2 = x^\top U^\top U x = x^\top x = \norm x{}^2$).
 \\
 The observation that $\max\set{\mu_i}=\mu_1$ gives $\norm{Ax}{2}^2 = \sum_i\mu_i\tx_i^2 \leq \sum_i \mu_1 \tx_i^2 = \mu_1$ whence $\boxed{\norm A 2 ^2 \leq \mu_1}$.
 \end{enumerate}
@@ -300,9 +307,9 @@ Prove or disprove the following statements. All matrices are \textit{symmetric, 
 \item \textbf{True}.\\
 For the sake of contradiction, assume there are indices $i< j$ such that $\abs{A_{ji}}=\abs{A_{ij}}>\abs{A_{kk}}\forall 1\leq k\leq n$. First we see that each $e_k^\top Ae_k = A_{kk}\geq 0$ by positive semi-definiteness. Next $0\leq (e_i+e_j)^\top A (e_i+e_j) = A_{ii} + 2A_{ij} + A_{jj}\implies A_{ii}+ A_{jj} \ge-2A_{ij}$. But, $A_{ii}, A_{jj} < \abs{A_{ij}}\implies A_{ii}+A_{jj} < 2 \abs{A_{ij}}$. Putting these together, we have $2\abs{A_{ij}} > A_{ii} + A_{jj} \ge -2A_{ij}$ which suggests that $A_{ij}\ge 0$ and thus $\abs{A_{ij}}=A_{ij}$. Now $(e_i-e_j)^\top A(e_i-e_j) = A_{ii} + A_{jj} - 2A_{ij} = A_{ii} + A_{jj} - 2\abs{A_{ij}} < 0$, contradicting that $A$ is positive semi-definite.
 \item \textbf{True}.\\
-$A\succeq 0$ implies that all eigenvalues are non-negative. Recall that trace is simply the sum of eigenvalues. But if their sum (of non-negative numbers) is zero, the only way that's possible is that all of them are zero. So $A$ is the conjugate of the zero matrix (because $A = UDU^\top$ for orthogonal $U$ and diagonal $D$ of eigenvalues, which is the $0$ matrix in this case).
+$A\succeq 0$ implies that all eigenvalues are non-negative. Recall that trace is simply the sum of eigenvalues. But if their sum (of non-negative numbers) is zero, the only way that's possible is that all of them are zero. $A$ is a conjugate of the zero matrix (because $A = UDU^\top$ for orthogonal $U$ and diagonal $D$ of eigenvalues), which is the $0$ matrix in this case.
 \item \textbf{True}.\\
-$A=-B\implies A,B$ are simultaneously diagonalizable (because each of them are). So $UAU^\top = -UBU^\top$ is diagonal. This means that if $\lambda_i$'s are the eigenvalues of $A$, the eigenvalues of $B$ are $-\lambda_i$'s. Positive semi-definiteness implies that $\lambda_i\geq 0, -\lambda_i\geq 0\forall i$ and thus $\lambda_i = 0\forall i$. So $UAU^\top = -UBU^\top$ is the $0$ matrix. This means $A=B=0$.
+$A=-B\implies A,B$ are simultaneously diagonalizable (because each of them are diagonalizable and they commute). So $UAU^\top = -UBU^\top$ is diagonal. This means that if $\lambda_i$'s are the eigenvalues of $A$, the eigenvalues of $B$ are $-\lambda_i$'s. Positive semi-definiteness implies that $\lambda_i\geq 0, -\lambda_i\geq 0\forall i$ and thus $\lambda_i = 0\forall i$. So $UAU^\top = -UBU^\top$ is the $0$ matrix. This means $A=B=0$.
 \item \textbf{False}.\\
 For a concrete example, take $A = \begin{bmatrix}1&0\\0&0\end{bmatrix}, B = \begin{bmatrix}0&0\\0&1\end{bmatrix}$ are both symmetric positive semi-definite satisfying $AB=0$, but neither of $A,B$ is $0$. One can find such an example for each dimension by taking $A=\text{diag}(1,0,\cdots,0,0), B=\text{diag}(0,0,\cdots,0,1)$.
 \item \textbf{False}.\\
