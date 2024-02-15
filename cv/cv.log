@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  15 FEB 2024 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  15 FEB 2024 13:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1090,37 +1090,32 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 553--554
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 561--562
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 562--563
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 569--570
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 570--571
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 577--578
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 578--579
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 588--592
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 586--587
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 621--624
-[] 
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 597--601
+[]  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 627--630
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 633--636
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 630--633
 [] 
  []
 
@@ -1130,7 +1125,17 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
 [3]
-Underfull \hbox (badness 10000) in alignment at lines 647--658
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 636--639
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 642--645
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 656--667
 [][] 
  []
 
@@ -1164,7 +1169,7 @@ nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy6.pfb>
-Output written on cv.pdf (4 pages, 467249 bytes).
+Output written on cv.pdf (4 pages, 467382 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
