@@ -1,0 +1,121 @@
+\input{../pre.tex}
+\usepackage{wrapfig}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{CONVEX AND CONIC OPTIMIZATION}\\ Homework $1$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+\author{{\Large NILAVA METYA} \\ 
+\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+\date{February $27$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\newcommand{\conv}{\text{conv}}
+\newcommand{\epi}{\text{epi}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\setlength{\columnsep}{1.2cm}
+\begin{document}
+
+\maketitle
+
+%$\boxed{
+%B(x,r), B^o(x,r) \text{ respectively denote the closed and open balls of radius } r \text{ around }x.}$
+
+\pb
+Let $S\subseteq\R^{n}$.
+\begin{enumerate}[leftmargin=*]
+\item The convex hull of S is the intersection of all convex sets that contain S.
+\item If $S$ is closed, then the convex hull of $S$ is closed.
+\item If $S$ is bounded, then the convex hull of $S$ is bounded.
+\item If $S$ is compact, then the convex hull of $S$ is compact.
+\item The sum of two quasiconvex functions is quasiconvex.
+\item A quadratic function $f(x) = x^{\top} Qx + b^{\top} x + c$ is convex if and only if it is quasiconvex.
+\item Any closed convex set $\Omega\subseteq \R^{n}$ can be written as $\Omega=\set {x\in \R^{n}\st g(x)\le 0}$ for some convex function $g : \R^{n} \to \R$.
+\item If $f : \R^{n} \to \R$ is convex on a convex set $S \subseteq \R^{n}$, then $f$ is continuous on $S$.
+\item Suppose $P \in \R^{n\times n}$ is a matrix with nonnegative entries whose columns each sum up to one. Then, there exists $x\in \R^{n}$ such that $Px=x,x\ge0$,and $\sum_{i}x_{i}=1$.
+\item A continuous function $f:\R^{n}\to\R$ satisfying the midpoint convexity property $$f\left(\frac{x+y}{2}\right) \leq \frac{f(x)+f(y)}{2}\forall x,y\in\R^{n}$$ is convex.
+\end{enumerate}
+
+\soln
+
+\begin{enumerate}[leftmargin=*]
+\item  \textbf{True}.
+
+Let $\cC=\conv(S)$ as defined in class (collection of convex combinations) and let $\cX$ be the intersection of all convex sets that contain $S$. \\It is clear that $S\subseteq \cC$ whence $\boxed{\cX\subseteq \cC}$ by the description of $\cX$. \\Now, if $T$ is a convex set containing $S$, then any convex combination $x$ of points in $S$ is a convex combination of points in $T$, so $x\in T$. This shows that $\cC\subseteq T$. Again by description of $\cX$, we have $\boxed{\cC\subseteq \cX}$.
+
+\item \textbf{False}.
+
+\begin{multicols}{2}
+Consider $S = \set{(x,y)\in\R^{2}\st y\ge e^{-\abs x}}$. We'll show that $\cC\sett\conv (S)$ is $\cX\sett\set{(x,y)\in\R^{2}\st y>0}$. Clearly $S\subseteq\cX$ because exponential takes only positive values, so $\boxed{\cC=\conv(S)\subseteq \conv(\cX) = \cX}$, where the last equality is true because $\cX$ is convex (if two points have positive $y-$coordinate, so do their convex combinations). \\On the other hand, say $(a,b)\in\cX$, pick a large enough $\theta$ such that $\min(\abs{a+\theta}, \abs{a-\theta}) > \ln\frac1b$. This ensures that $e^{-\abs{a\pm\theta}} < b$ so that $(a\pm\theta,b)\in S$ and thus their average $(a,b)\in \cC$. This proves that $\boxed{\cX\subseteq \cC}$. \\
+So $\cX = \conv(S)$ where $S$ is closed but $\cX$ (the strict upper half plane) is not.
+
+
+\includegraphics[width=0.45\textwidth]{closed.png}
+\captionof*{figure}{$S$ is the epigraph of this function}
+\end{multicols}
+
+\item \textbf{True}.
+
+$S$ is bounded, so $\exists\delta>0$ such that $S\subseteq B(0,\delta)$. Recall that $B(0,\delta)$ is convex. This implies that $\conv(S)\subseteq \conv(B(0,\delta)) = B(0,\delta)$, whence $\text{conv}(S)$ is bounded.
+\item \textbf{True}.
+
+We'll use the fact that a set in Euclidean space is compact iff it is sequentially compact. We say that a set $T$ is sequentially compact if every sequence of points in $T$ has a convergent subsequence (with limit in $T$). $\boxed{\text{We will use a}\bullet \text{ in subscript to suppress the lower index of a sequence}.}$\\
+Assume $S$ is compact (hence sequentially compact). It is also important to note that $[0,1]$ is (sequentially) compact. Consider a sequence of points $\set{a_{k}}_{{k\in\N}}$ in $\conv(S)$. By Caratheodory's theorem, for each $a_{k}$, there are $n+1$ non-negative reals $\lambda^{(k)}_{1},\cdots,\lambda^{(k)}_{n+1}\in[0,1]$ adding to $1$ and $n+1$ points $x^{(k)}_{1}, \cdots,x^{(k)}_{1}\in S$ such that $\ds a_{k} = \sum_{i=1}^{n}\lambda^{(k)}_{i}x^{(k)}_{i}$ (I want to emphasize again that this is for each $a_{k}$). \\
+Consider the sequence $\set{\lambda^{(1)}_{k}}_{k\in\N}$. This is a sequence in the compact unit interval and thus has a convergent subsequence, say $\set{\lambda^{(1)}_{d^{(1)}_{k}}}_{k\in\N}$. Let the limit of this subsequence be $\lambda^{(1)}$. Next note that $\ds\set{x^{(1)}_{d^{(1)}_{k}}}_{k\in\N}$ is a sequence in the compact set $S$ and thus has a convergent subsequence, say $\set{x^{(1)}_{\td^{(1)}_{k}}}_{k\in\N}$. So $\set{\td^{(1)}_{k}}_{k\in\N}$ is a subsequence of $\set{d^{(1)}_{k}}_{k\in\N}$, and thus does not affect the convergence of $\lambda^{(1)}_{\td^{(1)}_{k}}$. Let the limit of $\set{x^{(1)}_{\td^{(1)}_{k}}}_{k\in\N}$ be $x^{(1)}\in S$. Notice that $\ds\lim_{{k\to\infty}}\lambda^{(1)}_{\td^{(1)}_{k}}x^{(1)}_{\td^{(1)}_{k}} = \lambda^{(1)}x^{(1)}$, which happens because
+\begin{align*}\ds\norm{\lambda^{(1)}_{\td^{(1)}_{k}}x^{(1)}_{\td^{(1)}_{k}} - \lambda^{(1)}x^{(1)}}{}
+&\leq \norm{\lambda^{(1)}_{\td^{(1)}_{k}}x^{(1)}_{\td^{(1)}_{k}} - \lambda^{(1)}_{\td^{(1)}_{k}}x^{(1)}}{} + \norm{\lambda^{(1)}_{\td^{(1)}_{k}}x^{(1)} - \lambda^{(1)}x^{(1)}}{}\\
+&= \lambda^{(1)}_{\td^{(1)}_{k}}\underbrace{\norm{x^{(1)}_{\td^{(1)}_{k}} - x^{(1)}}{}}_{\text{can be made arbitrarily small}} + \underbrace{\abs{\lambda^{(1)}_{\td^{(1)}_{k}} - \lambda^{(1)}}}_{{\text{can be made arbitrarily small}}} \norm{x^{(1)}}{}.
+\end{align*}
+By following a similar procedure, one can further extract a subsequence $\set{d^{(2)}_{k}}_{k\in\N}$, which makes $\lambda^{(2)}_{\bullet}$ converge to $\lambda^{(2)}$, and a further sub-subquence $\set{\td^{(2)}_{k}}_{k\in\N}$ which makes $x^{(2)}_{\bullet}$ converge to $x^{(2)}$. Note that this smaller sequence does not affect the convergence of $\lambda^{(1)}_{\bullet}$ and $x^{(1)}_{\bullet}$ (and also their product). By the same argument as above, $\ds\lim_{{k\to\infty}}\lambda^{(2)}_{\td^{(2)}_{k}}x^{(2)}_{\td^{(2)}_{k}} = \lambda^{(2)}x^{(2)}$. \\
+We do this (extracting subsequences in turn for convergence of subsequences of $\lambda^{(1)}_{\bullet},x^{(1)}_{\bullet},\lambda^{(2)}_{\bullet}, x^{(2)}_{\bullet}, \lambda^{(3)}_{\bullet},\cdots$) for a total of $n+1$ times, and finally get a subsequence $\set{\td^{(n+1)}_{k}}_{{k\in\N}}$ which ensures convergence of $\lambda^{(i)}_{\td^{(n+1)}_{k}}\xrightarrow{k\to\infty} \lambda^{(i)}$ and $x^{(i)}_{\td^{(n+1)}_{k}}\xrightarrow{k\to\infty} x^{(i)}$ for every $i=1,\cdots,n+1$. It thus stands that $\lambda^{(i)}\in[0,1]$, $ x^{(i)}\in S\forall i$ and $\ds\sum_{i=1}^{n+1}\lambda^{(i)} = \sum_{i=1}^{n+1}\lim_{{k\to\infty}}\lambda^{(i)}_{\td^{(n+1)}_{k}} = \lim_{{k\to\infty}}\sum_{i=1}^{n+1}\lambda^{(i)}_{\td^{(n+1)}_{k}} = \lim_{{k\to\infty}} 1 = 1$ where the sum and limit could be exchanged because each limit exists. Thus $\set{a_{\td^{(n+1)}_{k}}}_{k\in\N}$ is a subsequence of $\set{a_{k}}_{k\in\N}$ which converges to $\ds a\sett \sum_{i=1}^{n+1}\lambda^{(i)}x^{(i)}$. $a\in \conv(S)$ because each $x^{(i)}\in S$ by construction and the $\lambda^{(i)}$'s form a convex weight for the $x^{(i)}$'s.
+
+\item \textbf{False}.
+
+Consider $f(x) = x^{3}, g(x) = x^{2}$. Then $f$ is quasiconvex with sublevel sets $S_{\alpha}(f) = \left(-\infty,\alpha^{\frac13}\right]$ and $g$ is quasiconvex with sublevel sets $S_{\alpha}(g) = \begin{cases}\left[-\sqrt\alpha,\sqrt\alpha\right] &\text{if }\alpha \geq 0\\\varnothing&\text{otherwise}
+\end{cases}$. But $(f+g)(x) = x^{3}+x^{2}$ is not quasiconvex. Indeed, $f+g\leq 0\iff x^{2}(x+1)\leq 0\iff x=0\text{ or } x \leq -1$, so $S\sett S_{0}(f+g) = (-\infty,-1]\cup \set{0}$ which is not convex because $\frac{-1+0}{2} = \frac{-1}{2}\notin S$ even though $0,-1\in S$.
+
+\item
+
+\item
+
+\item \textbf{False}.
+
+The counterexample is obtained by taking $S=[0,1]\subseteq \R$ and $f(x) = \pmb 1_{x=1} = \begin{cases}
+0 & \text{if } 0\leq x < 1\\
+1 & \text{otherwise}
+\end{cases}$. In each dimension, there is a counterexample, namely $S=[0,1]^{n}\subseteq\R^{n}$ and $f=\pmb 1_{x=(1,\cdots,1)}$. $S$ is clearly convex. The function is convex because it is constant $0$ except for one point and if $p=(1,\cdots,1)$ and $q\in S\smallsetminus \set{p}$ then for any $\lambda\in(0,1]$ we have $\lambda p + (1-\lambda)q\neq (1,\cdots,1)$ whence $f(\lambda p + (1-\lambda)q) = 0 \leq \lambda = \lambda f(p) + (1-\lambda)f(q)$. But clearly $f$ is not continuous.
+
+\item
+
+\item \textbf{True}.
+
+Say $f$ is midpoint convex (that is, satisfies the given condition). \\
+Consider $\epi(f) = \set{(x,t)\in \R^{n}\times\R\st f(x)\leq t}$. Consider a sequence $\set{(x_{n},t_{n})}_{n\in\N}$ of points in $\epi(f)$ that converge to $(a,s)\in \R^{n}\times\R$. This implies $\ds\lim_{n\to\infty} x_{n} = a, \lim_{n\to\infty} t_{n}=s$. By choice of points, $\ds t_{n}\ge f(x_{n})$ whence $\ds \lim_{n\to\infty} t_{n}\ge \lim_{n\to\infty} f(x_{n}) \stackrel{f \text{ continuous}}{=} f(a)$. By definition, $(a,s)\in\epi(f)$. Thus, $\epi(f)$ is closed. \\
+Say $(x,t),(y,u)\in\epi(f)$. So $u\geq f(y), t\geq f(x)$. Then by midpoint convexity of $f$, we have $f\left(\frac{x+y}{2}\right) \leq \frac{f(x)+f(y)}{2} \leq \frac{u+t}{2}$ and, by definition of $\epi(f)$, this implies $\left(\frac{x+y}{2},\frac{u+t}{2}\right)\in \epi(f)$. So $\epi(f)$ is mid-point convex.\\
+Since $\epi(f)$ is closed and midpoint convex, $\epi(f)$ is convex. This implies $f$ is convex.
+\end{enumerate}
+
+
+
+\end{document}
