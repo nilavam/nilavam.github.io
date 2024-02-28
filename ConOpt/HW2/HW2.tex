@@ -95,9 +95,37 @@ We do this (extracting subsequences in turn for convergence of subsequences of $
 Consider $f(x) = x^{3}, g(x) = x^{2}$. Then $f$ is quasiconvex with sublevel sets $S_{\alpha}(f) = \left(-\infty,\alpha^{\frac13}\right]$ and $g$ is quasiconvex with sublevel sets $S_{\alpha}(g) = \begin{cases}\left[-\sqrt\alpha,\sqrt\alpha\right] &\text{if }\alpha \geq 0\\\varnothing&\text{otherwise}
 \end{cases}$. But $(f+g)(x) = x^{3}+x^{2}$ is not quasiconvex. Indeed, $f+g\leq 0\iff x^{2}(x+1)\leq 0\iff x=0\text{ or } x \leq -1$, so $S\sett S_{0}(f+g) = (-\infty,-1]\cup \set{0}$ which is not convex because $\frac{-1+0}{2} = \frac{-1}{2}\notin S$ even though $0,-1\in S$.
 
-\item
+\item \textbf{True}.
 
-\item
+We already know convexity implies quasiconvexity. We'll prove the (contrapositive of) converse for quadratic polynomals (that is, not convex implies not quasiconvex). Note here that convexity is same as midpoint convexity by problem 1(10) because quadratic polynomials are continuous. Problem 1(10) can be used because this probem has not been used there and thus there is no circular argument.\\
+$f(x) = x^{\top} Q x + b^{\top}x + c$, where $Q$ is symmetric (WLOG). Assume that $f$ is not convex. So $\exists x,y\in\R^{n}$ such that 
+\begin{align*}
+f\left(\frac{x+y}{2}\right) &> \frac{f(x)+f(y)}{2}\\
+\implies \frac{1}{2}(x+y)^{\top}Q(x+y) + {\color{red}b^{\top} (x+y)} &> x^{\top}Qx + y^{\top}Qy + {\color{red}b^{\top} (x+y)}\\
+\implies x^{\top}Qx + y^{\top}Qy + 2 x^{\top}Qy &> 2\left(x^{\top}Qx + y^{\top}Qy\right)\\
+\implies x^{\top}Qx + y^{\top}Qy + 2 x^{\top}Qy &< 0\\
+\implies (x-y)^{\top}Q(x-y) &< 0
+\end{align*}
+Let $z = \begin{cases}x-y &\text{if } b^{\top}(x-y)\ge 0\\ y-x&\text{otherwise}\end{cases}$. So this ensures that $B\sett b^{\top} z\ge 0$ and $A\sett z^{\top}Qz<0$. Note that $B^{2}-4A = B^{2}+4\abs A>0$ so that $\ds \lambda_{\pm}\sett \frac{-B\pm\sqrt{B^{2}-4A}}{2A}$ are well defined real numbers. These are precisely the roots of the polynomial $At^{2}+Bt+1=0$. We thus note that $f(\lambda_{\pm} z) = \lambda_{\pm}^{2}A + \lambda_{\pm} B + c = c-1$. Consider the sublevel set $S\sett S_{c-1} = \set{q\in \R^{n}\st f(q)\leq c-1}$. We've shown that $p_{1}\sett\lambda_{+} z, p_{2}\sett\lambda_{-} z\in S$ because $f(p_{1}) = f(p_{2}) = c-1$. But $\ds \frac{p_{1}+p_{2}}{2} = \frac{\lambda_{+}z + \lambda_{-}z}{2} = \frac{-B}{2A}z$ whence \begin{align*}
+f\left(\frac{p_{1}+p_{2}}{2}\right) &= f\left(\frac{-B}{2A}z\right)\\
+&= \frac{B^{2}}{4A^{2}}A - \frac{B}{2A}B + c\\
+&= \frac{B}{4(-A)} + c \ge c \\
+&> c-1 \\
+\implies \frac{p_{1}+p_{2}}{2} &\notin S.
+\end{align*}
+This proves that $S$ is not convex. So $f$ is not quasiconvex.
+
+
+\item \textbf{True}.
+
+$\Omega$ is closed and convex. For each $x\in \R^{n}$ there is a point $p^{*}\in \Omega$ such that $\ds\inf_{p\in \Omega} \norm{x-p}{} = \norm{x-p^{*}}{}$. This is because the optimal value of $\ds\inf_{p\in \Omega} \norm{x-p}{}$, for a fixed $x$, is same as that obtained by optimizing over $\Omega\cap B(x,R)$ for some large enough radius $R$ such that $B(x,R)\cap \Omega$ is nontrivial (this intersection is closed and bounded and thus there is an optimal solution). \\
+Consider the function $g:\R^{n}\to \R$ given by $g(x) = \ds\inf_{p\in \Omega}\norm{x-p}{}$. Then $g$ is convex. Indeed, if $u,v\in \R^{n}$ and $\lambda\in[0,1]$ then there are points $a,b\in \Omega$ such that $g(u) = \norm{u-a}{}, g(v) = \norm{v-b}{}$, which means that \begin{align*}
+\lambda g(u) + (1-\lambda)g(v) &= \lambda\norm{u-a}{} + (1-\lambda)\norm{v-b}{} \\
+&\ge \norm{\lambda u + (1-\lambda)v - \underbrace{\left[\lambda a + (1-\lambda)b \right]}_{\in \Omega}}{} \\
+&\ge \ds\inf_{p\in \Omega}\norm{\lambda u + (1-\lambda)v-p}{} = g(\lambda u + (1-\lambda)v).
+\end{align*}
+We will show that $\Omega = \set{x\in\R^{n}\st g(x)\le 0}$. By definition, $g(x) = 0\forall x\in\Omega$, so $\Omega\subseteq \set{x\in\R^{n}\st g(x)\le 0}$. For the other inclusion, observe that if $g(x)\le 0$ then $g(x)=0$ because $g$ is the infimum over norms, hence non-negative, so that $\norm{x-p^{*}}{} = 0$ (where $p^{*}\in\Omega$ is the optimal solution for the abovementioned optimization problem). This means $x=p^{*}\in \Omega$. So the other inclusion is also true.
+
 
 \item \textbf{False}.
 
@@ -106,7 +134,20 @@ The counterexample is obtained by taking $S=[0,1]\subseteq \R$ and $f(x) = \pmb 
 1 & \text{otherwise}
 \end{cases}$. In each dimension, there is a counterexample, namely $S=[0,1]^{n}\subseteq\R^{n}$ and $f=\pmb 1_{x=(1,\cdots,1)}$. $S$ is clearly convex. The function is convex because it is constant $0$ except for one point and if $p=(1,\cdots,1)$ and $q\in S\smallsetminus \set{p}$ then for any $\lambda\in(0,1]$ we have $\lambda p + (1-\lambda)q\neq (1,\cdots,1)$ whence $f(\lambda p + (1-\lambda)q) = 0 \leq \lambda = \lambda f(p) + (1-\lambda)f(q)$. But clearly $f$ is not continuous.
 
-\item
+\item \textbf{True}.
+
+\textit{\textbf{First solution}:} (using Farkas lemma) \\
+Consider $A=\begin{bmatrix}& &P\\1 & 1 & \cdots &1 \end{bmatrix} - \begin{bmatrix}&&\pmb 1_{{n\times n}}\\0 & 0 & \cdots &0 \end{bmatrix}\in\R^{(n+1)\times n}$, where $\pmb 1_{n\times n}$ is the $n\times n$ identity matrix, and $b = \begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix}=f_{n+1}\in\R^{n+1}$ the $(n+1)^{\text{st}}$ basic vector in $\R^{n+1}$. Let $\ty = \begin{bmatrix}y_{1}\\\vdots\\y_{n}\\t\end{bmatrix}\in \R^{n}$ be an arbitrary real column vector. Consider the index $k\in\set{1,\cdots,n}$ such that $\ds y_{k} = \min_{i\le i\le n}y_{i}$. Then \begin{align*}
+\left(A^{\top}\ty\right)_{k} &= \sum_{i=1}^{n} p_{ik}y_{i} - y_{k} + t\\
+&= \sum_{i=1}^{n} p_{ik}y_{i} - \sum_{i=1}^{n} p_{ik}y_{k} + t &[\because\text{column sum }=1]\\
+&= \sum_{i=1}^{n} p_{ik}(y_{i}-y_{k}) + t\\
+&\ge t &[\because p_{ik}\ge 0, y_{i}-y_{k}\ge 0]\\
+&= b^{\top}\ty
+\end{align*}
+This means $\set{\ty\st A^{\top}\ty\le 0, b^{\top}\ty >0} = \varnothing$ because $0\ge A^{\top}\ty\ge b^{\top}\ty >0$ is infeasible. By Farkas lemma, $\set{x\in\R^{n}\st Ax=b, x\ge 0}\ne \varnothing$. This simply means that there is a vector $x\in\R^{n}$ such that $(P-\pmb 1_{n\times n})x = 0$ (using the first $n$ rows of $A$) with the properties that $\ds\sum_{i}x_{i}=1$ (using last row of $A$) and $x\ge 0$
+
+\textit{\textbf{Second solution}:} \\
+We know that $P^{\top}\begin{bmatrix}1\\\vdots\\1\end{bmatrix} = \begin{bmatrix}1\\\vdots\\1\end{bmatrix}$ because each column of $P$ sums to $1$. Recall that row rank is same as column rank, whence $\rk (P-\pmb 1_{n\times n}) = \rk \left((P-\pmb 1_{n\times n})^{\top}\right) = \rk(P^{\top}-\pmb 1_{n\times n}) < n$. This means $\ker (P-\pmb 1_{n\times n}) \ne \set{0}$ and so there is some $v\in\R^{n}\smallsetminus\set{0}$ such that $Pv=v$. If each $v_{i}\ge 0$, our required vector is $\frac{v}{\norm v 1}$. If each $v_{i}\le 0$ we can take $x = \frac{-v}{\norm v 1}$ to ensure that $x_{i}\ge 0\forall i$ and $\sum x_{i}=1$. \\Assume otherwise, that is, some indices are positive, some are negative. Then consider $v^{+} = (v_{1}^{+},\cdots,v_{n}^{+})$ where $v_{i}^{+} = \max(0,v_{i})\ge 0$. This means $\ds(Av^{+})_{k} - (v)_{k} = (Av^{+} - v)_{k} = (A(v^{+}-v))_{k} \ge 0$ because $v^{+}-v\ge 0$ and $A$ has nonnegative entries, so $Av^{+}\ge v$. But $Av^{+}\ge 0$ because $A,v^{+}$ all have non-negative entries. This proves $Av^{+}- v^{+}\ge0$. But $\begin{bmatrix}1\\\vdots\\1\end{bmatrix}^{\top} Av^{+} = \begin{bmatrix}1\\\vdots\\1\end{bmatrix}^{\top} v^{+} $ by associativity, whence $\begin{bmatrix}1\\\vdots\\1\end{bmatrix}^{\top}(Av^{+}-v^{+}) = 0$ where the LHS is the sum of entries of the non-negative vector $Av^{+}-v^{+}$. This can only happen when each entry of $Av^{+}-v^{+}$ is $0$. This shows $Av^{+}=v^{+}$. So we are done by taking $x=\frac{v^{+}}{\norm{v^{+}}1}$ because $v^{+}$ is a nonzero vector because of our assumptions.
 
 \item \textbf{True}.
 
@@ -116,6 +157,68 @@ Say $(x,t),(y,u)\in\epi(f)$. So $u\geq f(y), t\geq f(x)$. Then by midpoint conve
 Since $\epi(f)$ is closed and midpoint convex, $\epi(f)$ is convex. This implies $f$ is convex.
 \end{enumerate}
 
+\newpage
+
+\pb
+
+\soln
+
+
+\textit{\underline{Explanation:}}
+
+First note that $\ds x(N) = \sum_{i=0}^{N-1}u(i)A^{N-1-i}b = \underbrace{\begin{bmatrix}A^{N-1}b & A^{N-2}b & \cdots & Ab & b\end{bmatrix}}_{M}\begin{bmatrix}u(0)\\\vdots\\u(N-1)\end{bmatrix}$. Thus one constraint must be $\boxed{Mu = x_{\text{des}}}$, which is linear. 
+
+We want to solve \[\begin{aligned}
+\min_{u} &\sum_{i=0}^{N-1} f(u(i))\\
+\text{s.t. } 
+&M u = x_{\text{des}}
+\end{aligned}\]
+
+
+Next note that $f(a)=\max\left(\abs a, 2\abs a-1\right)$. There are two issues to address while forming affine constraint(s): one is the absolute value, another is the $\max$ function. The first one is addressed by considering a variable $v(i)\ge0$ for each $i\in\set{0,1,\cdots,N-1}$, such that $\boxed{u(i)\le v(i)}$ and $\boxed{-u(i)\le v(i)}$ and taking the tightest such $v(i)$, so the objective function might be written as a minimization of these $\ds\sum_{i=0}^{N-1}f(v(i)) = \sum_{i=0}^{N-1}\max\left(v(i),2v(i)-1\right)$. But now the objective isn't affine. We can further introduce a variable $w(i)$ for each $i$ that satisfies $\boxed{w(i)\ge v(i)}$ and $\boxed{w(i)\ge 2v(i)-1}$, which ensures that $w(i)\ge f(v(i))$ and minimizing $w(i)$ ensures that the optimal value is indeed $f(v(i))$.
+\\
+
+\textit{\underline{The LP formulation:}}
+
+So we propose the following LP:
+\[\begin{aligned}
+\min_{u,v,w} &\sum_{i=0}^{N-1} w(i)\\
+\text{s.t. } 
+&M u = x_{\text{des}}\\
+&-v+u\le 0\\
+&-v-u\le 0\\
+&-w+v\le 0\\
+&2v-\pmb c -w\le 0
+\end{aligned}\]
+where $\pmb c$ is the column vector of length $N$ containing all $1$'s. 
+
+
+See code next page onwards
+
+
+%\textit{\underline{Proving equivalence:}}
+%
+%Our intended problem was 
+%\begin{align*}
+%\min &\sum_{i=0}^{N-1} \max\left(\abs{u(i)}, 2\abs{u(i)}-1\right)\\
+%\text{s.t. } 
+%&M u = x_{\text{des}}.
+%\end{align*}
+%Call this problem $(2)$.
+%
+%Suppose $(u^{*},v^{*},w^{*})$ is a solution to $(1)$, then we will show that $u^{*}$ is a solution to $(2)$. Here $u^{*},v^{*},w^{*}\in\R^{N}$. Clearly $u^{*}$ satisfies $Mu^{*}=x_{\text{des}}$, so $u^{*}$ is feasible to $(2)$.
+%
+%
+%We'll first prove a lemma
+%\begin{lemma}
+%Say $\Omega\subseteq \R$ and $g:\Omega\to \R$ is a non-decreasing function, that is, if $x,y\in\Omega$ are such that $x\ge y$ then $g(x)\ge g(y)$. Then the optimization problem 
+%$$\begin{aligned}
+%\min_{x\in\R^{n}} & \sum_{i=1}^{n} g(\max(\alpha(x_{i}),\beta(x_{i})))\\
+%\textrm{s.t.} & 
+%\end{aligned}$$
+%\end{lemma}
+
+{\includepdf[pages=-,pagecommand={\label{pdf:imgcom}}]{Fuel Optimization/Fuel Optimization.pdf}}
 
 
 \end{document}

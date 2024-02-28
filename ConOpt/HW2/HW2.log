@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  16 FEB 2024 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  24 FEB 2024 16:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1217,7 +1217,38 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 )
 \@quotelevel=\count480
 \@quotereset=\count481
- (./HW2.aux)
+ (./HW2.aux
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom' multiply defined.
+
+
+LaTeX Warning: Label `pdf:imgcom@cref' multiply defined.
+
+)
 \openout1 = `HW2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -1360,7 +1391,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--72
 10 .
  []
 
-<closed.png, id=41, 136.4715pt x 57.717pt>
+<closed.png, id=45, 136.4715pt x 57.717pt>
 File: closed.png Graphic file (type png)
 <use closed.png>
 Package pdftex.def Info: closed.png  used on input line 74.
@@ -1372,40 +1403,187 @@ e of sub-se-quences of $\OML/cmm/m/it/10 ^^U[]; x[]; ^^U[]; x[]; ^^U[]; [] $\T1
 /bch/m/n/10 )
  []
 
-[2 <./closed.png>] [3] (./HW2.aux)
+[2 <./closed.png>] [3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+<Fuel Optimization/Fuel Optimization.pdf, id=79, 614.295pt x 794.97pt>
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf  used on input
+ line 221.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf  used on input
+ line 221.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<Fuel Optimization/Fuel Optimization.pdf, id=82, page=1, 614.295pt x 794.97pt>
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 1>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page1 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 1>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page1 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+[6]
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 1>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page1 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 1>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page1 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 1>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page1 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [7 <./Fuel Optimization/Fuel Optimization.pdf>]
+<Fuel Optimization/Fuel Optimization.pdf, id=165, page=2, 614.295pt x 794.97pt>
+
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 2>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page2 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 2>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page2 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 2>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page2 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [8 <./Fuel Optimization/Fuel Optimization.pdf>]
+<Fuel Optimization/Fuel Optimization.pdf, id=174, page=3, 614.295pt x 794.97pt>
+
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 3>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page3 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 3>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page3 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 3>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page3 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [9 <./Fuel Optimization/Fuel Optimization.pdf>]
+<Fuel Optimization/Fuel Optimization.pdf, id=182, page=4, 614.295pt x 794.97pt>
+
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 4>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page4 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 4>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page4 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 4>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page4 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [10 <./Fuel Optimization/Fuel Optimization.pdf>]
+<Fuel Optimization/Fuel Optimization.pdf, id=188, page=5, 614.295pt x 794.97pt>
+
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 5>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page5 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 5>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page5 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 5>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page5 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [11 <./Fuel Optimization/Fuel Optimization.pdf>]
+<Fuel Optimization/Fuel Optimization.pdf, id=196, page=6, 614.295pt x 794.97pt>
+
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 6>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page6 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 6>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page6 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: Fuel Optimization/Fuel Optimization.pdf Graphic file (type pdf)
+<use Fuel Optimization/Fuel Optimization.pdf, page 6>
+Package pdftex.def Info: Fuel Optimization/Fuel Optimization.pdf , page6 used o
+n input line 221.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [12 <./Fuel Optimization/Fuel Optimization.pdf>] (./HW2.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `HW2.out' has not changed.
-(rerunfilecheck)             Checksum: C5BDB6ED173554C55163B2415772ABD8;78.
+(rerunfilecheck)             Checksum: 36ABF834367DE6A4C1C7A9E3F7240A35;156.
 Package logreq Info: Writing requests to 'HW2.run.xml'.
 \openout1 = `HW2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37072 strings out of 476025
- 714469 string characters out of 5790017
- 1876388 words of memory out of 5000000
- 56933 multiletter control sequences out of 15000+600000
- 549554 words of font info for 90 fonts, out of 8000000 for 9000
+ 37121 strings out of 476025
+ 716102 string characters out of 5790017
+ 1880388 words of memory out of 5000000
+ 56965 multiletter control sequences out of 15000+600000
+ 555997 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,19n,99p,1192b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,19n,99p,1597b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on HW2.pdf (3 pages, 203767 bytes).
+/usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on HW2.pdf (12 pages, 417829 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
