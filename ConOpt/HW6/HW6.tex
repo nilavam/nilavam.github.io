@@ -1,0 +1,89 @@
+\input{../pre.tex}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage[breakable]{tcolorbox}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{CONVEX AND CONIC OPTIMIZATION}\\ Homework $6$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+\author{{\Large NILAVA METYA} \\ 
+\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+\date{May $2$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\newcommand{\conv}{\text{conv}}
+\newcommand{\epi}{\text{epi}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\setlength{\columnsep}{1.2cm}
+\newcommand{\fa}{~\forall}
+\begin{document}
+
+\maketitle
+
+\pb
+
+\begin{enumerate}[leftmargin=*]
+\item Suppose you had a blackbox that given a 3SAT instance would tell you whether it is satisfiable or not. How can you make polynomially many calls to this blackbox to find a satisfying assignment to any satisfiable instance of 3SAT?
+\item Suppose you had a blackbox that given a graph $G$ and an integer $k$ would tell you whether $G$ has a stable set of size larger or equal to $k$. How can you make polynomially many calls to this blackbox to find a maximum stable set of a given graph?
+\end{enumerate}
+
+
+\soln
+
+\begin{enumerate}[leftmargin=*]
+\item Denote the blackbox by $f$. So $f$ takes in a formula (in three variables) and outputs $1$ if satisfiable, and $0$ otherwise. \\
+Let $S$ be a formula in CNF, with variables $x_{1},\cdots,x_{n}$. Treat $S$ as a polynomial in $x_{i}$'s. Assume $S$ is satisfiable, i.e., there are values $a_{1},\cdots,a_{n}\in\set{0,1}$ such that $S(a_{1},\cdots,a_{n})=1$. Often we denote $\pmb a = (a_{1},\cdots,a_{n})$. We will make $n$ calls to the blackbox.
+\begin{cl}
+For each $i\in[n]$, at least one of $f(x_{i}\land S)$ or $f(\overline{x_{i}}\land S)$ is $1$.
+\end{cl}
+\begin{proof}
+If $a_{i}=1$ then $\left(x_{i}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$. 
+If $a_{i}=0$ then $\left(\overline{x_{i}}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$.\end{proof}
+
+We find each $f(x_{i}\land S)$ with the blackbox. For each $i$, if $f(x_{i}\land S) = 1$ then set $a_{i}=1$, otherwise set $a_{i}=0$. Denote $y_{i} \sett \begin{cases}x_{i}&\text{ if }a_{i}=1\\\overline{x_{i}}&\text{ otherwise}\end{cases}$. $\pmb a$ satisfies every $y_{i}S$ by the above. We'll show that $\pmb a$ satisfies $S$. 
+\begin{align*}\left(\bigwedge_{i=1}^{n}(y_{i}S)\right)(\pmb a) &= \left[\left(\bigwedge_{i=1}^{n}y_{i}\right) \land S\right](\pmb a)&[\because \alpha\land \alpha = \alpha]\\
+\implies \prod_{i=1}^{n}(y_{i}\land S)(\pmb a) &= \left(\prod_{i=1}^{n}y_{i}(\pmb a)\right) \cdot S(\pmb a) &[\because(\alpha\land \beta)(\pmb a) = \alpha(\pmb a)\cdot\beta(\pmb a)]\\
+\implies 1 &= \left(\prod_{i=1}^{n}y_{i}(\pmb a)\right) \cdot S(\pmb a) &[\because(y_{i}S)(a) = 1\forall i]\\
+\implies 1 &=  S(\pmb a) &[\because y_{i}(\pmb a) = 1\forall i \text{ by construction}]
+\end{align*}
+\item 
+\end{enumerate}
+
+
+\newpage
+
+\pb
+
+Consider a family of decision problems indexed by a positive integer $k$:
+\subsection*{RANK-$k$-SDP}
+\textbf{Input}: Symmetric $n\times n$ matrices $A_{1},\cdots,A_{m}$ with entries in $\Q$, scalars $b_{1},\cdots,b_{m} \in\Q$. \\
+\textbf{Question}: Is there a real symmetric matrix $X$ that satisfies the constraints
+$$\Tr(A_{i}X) = b_{i},i \in[m], X \succeq 0, rank(X) = k?$$
+
+%{\includepdf[pages=-,pagecommand={\label{pdf:code}}]{graph/graph.pdf}}
+
+
+\end{document}
+
