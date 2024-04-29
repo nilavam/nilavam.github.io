@@ -78,9 +78,161 @@ We find each $f(x_{i}\land S)$ with the blackbox. For each $i$, if $f(x_{i}\land
 
 Consider a family of decision problems indexed by a positive integer $k$:
 \subsection*{RANK-$k$-SDP}
-\textbf{Input}: Symmetric $n\times n$ matrices $A_{1},\cdots,A_{m}$ with entries in $\Q$, scalars $b_{1},\cdots,b_{m} \in\Q$. \\
+\textbf{Input}: Symmetric $N\times N$ matrices $A_{1},\cdots,A_{m}$ with entries in $\Q$, scalars $b_{1},\cdots,b_{m} \in\Q$. \\
 \textbf{Question}: Is there a real symmetric matrix $X$ that satisfies the constraints
-$$\Tr(A_{i}X) = b_{i},i \in[m], X \succeq 0, rank(X) = k?$$
+\begin{equation}\label{rk1}\Tr(A_{i}X) = b_{i},i \in[m], X \succeq 0, \rk(X) = k?\end{equation}
+
+\soln
+
+\subsubsection*{RANK-$1$-SDP:}
+First notice that a symmetric psd matrix $X\in S^{n}$ has rank $1$ iff it has the form $xx^{\top}$ for some $x\in \R^{n}\smallsetminus\set{0}$. So in the underlying problem, the constraints can be rewritten as $b_{i}=\Tr(A_{i}X) = x^{\top}A_{i}x\forall i\in[m]$ and $x\ne 0$. Thus it is clear that \begin{equation}\label{ee}\exists X\in S^{n} \text{ s.t. } X\succeq0,\Tr(A_{i}X) = b_{i}\forall i \in[m], \rk(X) =1\iff \exists x\in \R^{n} \text{ s.t. } x^{\top}A_{i}x = b_{i}\forall i\in[m], x\neq0.\end{equation}
+We will show a reduction \textbf{STABLE-SET} $\longrightarrow$ \textbf{RANK-$1$-SDP}. Let $(G,k)$ be an instance of \textbf{STABLE-SET} where graph $G$ has edges $E$ and vertices $[n]$. Recall that this is same as feasibility of some $v\in \R^{n}$ satisfying $v_{i}(1-v_{i}) = 0~\forall i\in [n], v_{i}v_{j} = 0 ~\forall \set{i,j}\in E, \sum\limits_{i\in[n]} v_{i} \ge k.$\\
+Since each $v_{i}\in \set{0,1}, \sum_{i\in[n]} v_{i}$ whence the last constraint is equivalent to the existence of some $s\in \R$ such that $\left(\sum\limits_{i\in[n]} v_{i}\right)^{2} - k^{2}=s^{2}$. So \textbf{STABLE-SET} is the feasibility of some $v,s$ subject to \begin{equation}\tag{(Q)}\label{Q}\begin{aligned}
+v\in\R^{n}, &~s\in\R\\
+v_{i}(1-v_{i}) &= 0~\forall i\in [n]\\
+v_{i}v_{j} &= 0 ~\forall \set{i,j}\in E\\
+\left(\sum_{i\in[n]} v_{i}\right)^{2}&=k^{2}+s^{2}.
+\end{aligned}\end{equation}
+
+\begin{cl}
+Feasibility of \ref{Q} is equivalent to the feasibility of $v,c,s$ subject to 
+\begin{equation}\tag{(QQ)}\label{QQ}\begin{aligned}
+v\in\R^{n}, c\in\R, &~s\in \R\\
+c^{2}&=1\\
+v_{i}(c-v_{i}) &= 0~\forall i\in [n]\\
+v_{i}v_{j} &= 0 ~\forall \set{i,j}\in E\\
+\left(\sum_{i\in[n]} v_{i}\right)^{2}-s^{2}&=k^{2}.
+\end{aligned}\end{equation}
+\end{cl}
+\begin{proof}
+If $(v,s)$. is feasible to \ref{Q}, then $(v,1,s)$ is clearly feasible to \ref{QQ}.\\
+Now suppose $(v,c,s)$ is feasible to \ref{QQ}. So each $v_{i}\in \set{0,c}\forall i\in[n]$. This means $k^{2}+s^{2} = \left(\sum_{}{i} v_{i}\right)^{2} = \left(\sum_{\substack{i\in[n]\\v_{i}= c}} v_{i}\right)^{2} = c^{2}\left(\sum_{\substack{i\in[n]\\v_{i}\ne 0}} 1\right)^{2} = \left(\sum_{\substack{i\in[n]\\v_{i}\ne 0}} cv_{i}\right)^{2} = \left(\sum_{i} cv_{i}\right)^{2}$. This shows that $(cv,s)$ is feasible to \ref{QQ}.
+\end{proof}
+
+Notice how all constraints in \ref{QQ} are polynomial expressions with only constant terms and homogeneous quadratic terms. This perfectly matches with what we want in the original problem using \cref{ee}. To get an instance of \textbf{RANK-$1$-SDP}, take: \begin{itemize}
+\item The size of matrices $N = n+2$,
+\item $Q = e_{n+1}e_{n+1}^{\top}$ and $q=1$,
+\item $B_{i} = E_{i,n+1} - 2 e_{i}e_{i}^{\top}$ and $r_{i}=0$ for each $i\in[n]$
+\item $A_{ij} = E_{ij} = e_{i}e_{j}^{\top} + e_{j}e_{i}^{\top}$ (which is the $N\times N$ matrix with $1$ in positions $(i,j),(j,i)$ and $0$ elsewhere), $b_{ij}=b_{ji}=0$ for each edge $\set{i,j}\in E$,
+\item $T = \sum\limits_{1\le i,j\le n}e_{i}e_{j}^{\top} - e_{N}e_{N}^{\top}, b = k^{2}$.
+\end{itemize}The above are clearly all rational.
+
+Now consider the constraints on $x$ \begin{equation}\tag{(HQ)}\label{HQ}\begin{aligned}x&\in\R^{N}\\
+x^{\top}Qx&=q\\
+x^{\top}B_{i}x &= r_{i}\forall i\in[n]\\
+x^{\top}A_{ij}x &= b_{ij}\forall \set{i,j}\in E \\
+x^{\top}Tx &= b\end{aligned}\end{equation}
+We show that this answers the same question as \textbf{STABLE-SET} gives on $(G,k)$.
+\begin{cl}
+\ref{QQ} is feasible iff \ref{HQ} is feasible.
+\end{cl}
+\begin{proof}
+A solution $(v,c,s)\in \R^{n}\times \R\times\R$ of \ref{QQ} corresponds to a solution  $x=(v,c,s)\in \R^{N}$ of \ref{HQ}. \begin{align*}
+x^{\top}Qx &= c^{2}  & 1 &= q\\
+x^{\top}B_{i}x &= 2v_{i}c-2v_{i}^{2} &0 &=r_{i}\\
+x^{\top}A_{ij}x &= 2v_{i}v_{j} & 0&=b_{ij}\\
+x^{\top}Tx &= (v_{1}+\cdots+v_{n})^{2} - s^{2} & k^{2} &= b.
+\end{align*}
+Left column matches the LHS and right column matches the RHS of each constraint in \ref{QQ} and \ref{HQ}.
+\end{proof}
+Notice that every solution $x$ of \ref{HQ} is automatically nonzero because of the first constraint: $x_{n+1}^{2}=1$. 
+
+The above shows that $G$ has a stable set of size (at least) $k$ iff \ref{HQ} is feasible, which is a problem of \textbf{RANK-$1$-SDP}. This completes the proof that \textbf{RANK-$1$-SDP} is NP hard because we showed a reduction from an NP hard problem.
+
+\subsubsection*{RANK-$k$-SDP:}
+We will show a reduction \textbf{RANK-$1$-SDP} $\longrightarrow$ \textbf{RANK-$k$-SDP} for $k\ge 2$. Indeed, consider an instance of \textbf{RANK-$1$-SDP} with inputs which are $N\times N$ matrices $A_{1},\cdots,A_{m}\in \Q^{N\times N}$ and scalars $b_{1},\cdots,b_{m}\in\Q$. Consider the following constraints: 
+\begin{equation}\label{rkk}
+\begin{aligned}
+X\in& S^{N+k-1}\\
+\rk(X) &= k\\
+X&\succeq 0\\
+\Tr(E_{ij} X) =&~ 0 ~\forall N < i < N+k, 1\le j\le N\\
+\Tr(E_{ij} X) =&~ 0 ~\forall N < i< j< N+k\\
+\Tr(E_{ii} X) =&~ 0 ~\forall N < i < N+k\\
+\Tr(\tilde A_{i}X) =&~ b_{i}~\forall i \in[m].
+\end{aligned}
+\end{equation}
+Here $\tilde A_{i} = \begin{bmatrix}A_{i}&0\\0&0\end{bmatrix}\in S^{N+k-1}$ obtained by putting appropriate number of $0$'s.
+
+We discuss the above linear constraints one by one. On slight inspection, the above linear constraints deal with four different blocks of $X = \begin{bmatrix}A & B\\B^{\top}&C\end{bmatrix}$ where $A\in S^{N}, B\in \R^{N\times(k-1)}, C\in S^{k-1}$.
+\begin{itemize}
+\item $\Tr(E_{ij} X) = 0 ~\forall N < i < N+k, 1\le j\le N:$ here $E_{ij} = e_{i}e_{j}^{\top}+e_{j}e_{i}^{\top}$. This is just saying that $X_{ij} = X_{ji} = 0$ whenever $i>N$ and $j\in [N]$. In other words $B=0$.
+\item $\Tr(E_{ij} X) = 0 ~\forall N < i< j< N+k:$  This looks at the block $C$ because $j>i>N$. The constraint says that all off-diagonal entries of $C$ are $0$, that is, $C$ is a diagonal matrix.
+\item $\Tr(E_{ii} X) = 0 ~\forall N < i < N+k:$ This says that the diagonal entries of $C$ are all $1$. Using the previous point, $C$ is the identity matrix of size $(k-1)\times (k-1)$.
+\end{itemize}
+
+So this makes $X$ look like $\begin{bmatrix}A&0\\0&I_{k-1}\end{bmatrix}$. Note that $\rk(X) = \rk(A) + \rk(I_{k-1}) = \rk(A) + k-1$, whence $\rk(X) = k\iff \rk(A)=1$. Further $\begin{bmatrix}A&0\\0&I_{k-1}\end{bmatrix}\succeq0\iff A\succeq 0$ because eigenvalues of a block matrix formed of two blocks stacked diagonally is the union of the eigenvalues of the two individual blocks.
+
+\begin{cl}
+\ref{rk1} is feasible iff \ref{rkk} is feasible.
+\end{cl}
+\begin{proof}
+From the above bullet points and the rank discussion, it is clear that a rank $1$ solution $A \succeq 0$ of \ref{rk1} corresponds to a rank $k$ solution $\begin{bmatrix}A&0\\0&I_{k-1}\end{bmatrix}\succeq 0.$
+\end{proof}
+
+This completes the proof that \textbf{RANK-$k$-SDP} is NP hard because we showed a reduction from an NP hard problem.
+
+
+\newpage
+
+\pb
+
+A polynomial $p(x)\sett p(x_{1},\cdots,x_{n})$ is nondecreasing with respect to a variable $x_{i}$ if $\frac{\partial p}{\partial x_{i}}(x)\ge 0\forall x\in\R^{n}$. Show that the problem of deciding whether a degree-$d$ polynomial with rational coefficients is nondecreasing with respect to a particular variable (e.g., $x_{1}$) is
+\begin{enumerate}[label=(\roman*)]
+\item in P if $d<5$.
+\item NP-hard if $d\ge 5$.
+\end{enumerate}
+
+\soln
+
+Set $d=\deg(p)$. Here $p\in\Q[x_{1},\cdots,x_{n}]$. For short, denote $\partial_{i}p \sett \frac{\partial p}{\partial x_{i}}$. 
+
+First note that $\deg(\partial_{i}(p)(x)) < d$ for each $i\in[n]$. This is because (fixing some $i\in[n]$) if $p(x) = x_{i}^{k}q_{k}(x_{-i}) + \cdots + x_{i} q_{1}(x_{-i}) + q_{0}(x_{-i})$ with all $q_{j}\in \Q[x_{-i}]$ ($x_{-i}$ denotes the vector with all variables in $x$ without $x_{i}$), then $d = \max\limits_{0\le j\le k}\set{j+\deg(q_{j})}$ whence $\deg (\partial_{i}p) = \max\limits_{1\le j\le k}\set{j-1+\deg(q_{j})} \le \max\limits_{0\le j\le k}\set{j-1+\deg(q_{j})} = d-1$ as a polynomial in $\Q[x]$.
+
+The problem as mentioned, for each degree $d$, takes input $n$, the number of variables, the rational coefficients that make a polynomial, and an index $i$; and answers the question if the polynomial is non-decreasing in variable $x_{i}$. Denote the input size by $N$ - that is the number of coefficients till degree $d$. The degree $d$ of this polynomial can in fact be found in polynomial time in $N$. So there is a problem for each degree. Call it \textbf{MONO-d}.
+
+\begin{enumerate}[label=(\roman*)]
+\item We will show this by cases on degree of $d'=\deg(\partial_{i}p(x))$. Note that $d'\le 4$ if $d\le 5$.
+\begin{itemize}
+\item[$d=0:$] Then $\partial_{i}p = 0\ge 0$. So non-increasing. Thus we answered in constant time.
+\item[$d'=0:$] Then $\exists b\in \Q$ such that $\partial_{i}p(x) = b$. Non-negativity of the rational constant $b$ can be checked in constant time.
+\item[$d'=1:$] The required derivative looks like $\partial_{i}p(x) = b^{\top}x + c$ for some $b\in\Q^{n}, c\in\Q$. This is $\ge 0$ everywhere on $\R^{n}$ iff $b\ne 0$ and $c\ge 0$. Nonzero-ness of $b$ can be checked in linear (in $n$) time and $c\ge 0$ can be checked in constant time.
+\item[$d'=2$:] The required derivative looks like $\partial_{i}p(x) = \frac12x^{\top}Ax - b^{\top}x + c$ for some $A\in\Q^{n\times n},b\in\Q^{n}, c\in\Q$ and $A$ symmetric. Then:
+\begin{itemize}
+\item Say $A \not\succeq 0$. This is checked in $\mathcal{O}(n^{3})$ time. Then the function $\partial_{i}p$ is unbounded below: along the direction of some eigenvector with negative eigenvalue.
+\item So $A\succeq 0$ now. We have reduced to the problem of minimizing the convex function $\partial_{i}p(x)$ where $x\in\R^{n}$. Recall that if $x\in\R^{n}$ is a minima of this function then it's a critical point. Conversely if $x\in \R^{n}$ is a critical point, then $\nabla(\partial_{i}p)(x) = 0\implies \nabla(\partial_{i}p(x))(y-x)\ge0\forall y\in\R^{n}$ whence it is a minima (convexity was needed here). If there is no $x\in\R^{n}$ such that $(Ax-b=)\partial_{i}p(x)=0$, then there is no minima and the problem is unbounded below. Otherwise assume there is a critical point $v \in\R^{n}$, that is, $Av=b$. In other words, $b$ is in the column span ($=$ row transpose span because $A$ is symmetric) of $A$. Then we claim every critical point takes the same objective. Say $u$ is another critical point. Clearly $Av = Au = b$ whence $A^{\top}(u-v)=A(u-v)=0$. Since $b$ is in the column span of $A$, $b^{\top}(u-v)=0$. But $\partial_{i}p(v) = -\frac12b^{\top}v+c = \frac12b^{\top}u+c=p(u)$. It follows that any critical point $v$ gives a global minima with value $-\frac12b^{\top}v+c$. 
+\end{itemize} 
+Thus our polynomial time algorithm is:
+\begin{enumerate}
+\item Differentiate $p(x)$ to get $A,b,c$ such that $\partial_{i}p(x) = \frac12x^{\top}Ax-b^{\top}x+c$.
+\item Check if $A\succeq 0$. If not, conclude that $p$ is not non-decreasing wrt $x_{i}$ and {\tt{EXIT}} (because $\partial_{i}p$ is then unbounded below). Otherwise go to the next step.
+\item Check if $b$ is in the column span of $A$. If not, conclude that $p$ is not non-decreasing wrt $x_{i}$ and {\tt{EXIT}} (because $\partial_{i}p$ is then unbounded below). Otherwise go to the next step.
+\item Otherwise $\set{x\in\R^{n}\st Ax=b}\neq\varnothing$. Find a solution $\overline x$ to $Ax=b$. The objective $\partial_{i}p(\overline x)$ becomes $-\frac{1}{2}b^{\top}\overline x+c$. If this value is $\ge 0$, conclude that $p$ is non-decreasing wrt $x_{i}$ and {\tt{EXIT}}. Otherwise conclude that $p$ is not non-decreasing wrt $x_{i}$ and {\tt{EXIT}}.
+\end{enumerate}
+This is correct because of the above discussion. This runs in polynomial time in size of input because step (a) takes same number of steps as number of coefficients; step (b) takes $\mathcal{O}(n^{3}) \le \mathcal{O}(N^{3})$ steps; step (c) can be done in polynomial time (in $n$) again (say Gaussian elimination); and step (d) can again be done in polynomial steps in $n$. So overall, the number of steps this algorithm takes is polynomial in the input size $N$.
+\item[$d'=3:$] So $\partial_{i}p(x)$ restricted to $\set{x\in\R^{n}\st x_{1}=x_{2}=\cdots=x_{n}}$ gives a $3-$degree polynomial in one variable which, we know from elementary theory, is unbounded below.
+\end{itemize}
+\item We'll now show a reduction \textbf{COPOS} $\longrightarrow$ \textbf{MONO-$d$} for $d\ge 5$, where \textbf{COPOS} takes input a matrix $M$ and decides whether it is copositive. Given an input $M\in\Q^{n\times n}$ to \textbf{COPOS}, we'll give the input $\ds p(x_{1},\cdots,x_{n+1})\sett x_{n+1} \left(\sum_{1\le i\le j\le n}M_{ij}x_{i}^{2}x_{j}^{2}\right) + x_{1}^{d}$ and variable index $n+1$ to \textbf{MONO-$d$}. This makes $\deg$ of the first term to be $5$ which is why we want $d\ge 5$. Then the following is immediate.
+\begin{cl}
+$M$ is copositive iff $q$ is non-decreasing wrt $x_{n+1}$.
+\end{cl}
+\begin{proof}
+Note that $\ds\partial_{n+1}p(x) = \sum_{1\le i\le j\le n}M_{ij}x_{i}^{2}x_{j}^{2} = \begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}^{\top}M\begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}\ge 0$ for all $x\in\R^{n+1}$ iff $v^{\top}Mv\ge 0\forall v\in\R^{n} $ such that $v\ge 0$ iff $M$ is copositive.
+\end{proof}
+Since \textbf{COPOS} is known to be NP-hard, the above reduction shows that \textbf{MONO-$d$} is NP-hard.
+\end{enumerate}
+
+\newpage
+\pb
+\begin{enumerate}[leftmargin=*]
+\item In the file \texttt{regression\textunderscore data.mat}, you are given $20$ points $(x_{i}, f_{i})$ in $\R^{2}$ where $(x_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{xvec} and $(f_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{fvec}. The goal is to fit a polynomial of degree $7$ \begin{equation}\label{pol} p(x) = c_{0} +c_{1}x+\cdots+c_{7}x^{7}\end{equation} to the data to minimize least square error: \begin{equation}\label{ls}\min_{c_{1},\cdots,c_{7}} \sum_{i=1}^{20}(f_{i}-p(x_{i}))^{2}.\end{equation} The data comes from noisy measurements of an unknown function that is a priori known to be nondecreasing (e.g., the number of calories you intake as a function of the number of Big Macs you eat).
+\begin{enumerate}[label=(\alph*)]
+\item If the underlying function is truly monotone and the noise is not too large, one may hope that least squares would automatically respect the monotonicity constraint. Solve (\ref{ls}) to see if this is the case. Plot the optimal polynomial you get and report the optimal value.
+\item Resolve (\ref{ls}) subject to the constraint that the polynomial (\ref{pol}) is nondecreasing. Plot the optimal polynomial you get and report the optimal value.
+\end{enumerate}
+\end{enumerate}
+
+
 
 %{\includepdf[pages=-,pagecommand={\label{pdf:code}}]{graph/graph.pdf}}
 

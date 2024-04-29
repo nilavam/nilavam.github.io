@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  23 APR 2024 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  29 APR 2024 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1391,19 +1391,91 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr
 /local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
-] [2] [3] (./HW6.aux)
+] [2] [3
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.113 \item
+            The size of matrices $N = n+2$,]
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
+13.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
+File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+)
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 ...r the constraints on $x$ \begin{equation}
+                                                  \tag{(HQ)}\label{HQ}\begin...
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 ...r the constraints on $x$ \begin{equation}
+                                                  \tag{(HQ)}\label{HQ}\begin...
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 ...r the constraints on $x$ \begin{equation}
+                                                  \tag{(HQ)}\label{HQ}\begin...
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 ...r the constraints on $x$ \begin{equation}
+                                                  \tag{(HQ)}\label{HQ}\begin...
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 \begin{equation}
+                      \label{rkk}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 \begin{equation}
+                      \label{rkk}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 \begin{equation}
+                      \label{rkk}
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 \begin{equation}
+                      \label{rkk} [4] [5]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+08.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+) [6] [7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t
+1.enc}] [8]
+(./HW6.aux)
 Package rerunfilecheck Info: File `HW6.out' has not changed.
-(rerunfilecheck)             Checksum: 36ABF834367DE6A4C1C7A9E3F7240A35;156.
+(rerunfilecheck)             Checksum: 6D7198DD758655314577F0B82CAA29D8;312.
 Package logreq Info: Writing requests to 'HW6.run.xml'.
 \openout1 = `HW6.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39345 strings out of 476025
- 774755 string characters out of 5790017
+ 39443 strings out of 476025
+ 776195 string characters out of 5790017
  1878388 words of memory out of 5000000
- 59200 multiletter control sequences out of 15000+600000
- 551464 words of font info for 91 fonts, out of 8000000 for 9000
+ 59259 multiletter control sequences out of 15000+600000
+ 552094 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,12n,99p,1192b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
@@ -1412,18 +1484,22 @@ r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HW6.pdf (3 pages, 135677 bytes).
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on HW6.pdf (8 pages, 230512 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
