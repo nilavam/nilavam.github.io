@@ -2,6 +2,11 @@
 \usepackage{wrapfig}
 \usepackage{multicol}
 \usepackage[breakable]{tcolorbox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{float}
+%\usepackage{listings}
 %\fontfamily{qcr}\selectfont 
 %\usepackage[backend=bibtex]{biblatex}
 \usepackage[
@@ -53,23 +58,87 @@ sorting=ynt
 \soln
 
 \begin{enumerate}[leftmargin=*]
-\item Denote the blackbox by $f$. So $f$ takes in a formula (in three variables) and outputs $1$ if satisfiable, and $0$ otherwise. \\
-Let $S$ be a formula in CNF, with variables $x_{1},\cdots,x_{n}$. Treat $S$ as a polynomial in $x_{i}$'s. Assume $S$ is satisfiable, i.e., there are values $a_{1},\cdots,a_{n}\in\set{0,1}$ such that $S(a_{1},\cdots,a_{n})=1$. Often we denote $\pmb a = (a_{1},\cdots,a_{n})$. We will make $n$ calls to the blackbox.
-\begin{cl}
-For each $i\in[n]$, at least one of $f(x_{i}\land S)$ or $f(\overline{x_{i}}\land S)$ is $1$.
-\end{cl}
-\begin{proof}
-If $a_{i}=1$ then $\left(x_{i}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$. 
-If $a_{i}=0$ then $\left(\overline{x_{i}}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$.\end{proof}
+\item \boxed{\text{Sum, product in boolean expressions will denote \texttt{OR}, \texttt{AND} respectively.}}\\
+Let $f$ be the blackbox. $f$ takes in a formula and outputs $1$ if satisfiable, and $0$ otherwise. \\
+Let $S$ be a formula in CNF, with variables $x_{1},\cdots,x_{n}$. Treat $S$ as a polynomial in $x_{i}$'s. Assume $S$ is satisfiable, i.e., there are values $a_{1},\cdots,a_{n}\in\set{0,1}$ such that $S(a_{1},\cdots,a_{n})=1$. Often we denote $\pmb a = (a_{1},\cdots,a_{n})$. We will make $n$ calls to the blackbox. We find $\pmb a$ using $f$ as in \Cref{alg:sat}.
 
-We find each $f(x_{i}\land S)$ with the blackbox. For each $i$, if $f(x_{i}\land S) = 1$ then set $a_{i}=1$, otherwise set $a_{i}=0$. Denote $y_{i} \sett \begin{cases}x_{i}&\text{ if }a_{i}=1\\\overline{x_{i}}&\text{ otherwise}\end{cases}$. $\pmb a$ satisfies every $y_{i}S$ by the above. We'll show that $\pmb a$ satisfies $S$. 
-\begin{align*}\left(\bigwedge_{i=1}^{n}(y_{i}S)\right)(\pmb a) &= \left[\left(\bigwedge_{i=1}^{n}y_{i}\right) \land S\right](\pmb a)&[\because \alpha\land \alpha = \alpha]\\
-\implies \prod_{i=1}^{n}(y_{i}\land S)(\pmb a) &= \left(\prod_{i=1}^{n}y_{i}(\pmb a)\right) \cdot S(\pmb a) &[\because(\alpha\land \beta)(\pmb a) = \alpha(\pmb a)\cdot\beta(\pmb a)]\\
-\implies 1 &= \left(\prod_{i=1}^{n}y_{i}(\pmb a)\right) \cdot S(\pmb a) &[\because(y_{i}S)(a) = 1\forall i]\\
-\implies 1 &=  S(\pmb a) &[\because y_{i}(\pmb a) = 1\forall i \text{ by construction}]
-\end{align*}
-\item 
+\begin{algorithm}
+\caption{Finding SAT assignment using decision solving blackbox}\label{alg:sat}
+\begin{algorithmic}
+\Require Formula $S$ (which has a satisfiable assignment)
+\Ensure Boolean numbers $a_{1},\cdots,a_{n}$ that satisfy $S$
+\Procedure{FindSat}{$S$}
+\State declare variables $y_{1},\cdots, y_{n}$
+\For{$k = 1, \cdots, n$}
+\State $y_{k}\gets x_{k}$
+\If{$f\left(S\cdot\prod_{i=1}^{k}y_{i}\right)$}
+	\State $a_{k} \gets 1$
+\Else
+	\State $y_{k}\gets \overline{x_{k}}$
+	\State $a_{k} \gets 0$
+\EndIf
+\EndFor
+\State \Return $\pmb a=(a_{1},\cdots,a_{n})$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Let's justify the correctness via the following claims. The first statement in each bullet is a claim, followed by an explanation.
+\begin{itemize}
+\item \textbf{For each $i\in[n]$, at least one of $f(x_{i}\land S)$ or $f(\overline{x_{i}}\land S)$ is \texttt{True}.} If $a_{i}=1$ then $\left(x_{i}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$. 
+If $a_{i}=0$ then $\left(\overline{x_{i}}\land S\right)(\pmb a) = 1\cdot S(\pmb a) = 1$.
+\item \textbf{For any formula $\phi$, and a variable $x$ in it, $f(x\phi)=\texttt{True}$ iff $\phi$ has an assignment such that $x=1$}. Indeed if $f(x\phi)=\texttt{True}$ then there is some $\pmb c\in \set{0,1}^{N}$ (where $N$ is the number of variables in $\phi$) such that $\phi(\pmb c) = x(\pmb c) = 1$. On the other hand if $\pmb c$ is an assignment with $x(\pmb c) = 1 = \phi(\pmb c)$ then clearly $\pmb c$ satisfies $x\phi$. Note here that $x(\pmb c)$ is the coordinate of $\pmb c$ that corresponds to the variable $x$.
+\item \textbf{At the end of the $k^{\text{th}}$ loop (for each $1\le k\le n$), $y_{1}\cdots y_{k}S$ is satisfiable with $y_{1}=\cdots=y_{k}=1$, where $S$ is the input to the above procedure.} (Inductively) assuming this is true till $t^{\text{th}}$ step, we note that the \textbf{if} statement in the $(t+1)^{\text{st}}$ iteration checks $f(S y_{1}\cdots y_{t} \cdot x_{t+1})$. We know that $Sy_{1}\cdots y_{t}$ is satisfiable with $y_{1}=\cdots =y_{t} = 1$. If $f(S y_{1}\cdots y_{t} x_{t+1})=1$ then $Sy_{1}\cdots y_{t}$ has a satisfiable assignment with $x_{t+1}=1$ (by the previous bullet) which is assigned to $a_{t+1}$ and $y_{t+1}$ is taken to be $x_{t+1}$ itself. 
+If not, then (by first bullet) $Sy_{1}\cdots y_{t}  \overline{x_{t+1}}$ is satisfiable with $x_{t+1}=0$ which is assigned to $a_{t+1}$ again, but $y_{t+1}$ is taken to be $\overline{x_{t+1}}$. In either case, $S\cdot y_{1}\cdots y_{t+1}$ is satisfiable, by the end of the loop. The base case for $k=1$ is again true due to the previous bullet point.
+\item \textbf{$y_{i} = a_{i}\cdot x_{i}+\overline{a_{i}}\cdot \overline{x_{i}}~\forall i\in[n]$}. This is clear by the construction. Note that this is exactly $\overline{a_{i}\texttt{ XOR }x_{i}}$.
+\item \textbf{At the end, $y_{1}\cdots y_{n}S$ is satisfiable with the assignment  $x_{i}=a_{i}~\forall i$.} Using the third and fourth bullet above, $y_{i}=1$ exactly when $x_{i}=a_{i}$.
+\end{itemize}
+The above algorithm takes only $\mathcal O(n \cdot T(f))$ steps where $T(f)$ is the runtime of the blackbox $f$ (or $\mathcal O(n^{3} \cdot T(f))$ if we consider that it takes $\mathcal O(k)$ steps to form $y_{1}\cdots y_{k}S$ before passing it to $f$). Thus it's a polynomial-time reduction.
+
+\item We have a decision problem solving submodule $\textsc{HasStab}(G,k)$ that takes input a graph $G$, an integer $k$ and outputs \texttt{True} if $G$ has a stable set of size (at least) $k$, and \texttt{False} otherwise. We also use a module $\textsc{Neigh}(G,v)$ which returns all neighbors of $v$ in $G$. 
+
+\begin{algorithm}
+\caption{Finding stable set using decision solving blackbox}\label{alg:cap}
+\begin{algorithmic}
+\Require Graph $G = (V,E)$ with $V=[n]$
+\Ensure Maximal stable set in $G$
+\Procedure{MaxStab}{$G$}
+\State $n \gets$ number of vertices$, k\gets 0$
+\For{$i = 1, \cdots, n$}\Comment{finding maximum stable set size}
+\If{$\textsc{HasStab}(G,i)$}
+	\State $k \gets i$
+\EndIf
+\EndFor
+\State $S \gets \varnothing, t \gets k, G' \gets G$ \Comment{initialize a container for max stable set and make dummy variables}\For{$i = 1, \cdots, n$}\Comment{finding maximum stable set}
+\State $G' \gets G'\smallsetminus \set{i}$
+%\If{$i$ is not a vertex in $G'$}\State{continue}\EndIf
+\If{($\texttt{NOT } \textsc{HasStab}(G',t)$)}
+	\State append $i$ to $S$
+	\State $t \gets t-1$
+	\State $G' \gets$ $G'\smallsetminus \textsc{Neigh}(G',i)$
+\EndIf
+\EndFor
+\State \Return $S$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Let's show that this algorithm finds a maximal stable set. It is clear that the first \textbf{for} loop finds the size of maximal stable set $k$. From now on, when we say `loop', we refer to the second \textbf{for} loop. In the following enumerations, the first lines contains claims in bold, followed by a proof in the rest of the paragraph.
+
+\begin{itemize}
+\item \textbf{$S$ always remains stable}. Whenever $S$ is updated with, say, $v$, $G'$ is restricted to the non-neghbors of $v$, ensuring that every future update will only accept vertices in $S$ among non-neighbors of $v$. 
+\item \textbf{At the start and end of every reiteration, $G'$ has a stable set of size $t$, for the respective current values}. (Inductively) assume true at the start of some loop. If removing $i$ from $G$ reduces the stable set number (by $1$ because one vertex is removed), which is exactly how $t$ is updated. If true at the end of some loop, then automatically true for the start of the next loop.
+\item \textbf{At the end of every reiteration, $\abs S +t = k$}. This is because $t$ is updated to decrease by $1$ exactly when $S$ gets a new vertex.
+\item \textbf{After the $i^{\text{th}}$ iteration, the only vertices remaining in $G'$ are a subset of $[n]\smallsetminus[i]$.} This is beacuse vertex $i$ is removed at the $t^{\text{th}}$ iteration.
+\item \textbf{At the end of the iteration corresponding to $i=n$, the value of $t$ is $0$.} At the beginning of this iteration, $G'$ is either $\set{n}$ or $\varnothing$ (due to the previous bullet point), so that the only possible values of $t$ are $0,1$ (by the second bullet above). If $t=1$ then $G'=\set{n}$ so that only the \textbf{else} brach is executed and $t$ is updated to $0$. If $t$ was already $0$, then there is no update and the iteration ends with $t=0$. So at the end, $t=0$ anyway.
+\end{itemize}
+
+Due to the third and fifth bullet points above, the set $S$ we end with satisfies that $\abs S = k$ whence it has the same cardinality as a maximal stable set. The first bullet point shows that it is stable. Thus the algorithm outputs a maximal stable set.
+
+Now coming to runtime. The number of steps is $\mathcal O(n\cdot T(\textsc{HasStab})+n\cdot T(\textsc{Neigh}))$ where $T(\textsc{HasStab})$ is the time to run the module $\textsc{HasStab}$ and $T(\textsc{Neigh})$ is the time to find neighbors of a vertex and remove it from the graph. The latter is clearly polynomial-time in terms of the input. Thus this is a poly-time reduction.
+
 \end{enumerate}
+
 
 
 \newpage
@@ -192,15 +261,15 @@ First note that $\deg(\partial_{i}(p)(x)) < d$ for each $i\in[n]$. This is becau
 The problem as mentioned, for each degree $d$, takes input $n$, the number of variables, the rational coefficients that make a polynomial, and an index $i$; and answers the question if the polynomial is non-decreasing in variable $x_{i}$. Denote the input size by $N$ - that is the number of coefficients till degree $d$. The degree $d$ of this polynomial can in fact be found in polynomial time in $N$. So there is a problem for each degree. Call it \textbf{MONO-d}.
 
 \begin{enumerate}[label=(\roman*)]
-\item We will show this by cases on degree of $d'=\deg(\partial_{i}p(x))$. Note that $d'\le 4$ if $d\le 5$.
+\item We will show this by cases on degree of $d'=\deg(\partial_{i}p(x))$. Note that $d'\le 3$ if $d\le 4$.
 \begin{itemize}
 \item[$d=0:$] Then $\partial_{i}p = 0\ge 0$. So non-increasing. Thus we answered in constant time.
 \item[$d'=0:$] Then $\exists b\in \Q$ such that $\partial_{i}p(x) = b$. Non-negativity of the rational constant $b$ can be checked in constant time.
-\item[$d'=1:$] The required derivative looks like $\partial_{i}p(x) = b^{\top}x + c$ for some $b\in\Q^{n}, c\in\Q$. This is $\ge 0$ everywhere on $\R^{n}$ iff $b\ne 0$ and $c\ge 0$. Nonzero-ness of $b$ can be checked in linear (in $n$) time and $c\ge 0$ can be checked in constant time.
+\item[$d'=1:$] The required derivative looks like $\partial_{i}p(x) = b^{\top}x + c$ for some $b\in\Q^{n}\smallsetminus \set{0}, c\in\Q$. This is not everywhere non-negative because degree $1$.
 \item[$d'=2$:] The required derivative looks like $\partial_{i}p(x) = \frac12x^{\top}Ax - b^{\top}x + c$ for some $A\in\Q^{n\times n},b\in\Q^{n}, c\in\Q$ and $A$ symmetric. Then:
 \begin{itemize}
-\item Say $A \not\succeq 0$. This is checked in $\mathcal{O}(n^{3})$ time. Then the function $\partial_{i}p$ is unbounded below: along the direction of some eigenvector with negative eigenvalue.
-\item So $A\succeq 0$ now. We have reduced to the problem of minimizing the convex function $\partial_{i}p(x)$ where $x\in\R^{n}$. Recall that if $x\in\R^{n}$ is a minima of this function then it's a critical point. Conversely if $x\in \R^{n}$ is a critical point, then $\nabla(\partial_{i}p)(x) = 0\implies \nabla(\partial_{i}p(x))(y-x)\ge0\forall y\in\R^{n}$ whence it is a minima (convexity was needed here). If there is no $x\in\R^{n}$ such that $(Ax-b=)\partial_{i}p(x)=0$, then there is no minima and the problem is unbounded below. Otherwise assume there is a critical point $v \in\R^{n}$, that is, $Av=b$. In other words, $b$ is in the column span ($=$ row transpose span because $A$ is symmetric) of $A$. Then we claim every critical point takes the same objective. Say $u$ is another critical point. Clearly $Av = Au = b$ whence $A^{\top}(u-v)=A(u-v)=0$. Since $b$ is in the column span of $A$, $b^{\top}(u-v)=0$. But $\partial_{i}p(v) = -\frac12b^{\top}v+c = \frac12b^{\top}u+c=p(u)$. It follows that any critical point $v$ gives a global minima with value $-\frac12b^{\top}v+c$. 
+\item Say $A \not\succeq 0$. This is checked in $\mathcal{O}(n^{3})$ time. Then the function $\partial_{i}p$ is unbounded below: for example, along the direction of some eigenvector with negative eigenvalue.
+\item So $A\succeq 0$ now. We have reduced to the problem of minimizing the convex function $\partial_{i}p(x)$ where $x\in\R^{n}$. Recall that if $x\in\R^{n}$ is a minima of this function then it's a critical point. Conversely if $x\in \R^{n}$ is a critical point, then $\nabla(\partial_{i}p)(x) = 0\implies \nabla(\partial_{i}p(x))^{\top}(y-x)\ge0\forall y\in\R^{n}$ whence it is a minima (convexity was needed here). If there is no $x\in\R^{n}$ such that $(Ax-b=)\partial_{i}p(x)=0$, then there is no minima and the problem is unbounded below. Otherwise assume there is a critical point $v \in\R^{n}$, that is, $Av=b$. In other words, $b$ is in the column span ($=$ row transpose span because $A$ is symmetric) of $A$. Then we claim every critical point takes the same objective. Indeed if $u$ is another critical point, then $Av = Au = b$ whence $A^{\top}(u-v)=A(u-v)=0$. Since $b$ is in the column span of $A$, $b^{\top}(u-v)=0$. But $\partial_{i}p(v) = -\frac12b^{\top}v+c = \frac12b^{\top}u+c=p(u)$. It follows that any critical point $v$ gives a global minima with value $-\frac12b^{\top}v+c$. 
 \end{itemize} 
 Thus our polynomial time algorithm is:
 \begin{enumerate}
@@ -214,10 +283,10 @@ This is correct because of the above discussion. This runs in polynomial time in
 \end{itemize}
 \item We'll now show a reduction \textbf{COPOS} $\longrightarrow$ \textbf{MONO-$d$} for $d\ge 5$, where \textbf{COPOS} takes input a matrix $M$ and decides whether it is copositive. Given an input $M\in\Q^{n\times n}$ to \textbf{COPOS}, we'll give the input $\ds p(x_{1},\cdots,x_{n+1})\sett x_{n+1} \left(\sum_{1\le i\le j\le n}M_{ij}x_{i}^{2}x_{j}^{2}\right) + x_{1}^{d}$ and variable index $n+1$ to \textbf{MONO-$d$}. This makes $\deg$ of the first term to be $5$ which is why we want $d\ge 5$. Then the following is immediate.
 \begin{cl}
-$M$ is copositive iff $q$ is non-decreasing wrt $x_{n+1}$.
+$M$ is copositive iff $p$ is non-decreasing wrt $x_{n+1}$.
 \end{cl}
 \begin{proof}
-Note that $\ds\partial_{n+1}p(x) = \sum_{1\le i\le j\le n}M_{ij}x_{i}^{2}x_{j}^{2} = \begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}^{\top}M\begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}\ge 0$ for all $x\in\R^{n+1}$ iff $v^{\top}Mv\ge 0\forall v\in\R^{n} $ such that $v\ge 0$ iff $M$ is copositive.
+Note that $\ds\partial_{n+1}p(x) = \sum_{1\le i\le j\le n}M_{ij}x_{i}^{2}x_{j}^{2} = \begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}^{\top}M\begin{bmatrix}x_{1}^{2}\\\vdots\\x_{n}^{2}\end{bmatrix}\ge 0$ for all $x\in\R^{n+1}$, iff $v^{\top}Mv\ge 0\forall v\in\R^{n} $ satisfying $v\ge 0$, iff $M$ is copositive.
 \end{proof}
 Since \textbf{COPOS} is known to be NP-hard, the above reduction shows that \textbf{MONO-$d$} is NP-hard.
 \end{enumerate}
@@ -225,10 +294,73 @@ Since \textbf{COPOS} is known to be NP-hard, the above reduction shows that \tex
 \newpage
 \pb
 \begin{enumerate}[leftmargin=*]
-\item In the file \texttt{regression\textunderscore data.mat}, you are given $20$ points $(x_{i}, f_{i})$ in $\R^{2}$ where $(x_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{xvec} and $(f_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{fvec}. The goal is to fit a polynomial of degree $7$ \begin{equation}\label{pol} p(x) = c_{0} +c_{1}x+\cdots+c_{7}x^{7}\end{equation} to the data to minimize least square error: \begin{equation}\label{ls}\min_{c_{1},\cdots,c_{7}} \sum_{i=1}^{20}(f_{i}-p(x_{i}))^{2}.\end{equation} The data comes from noisy measurements of an unknown function that is a priori known to be nondecreasing (e.g., the number of calories you intake as a function of the number of Big Macs you eat).
+\item In the file \texttt{regression\textunderscore data.mat}, you are given $20$ points $(x_{i}, f_{i})$ in $\R^{2}$ where $(x_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{xvec} and $(f_{i})_{i=1,\cdots,20}$ are the entries of the vector \texttt{fvec}. The goal is to fit a polynomial of degree $7$ \begin{equation}\label{pol} p(x) = c_{0} +c_{1}x+\cdots+c_{7}x^{7}\end{equation} to the data to minimize least square error: \begin{equation}\label{ls}\min_{c_{0},\cdots,c_{7}} \sum_{i=1}^{20}(f_{i}-p(x_{i}))^{2}.\end{equation} The data comes from noisy measurements of an unknown function that is a priori known to be nondecreasing (e.g., the number of calories you intake as a function of the number of Big Macs you eat).
 \begin{enumerate}[label=(\alph*)]
 \item If the underlying function is truly monotone and the noise is not too large, one may hope that least squares would automatically respect the monotonicity constraint. Solve (\ref{ls}) to see if this is the case. Plot the optimal polynomial you get and report the optimal value.
 \item Resolve (\ref{ls}) subject to the constraint that the polynomial (\ref{pol}) is nondecreasing. Plot the optimal polynomial you get and report the optimal value.
+\end{enumerate}
+\item In the file \texttt{regression\_data.mat}, you are also given $30$ points $(x^{1}_{i} , x^{2}_{i} , g_{i})$ in $\R^{3}$ where $(x^{1}_{i})_{i=1,\cdots,30}$ are the entries of the vector \texttt{x1vec}, $(x^{2}_{i})_{i=1,\cdots,30}$ are the entries of \texttt{x2vec} and $(g_{i})_{i=1,\cdots,30}$ are the entries of the vector \texttt{gvec}. The goal in this case is to fit a polynomial of degree $4$: $$p\sett p(x_{1},x_{2}) = c_{0}+c_{1}x_{1} + c_{2}x_{2}+ c_{3}x_{1}^{2}+ c_{4}x_{1}x_{2}+c_{5}x_{2}^{2}+\cdots+c_{15}x_{2}^{4}$$ to the data to minimize least square error: \begin{equation}\label{ls2}
+\min_{c_{0},\cdots,c_{15}} \sum_{i=1}^{30}(g_{i}-p(x_{i}))^{2}.
+\end{equation}
+\begin{enumerate}[label=(\alph*)]
+\item Solve \ref{ls2} and plot the resulting polynomial together with the data points. Report the optimal value of the problem (denoted by $\eta^{*}$). Is the optimal polynomial convex?
+\item Find a convex polynomial $p$ of degree no more than $4$ such that its least squares error $$\eta\sett \sum_{i=1}^{30}(g_{i}-p(x_{i}))^{2}$$ satisfies $\eta < 1.75\eta^{*}$.
+\end{enumerate}
+\end{enumerate}
+
+\soln
+\begin{enumerate}[leftmargin=*]
+\item 
+\begin{enumerate}[label=(\alph*)]
+\item For this, we simply create an unconstrained minimization problem for \ref{ls} with parameters being $c_{i}$. 
+The optimal value comes out to be \texttt{125.032580376} and the optimal polynomial comes out to be $\tt -54.6891282979 - 115.453894584x + 433.37004128*x^2 - 371.217387861*x^3 + 143.250393347*x^4 - 28.3156335072*x^5 + 2.79906045685*x^6 - .0.109762103312*x^7$. Here's the plotted figure:
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=7cm]{leastsquare.png}}
+\caption{Optimal polynomial without constraints}
+\end{figure}
+
+\begin{minipage}[c]{0.9\textwidth}
+\lstinputlisting[language=MatLab]{1a.m}
+\end{minipage}
+
+\item For this, we simply create a constrained minimization problem for \ref{ls} with parameters being $c_{i}$ with the constraint that the derivative is non-negative everywhere. Due to Hilbert, non-negativity everywhere is equivalent to the polynomial being a SOS because it's univariate in this case. 
+The optimal value comes out to be \texttt{329.348105777} and the optimal polynomial comes out to be $\tt -77.1285656362 + 67.5949992492*x - 10.6081243942*x^2 - 5.07857316587*x^3 + 1.41408502117*x^4 + 0.116990340254*x^5 - 0.0625905841674*x^6 + 0.00476800398802*x^7$. 
+
+\begin{figure}
+\centerline{\includegraphics[width=7cm]{leastsquareinc.png}}
+\caption{Optimal non-decreasing polynomial}
+\end{figure}
+
+\begin{minipage}{0.9\textwidth}
+\lstinputlisting[language=MatLab]{1b.m}
+\end{minipage}
+\end{enumerate}
+\item 
+\begin{enumerate}[label=(\alph*)]
+\item We solve an unconstrained optimization as in \ref{ls2} with parameters being $c_{0},\cdots,c_{15}$. The optimal error came out to be $\eta^{*}=\tt0.607567008796$ and the optimal polynomial came out to be $p^{*} = \tt 0.255317133343-0.969928883268*x_1+2.14288177956*x_2-2.67668839065*x_1^2+8.62632262807*x_1*x_2-13.9522662329*x_2^2+17.0926456078*x_1^3-34.1236189852*x_1^2*x_2+6.32033706645*x_1*x_2^2+21.1619340693*x_2^3-13.2527468384*x_1^4+16.0599795058*x_1^3*x_2+23.1485809245*x_1^2*x_2^2-19.1076202561*x_1*x_2^3-7.511276463*x_2^4$. It's clear from the picture that it's non-convex.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.9\textwidth]{non-convex.png}}
+\caption{Optimal polynomial without constraints}
+\end{figure}
+\begin{minipage}{0.9\textwidth}
+\lstinputlisting[language=MatLab]{2a.m}
+\end{minipage}
+\item We solve a constrained optimization as in \ref{ls2} with parameters being $c_{0},\cdots,c_{15}$ with the constraints that the Hessian is PSD and the error is at most $1.75\eta^{*}$. The first constraint is enforced by asking that $\begin{bmatrix}s&t\end{bmatrix}H(x_{1},x_{2})\begin{bmatrix}s\\t\end{bmatrix}$ being non-negative for every $x_{1},x_{2},s,t\in\R$ (equivalently SOS because it's a binary quartic in $(x_{1},x_{2},s,t)$). The optimal error came out to be $\tt1.0473433212$ and the optimal polynomial came out to be $p^{*} = \tt 0.573755005423-1.99144979766*x_1-2.21859111356*x_2+5.09138334665*x_1^2+7.0384501806*x_1*x_2+3.92848978664*x_2^2-5.03233518376*x_1^3 - 9.12724553595*x_1^2*x_2-11.6513144747*x_1*x_2^2-2.34405914206*x_2^3+1.91289158409*x_1^4+3.73216359112*x_1^3*x_2+8.86040781842*x_1^2*x_2^2+2.87325038847*x_1*x_2^3 + 1.14003374755*x_2^4$. 
+
+
+%\begin{minipage}[t]{\linewidth}
+\begin{figure}[H]
+\centerline{
+\includegraphics[width=0.7\textwidth]{convex.png}}
+\caption{Optimal convex polynomial}
+\end{figure}
+%\end{minipage}
+
+\begin{minipage}[c]{0.9\textwidth}
+\lstinputlisting[language=MatLab]{2a.m}
+\end{minipage}
 \end{enumerate}
 \end{enumerate}
 
