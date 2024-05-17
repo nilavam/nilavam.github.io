@@ -1,7 +1,7 @@
 clc;
 clear all;
 
-load("regression_data.mat");    %loading data
+load("HW6/regression_data.mat");    %loading data
 sdpvar x_1 x_2 s t;   %declaring variable
 inp = [s, t];
 x = [x_1, x_2];
