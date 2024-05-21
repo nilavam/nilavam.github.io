@@ -1,0 +1,6 @@
+
+{
+  "title":"Related Resources",
+  "content":" Software There are many good software codes for semidefinite programming. Among the most well-known, the following ones are presented:\nSeDuMi, originally by Jos Sturm, now being maintained by the optimization group at McMaster University SDPT3, by Kim-Chuan Toh, Reha Tütüncü, and Mike Todd SDPA, by the research group of Masakazu Kojima CSDP, by Brian Borchers SDP software, by various authors A very convenient way of using these (and other) SDP solvers under MATLAB® is through the YALMIP Parser/Solver by Johan Löfberg.\n"}
+
+

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture Notes</title>
+      <link>/pages/lecture-notes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/lecture-notes/data.json</guid>
+      <description>The lecture notes provided below are preliminary and an ongoing work.
+LEC # TOPICS LECTURE NOTES 1 Introduction
+Review of Convexity and Linear Programming (PDF) 2 PSD Matrices
+Semidefinite Programming (PDF) 3 Binary Optimization
+Bounds: Goemans-Williamson and Nesterov
+Linearly Constrained Problems (PDF) 4 Review: Groups, Rings, Fields
+Polynomials and Ideals (PDF) 5 Univariate Polynomials
+Root Bounds and Sturm Sequences
+Counting Real Roots
+Nonnegativity
+Sum of Squares
+Positive Semidefinite Matrices (PDF) 6 Resultants</description>
+    </item>
+    
+    <item>
+      <title>lecture_01.pdf</title>
+      <link>/resources/lecture_01/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_01/data.json</guid>
+      <description>This resource contains notes on Introduction, Review of Convexity and Linear Programming.</description>
+    </item>
+    
+    <item>
+      <title>lecture_02.pdf</title>
+      <link>/resources/lecture_02/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_02/data.json</guid>
+      <description>This course contains notes on PSD Matrices, Semidefinite Programming.</description>
+    </item>
+    
+    <item>
+      <title>lecture_03.pdf</title>
+      <link>/resources/lecture_03/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_03/data.json</guid>
+      <description>This course contains notes on Binary Optimization, Bounds: Goemans-Williamson and Nesterov, and Linearly Constrained Problems</description>
+    </item>
+    
+    <item>
+      <title>lecture_04.pdf</title>
+      <link>/resources/lecture_04/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_04/data.json</guid>
+      <description>This course contains notes on Review: Groups, Rings, Fields, and Polynomials and Ideals.</description>
+    </item>
+    
+    <item>
+      <title>lecture_05.pdf</title>
+      <link>/resources/lecture_05/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_05/data.json</guid>
+      <description>This course contains notes on Univariate Polynomials, Root Bounds and Sturm Sequences, Counting Real Roots, Nonnegativity, Sum of Squares, Positive Semidefinite Matrices.</description>
+    </item>
+    
+    <item>
+      <title>lecture_06.pdf</title>
+      <link>/resources/lecture_06/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_06/data.json</guid>
+      <description>This course contains notes on Resultants, Discriminants, Applications, and The set of Nonnegative Polynomials.</description>
+    </item>
+    
+    <item>
+      <title>lecture_07.pdf</title>
+      <link>/resources/lecture_07/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_07/data.json</guid>
+      <description>This course contains notes on Hyperbolic Polynomials, and SDP Representability.</description>
+    </item>
+    
+    <item>
+      <title>lecture_08.pdf</title>
+      <link>/resources/lecture_08/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_08/data.json</guid>
+      <description>This course contains notes on SDP Representability, Convex Sets in R2, Hyperbolicity and the Lax Conjecture, Relating SDP-representable Sets and Hyperbolic Polynomials, and Characterization.</description>
+    </item>
+    
+    <item>
+      <title>lecture_09.pdf</title>
+      <link>/resources/lecture_09/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_09/data.json</guid>
+      <description>This course contains notes on Binomial Equations, Newton Polytopes, The B?zout and BKK Bounds, Application: Nash Equilibria.</description>
+    </item>
+    
+    <item>
+      <title>lecture_10.pdf</title>
+      <link>/resources/lecture_10/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_10/data.json</guid>
+      <description>This course contains notes on Nonegativity and Sums of Squares, Sums of Squares and Semidefinite Programming, Applications and Extensions, Multivariate Polynomials, Duality and Density.</description>
+    </item>
+    
+    <item>
+      <title>lecture_11.pdf</title>
+      <link>/resources/lecture_11/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_11/data.json</guid>
+      <description>This course contains notes on SOS Applications, Moments, Bridging the Gap.</description>
+    </item>
+    
+    <item>
+      <title>lecture_12.pdf</title>
+      <link>/resources/lecture_12/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_12/data.json</guid>
+      <description>This course contains notes on Recovering a Measure from its Moments, A Probabilistic Interpretation, Duality and Complementary Slackness, Multivariate Case, Density Results.</description>
+    </item>
+    
+    <item>
+      <title>lecture_13.pdf</title>
+      <link>/resources/lecture_13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_13/data.json</guid>
+      <description>This course contains notes on Polynomial Ideals, Algebraic Varieties, Quotient Rings, Monomial Orderings.</description>
+    </item>
+    
+    <item>
+      <title>lecture_14.pdf</title>
+      <link>/resources/lecture_14/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_14/data.json</guid>
+      <description>This resource contains notes on Monomial Orderings, Groebner Bases, Applications and Examples, Zero-dimensional Ideals.</description>
+    </item>
+    
+    <item>
+      <title>lecture_15.pdf</title>
+      <link>/resources/lecture_15/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_15/data.json</guid>
+      <description>This course contains notes on Zero-dimensional Ideals, Hilbert Series.</description>
+    </item>
+    
+    <item>
+      <title>lecture_16.pdf</title>
+      <link>/resources/lecture_16/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_16/data.json</guid>
+      <description>This course contains notes on Generalizing the Hermite Matrix, Parametric Versions, SOS on Quotients.</description>
+    </item>
+    
+    <item>
+      <title>lecture_17.pdf</title>
+      <link>/resources/lecture_17/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_17/data.json</guid>
+      <description>This course contains notes on Infeasibility of Real Polynomial Equations, Certificates, The Zero-dimensional Case, Optimization.</description>
+    </item>
+    
+    <item>
+      <title>lecture_18.pdf</title>
+      <link>/resources/lecture_18/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_18/data.json</guid>
+      <description>This course contains notes on Quantifier Elimination, Tarski-Seidenberg, Cylindrical Algebraic Decomposition (CAD).</description>
+    </item>
+    
+    <item>
+      <title>lecture_19.pdf</title>
+      <link>/resources/lecture_19/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_19/data.json</guid>
+      <description>This course contains notes on Certificates, Psatz Revisited, Copositive Matrices and Polya&amp;rsquo;s Theorem, Positive Polynomials.</description>
+    </item>
+    
+    <item>
+      <title>lecture_20.pdf</title>
+      <link>/resources/lecture_20/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_20/data.json</guid>
+      <description>This course contains notes on Positive Polynomials, Schmudgen&amp;rsquo;s Theorem.</description>
+    </item>
+    
+    <item>
+      <title>lecture_21.pdf</title>
+      <link>/resources/lecture_21/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_21/data.json</guid>
+      <description>This course contains notes on Groups and their Representations, and Algebra Decomposition.</description>
+    </item>
+    
+    <item>
+      <title>lecture_22.pdf</title>
+      <link>/resources/lecture_22/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/lecture_22/data.json</guid>
+      <description>This course contains notes on Sums of Squares Programs and Polynomial Inequalities.</description>
+    </item>
+    
+  </channel>
+</rss>

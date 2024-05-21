@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Readings on MIT OpenCourseWare</title>
+    <link>/resources/readings/</link>
+    <description>Recent content in Readings on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/readings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readings</title>
+      <link>/pages/readings/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/readings/data.json</guid>
+      <description>Suggested Texts Cox, D. A., John B. Little, and Donal O&amp;rsquo;Shea. Ideals, Varieties, and Algorithms: An Introduction to Computational Algebraic Geometry and Commutative Algebra. New York, NY: Springer-Verlag, 1997. ISBN: 0387946802.
+de Klerk, Etienne. Aspects of Semidefinite Programming: Interior Point Algorithms and Selected Applications. Boston, MA: Kluwer Academic Publishers, 2002. ISBN: 1402005474.
+Mishra, Bhubaneswar. Algorithmic Algebra. New York, NY: Springer-Verlag, 1993. ISBN: 0387940901.
+Sturmfels, Bernd. Solving Systems of Polynomial Equations.</description>
+    </item>
+    
+  </channel>
+</rss>
