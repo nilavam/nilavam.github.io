@@ -115,10 +115,15 @@ div.author{white-space: nowrap;}
   color: black;
 }
 
+.topnav a:visited {
+  color: #990000;
+}
+
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
 }
+
 
 /* end css.sty */

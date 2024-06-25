@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 	<title>Nilava Metya</title> 
 
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
@@ -11,6 +12,34 @@
 	<meta name="date" content="2004-10-15 10:44:00"> 
 	<link rel="stylesheet" type="text/css" href="selfscan.css">
 	<style>
+		p {
+  			font-size: 19px;
+		}
+
+		table {
+  			font-size: 19px;
+		}
+
+		ul {
+  			font-size: 17px;
+		}
+
+		ol {
+  			font-size: 17px;
+		}
+
+		li:hover {
+  			font-size: 17.5px;
+		}
+
+		a:visited {
+  			color: #8888aa;
+		}
+
+		a:hover{
+  background-color: hotpink;
+} 
+
 		.collapsible {
   			background-color: white;
   			color: rgb(0,0,0);
@@ -21,7 +50,7 @@
   			border: none;
   			text-align: left;
   			outline: none;
-  			font-size: 15px;
+  			font-size: 18px;
   			font-family: "Times New Roman", Times, serif;
 		}
 
@@ -38,7 +67,7 @@
 		}
 		
 		.active, .collapsible:hover {
-  			font-size: 16px;
+  			font-size: 19px;
 		}
 
 		.content {
@@ -81,14 +110,35 @@
 
 	<h2 class="sectionHead" style="color: #004488">About me</h2>
 	<p>
-	<img src="mine.jpg" alt="Nilava" style="float:left;width:390px; border-right:100px solid #FFFFFF; border-bottom:20px solid #FFFFFF">
+	<img src="mine.jpg" alt="Nilava" style="float:left;width:390px; border-right:40px solid #FFFFFF; border-bottom:20px solid #FFFFFF">
 
 	<p><br>
-  	I am a second year PhD student in <a href="https://www.math.rutgers.edu/" target="_blank">Mathematics at Rutgers University - New Brunswick</a>. My advisor is <a href = "http://aruneshsinha.net" target="_blank">Arunesh Sinha</a>. Email me at <a href="mailto:nilava.metya@rutgers.edu">nilava.metya@rutgers.edu</a> if you have any question (about anything: life in general, the math community at Rutgers, ...)</p>
+  	I am a second year PhD student in <a href="https://www.math.rutgers.edu/" target="_blank">Mathematics at Rutgers University - New Brunswick</a>. My advisors are <a href = "http://aruneshsinha.net" target="_blank">Arunesh Sinha</a> and <a href = "https://sites.math.rutgers.edu/~feehan/" target="_blank">Paul Feehan</a>. Email me at <a href="mailto:nilava.metya@rutgers.edu">nilava.metya@rutgers.edu</a> if you have any question (about anything: life in general, the math community at Rutgers, ...)</p>
   	<p>
   	<u>Something I want to clarify for readers of this webpage:</u> This is my professional webpage written from my personal point of view and I have different optinions on learning vs research. For me, learning includes research; I refer to <em>learning from a book/paper/others</em> as second-hand learning and <em>learning from my own insights/research/results</em> as first-hand learning. So if you see the word 'learn', it does include research sometimes. I have a strong urge to do second-hand learning from experts only, because of my strong belief that <em><b>second-hand learning, by definition, cannot be done third-hand</b></em>.</p>
   	<p>
-  	My learning interests lie in applied areas of <b>Distributionally Robust Optimization</b>, <b>Homotopy Continuation</b> methods for optimization, <b>Polynomial Optimization</b>, <b>Applied Algebraic Geometry</b> and <b>theoretical Machine Learning</b>.<br> I love solving problems (and mathematical puzzles), especially those similar to olympiad style and competitive coding problems.</p>
+  	My learning interests lie in applied areas of <em>Distributionally Robust Optimization</em>, <em>Homotopy Continuation</em> methods for optimization, <em>Polynomial Optimization</em>, <em>Applied Algebraic Geometry</em> and <em>theoretical Machine Learning</em>.<br> I love solving problems (and mathematical puzzles), especially those similar to olympiad style and competitive coding problems.</p>
+
+
+  	<p>
+  		<b>I'm actively seeking internships for summer 2025.</b> It could be either in <u>quant research</u> or <u>game theory and AI research</u> or a combination. The former is due to my avid interest and longterm skill in <em>problem solving</em> (like, elementary number theory, combinatorics, probability, inequalities, Euclidean geometry). The latter is for research during my PhD. Here's some of my skillset and experience:
+  		<ul style = "margin-left: 20px; margin-top: -10px" >
+	  	<li><u>Mathematical competition-style problem solving.</u> <br>This is due to the heavy number of hours I spent during my high school preparing for math and informatics olympiad (the latter covered combinatorics). I love cute and short problems like the ones that appear in ISI BStat objective section of the entrance exam. In 2019, I solved 28/30 problems correctly in the exam hall and have been solving those questions for the subsequent years.<br><br></li>
+	    <li><u>Coding in C++.</u> <br>As a high-schooler, I was preparing for the national informatics olympiad without any resource. So I practised coding in CodeChef. <a href="https://www.codechef.com/users/codeup_nil123" target="_blank">Here</a> is my CodeChef profile. I've started practising on Codeforces again recently.<br><br></li>
+	    <li><u>Coding in JAVA.</u> <br>I had JAVA as a part of my high-cshool curricullum and I've extensively learnt OOP on this language. <a href="./Inventory.pdf"  target="_blank">Here</a> is an example of my code written for a school project. <br><br></li>
+	    <li><u>Coding in Python.</u> <br>I generally use this language now. My first extensive use was during an undergrad class where we solved solved problems implementing algorithms based on DP, graphs, greedy. Here are some Jupyter notebook examples of using Python for convex optimization (I used the <a href="https://www.cvxpy.org" target="_blank">CVXPY package</a>): <a href="./ConOpt/HW1/Image Compression/Image Compression.pdf" target="_blank">Image compression using SVD</a>, <a href="./ConOpt/HW2/Fuel Optimization/Fuel Optimization.pdf" target="_blank">Fuel Optimization with LP</a>, <a href="./ConOpt/HW3/Hillary_vs_Bernie/Hillary Bernie.pdf" target="_blank">Lasso</a>, <a href="./ConOpt/HW3/Radiation Treatment planning/Radiation Treatment planning.pdf" target="_blank">Converting to LP and solving</a>, <a href="./ConOpt/HW4/stability/stab.pdf" target="_blank">Stability of a pair of matrices</a>, <a href="./ConOpt/HW5/graph/graph.pdf" target="_blank">SDP bounds on stability number</a>. <br><br>
+	    </li>
+	    <li><u>Coding in MATLAB.</u> <br>I've used <a href=".https://cvxr.com/cvx/" target="_blank">CVX</a> and <a href="https://yalmip.github.io" target="_blank">YALMIP</a> on MATLAB for optimization. Here's some code for fitting increasing/convex curves/surfaces to data using sum-of-squares: 
+	    	<a href="./ConOpt/HW6/1a.m" target="_blank">best curve fit</a> with <a href="./ConOpt/HW6/leastsquare.png" target="_blank">plot</a>, 
+	    	<a href="./ConOpt/HW6/1b.m" target="_blank">best increasing curve fit</a> with <a href="./ConOpt/HW6/leastsquareinc.png" target="_blank">plot</a>, 
+	    	<a href="./ConOpt/HW6/2a.m" target="_blank">best surface fit</a> with <a href="./ConOpt/HW6/non-convex.png" target="_blank">plot</a>, 
+	    	<a href="./ConOpt/HW6/2b.m" target="_blank">best convex surface fit</a> with <a href="./ConOpt/HW6/convex.png" target="_blank">plot</a>. <br><br></li>
+	    <li><u>Coding in R. <br></u> <a href="https://github.com/nilavam/Data-Mining.git" target="_blank">Here</a> is my HW/exam repository from a data mining class where I coded in R. All assignments are mostly coding assignments to analyse some data. <br><br>
+	    </li>
+	    <li><u>Protein data analysis.</u>  <br>My team did a data-based analysis and prediction of symmetries based on certain features of proteins. <a href = "https://github.com/AlexDowling/PDBSymmetries" target="_blank">This</a> is the repository with code and results. <a href="https://www.erdosinstitute.org/certificates/spring-2024/data-science-boot-camp/nilava-metya" target = "_blank">This webpage</a> contains my certificate of completion and the summary presentation.<br></li>
+	  </ul>
+	  </ul>
+  	</p>
 
 	<p>
   	Here is a <a href="./cv/cv.pdf"  target="_blank">CV</a>.
@@ -122,7 +172,7 @@
 	  </ul>
   </p>
   <p>
-  	Goals to reach within 2028 (strict upper bound):
+  	Goals to reach within 2027:
   	<ul style = "margin-left: 20px; margin-top: -10px">
 	  	<li>Graduate with a PhD.</li>
 	    <li>Join a supportive research position (including academia and industry) to learn more about aspects of ML, and optimization, and use them in real-world problems.</li>
@@ -139,7 +189,7 @@
 	<table width="100%" style="margin-left: 40px">
 		<tr>
 			<td> Doctor of Philosophy </td>
-			<td> Sept 2022 - (expected) 2027 </td>
+			<td> Sep 2022 - (expected) 2027</td>
 			<td> Rutgers - the State University of New Jersey </td>
 		</tr>
 		<tr>
@@ -148,8 +198,8 @@
 			<td> Mathematics</td>
 		</tr>
 		<tr>
-			<td> </td>
-			<td> </td>
+			<td> Master of Science</td>
+			<td> Seo 2022 - May 2024</td>
 			<td> CGPA: 4.0 / 4.0</td>
 		</tr>
 			 <tr class="blank_row">
@@ -556,7 +606,7 @@
      	<li>
      		<font size="+1" color="337711">Computer Project in grade 12</font><br>
      			These are the project writeups for my project for grade 12 in high-school. One is a compilation of codes we did throughout the year, another is a larger project to imitate a retail shop and implement an inventory of items.<br>
-     			<a href="./Computer_Project.pdf"  target="_blank">Compilation</a>. <a href="./Inventory.pdf"  target="_blank">Inventory</a>.
+     			<a href="./Computer_Project.pdf"  target="_blank">Compilation</a>. <a href="./Inventory.pdf"  target="_blank">Inventory Code</a>.
      	</li><br>
     </ol>
 
