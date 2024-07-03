@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remote access</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<meta name="generator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+	<meta name="originator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+	<!-- html,png --> 
+	<meta name="src" content="selfscan.tex"> 
+	<meta name="date" content="2004-10-15 10:44:00"> 
+	<link rel="stylesheet" type="text/css" href="./../selfscan.css"> 
+	
+	<style>
+		.collapsible {
+  			background-color: white;
+  			color: #004488;
+  			cursor: pointer;
+ 			margin-top: 20px;
+ 			margin-bottom: 20px;
+  			width: 100%;
+  			border: none;
+  			text-align: left;
+  			outline: none;
+  			font-size: 25px;
+  			font-family: "Times New Roman", Times, serif;
+		}
+		
+		.active, .collapsible:hover {
+  			font-size: 24px;
+		}
+
+		.collapsible:after {
+  			content: '\02795'; /* Unicode character for "plus" sign (+) */
+  			font-size: 13px;
+  			color: #000000;
+  			float: right;
+  			margin-left: 5px;
+  			font-size: 24px;
+		}
+
+		.active:after {
+  			content: "\2796"; /* Unicode character for "minus" sign (-) */
+		}
+
+		.content {
+  			padding: 0 0px;
+  			max-height: 0;
+  			overflow: hidden;
+  			margin-left: 0;
+  			background-color: white;
+  			transition: max-height 0.3s ease-out;
+		}
+	</style>
+</head>
+
+
+
+
+<body style="margin:30px;padding:10px">
+	<div class="maketitle">
+		<h1 class="titleHead">The Birkoff-von Neumann theorem</h1>
+		<div class="author" >
+			<span class="cmr-12">Nilava Metya</span>
+		</div>
+		<div class="emailid" >
+			<small><a href="mailto:nilava.metya@rutgers.edu" target="_blank">nilava.metya@rutgers.edu</a> </small>
+		</div>
+		<br>
+		<div class="date" >
+			<span class="cmr-12">July, 2024</span>
+		</div>
+	</div>
+                             
+
+
+<button type="button" class="collapsible">Statement and explanation</button>
+<div class="content">
+	<p style="margin-left: 30px">
+		Fix some $n\in\mathbb{N}$.<br>
+		If you are using Windows 10, you will need a client which allows you to generate a RSA key pair. Open <b>Settings &#8594 Apps &#8594 Optional features</b> and click on <b>Add a feature</b> next to the plus sign. Scroll through the list to find and select <b>OpenSSH Client</b>. Finally, click <b>Install</b>.
+
+		<ol type="1" class="enumerate1" style = "margin-left: 50px">
+			<li class="enumerate" value="1" >
+				On Unix, start your terminal. <br>
+				On Windows 10, open <span class="cmtt-10">cmd</span> as administrator: Click on the start button, search ``cmd'', right click on ``Command Prompt'' and select ``Run as administrator''.
+			</li>
+
+			<li class="enumerate" value="2" >
+				On Unix, execute (type and hit the return key) the code <mark style="background-color:#DCDCDC"><code> ssh-keygen -t rsa</code></mark> in the terminal. On Windows 10, execute the code <mark style="background-color:#DCDCDC"><code>ssh-keygen</code></mark> in the command prompt.<br>
+				The following (or something similar tot he following) will be displayed:
+				<div style="margin-left: 40px">
+					<pre style = "background-color: #F0F0F0">
+Generating public/private rsa key pair.
+Enter file in which to save the key (~/.ssh/id_rsa):</pre>
+				</div>
+				Hit the return key to keep the location as it is.
+			</li>
+
+			<li class="enumerate" value="3" >
+				In the next step, you'll be asked for a passphrase. Enter a passphrase and hit the return key. Note: Whle you are typing the passphrase, no character will be displayed, they will simply be input one by one; so type carefully. If required, hit the backspace multiple times to clear out the passphrase and re-enter.<br> 
+				This passphrase will be required whenever you are trying to connect with the remote server through the <kbd>ssh</kbd> protocol. While connecting, the remote server will try to authenticate using your identity (the identity on your local computer). Even if someone else tries to connect to your CMI account through your computer, they will be unsuccessful because you'll be the only one knowing this passphrase. <br>
+				You may skip this step (which is not recommend) by simply hitting return, in which case the passphrase will not be required for establishing a connection.
+			</li>
+
+			<li class="enumerate" value="4" >
+				Congratulations! You have successfully generated an RSA key pair...if everything has gone right. The path to you your private key public key will be displayed, along with the key fingerprint and a random image. Here is a sample display in Unix terminal (something similar will be shown in Windows 10):
+				<div style="margin-left: 40px">
+					<pre style = "background-color: #F0F0F0">Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
+The key fingerprint is:
+05:1e:1e:c1:ac:b9:d1:1c:6a:60:ce:0f:77:6c:78:47 myname@mymac.local
+The key's randomart image is:
++--[ RSA 2048]----+
+|       o=.       |
+|    o  o++E      |
+|   + . Ooo.      |
+|    + O B..      |
+|     = *S.       |
+|      o          |
+|                 |
+|                 |
+|                 |
++-----------------+</pre>
+				</div>	
+			</li>
+		</ol>
+		<mark style = "background-color: rgb(256,130,130)">
+			Never ever share the <kbd>id_rsa</kbd> file with anyone. This is your (computer's) private identity.
+		</mark>
+	</p>
+</div>
+
+<!--
+<h2 class="sectionHead" style="color: #004488">Send your public key to <kbd>sysadm</kbd></h2>
+<p style="margin-left: 30px">
+Open your file browser and navigate to the location where your key-pair are saved. By default, the path is <kbd>~/.ssh/</kbd> on Unix, or <kbd>C:\Users\&ltusername&gt\.ssh\</kbd> on Windows. You will be needing the <kbd>id_rsa.pub</kbd> file (<strong>NOT</strong> <kbd>id_rsa</kbd>). 
+
+If you cannot navigate to the above location, open your terminal (<kbd>cmd</kbd> on Windows) and execute the following commands. I shall assume that the location of the key-pair is the default one.<br>
+
+For Unix: <code style="background-color:#DCDCDC">cp ~/.ssh/id_rsa.pub ~/Desktop</code><br>
+For Windows: <code style="background-color:#DCDCDC">copy C:\Users\&ltusername&gt\.ssh\id_rsa.pub C:\Users\&ltusername&gt\Desktop</code><br>
+This will copy your public key (the component of the pair which is public) to your desktop.<br>
+
+Now log in to your CMI account. Compose an email to the <a href="mailto:sysadm@cmi.ac.in">system administrator</a> asking them to ``kindly copy the ssh key to the appropriate location". Attach the file <kbd>id_rsa.pub</kbd> in this email. Send it.</p>
+-->
+
+
+
+<button type="button" class="collapsible">Send your public key to <kbd>sysadm</kbd></button>
+<div class="content">
+	<p style="margin-left: 30px">
+		Open your file browser and navigate to the location where your key-pair are saved. By default, the path is <kbd>~/.ssh/</kbd> on Unix, or <kbd>C:\Users\&ltusername&gt\.ssh\</kbd> on Windows. You will be needing the <kbd>id_rsa.pub</kbd> file (<strong>NOT</strong> <kbd>id_rsa</kbd>). 
+
+		If you cannot navigate to the above location, open your terminal (<kbd>cmd</kbd> on Windows) and execute the following commands. I shall assume that the location of the key-pair is the default one.<br>
+
+		For Unix: <code style="background-color:#DCDCDC">cp ~/.ssh/id_rsa.pub ~/Desktop</code><br>
+		For Windows: <code style="background-color:#DCDCDC">copy C:\Users\&ltusername&gt\.ssh\id_rsa.pub C:\Users\&ltusername&gt\Desktop</code><br>
+		This will copy your public key (the component of the pair which is public) to your desktop.
+	</p>
+	<p style="margin-left: 30px">
+		Now log in to your CMI account. Compose an email to the <a href="mailto:sysadm@cmi.ac.in" target="_blank">system administrator</a> asking them to ``kindly copy the ssh key to the appropriate location". Attach the file <kbd>id_rsa.pub</kbd> in this email. Send it.
+	</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+<button type="button" class="collapsible">Connect to your CMI account through the <kbd>ssh</kbd> protocol</button>
+<div class="content">
+	<p style="margin-left: 30px">
+		Open your terminal (or <kbd>cmd</kbd> on Windows) and try to execute <code style="background-color:#DCDCDC"> ssh &ltcmi_userid&gt@access2.cmi.ac.in</code>. For example, I would execute <code style="background-color:#DCDCDC"> ssh nilavam@access2.cmi.ac.in</code> on the terminal. You will be asked to enter your passphrase. After you enter this correctly, you will be connected to your CMI local account. 
+	</p>
+	<p style="margin-left: 30px">
+		You can now access the local computer at CMI loggined with your account, as it would have looked like when accessing offline from the computer lab, remotely from your home. The only difference is that the GUI will be missing. You may (recommended) learn to work with the linux terminal from some online resources. <a href="https://www.digitalocean.com/community/tutorials/a-linux-command-line-primer" target="_blank">Here</a> is a good place to start.
+	</p>
+</div>
+
+<button type="button" class="collapsible">Set up mail forwarding</button>
+<div class="content">
+	<p style="margin-left: 30px">
+		The CMI inbox (Roundcube) has a very limited capacity, and tends to get full too soon. One way is to continuous delete emails or save them in some place other than your inbox. There's another way out. You might want to forward those mails, which come to your CMI account, to some other account (like gmail) which has a considerable amount of inbox capacity. Follow the steps below. I am assuming that you do not have access to the CMI computers. Keep your terminal ready.
+		<ol style = "margin-left: 50px">
+			<li>
+				<kbd>ssh</kbd> to your cmi account. For example, I'd execute <code style="background-color:#DCDCDC"> ssh nilavam@access2.cmi.ac.in</code>.
+			</li>
+			<li>
+				Now you need to create a file named <kbd>.forward</kbd> which contains just the email to which you want your CMI mails to be be forwarded (<a href="mailto:nilavametya.huntik@gmail.com" target="_blank"><kbd>nilavametya.huntik@gmail.com</kbd></a> in my case). To do this, execute the command <code style="background-color:#DCDCDC"> echo &ltyour_complete_email&gt &gt ~/.forward</code>. For example, I'd execute <code style="background-color:#DCDCDC"> echo nilavametya.huntik@gmail.com &gt ~/.forward</code>.
+			</li>
+		</ol>
+	</p>
+	<p style="margin-left: 30px">
+		Congratulations! From now, any email sent to your CMI account will be redirected to the other account you provided in the file.<br><br>
+
+		For sending emails from your CMI account, you still have to login to Roundcube. If you want to avoid this as well, follow the steps below. I shall assume here that you are using gmail. For other email service providers, I'm sure there must be something analogous.
+		<ol style = "margin-left: 50px">
+			<li>
+				Login to your <a href="https://www.gmail.com" target="_blank">Gmail</a> account.
+			</li>
+			<li>
+				Go to <b>Settings &#8594 Accounts and Import</b>. Scroll down and locate <b>Send mail as:</b>.
+			</li>
+			<li>
+				Click on <b>Add another email address</b>.
+			</li>
+			<li>
+				You will be asked for your name and the email address that you want to add. In my case, I'd enter <kbd>Nilava Metya</kbd> and <kbd>nilavam@cmi.ac.in</kbd> respectively. If the gmail account is yours (and so is the CMI account), keep the <kbd>Treat as an alias</kbd> option checked. Click on the <button>Next Step &#187</button> button.
+			</li>
+			<li>
+				You may use the following settings:
+				<ul>
+					<li>SMTP Server: <kbd>mail.cmi.ac.in</kbd></li>
+					<li>Port: <kbd>25</kbd></li>
+					<li>Username: <kbd>&ltyour_cmi_userid&gt@cmi.ac.in</kbd> (I would fill in <kbd>nilavam@cmi.ac.in</kbd>)</li>
+					<li>Password: <kbd>your_password</kbd> (I would fill in <kbd></kbd> &#8230 yes, you know my password)</li>
+					<li>Secured connection using TLS</li>
+				</ul>
+			</li>
+			<li>Click on <b>Save Changes</b>.</li>
+		</ol>
+	</p>
+	<p style="margin-left: 30px">
+		Now when you compose an email from your gmail account, you should see a dropdown option in the <b>From:</b> field, where both your gmail and cmi accounts will be mentioned.
+	</p>
+	<p style="margin-left: 30px">
+		You might want to add a filter on gmail to separate emails related to your CMI account. This helps in better management. Learn more about this <a href="https://support.google.com/mail/answer/6579?hl=en" target="_blank">here</a>.
+	</p>
+</div>
+
+<button type="button" class="collapsible">Creating a homepage</button>
+<div class="content">
+	<p style="margin-left: 30px">
+		Create a folder called .www on your homepage on the local CMI computer (you can ssh to do that). Inside that folder, create a file called index.html. This will be the file that will be visible as your homepage. For example, <a href="https://www.cmi.ac.in/~nilavam" target="_blank">https://www.cmi.ac.in/~nilavam</a> is just the view of my index.html that I have put in the .www directory in my account. Of course, you'll have to get a little bit of understanding of HTML to create your homepage, which you can easily do using online resources, or simply go to someone's homepage and try to view source to see their index.html file (you might find a lot of other related CSS and javascript files which are used for formatting purposes, but a good webpage can be built without those). Finally, in order to edit your index.html file, you can either make edits on your local computer (at your home) and upload using the <kbd>scp</kbd> command, or you can edit the file online using <kbd>nano</kbd> or <kbd>vi</kbd>.
+	</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+  			coll[i].addEventListener("click", function() {
+    		this.classList.toggle("active");
+    		var content = this.nextElementSibling;
+    		if (content.style.maxHeight){
+      			content.style.maxHeight = null;
+    		} else {
+      		content.style.maxHeight = content.scrollHeight + "px";
+    		} 
+  			});
+		}
+	</script>
+
+
+</body>
+</html>
