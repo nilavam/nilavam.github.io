@@ -1,0 +1,443 @@
+\input{../pre.tex}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{ADVANCED ALGORITHM DESIGN}\\ Homework $1$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+%\author{{\Large NILAVA METYA} \\ 
+%\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+%\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+
+\date{\vspace{-0.7in}September $29$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\newcommand{\fa}{~\forall~}
+\begin{document}
+
+\maketitle
+
+%$\boxed{
+%B(x,r), B^o(x,r) \text{ respectively denote the closed and open balls of radius } r \text{ around }x.}$
+
+\pb
+In class, we saw that, when hashing $m$ items into a hash table of size $\cO(m^{2})$, the expected number of collisions was $< 1$. In particular, this meant we could easily find a “perfect” hash function of the table that has no collisions.
+
+Consider the following alternative scheme: build two tables, each of size $\cO(m^{1.5})$ and choose a separate hash function for each table independently. To insert an item, hash it to one bucket in each table and insert it only in the emptier bucket (tie-break lexicographically).
+
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Show that, if we’re hashing $m$ items, with probability $\frac12$, there will be no collisions in either table (a collision occurs when multiple distinct elements are inserted into the same bucket in the same table). You may assume a fully random hash function.
+\item Modify the above scheme to use $\cO(\log m)$ tables, each of size $\cO(m)$. Prove again that with probability $\frac12$, there will be no collisions in any table. Again, you may assume a fully random hash function.
+\end{enumerate}
+
+
+\soln
+
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $X=\set{x_{1},\cdots,x_{m}}$ be the elements to be hashed, $h,g$ are the hash functions, and $n=m\sqrt{2m}$ be the size of each hash table. Let $E_{i}$ be the event that $x_{i}$ collides. Then $E_{i} \subseteq F_{i}$ where $F_{i}$ is the event that $\exists x_{j},x_{k}$ such that $h(x_{i})=h(x_{j})$ and $g(x_{i}) = g(x_{k})$. Since $g,h$ are independent, $\P{E_{i}}\le \P{\exists x_{j} \text{ such that } h(x_{i})=h(x_{j})}^{2}$. Let's take $E_{1}\subseteq F_{1}$ and estimate the latter probability without the square assuming a random hash function. The chance that $x_{1}$ collides with a fixed $x_{j}$ (under $h$) is $\le \frac{1}{n}$, so by union bound $\P{E_{1}}\le \left(\frac{m-1}{n}\right)^{2} \le \frac{1}{2m}$. Again by union bound $\P{\cup_{i}E_{i}} \le \frac12$ whence $\P{\cap_{i}E_{i}^{c}}\ge \frac12$. $\cap_{i}E_{i}^{c}$ is precisely the event that there is no collision for $x_{i}$ for each $i$.
+\item Now we have $m$ elements in $X$, $r=\lceil d\ln m\rceil$ tables each of size $n=\lceil cm\rceil$ where $c=e,d=2$. let the hash functions be $h_{1},\cdots,h_{r}$. Again define $E_{i}$ as the event that $x_{i}$ collides and $F_{i}$ as the event that $\exists x_{j_{1}},\cdots,x_{j_{r}}$ such that $h_{k}(x_{i})=h_{k}(x_{j_{k}})$ for each $1\le k\le r$. By a similar argument as the previous part, $\P{F_{j}} = \P{\exists x_{j} \text{ s.t. } h_{1}(x_{i}) = h_{1}(x_{j})}^{r}$, due to independence. Then $$\P{F_{1}} \le \left(\frac{m-1}{n}\right)^{r} = c^{-r}\left(1-\frac{1}{m}\right)^{r} \le \frac{1}{c^{d\ln m}}\cdot \exp\set{-\frac{d\ln m}{m}} = m^{-2}\cdot m^{\frac{2}{m}} \le \frac1{2m}$$ for $m>100$, because $m^{\frac{2}{m}} \stackrel{m\to\infty}{\longrightarrow} 1$ and is eventually decreasing. By union bound and taking complement $\P{\cap_{i} F_{i}^{c}} = 1-\P{\cup_{i} F_{i}} \ge 1-\frac{1}{2} = \frac12$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\pb
+
+Prove that (the natural variant of) Karger’s algorithm does not work for finding the minimum $s-t$ cut in unweighted, undirected graphs. Specifically, design an unweighted, undirected graph $G$ (with no parallel edges), with two nodes $s$, $t$, such that repeatedly contracting a random edge that does not contract $s$ and $t$ to the same supernode outputs a minimum $s-t$ cut with probability $2^{-\Omega(n)}$.
+
+\soln
+
+
+Consider the following graphs parameterized by even $k$. We draw $4k^{2}$ nodes $X=(\Z\cap[1,2k])^{2}$, add four nodes $(0,0), (0,2k+1), (2k+1,0), (2k+1,2k+1)$, and take $s=(0,0), t=(0,2k+1,2k+1)$. So there are $n=4k^{2}+4$ nodes. We draw edges as follows. For each $(i,j)\in X$ with $i+j\ge 2k+1$, connect it with $t$ (then $t$ has $k(2k+1)$ neighbors). For each $(i,j)\in X$ with $i+j \le 2k$, connect it with $s$ (then $s$ has $k(2k-1)$). For each $(i,j)\in X$, connect it with each of its neighbors in $X$, that is those elements which differ in each coordinate by at most $1$ (this gives $8k^{2}-4k$ edges). Connect each $(2k-i,i)$ to $(2k-i+1,i+1)$ for each $i=1,\cdots,2k-1$ (this gives another $2k-1$ edges). Connect $(0,2k+1)$ to $(1,2k)$ and connect $(2k+1,0)$ to $(2k,1)$ (two more edges). So the total number of edges is $m=12k^{2}-2k+1$. The picture for $k=2$ is as follows.
+
+\[\begin{tikzcd}
+	{{\color{red}\bullet}} &&&&& {{\color{red}\bullet}t} \\
+	& \bullet & \bullet & \bullet & \bullet \\
+	& \bullet & \bullet & \bullet & \bullet \\
+	& \bullet & \bullet & \bullet & \bullet \\
+	& \bullet & \bullet & \bullet & \bullet \\
+	{s{\color{red}\bullet}} &&&&& {{\color{red}\bullet}}
+	\arrow[no head, from=1-1, to=2-2]
+	\arrow[curve={height=-6pt}, no head, from=2-2, to=1-6]
+	\arrow[no head, from=2-2, to=2-3]
+	\arrow[no head, from=2-2, to=3-2]
+	\arrow[curve={height=-6pt}, no head, from=2-3, to=1-6]
+	\arrow[no head, from=2-3, to=2-4]
+	\arrow[no head, from=2-3, to=3-3]
+	\arrow[curve={height=-6pt}, no head, from=2-4, to=1-6]
+	\arrow[no head, from=2-4, to=2-5]
+	\arrow[no head, from=2-5, to=1-6]
+	\arrow[no head, from=2-5, to=3-5]
+	\arrow[no head, from=3-2, to=2-3]
+	\arrow[no head, from=3-2, to=3-3]
+	\arrow[no head, from=3-2, to=6-1]
+	\arrow[curve={height=-6pt}, no head, from=3-3, to=1-6]
+	\arrow[no head, from=3-3, to=3-4]
+	\arrow[no head, from=3-3, to=4-3]
+	\arrow[curve={height=-6pt}, no head, from=3-4, to=1-6]
+	\arrow[no head, from=3-4, to=2-4]
+	\arrow[no head, from=3-4, to=3-5]
+	\arrow[no head, from=3-4, to=4-4]
+	\arrow[no head, from=3-5, to=1-6]
+	\arrow[no head, from=3-5, to=4-5]
+	\arrow[no head, from=4-2, to=3-2]
+	\arrow[no head, from=4-2, to=4-3]
+	\arrow[no head, from=4-2, to=6-1]
+	\arrow[no head, from=4-3, to=3-4]
+	\arrow[no head, from=4-3, to=4-4]
+	\arrow[curve={height=6pt}, no head, from=4-3, to=6-1]
+	\arrow[no head, from=4-4, to=1-6]
+	\arrow[no head, from=4-4, to=4-5]
+	\arrow[no head, from=4-4, to=5-4]
+	\arrow[no head, from=4-5, to=1-6]
+	\arrow[no head, from=4-5, to=5-5]
+	\arrow[no head, from=5-2, to=4-2]
+	\arrow[no head, from=5-2, to=5-3]
+	\arrow[no head, from=5-2, to=6-1]
+	\arrow[no head, from=5-3, to=4-3]
+	\arrow[no head, from=5-3, to=5-4]
+	\arrow[no head, from=5-3, to=6-1]
+	\arrow[no head, from=5-4, to=4-5]
+	\arrow[no head, from=5-4, to=6-1]
+	\arrow[no head, from=5-5, to=1-6]
+	\arrow[no head, from=5-5, to=5-4]
+	\arrow[no head, from=5-5, to=6-6]
+\end{tikzcd}\]
+
+It's not hard to see from the structure of the graph that the minimum $s-t$ cut value of such a graph is $c=k(2k-1)$ and the unique such cut is $C = (\set{s},\overline{\set{s}})$. Clearly $m\ge 12k^{2} = 6\cdot 2k^{2}\ge 2\cdot(2k-1)\cdot k = 6c$.
+
+Now we use a crucial observation. Say Karger's (modified) algorithm has performed $i$ contractions where $C$ has survived so far. Here's some terminology. Sequentially while the algorithm contracts edges, we will call an edge \textit{good} if it is adjacent to $s$, and we will call an edge \textit{valid} if it is not adjacent to both $s$ and $t$. For example, in the above graph, $\set{t,1}$ is a valid but not good, $\set{s,1}$ is both valid and good. If we contract $\set{1,t}$ to form a super-node, so that now $s$ is adjacent to this supernode ${1,t}$, then the edge $\set{s,\set{1,t}}$ is good but not valid. Say after $i$ steps, conditioned on the fact that $C$ has survived so far, there are $z_{i}$ \textit{valid} (multi-)edges remaining and $k_{i}$ out of them are valid and good edges (i.e., adjacent to $s$ but not $t$), then the probability of survival of $C$ after another \textit{valid} contraction (i.e. contracting a \textit{valid edge}) is $1-\frac{k_{i}}{z_{i}}$. Now we observe that after $i-1$ steps, the contracted edge may or may not make $t$ a neighbor of $s$. If $t$ becomes a neighbor of $s$ then $(k_{i},z_{i}) = (k_{i-1}-1,z_{i-1}-2)$, otherwise $(k_{i},z_{i}) = (k_{i-1},z_{i-1}-1)$. In either case $z_{i}-k_{i} = z_{i-1}-k_{i-1}-1$. So the probability that $C$ survives after $i^{\text{th}}$ round is $\frac{z_{i}-k_{i}}{z_{i}}$ which is either $\frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-1}$ or $\frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-2}$. In particular this probability is $\le \frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-2}$. So the probability that $C$ survives after $r$ rounds is $\le \prod_{i=0}^{r-1}\frac{c-i}{m-2i}\le \left(\frac{c-r}{m-2r}\right)^{r}$. Taking $r=\frac{c}{2}$, the probability of survival of $C$ is $\le \left(\frac{c}{2(m-c)}\right)^{c/2} \le \left(\frac{c}{10c}\right)^{k^{2}} = 10^{-k^{2}} = 2^{-\Omega(n)}$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\[\begin{tikzcd}
+%	&&& t \\
+%	1 & {k+1} & 2 & {k+2} & \cdots & k & 2k \\
+%	&&& s
+%	\arrow[no head, from=1-4, to=2-1]
+%	\arrow[no head, from=1-4, to=2-2]
+%	\arrow[no head, from=1-4, to=2-3]
+%	\arrow[no head, from=1-4, to=2-4]
+%	\arrow[no head, from=1-4, to=2-6]
+%	\arrow[no head, from=1-4, to=2-7]
+%	\arrow[no head, from=2-1, to=2-2]
+%	\arrow[no head, from=2-1, to=3-4]
+%	\arrow[no head, from=2-3, to=2-4]
+%	\arrow[no head, from=2-3, to=3-4]
+%	\arrow[no head, from=2-6, to=2-7]
+%	\arrow[no head, from=2-6, to=3-4]
+%\end{tikzcd}\]
+%
+%There are $n=2k+2$ nodes and $m=4k$ edges. So there will be $2k$ contraction steps.
+%
+%\begin{cl}
+%The unique minimum $s-t$ cut is obtained for $(S,\overline S)=(\set{s},\overline{\set{s}})$ and the corresponding cut value is $k$. 
+%\end{cl}
+%\begin{proof}
+%If $s,t$ are in different partitions, the cut value has to be at least $n$.
+%Say $S$, with $s\in S, t\notin S$, is such that $(S,\overline S)$ has minimum cut value. \\
+%If $\exists~i\in S\cap[1,k]$ such that $i+k\in S$ then $(S\smallsetminus\set{i,i+k},\overline S\cup\set{i,i+k})$ has cut-value $1$ less. \\
+%If $\exists~i\in S\cap[1,k]$ such that $i+k\notin S$ then $(S\smallsetminus\set{i},\overline S\cup\set{i})$ has cut-value $1$ less.\\
+%If $\exists~i\in S\cap[k+1,2k]$ such that $i-k\notin S$ then $(S\smallsetminus\set{i},\overline S\cup\set{i})$ has cut-value $1$ less.\\
+%It follows that none of the nodes $1,\cdots, 2n$ is in $S$ for min-cut, forcing $S=\set{s}$. Note that uniqueness was automatically proven.
+%\end{proof}
+%
+%Note that $\P{\text{output min $s-t$ cut}} = \P{\text{none of the edges $\set{s,i}$ is contracted $~\forall 1\le i\le k$}}$. 
+%
+%Here's some terminology. Sequentially while the algorithm contracts edges, we will call an edge \textit{good} if it is adjacent to $s$, and we will call an edge \textit{valid} if it is not adjacent to both $s$ and $t$. For example, in the above graph, $\set{t,1}$ is a valid but not good, $\set{s,1}$ is both valid and good. If we contract $\set{1,t}$ to form a super-node, so that now $s$ is adjacent to this supernode ${1,t}$, then the edge $\set{s,\set{1,t}}$ is good but not valid.
+%
+%From now on, $C=(S,\overline S)$ will denote the above mentioned (unique) minimum $s-t$ cut. Say after $i$ steps, conditioned on the fact that $C$ has survived so far, there are $z_{i}$ \textit{valid} (multi-)edges remaining and $k_{i}$ out of them are valid and good edges (i.e., adjacent to $s$ but not $t$), then the probability of survival of $C$ after another \textit{valid} contraction (i.e. contracting a \textit{valid edge}) is $1-\frac{k_{i}}{z_{i}}$. Now we observe that after $i-1$ steps, the contracted edge may or may not make $t$ a neighbor of $s$. If $t$ becomes a neighbor of $s$ then $(k_{i},z_{i}) = (k_{i-1}-1,z_{i-1}-2)$, otherwise $(k_{i},z_{i}) = (k_{i-1},z_{i-1}-1)$. In either case $z_{i}-k_{i} = z_{i-1}-k_{i-1}-1$. So the probability that $C$ survives after $i^{\text{th}}$ round is $\frac{z_{i}-k_{i}}{z_{i}}$ which is either $\frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-1}$ or $\frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-2}$. In particular this probability is $\le \frac{z_{i-1}-k_{i-1}-1}{z_{i-1}-2}$. So the probability that $C$ survives after $m$ rounds is $\le \prod_{i=0}^{m}\frac{3k-i}{4k-2i}\le \left(\frac{3k-m}{4k-2m}\right)^{m}$. Taking $m=2k-1$, the probability of survival of $C$ is $\le \frac{k+1}{2}$
+%
+%
+%
+% It is clear that $k_{t}\in \set {k_{t-1}-1,k_{t-1}}$ and $z_{t} \in \set{z_{t-1}-1, z_{t-1}-2}$. This is because if some valid edge is contracted after the $(t-1)^{\text{st}}$ step, then either an edge incident on $s$ becomes incident on $t$ as well, in which case it becomes invalid, thus reducing $k_{t-1}$ by $1$, or all the valid. If the required cut survives all contraction steps, then $z\ge k+1$ at all steps, because all the $k$ edges adjacent to $s$ survive and there are at least $3$ vertices before completion which are connected by $k$ edges from $C$ plus some other edge, whence $1-\frac{k}{z}\ge 1-\frac{k}{k+1} = \frac{1}{k+1}\ge \frac{1}{2}$. So the probability of survival. So $\P{\text{output min $s-t$ cut $C$}} \ge \prod_{i=1}^{2k}\frac12 = 2^{-\Omega (n)}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\pb
+In this problem, we investigate whether an algorithm can compute the median of a given set of numbers when it can only access the input set via independent samples.
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $A$ be an algorithm the input to which is a collection of $m$ independent samples drawn uniformly at random from an arbitrary set $X = \{x_{1}, \cdots , x_{n}\}$. Prove that if $m = o(n)$ then $A$ must fail compute the median of $X$ within a multiplicative error of $1.1$ with probability at least $1/3$. That is, any algorithm which (possibly randomly) maps $m = o(n)$ samples to a guess at the median is off by a factor of at least $1.1$ with probability at least $1/3$.
+\item Say we relax the goal and ask for the algorithm above to output a number $y$ such that at least $n/2 - t$ elements of $X$ exceed $y$, and $n/2 - t$ numbers are less than $y$. Prove that if we take $m = \cO(n^{2} \ln(1/\delta)/t^{2})$ samples, and let $y$ denote the median of the $m$ samples, then $y$ has this property with probability at least $1-\delta$.
+\end{enumerate}
+
+\soln
+\begin{enumerate}[leftmargin = *, label=(\alph*)]
+\item \underline{Deterministic:}
+
+First assume that we are only looking at a \textit{deterministic} algorithm. Let $f:X^{m}\to\R$ be this algorithm. Note that the algorithm will output the same value if two inputs differ only by a permutation. Let $\epsilon=\frac{1}{10}$. Consider the multiset $S=\set{n \text{ many } 0's, n \text{ many } 1's}$. And let the two lists be $S_{1}=S\cup\set{\epsilon}, S_{2} = S\cup \set{1-\epsilon}$. Clearly their medians are $\epsilon,1-\epsilon$ respectively. We sample $m$ numbers from each list and feed it to the algorithm. Say we sample $X_{1}^{(i)},\cdots,X_{m}^{(i)}$ from $S_{i}$. Let $G_{i}$ be the event that $X_{j}^{(i)}\in S\fa 1\le j\le m$. Then for $i=1,2$, $\P{G_{i}} = (\frac{2n}{2n+1})^{m} = (1-\frac{1}{2n+1})^{m} \ge 1-\frac{m}{2n+1}= 1-o(1)$ as $n\to \infty$ because $m=o(n)$.
+
+Let $A_{1}$ be the event that $f$ on $m$ samples from $S_{1}$ gives answer $\in (\epsilon/1.1,1.1\epsilon)$. Let $A_{2}$ be the event that $f$ on $m$ samples from $S_{2}$ gives answer $\in ((1-\epsilon)/1.1,1.1(1-\epsilon))$ Then $\P{A_{i}} = \P{A_{i}\st G_{i}}\P{G_{i}} + \P{A_{i}\st G_{i}^{c}}\P{G_{i}^{c}}$ for $i=1,2$. But $\P{G_{1}}=\P{G_{2}}$. %WLOG $\P{A_{1}}\ge \P{A_{2}}$. So $\ds0\le\P{A_{1}}-\P{A_{2}} = \left(\P{A_{1}\st G_{1}}-\P{A_{2}\st G_{2}}\right) + \P{G_{1}^{c}}\left(\P{A_{1}\st G_{1}^{c}}-\P{A_{2}\st G_{2}^{c}}-\P{A_{1}\st G_{1}}+\P{A_{2}\st G_{2}}\right)$. Since $\P{G_{1}^{c}}=o(1)$ it must happen that $\P{A_{1}\st G_{1}}\ge\P{A_{2}\st G_{2}}$. 
+So $\P{A_{1}}+\P{A_{2}} = \P{A_{1}\st G_{1}}+\P{A_{2}\st G_{2}} + \\\P{G_{1}^{c}}\left(\P{A_{1}\st G_{1}^{c}} + \P{A_{2}\st G_{2}^{c}} - \P{A_{1}\st G_{1}}-\P{A_{2}\st G_{2}}\right).$ 
+
+We denote $\pmb X^{(i)} \sett (X_{1}^{(i)},\cdots,X_{m}^{(i)})$ and $\pmb x$ for a vector in $X^{m}$. Now $\ds\P{A_{1}\st G_{1}} = \sum_{\pmb x\in S^{m}} \P{A_{1}\st G_{1}, \pmb X^{(1)}=\pmb x}\P{\pmb X^{(1)\st G_{1}} = \pmb x} = \sum_{\pmb x\in S^{m}} \P{f(\pmb x)\in (1/1.1,1.1)\epsilon}\P{\pmb X^{(1)} = \pmb x\st G_{1}}$. The sum runs over only $S^{m}$ because we've already conditioned on $G_{1}$. Similarly $\ds\P{A_{2}\st G_{2}} = \sum_{\pmb x\in S^{m}} \P{f(\pmb x)\in (1/1.1,1.1)(1-\epsilon)}\P{\pmb X^{(2)} = \pmb x\st G_{2}}$. Trivially for each $\pmb x\in S^{m}$, $\P{\pmb X^{(1)} = \pmb x\st G_{1}} = \P{\pmb X^{(2)} = \pmb x\st G_{2}}$. Also for each $\pmb x\in S^{m}$, the events $\set{f(\pmb x)\in (1/1.1,1.1)\epsilon},\set{f(\pmb x)\in (1/1.1,1.1)(1-\epsilon)}$ are disjoint whence $\P{A_{1}\st G_{1}} + \P{A_{2}\st G_{2}} \le 1$. It follows that $\P{A_{1}}+\P{A_{2}}\le 1+ o(1)$. \textbf{In short}, what this paragraph is saying is that, conditioned on the fact that all samples are picked only from $S$, the algorithm's answer can't be correct together for $S_{1},S_{2}$ which is why the sum of those probabilities is $\le 1$.
+
+So, WLOG, $\P{A_{1}^{c}} \ge \frac{1}{2} - o(1)$, that is, the algorithm fails to estimate (within multiplicative error $1.1$) the median of $S_{1}$ with at least, say, $\frac{1}{3}$ probability.\\
+ 
+\underline{Randomized:}
+
+Now we argue why there cannot be a \textit{randomized} algorithm for the given task. Suppose there is some randomized algorithm $f$ which performs the given task with high probability. Since $f$ is randomized, for every input $\pmb x\in X^{m}$, it will pick one of many \textit{deterministic} algorithms $f_{1},\cdots,f_{k}$, with respective probabilities $p_{1},\cdots, p_{k}$, and output $f_{i}(\pmb x)$ with probability $p_{i}$. In the deterministic case, we proved that for any deterministic algorithm the probability of existence of a list in which the algorithm fails to give an estimate within the given error on $m=o(n)$ samples at least for $1/3$. Let $E$ be the event that $f$ fails to give a good estimate via $m$ samples from $X$. Note that each $f_{i}$ is deterministic, whence $\P{E\st f=f_{i}} \ge1/3$. Consequently $\P{E} = \sum_{i=1}^{k}\P{E\st f=f_{i}}p_{i} \ge \frac{1}{3}\sum_{i=1}^{k}p_{i} = \frac13$.
+ %Let $I_{1} \sett \set{i\in[k]\st f_{i} \text{ fails to estimate for } S_{1} \text{ with probability}\ge1/2}$. Similarly define $I_{2} \sett \set{i\in[k]\st f_{i} \text{ fails to estimate for } S_{2} \text{ with probability}\ge1/2}$. From the above discussion for deterministic algorithms we know that $S_{1}\cup S_{2}=[k]$, that is, every $f_{i}$ fails on either $S_{1}$ or $S_{2}$ with probability $\ge1/2$. Thus $\ds\P{f \text{ fails on } S_{1}} = \sum_{i=1}^{k}\P{f_{i}\text{ fails on } S_{1}}p_{i} \ge \frac12\sum_{i\in I_{1}}p_{i}$. Similarly $\ds\P{f \text{ fails on } S_{2}} \ge \frac12\sum_{i\in I_{2}}p_{i}$. At least one of $\sum_{i\in I_{1}}p_{i}$ or $\sum_{i\in I_{2}}p_{i}$ is $\ge\frac12$, say for $I_{1}$, because they sum to $1$. So $\P{f \text{ fails on } S_{1}} \ge \frac{1}{4}$.
+
+
+%$A_{1}\cap A_{2}=\varnothing$ because $1.1\epsilon < 0.9(1-\epsilon)$ and the deterministic algorithm $f$ cannot simultaneously give an answer $<1.1\epsilon$ and $>0.9(1-\epsilon)$. Therefore $1\ge \P{A_{1}\cup A_{2}} = \P{A_{1}} +\P{A_{2}}$.
+ 
+\item We assume the ratio of $t$ to $n$ is small, say $t < n/10$. We sample numbers $Z_{1},\cdots,Z_{m}$, where $m=\frac{12n^{2}\ln(1/\delta)}{t^{2}}$ and $\delta<\frac12$, from $X$. Let $M$ be the true median of $X$ and $Z$ be the median of the samples. Let $a,b\in X$ be such that $\frac{n}{2}-t$ elements in $X$ are $< a$ and $\frac{n}{2}-t$ elements in $X$ are $>b$. Let $L = X\cap[0,a), R=X\cap(b,1]$. We want that $Z$ lies in $L\cup R$ with low probability.
+Consider the indicators $I_{i} = \begin{cases}1&\text{if } Z_{i}\in L\\0&\text{otherwise}\end{cases}$. Then $\E{I_{i}} \le \frac{1}{2} - \frac{t}{n}$. The random variable $X_{L} = \sum\limits_{i=1}^{m} I_{i}$ counts the number of samples in $L$, and $\E {X_{L}} \le m\left(\frac{1}{2} - \frac{t}{n}\right)$. Note that the $I_{i}$ are all iid. By Chernoff with $\epsilon=\frac tn$, $\P{X_{L} \ge \frac{m}2} \le \P{X_{L} > (1+\epsilon)\E{X_{L}}} \le 2\exp\set{-\frac{\epsilon^{2}m}{3(1+\epsilon)}} \le \exp\set{-\frac{t^{2}m}{6n^{2}}} = \delta^{2} < \frac{\delta}{2}$. 
+By a similar argument, if we define $X_{R}$ in a similar way as above, we will have $\P{X_{L}\ge\frac{m}{2}} \le \frac{\delta}2$. So the probability that more than $\frac{m}{2}$ sampled elements come from $L$ and more than $\frac{m}{2}$ sampled elements come from $R$ is at least $1-\delta$ (use union bound for $\set{X_{L}>m/2}\cup\set{X_{R}>m/2}$). Hence, the chance that the sample median lies in $X\smallsetminus(L\cup R)$ is $\ge 1-\delta$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\pb
+A cut is said to be a $B-$\textit{approximate} min cut if the number of edges in it is at most $B$ times that of the minimum cut. Show that all undirected graphs have at most $(2n)^{2B}$ cuts that are $B-$approximate.
+
+\soln
+
+We argue as the hint. Let $m = \lceil 2B\rceil$. We stop Karger's algorithm when $m$ supernodes remain, and output a random cut among them. Say $c$ is the actual mincut value. Consider a particular $B-$approximate mincut $(S,\overline S)$ and we compute its probability of \textbf{survival} (when stopped at $m$ supernodes). From the analysis given in notes, this probability is at least $\ds \prod_{i=1}^{n-m} \left(1-\frac{Bc}{(n-i+1)c/2}\right)$. This gives $ \prod\limits_{i=1}^{n-m} \left(1-\frac{Bc}{(n-i+1)c/2}\right) 
+= \frac{n-2B}{n} \cdot \frac{n-1-2B}{n-1} \cdots \frac{m+1-2B}{m+1}
+=\frac{(m!)\prod\limits_{i=m+1}^{n}(i-2B)}{n!} \ge \frac{m!}{n^{2B}}$. The probability that it is output by the algorithm, in the final step, is $\frac{2}{2^{m}-2}$, because there are a total of $2^{m}-2$ nontrivial choices of vertex subsets and feasible outputs are $(S,\overline S), (\overline S,S)$. The chance that $(S,\overline S)$ is output by the algorithm is $\ge \frac{2m!}{(2^{m}-2)n^{2B}} \ge \frac{m!}{(2^{m-1}-1)n^{2B}} \ge \frac{1}{2^{2B}n^{2B}}$.
+
+Let $C_{1},\cdots,C_{k}$ (where $C_{i}=(X_{i},\overline{X_{i}})$) be the distinct $B-$approximate mincuts in the given graph, and let $E_{i}$ be the event that $C_{i}$ is output by the algorithm. By the above calculation $\P{E_{i}}\ge (2n)^{-2B}$. So $1\ge \P{\cup_{i}E_{i}} = \sum_{i}\P{E_{i}} \ge k(2n)^{-2B}$ whence $k\le (2n)^{2B}$.
+
+
+%\begin{cl}\label{base}
+%$k!\le (k+1)^{k-1-p}(p+1)$ for all $k\in\Z_{\ge 2}, p\in[0,1)$.
+%\end{cl}
+%\begin{proof}
+%Fixing $p$, we will induct on $k$. For $k=2$, it says $2\le 3^{1-p}(1+p)$ which is true by simple calculus (use derivatives on the function $3^{x}-1.5(1+x)$ over $[0,1]$). Assume that the statement is true for the integer $k\ge 2$, that is, $k!\le (k+1)^{k-1-p}(p+1)$. Then $(k+1)! = (k+1)\cdot k! \le  (k+1)\cdot(k+1)^{k-1-p}(p+1) =(k+1)^{k-p}(p+1) \le (k+2)^{k-p}(p+1) = (k+2)^{(k+1)-1-p}(p+1)$ which is what we wanted.
+%\end{proof}
+%
+%We will use the following inequality
+%
+%\begin{prop}
+%If $k\ge0$ is an integer then $\ds n! \le n^{k}(n-k)!$.
+%\end{prop}
+%\begin{proof}
+%$\frac{n!}{(n-k)!} = \prod\limits_{i=0}^{k-1}(n-i) \le \prod\limits_{i=0}^{k-1}n = n^{k}$.
+%\end{proof}
+%
+%
+%\begin{prop}
+%With $n,m,2B,\epsilon$ as in our problem, $n! \le 2n^{2B}\prod\limits_{i=m+1}^{n}(i-2B)$.
+%\end{prop}
+%\begin{proof}
+%First note that $\frac{(n-m)!}{\prod\limits_{i=m+1}^{n}(i-2B)} = \frac{\prod\limits_{i=1}^{n-m}i}{\prod\limits_{i=1}^{n-m}(i+\epsilon)} = \prod\limits_{i=1}^{n-m}\frac{1}{1+\epsilon/i} = \prod$
+%\end{proof}
+%
+%
+%\begin{proof}
+%Let $\epsilon=m-2B\in [0,1)$. First note that
+%\begin{align}
+%\frac{(n-m)!}{\prod\limits_{i=m+1}^{n}(i-2B)} &= \prod\limits_{i=1}^{n-m}\frac{i}{i+\epsilon} = \prod\limits_{i=1}^{n-m} \left(\frac{1}{1+\frac\epsilon i}\right)\\
+%&\le \prod\limits_{i=1}^{n-m} \left(\frac{1}{1+\frac\epsilon{n-m}}\right) = \left(\frac{1}{1+\frac\epsilon{n-m}}\right)^{n-m} \le \frac{1}{1+\epsilon}
+%\end{align}
+%
+%\end{proof}
+%\begin{proof}
+%Let $\epsilon=m-2B\in [0,1)$. We prove this by induction on $n$. For the base case $n=m+1$, the statement says $(m+1)!\le (m+1)^{m-\epsilon}(m+1-B)$ which is true when we take $k=m+1$ in \cref{base}. Now assume this statement is true for some integer $n$, that is, $n! \le n^{2B}\prod\limits_{i=m+1}^{n}(i-2B)$. First note that $1-\frac{4B^{2}}{n^{2}} >0\implies \left(1+\frac1n\right)^{2B}\left(1-\frac{2B}{n}\right) \ge \left(1+\frac{2B}n\right)\left(1-\frac{2B}{n}\right) > 0 $ Then 
+%\begin{align*}
+%(n+1)! = (n+1) n! &\le (n+1)n^{2B}\prod_{i=m+1}^{n}(i-2B)\\
+%&=
+%\end{align*}
+%\end{proof}
+
+
+
+
+
+
+
+
+\newpage
+\pb
+Consider the following process for matching $n$ jobs to $n$ processors. In each step, every job picks a processor at random. The jobs that have no contention on the processors they picked get executed, and all the other jobs back off and then try again. Jobs only take one round of time to execute, so in every round all the processors are available. Show that all the jobs finish executing after $\cO(\log \log n)$ steps, with high probability.
+
+
+
+
+
+\soln
+
+
+\begin{cl}\label{complete}
+If instead we had $m$ jobs and $n$ processors, the expected number of completed jobs in the first round is $m\left(1-\frac{1}{n}\right)^{m-1}$.
+\end{cl}
+\begin{proof}
+Let $I_{i}$ be the random variable that takes value $1$ if $i^{\text{th}}$ job is completed, and $0$ otherwise. They have the same density. A particular job is completed in a round iff it is matched to a processor distinct from the processors that the other jobs get. The chance that the $i^{\text{th}}$ job is assigned to a different processor than that of a given job, say $j$, is exactly $1-\frac1n$. By independence, $\E{I_{i}}=\P{I_{i}=1} = \left(1-\frac{1}{n}\right)^{m-1}$. Conclude by linearlity of expectation.\\
+Just to use later, we will keep in mind that $\Var{I_{i}} = \left(1-\frac{1}{n}\right)^{m-1}\left(1-\left(1-\frac{1}{n}\right)^{m-1}\right)$.
+\end{proof}
+
+\begin{cor}\label{rem}
+Say $m$ jobs remain at the beginning of some round. Then the expected number of jobs remaining after one more round is $m\left[1-\left(1-\frac{1}{n}\right)^{m-1}\right]$.
+\end{cor}
+
+\begin{cl}\label{last}
+Say $m \le \sqrt n$ jobs remain at the beginning of some round. Then, with high probability, all jobs are completed.
+\end{cl}
+\begin{proof}
+Let $X$ be the random variable denoting the number of remaining jobs after the round starting with $m$ jobs. By \cref{rem}, $\E X = m\left[1-\left(1-\frac{1}{n}\right)^{m-1}\right]$. From \cref{complete}, taking $J_{i} = 1-I_{i}$ we observe that $X=\sum J_{i}$. Independence of $J_{i}$'s implies that $\Var{X} = \sum \Var{J_{i}} = m \cdot \Var{J_{1}} = m\left(1-\frac{1}{n}\right)^{m-1}\left(1-\left(1-\frac{1}{n}\right)^{m-1}\right)$. Chebyshev gives $\P{X\ge 1}\le  \P{X\ge \E X + \frac{1}{\sqrt rn}}\le \frac{m}{n}\underbrace{\left(1-\frac{1}{n}\right)^{m-1}}_{\le e^{-\frac{m-1}{n}} }\left(1-\underbrace{\left(1-\frac{1}{n}\right)^{m-1}}_{\ge 1-\frac{m-1}{n}}\right) \le \frac{m(m-1)}{n^{2}}\cdot e^{-\frac{m-1}{n}}\le \frac{m^{2}}{n^{2}}\cdot 1\le \frac1n$.
+The first inequality is true since $\E{X} + \frac{1}{\sqrt n} \le \frac{m-1}{n} + \frac{1}{\sqrt n} = \frac{m-1+\sqrt n}{n} { \color{blue}\stackrel{(*)}{\le}}\frac{2\sqrt n-1}{n} \le 1$. {\color{blue}$(*)$} is true as $n-2\sqrt n+1 = (\sqrt n-1)^{2} \ge 1 \implies 1 \ge \frac{2\sqrt n-1}{n}$. So $\P{X=0} = 1-\P{X\ge 1} \ge 1-\frac1n$.
+\end{proof}
+
+
+
+\begin{cl}
+If $m=\alpha n$ jobs remain at the beginning of some round (this is the conditioning on a particular round), with $\frac{1}{\sqrt n}<\alpha <1$ (so that $\sqrt n<m<n$), then after one round, with probability $1-\frac1n$, at most $3\alpha^{2}n/2$ jobs remain.
+\end{cl}
+
+\begin{proof} We denote $[t] \sett \set{1,\cdots,t}$ for a positive integer $t$.\\
+Let $P_{i}$ (for $1\le i\le m$) be the random variable, taking values in $\set{1,\cdots,n}$, which denotes the processor assigned to job $i$. Denote the tuples $\pmb Q_{i}=(P_{1},\cdots,P_{i})$ and for simplicity $\pmb Q=\pmb Q_{m}$. Note that $P_{i}$ are iid $\sim \text{Uniform}(1,n)$. Define a function $f:[n]^{m}\to \R$ given by $f(x_{1},\cdots,x_{m}) = \#\set{i\in[m]\st \exists j\in[m]\smallsetminus\set{i} \text{ for which } x_{i}=x_{j}}$. That is, $f(x_{1},\cdots,x_{m})$ counts the number of repeated elements. For example if $m=5$ then $f(1,1,2,3,7) = 2$ and $f(6,2,3,4,8) = 0$. So $f(\Q)$ is the number of uncompleted jobs. We compute $\mu\sett \E{f(\pmb Q)} = m\left(1-\left(1-\frac{1}{n}\right)^{m-1}\right)\simeq m\cdot\frac{m-1}{n} \simeq \alpha^{2}n$. In fact, $\alpha^{2}n$ is only slightly more that $\mu=m\left(1-\left(1-\frac{1}{n}\right)^{m-1}\right)$ because $\left(1-\frac{1}{n}\right)^{m-1} \ge 1-\frac{m-1}{n}$ and the difference is $\simeq \frac{\mu}{\alpha n}$.
+
+Define random variables $R_{i} \sett \E{f(\pmb Q)\st \pmb Q_{i}}$ and $R_{0} \sett \E{f(\pmb Q)}$. Note $R_{m} = \E{f(\pmb Q)\st \pmb Q} = f(\pmb Q)$. 
+Using the moment-method $e^{tX}$ along with Markov inequality gives $$\P{f(\pmb Q) - \mu \ge \epsilon} \le e^{-t\epsilon} \E{e^{t(f(\pmb Q)-\mu)}}.$$
+
+To bound the RHS, let's first note that $f(\pmb Q)-\mu = R_{m}-R_{0} = \sum_{i=1}^{m}(R_{i}-R_{i-1})$. Recall the property of expectation that $\E{h(X,Y)} = \mathbb{E}_{X}\left[\mathbb E_{Y}\left(h(X,Y)\st X\right)\right]$ where we will take $h=\exp$. We have the following calculation (the last line in the following is due to independence of $P_{i}$'s)
+\begin{align*}
+\E{e^{t(f(\pmb Q)-\mu)}} &= \E{\exp\set{t\sum_{i=1}^{m}\left(R_{i}-R_{i-1}\right)}}\\
+&= \E{\E{\exp\set{t\sum_{i=1}^{m}\left(R_{i}-R_{i-1}\right)}\st \pmb Q_{m-1}}}\\
+&= \E{\exp\set{t\sum_{i=1}^{m-1}\left(R_{i}-R_{i-1}\right)}\E{\exp\set{t\left(R_{m}-R_{m-1}\right)}\st \pmb Q_{m-1}}}\\
+&\le \alpha_{m}\E{\exp\set{t\sum_{i=1}^{m-1}\left(R_{i}-R_{i-1}\right)}}\le \cdots\le \prod_{i=1}^{m}\alpha_{i}
+\end{align*}
+where $\alpha_{i}$ is an upper bound for $\E{\exp\set{t\left(R_{i}-R_{i-1}\right)}\st \pmb Q_{i-1}}$. Let's try to get $\alpha_{i}$'s. First note that if the jobs-to-processor assignment were to be changed for just one job (that is change just one $P_{i}$) then the number of collisions changes (increases or decreases) at most by $5$ ($5$ is just something arbitrarily big). More formally, $\abs{f(b,x_{2}\cdots,x_{m}) - f(a,x_{2}\cdots,x_{n})} \le 5$ for any $x_{2},\cdots,x_{n},b,a\in [n]$ and this is true for all coordinates $i$, not just $i=1$. It's also true that \begin{align*}
+\E{R_{i}-R_{i-1}\st \pmb Q_{i-1}} &= \E{\E{f(\pmb Q)\st \pmb Q_{i}}-\E{f(\pmb Q)\st \pmb Q_{i-1}}\st \pmb Q_{i-1}} \\
+&= \mathbb E_{P_{i},\cdots,P_{m}}\Big(\E{f(\pmb Q)\st \pmb Q_{i}}-\E{f(\pmb Q)\st \pmb Q_{i-1}}\Big) \\
+&= \mathbb E_{P_{i},\cdots,P_{m}}\Big(\E{f(\pmb Q)\st \pmb Q_{i}}\Big) - \mathbb E_{P_{i},\cdots,P_{m}}\Big(\E{f(\pmb Q)\st \pmb Q_{i-1}}\Big)\\
+&= \mathbb E_{P_{i},\cdots,P_{m}}\Big(\E{f(\pmb Q)\st \pmb Q_{i-1}}\Big) - \mathbb E_{P_{i},\cdots,P_{m}}\Big(\E{f(\pmb Q)\st \pmb Q_{i-1}}\Big) = 0
+\end{align*}
+By Hoeffding's lemma (\url{https://en.wikipedia.org/wiki/Hoeffding%27s_lemma}),\\
+$\E{\exp\set{t\left(R_{i}-R_{i-1}\right)}\st \pmb Q_{i-1}} \le \exp\set{25t^{2}/8}$ (the difference in supremum and infimum of the required random variables is at most $5$ because changing the allocation of one job changes at most $5$ in the number of uncompleted jobs.) Combining the above we get 
+\begin{align*}
+\P{f(\pmb Q)-\mu\ge \epsilon} \le e^{-t\epsilon}\prod_{i=1}^{m} e^{\frac{25t^{2}}{8}} = \exp\set{-t\epsilon + \frac{ct^{2}m}{2}}
+\end{align*}
+where $c=\frac{25}{16}$. This is true for all $t$. Optimizing over $t$, the best RHS is $\exp\set{-\frac{\epsilon^{2}}{2mc}}$. Picking $\epsilon=\sqrt{2c m\ln n}$ and noting that $\mu/2\simeq \alpha^{2}n/2 \ge \sqrt{2cm\ln n}$ (because $\ln n=o(n)$) we get $$\P{\text{\#unfinished jobs}\ge2\alpha^{2}n} \le \P{\text{\#unfinished jobs}\ge\mu+ \sqrt{2c m\ln n}} \le \frac{1}{n}.$$
+\end{proof}
+
+The expected number of remaining jobs after just first round is $n\left(1-\left(1-\frac1n\right)^{n-1}\right) \simeq n\left(1-\frac1e\right).$ It is easy to note that $\frac32\alpha^{2}=K\alpha^{2}<\alpha$ for $\alpha_{0}=1-\frac1e$. Due to the above proof, this event also have high chance of occurrence, say with probability $\ge1-\frac{1}{n}$.
+
+Formally we showed that if $M_{i}$ is the random variable denoting the number of jobs remaining at the end of $i^{\text{th}}$ round, then $\P{M_{i} \le \frac{1}{K}(K\alpha_{0})^{2^{i-1}}n}\ge(1-\frac1n)^{i}$.
+
+Let $T$ denote the (least) number of steps for which $M_{T}\le \sqrt n$. By our probability bounds $\P{T \le \log_{2}\log_{2\alpha_{0}} n} \ge (1-\frac1n)^{\log_{2}\log_{2\alpha_{0}} n} \ge 1-\frac{\log_{2}\log_{2\alpha_{0}} n}{n} = 1-o(1)$. Again, with probability $\ge1-\frac1n$, the remaining $M_{T}<\sqrt n$ jobs are completed in one more round. So $\P{\text{ all jobs completed in } \le \cO(\log\log n) \text{ rounds }}\ge 1-\frac{\cO(\log\log n)}{n}$.
+
+% we reach to $\left(1-\frac1e\right)n$ jobs after first round. If the expected behaviour occurs at every step, the number of jobs remaining after $r$ rounds is $K^{2^{r}-1}\alpha_{0}^{2^{r}}n$. If this number is $\le \sqrt n$, we will be done in more step by \cref{last} (if expected behavior occurs). This gives $r=\cO(\log \log n)$. We find this probability of expected behavior happening every step, by multiplying conditional probabilities. This expression is just $(1-\frac1n)^{\cO(\log\log n)} \simeq \exp\set{\frac{\cO(\log\log n)}{n}}$ which is very close to $1$ for large $n$.
+
+
+
+%\begin{proof}
+%As in previous claims, let $X$ be the random variable denoting the number of jobs remaining after one round, assuming we had $m=\alpha n$ jobs in the beginning of that round. Let $p=\left(1-\frac{1}{n}\right)^{m-1}$ and $q=1-p$. By \cref{rem}, $\mu = \E{X} = mq=q\sqrt{\alpha n}$. It's variance is easily seen to be $\sigma^{2}\le m^{2}pq$ because the variance of each indicator (summands of $X$) is $pq$ and Cauchy-Schwarz inequality gives that $\Var {\sum_{i} Y} \le \sum_{i}\Var{Y_{i}}$ for any finite set of random variables $\set{Y_{i}}$. Let $k = \frac{\alpha^{2}n}{2}$. Note that $\ds\frac{\alpha^{2} n}{\E X} = \frac{m^{2}}{nm\left[1-\left(1-\frac{1}{n}\right)^{m-1}\right]} \ge \frac{m}{n\cdot \frac{m-1}{n}} = 1+\frac{1}{m-1} \ge 1\implies \alpha^{2}n \ge \mu$. So $c\alpha^{2}n = \frac{3}{2}\alpha^{2}n \ge k+\mu$. 
+%
+%Then we have the following because we're on the right sided tail of $\mu$:
+%\begin{align*}
+%\P{X>c\alpha^{2}n} \le \P{X > k + \mu} &\stackrel{\text{Chebyshev}}{\le} \frac{\sigma^{2}}{k^{2}}\\
+%&= \frac{4\alpha n pq}{\alpha^{4}n^{2}}
+%\end{align*}
+%This establishes that $\mu(1-\epsilon) > \mu - k\sqrt m$. Therefore, $\P{X\le\mu - k\sqrt m}\le \P{X < (1-\epsilon)\mu}$
+%
+%Then $\ds\frac{\alpha^{2} n}{\E X} = \frac{m^{2}}{nm\left[1-\left(1-\frac{1}{n}\right)^{m-1}\right]} \ge \frac{m}{n\cdot \frac{m-1}{n}} = 1+\frac{1}{m-1} = 1+\epsilon$. Here we used the inequality $(1-x)^{k} \ge 1-kx$ for all $x\le 1, k\ge 1$. This establishes that $\alpha^{2}n \ge (1+\epsilon)\mu$ which when combined with Chernoff bound gives $\P{X > \alpha^{2}n} \le \P{X > (1+\epsilon)\mu} \le e^{\frac{-\mu^{2}\epsilon}{3(1+\epsilon)}}$. We can apply the Chernoff bound because $X$ is a sum of independent indicator random variables (this is established in \cref{complete} and \cref{last}) and their expectations are in $(0,1)$. Let's look at the negative of the exponent of the RHS of our bound upto a factor $3$: 
+%\begin{align*}
+%\frac{\mu\epsilon^{2}}{1+\epsilon} &= \frac{m\left[1-\left(1-\frac{1}{n}\right)^{m-1}\right]}{(m-1)^{2}\cdot \frac{m}{m-1}}= \frac{1-\left(1-\frac{1}{n}\right)^{m-1}}{m-1} \\
+%&{\color{blue}\stackrel{(**)}{\ge}} ~\frac{1-\frac{1}{1+\frac{m-1}{n}}}{m-1}= \frac{1}{m-1}\cdot \frac{\frac{m-1}{n}}{1+\frac{m-1}{n}} = \frac{1}{m+n-1}\\
+%&\ge \frac{1}{2n}
+%\end{align*}
+%where ${\color{blue}(**)}$ follows from the basic inequality $(1-x)^{k} (1+kx) \le 1$ whenever $x\in[0,1], k\ge 0$ and the last inequality (in the above aligned calculation) is because $m<n$.
+%\end{proof}
+
+
+\newpage
+\pb
+Consider the following random process: there are $n+1$ coupons $\set{0,\cdots,n}$. Each step, you draw a uniformly random coupon independently with replacement, and you
+repeat this until you have drawn all coupons in $\set{1,\cdots,n}$ (that is, you may terminate without ever drawing $0$). Prove that, with probability at least $1-\cO(1/n)$, you draw the $0$ coupon at most $\cO(\log n)$ times.
+
+\soln
+Denote $[n]=\set{1,\cdots,n}$.
+Let $X_{i}$ be the random variable denoting the number of steps to observe a new coupon in $[n]$ if $i$ distinct coupons in $[n]$ have already been observed. Then the number of steps required to terminate is $X = \sum_{i=0}^{n-1}X_{i}$. $X_{i}$ follows a geometric distribution with parameter $\frac{n-i}{n+1}$, so $\E{X_{i}} = \frac{n+1}{n-i}$. This means $\E{X} = (n+1)H_{n}$ where $H_{n}$ is the harmonic sum $\sum_{i=1}^{n}\frac1i$. Using Chebyshev with $\epsilon=(n+1)H_{n}$ we can get $\P{X>2(n+1)H_{n}} \le \frac{1}{\ln n}$ because $\E X = (n+1)H_{n},\Var X = (n+1)((n+1)H_{n}-n)$.
+
+Let $Y$ denote the number of $0$ coupons collected. Take $t=\lfloor 2(n+1)H_{n}\rfloor$. Let $Y_{i}$ be the indicator denoting that $0$ was picked in the $i^{\text{th}}$ step, and $\pmb 1_{i\ge X}$ be the indicator denoting $i\le X$. Then $\ds Y=\sum\limits_{i=1}^{\infty}  Y_{i}\pmb 1_{i\le X}$. Since $X$ (and thus $\pmb 1_{i\le X}$) and all $Y_{i}$ have finite expectations and they are independent, we can write  $\E{Y} = \sum\limits_{i=1}^{\infty} \E{Y_{i}\pmb 1_{i\le X}} = \E{Y_{1}}\sum\limits_{i=1}^{\infty} \E{\pmb 1_{i\le X}}= \sum\limits_{i=1}^{\infty} \E{Y_{i}}\E{\pmb 1_{i\le X}} = \E{Y_{1}}\cdot \E X=\frac{(n+1)H_{n}}{n+1} = H_{n}$.\footnote{Another way to see this: $X-Y$ is the random variable denoting the number of steps to terminate if $0$ was never collected. By a similar argument as before (each parameter just becomes $\frac{n-i}{n}$, so the individual expectations are $\frac{n}{n-i}$ for $0\le i<n$), the expected number of steps for such operation is $nH_{n}$. So $\E Y = H_{n}$. } %In fact for $n>3$ we have $\ln n < \ln(n+1) < H_{n} < 1+ \ln n < 2\ln n$. 
+With $n$ large and $\epsilon=2$, Chernoff gives (for small constants $c,c'$) $\P{Y>10\ln n} \le \P{\sum_{i=1}^{t}Y_{i}>10\ln n}\P{X\le t}  + \frac{c}{\ln n} = \P{\sum_{i=1}^{t}Y_{i}>(1+\epsilon)2H_{n}} + \frac{c'}{\ln n} \le e^{-2H_{n}} + \frac{c'}{\ln n} \le \cO\left(\frac1n\right)$. So $\P{Y\le 10\ln n} \ge 1-\cO\left(\frac 1n\right)$. 
+
+
+\end{document}
+

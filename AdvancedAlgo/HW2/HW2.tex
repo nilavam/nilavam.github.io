@@ -1,0 +1,188 @@
+\input{../pre.tex}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{ADVANCED ALGORITHM DESIGN}\\ Homework $2$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+%\author{{\Large NILAVA METYA} \\ 
+%\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+%\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+
+\date{\vspace{-0.7in}October $27$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\newcommand{\fa}{~\forall~}
+\begin{document}
+
+\maketitle
+
+
+\pb
+
+
+
+
+\soln
+
+
+
+
+
+
+
+
+\newpage
+\pb
+
+The maximum cut problem asks us to cluster the nodes of a graph $G = (V,E)$ into
+two disjoint sets $X,Y$ so as to maximize the number of edges between these sets:
+$$\max_{X,Y} \sum_{(i,j)\in E}\pmb 1\left[(i\in X, j\notin X) \lor (i\in Y, j\notin Y)\right].$$
+Consider instead clustering the nodes into three disjoint sets $X,Y,Z$. Our goal is to maximize the number of edges between different sets:
+$$\max_{X,Y,Z} \sum_{(i,j)\in E}\pmb 1\left[(i\in X, j\notin X) \lor (i\in Y, j\notin Y)(i\in Z, j\notin Z)\right].$$
+
+Design an algorithm based on SDP relaxation that solves this problem with approximation ration greater then $0.7$.
+
+\soln
+
+(We assume undirected graph $G$ just to write the notation $\set{i,j}$)
+For the problem with two partitions, we had modeled the problem with having variables $x_{v}\in \set{\pm 1}$ for each vertex $v\in V$. For the corresponding problem with three partitions we will restrict each such variable to be a $2-$vector among $\pmb a_{1} \sett (1,0), \pmb a_{2} \sett\left(-\frac12,\frac{\sqrt3}{2}\right), \pmb a_{3} \sett \left(-\frac12,-\frac{\sqrt3}{2}\right)$. It is easy to verify that $\pmb a_{1}^{\top}\pmb a_{2} = \pmb a_{2}^{\top}\pmb a_{3} = \pmb a_{3}^{\top}\pmb a_{1} = -\frac12$. The three vertices $\pmb a_{1,2,3}$ stand for the three partitions $X,Y,Z$. Any edge $(u,v)\in E$ that gets assigned different classes of vertices, say $\pmb x_{u} = \pmb a_{1}, \pmb x_{v} = \pmb a_{2}$, contributes exactly $1 = \frac{2}{3}\left(1-\pmb a_{1}^{\top}\pmb a_{2}\right)$ to the cut value. If they are in the same class then $\pmb x_{u} = \pmb x_{v}$ and $\pmb x_{u}^{\top}\pmb x_{v} = 1$ giving a contribution of $0$ from the expression $\frac{2}{3}\left(1-\pmb x_{u}^{\top}\pmb x_{v}\right)$.
+
+Let's make things formal now. Let $G=(V=[n],E)$ be the given graph. Introduce variables $\pmb x_{v}\in \R^{2}$, one for each $v\in V$, and constrain them $\pmb x_{v}\in \set{\pmb a_{1},\pmb a_{2}, \pmb a_{3}}$ where $\pmb a_{i}$ are as in the above paragraph. Given the above discussion, our problem is modeled as follows
+\begin{equation}\label{max3cut}\begin{aligned}
+f^{*}\sett \max_{\pmb x_{1},\cdots, \pmb x_{n}\in \R^{2}} &~~~~\frac{2}{3} \sum_{(i,j)\in E} (1-\pmb x_{i}^{\top}\pmb x_{j})\\
+\text{s.t. } &~~~~ \pmb x_{i}\in \set{\pmb a_{1},\pmb a_{2}, \pmb a_{3}} \fa i\in V
+\end{aligned}\end{equation}
+
+We are essentially interested in $\ds\min_{\pmb x_{1},\cdots, \pmb x_{n}\in \R^{2}}\frac{2}{3} \sum_{(i,j)\in E} \pmb x_{i}^{\top}\pmb x_{j}$ s.t. $\pmb x_{i}\in \set{\pmb a_{1},\pmb a_{2}, \pmb a_{3}} \fa i\in V$.
+
+To get an SDP relaxation, we relax our constraints to $\norm{\pmb x_{i}}{2} = 1\fa i\in V$ and $\pmb x_{i}^{\top}\pmb x_{j} \ge -\frac{1}{2}$. The last constraint gives the best angle separation among $3$ vectors on $\mathbb S^{2}$ in the following sense: if $t\in \R$ is such that $\pmb v_{1},\pmb v_{2},\pmb v_{3}\in \mathbb S^{2}$ satisfy $\pmb v_{i}^{\top}\pmb v_{j} \le t ~(\forall~ i\ne j)$ then $0\le \norm{\pmb v_{1}+\pmb v_{2}+\pmb v_{3}}{2}^{2} = 3 + 2\cdot 3 \cdot t \implies t\ge -1/2$. So we design an SDP with the rank$-2$ matrix $\begin{bmatrix}\pmb x_{1}^{\top} \\ \vdots \\ \pmb x_{n}^{\top}\end{bmatrix}_{n\times 2}\begin{bmatrix}\pmb x_{1} & \cdots & \pmb x_{n}\end{bmatrix}_{2 \times n} \succeq 0$ in mind:
+\begin{equation}\label{sdprelax}\begin{aligned}
+\frac{2m}{3}- f_{S} = \min_{X\in S^{n\times n}} &~~~~  \Tr\left[\frac{2}{3}QX\right]\\
+\text{s.t. } &~~~~ X_{ii} = 1 \fa i\in V\\
+&~~~~ X_{ij} \ge -\frac{1}{2} \fa i\ne j\in V\\
+&~~~~ X \succeq 0
+\end{aligned}\end{equation}
+where $Q$ is a matrix whose $(i,j)^{\text{th}}$ entry is $1$ if $\set{i,j}\in E$ and $0$ otherwise, $S^{n\times n}$ denotes the space of al real symmetric $n\times n$ matrices, and $f_{S}$ is the optimal value obtained from SDP relaxation. 
+
+Let's say the optimal solution of this SDP is attained at $X^{*}$, take a Cholesky factorization $X^{*} = V^{\top}V$ where $V\in \R^{r\times n}$ and $r=\rk V$. Let the columns of $V$ be $\pmb y_{1},\cdots, \pmb y_{n}\in \R^{r}$. In the rounding step, we choose random vectors $\pmb R_{1}, \pmb R_{2}, \pmb R_{3}\in \R^{r}$ such that each $\pmb R_{i,j}\sim \mathcal N(0,1)$ (for $1\le j \le r$) is chosen independently. These will give us the partitions, by rounding each $\pmb y_{i}$ to the component nearest among $\pmb R_{j}$. More precisely, we partition $V = V_{1}\sqcup V_{2}\sqcup V_{3}$ as follows:
+\begin{align*}
+V_{1} &\sett \set{i\in V \st \pmb y_{i}^{\top} \pmb R_{1} \ge \pmb y_{i}^{\top} \pmb R_{2},\pmb  y_{i}^{\top} \pmb R_{1} \ge \pmb y_{i}^{\top} \pmb R_{3}}\\
+V_{2} &\sett \set{i\in V \st \pmb y_{i}^{\top} \pmb R_{2} \ge \pmb y_{i}^{\top} \pmb R_{1},\pmb  y_{i}^{\top} \pmb R_{2} \ge \pmb y_{i}^{\top}\pmb  R_{3}}\\
+V_{3} &\sett \set{i\in V \st \pmb y_{i}^{\top} \pmb R_{3} \ge \pmb y_{i}^{\top} \pmb R_{2},\pmb y_{i}^{\top} \pmb R_{3} \ge \pmb y_{i}^{\top}\pmb  R_{1}}
+\end{align*}
+while breaking ties at random. In fact assign $\pmb x_{i} \sett \pmb a_{j}$ if $i\in V_{j}$.
+
+Let $f_{R}$ denote the cut value produced by the above-mentioned randomized rounding. So $f_{R} = \sum_{\set{i,j}\in E} \pmb 1\left[\pmb x_{i}\ne \pmb x_{j}\right]$. We are interested in $\ds \E{f_{R}} = \sum_{\set{i,j}\in E} \P{\pmb x_{i}\ne \pmb x_{j}}$.
+
+
+
+
+
+
+
+
+
+
+\newpage
+\pb
+The Ellipsoid algorithm we saw in the lecture solves convex programs assuming a separation oracle. Here, we want to show the opposite. To be more specific, consider the following two tasks regarding a convex body $\cK$:
+\begin{itemize}
+\item $\texttt{OPTIMIZE}(\cK):$ given a vector $c\in\R^{n}$, output $\arg\max\limits_{x\in\cK}c^{\top}x$;
+\item $\texttt{SEPARATE}(\cK):$ given a point $x\in\R^{n}$, output either $x\in \cK$ or a separating hyperplane.
+\end{itemize}
+
+We are going to show that if for a specific convex body $\cK$, there is a polynomial time algorithm for $\texttt{OPTIMIZE}(\cK)$, then there is a polynomial time algorithm for $\texttt{SEPARATE}(\cK)$.
+\begin{enumerate}[label = (\alph*)]
+\item Suppose for a given $x$, we can solve the following LP with infinitely many constraints (finding the optimal $w$ and $T$). Show that we can use such an algorithm to solve $\texttt{SEPARATE}(\cK)$.
+\begin{equation}\label{margin}
+\begin{aligned}
+\max_{w\in \R^{n},T\in\R} &~~ w^{\top} x-T\\
+\text{s.t.} &~~ w^{\top} y \le T\fa y\in\cK\\
+&~~ -1\le T\le 1
+\end{aligned}
+\end{equation}
+\item Design a polynomial time separation oracle for the above LP using $\texttt{OPTIMIZE}(\cK)$, and conclude.
+\end{enumerate}
+
+
+\soln
+
+\begin{enumerate}[label = (\alph*)]
+\item Suppose the value of this LP is $>0$ and is attained at $(\overline w,\overline T)$. Then for any $y\in\cK$, $\overline w^{\top}y-\overline T \le 0$. This means that $x\notin \cK$.\\
+Suppose $x\notin \cK$. Then there is a vector $w\in \R^{n}$ such that $w^{\top}x > 0$ and $w^{\top}y\le 0\fa y\in \cK$. This $(w,T=0)$ is feasible to \ref{margin} with objective $>0$. Thus its optimal value is $>0$.
+
+Therefore $x\in \cK$ iff the optimal value of \ref{margin} is $\le 0$. If $\le 0$ with optimal $w=\overline w$, a separating hyperplane is $\overline w$ because of what is discussed above.
+
+\item 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\pb
+Describe separation oracles for the following convex sets. Your oracles should run in linear time, assuming that the given oracles run in linear time (so you can make a constant number of black-box calls to the given oracles).
+
+\soln
+
+
+
+
+
+
+
+\newpage
+\pb
+
+
+
+
+
+
+\soln
+
+
+
+\newpage
+\pb
+
+
+
+\soln
+
+
+
+
+\end{document}
+
