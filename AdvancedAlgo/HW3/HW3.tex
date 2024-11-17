@@ -1,0 +1,229 @@
+\input{../pre.tex}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{ADVANCED ALGORITHM DESIGN}\\ Homework $3$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+%\author{{\Large NILAVA METYA} \\ 
+%\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+%\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+
+\date{\vspace{-0.7in}November $17$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\newcommand{\fa}{~\forall~}
+\begin{document}
+
+\maketitle
+
+
+\pb
+This problem explores compressed sensing schemes that work when noise/numerical
+precision is not an issue. Let $q_{1},\cdots,q_{n} \in \R$ be any set of distinct numbers. E.g. we could choose $q_{i}=i$. Consider the sensing matrix $A\in\R^{2k\times n}$:
+$$A = \begin{bmatrix}
+1 & 1 & \cdots & \cdots & 1\\
+q_{1} & q_{2} & \cdots & \cdots & q_{n}\\
+q_{1}^{2} & q_{2}^{2} & \cdots& \cdots & q_{n}^{2}\\
+\vdots&\vdots&&&\vdots\\
+q_{1}^{2k-1} & q_{2}^{2k-1} & \cdots & \cdots & q_{n}^{2k-1}
+\end{bmatrix}.$$
+Show that if $x\in\R^{n}$ is a $k-$sparse vector, that is, $\norm x0\le k$, then $x$ can be recovered uniquely given $Ax$, which is a vector with length $2k$. You don’t need to give an eﬃcient algorithm. Just argue that for any given $y\in \R^{2k}$, there is at most one $k-$sparse $x$ such that $y= Ax$.
+
+\soln
+
+We assume $n \ge 2k$, that is, $A$ is horizontally wide.
+
+WLOG, $q_{1}< \cdots < q_{n}$. For any index set $S=\set{i_{1},\cdots,i_{2k}}$ with $1\le i_{1}<\cdots<i_{2k}\le n$, we denote by $A_{S}$ the $2k\times 2k$ matrix formed by taking only the columns $i_{1},\cdots,i_{2k}$ from $A$. This is a Vandermonde matrix with determinant $\det A_{S} = \prod_{\alpha>\beta}(q_{i_{\alpha}}-q_{i_{\beta}}) \ne 0$. %Equivalently, $A_{S}$ is injective. Therefore if $S$ were to have lower cardinality (i.e., $A_{S}$ is tall) then it has linearly independent columns, whence it is injective. 
+
+Let $\pmb x,\pmb z\in\R^{n}$ be $k-$sparse vectors such that $A\pmb x = A\pmb z$. Take $S\sett \supp (\pmb x-\pmb z)$ so that $\abs{S} \le 2k$ (WLOG take it to be $2k$ by adding more indices which could be $0$ in $\pmb x-\pmb z$). WLOG say $S=\set{{1},\cdots,{2k}}$ in an increasing order. Then $A_{S}$ is invertible by the previous paragraph. Next note that if $\pmb v\in\R^{2k}$ then $\pmb v \pmb e_{i}^{\top}$ is the $2k\times 2k$ matrix whose $i^{\text{th}}$ column is all $\pmb v$ and $0$ everywhere else. Take $\pmb v\sett \pmb x-\pmb z$ now. The next key observation is that $A_{S} = \sum_{i\in S} A\pmb e_{i} \pmb e_{i}^{\top}$ and that $\pmb v_{S} =  \sum_{j\in S}\pmb e_{j}\pmb e_{j}^{\top}\pmb v$ where $\pmb v_{S}$ is the restriction of $\pmb v$ to only the indices in $S$. Here $\supp \pmb v\subseteq S$. Therefore $A_{S}\pmb v_{S} = \sum_{i\in S}A \pmb e_{i} \pmb e_{i}^{\top}\pmb v = \sum_{i\in S}A \pmb e_{i} v_{i} = \sum_{i\in [n]}A \pmb e_{i} \pmb e_{i}^{\top}\pmb v = A\pmb v$ where the second last equality is because $\pmb e_{i}^{\top}\pmb v=0$ if $i\notin S$. But $A\pmb v = A(\pmb x-\pmb z) = \pmb0$. This means $A_{S}\pmb v_{S}\implies v_{S} = 0 \implies \pmb x_{S} = \pmb z_{S} \implies \pmb x = \pmb z$ where the last implication is because all coordinates of $\pmb x,\pmb z$ are $0$ at indices in $[n]\smallsetminus S$.
+
+
+
+
+
+\newpage
+\pb
+
+In this problem, we will come up with two alternate characterizations of the minimum
+distance of a binary linear code. Let $E:\mathbb F_{2}^{k}\to \mathbb F_{2}^{n}$ be a linear error correcting code that stretches $k$ bits into $n$ bits. Let $\pmb g_{i} = E(\pmb e_{i})$ be the encoding of the standard basis vectors $\pmb e_{1},\pmb e_{2},\cdots,\pmb e_{k}$ in the $k$ dimensions. Let $G$ be the $k\times n$ matrix with $i^{\text{th}}$ row equal to $\pmb g_{i}$.
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $C= \text{Span}(g_{1},g_{2},\cdots,g_{k})$ be the linear subspace $\F_{2}^{n}$. Prove that every element of $C$ is an encoding of some message.
+\item Argue that minimum distance of the code defined by $E$ equals the smallest number of 1s in any non-zero element of $C$.
+\item Prove that if every subset of $k$ columns of $G$ are linearly independent,
+then, $E$ has minimum distance $d \ge n-k+1$. (Hint: use the conclusion from
+part $(a)$ and remember that if every $k$ columns of $G$ are linearly independent then every $k\times k$ submatrix of $G$ must be full rank.)
+\end{enumerate}
+
+\soln
+Assume $E$ is injective.
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $\pmb v\in C$. Then $\pmb v= \sum\limits_{i=1}^{k}a_{i}\pmb g_{i}$ for some scalars $a_{i}\in\F_{2}$. So, $\pmb v = \sum\limits_{i=1}^{k}a_{i}E(\pmb e_{i}) = E\left(\sum\limits_{i=1}^{k}a_{i}\pmb e_{i}\right)$. So $\pmb v$ is the encoding of $\sum\limits_{i=1}^{k}a_{i}\pmb e_{i}$.
+\item Recall the definition of minimum distance: $\ds\Delta = \min_{\pmb x,\pmb y\in \F_{2}^{k}, \pmb x\ne \pmb y} \norm{E(\pmb x)-E(\pmb y)}{0}$. By linearity of $E$, $\ds\Delta = \min_{\pmb x,\pmb y\in \F_{2}^{k}, \pmb x\ne \pmb y} \norm{E(\pmb x-\pmb y)}{0} = \min_{\pmb z\in \F_{2}^{k}, \pmb z\ne 0} \norm{E(\pmb z)}{0} = \min_{\pmb z\in \F_{2}^{k}, \pmb z\ne 0} \norm{E(\pmb z)}{0} = \min_{\pmb v\in E(\F_{2}^{k})=C, \pmb v\ne 0} \norm{\pmb v}{0}$.
+\item Every subset of $k$ columns of $G$ is linearly independent. Note that $\pmb g_{i} = G^{\top}\pmb e_{i} = E(\pmb e_{i})$. %Suppose the minimum distance is attained at $\pmb a = E(\pmb x)\in C \smallsetminus\set{\pmb 0}$. Since $E$ is linear, $\pmb a = G^{\top}\pmb x$. 
+Say $\pmb a = E(\pmb x)\in C$ has $\ge k$ zero entries, that is, $\norm{\pmb a}{0} \le n-k$. WLOG, entries at $S=\set{1,\cdots, k}$ in $\pmb a$ are $0$. The submatrix $G_{S}$ of $G^{\top}$ formed by taking the first $k$ rows has size $k\times k$ and is full rank, thus invertible. Then $\begin{bmatrix}G_{S}^{-1} & \pmb 0_{k\times(n-k)}\end{bmatrix} G^{\top}_{n\times k} = I_{k}$ where $I_{k}$ is the $k\times k$ identity matrix. Therefore, $\pmb x = \begin{bmatrix}G_{S}^{-1} & \pmb 0_{k\times(n-k)}\end{bmatrix} G^{\top}_{n\times k} \pmb x = \begin{bmatrix}G_{S}^{-1} & \pmb 0_{k\times(n-k)}\end{bmatrix} \pmb a = \pmb 0$ where the last equality is true because the last $n-k$ columns of the matrix are $0$ are the first $k$ entries of $\pmb a$ are $0$. Therefore $\pmb a=\pmb 0$. This means that our assumption, that $\norm{\pmb a}{0} \le n-k$ was false, which proves that $\norm{\pmb a}{0} \ge n-k+1$ for any nonzero $\pmb a\in C$.
+\end{enumerate}
+
+
+
+\newpage
+\pb
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $M$ be the transition matrix of a ergodic random walk with mixing time $t_{0}$. Let $M' = \frac12(I + M)$ be the ``lazy'' version of this Markov Chain. Show that the mixing time of $M'$ is at most $10t_{0}$. It’s fine to have any constant (instead of $10$) in this bound.
+\item Let $M$ be the transition matrix of a random walk on an undirected $d-$regular
+graph $G$ on $n$ vertices that defines an ergodic Markov Chain with stationary
+distribution $\pi$. In the class, we defined the mixing time of this Markov Chain
+as the smallest integer $t_{0}$ such that for every distribution $x$ on the vertices of $G$, $\norm{M^{t_{0}} x-\pi}1 \le \frac14$. Justify this definition by arguing that the distance to stationary distribution shrinks exponentially: i.e., show that after $kt_{0}$ steps, $\norm{M^{kt_{0}} x-\pi}1 \le2^{-k}$.
+\end{enumerate}
+\soln
+
+\begin{lemma}\label{maxelt}
+Let $\pmb x,\pmb y\in \Delta_{n-1}$ be two probability distributions, that is, $\pmb x,\pmb y\in \R^{n}, \pmb x\ge 0, \pmb y\ge 0$ and $\norm{\pmb x}{1} = \norm {\pmb y}1=1$. Then $\norm{\pmb x-\pmb y}{1} = 2\sum\limits_{i\in[n]} \pmb 1[x_{i} < y_{i}]\cdot (y_{i}-x_{i})$.
+\end{lemma}
+\begin{pf}
+Let $I$ denote the set of all $i\in [n]$ for which $x_{i}=\pmb e_{i}^{\top}\pmb x < \pmb e_{i}^{\top}\pmb y = y_{i}$. And denote $\pmb v\sett \pmb x-\pmb y$. Then $\sum_{i}v_{i}=0$. Furthermore $v_{i}<0\iff i\in I$. So $I=\set{i\in[n]\st v_{i}<0}$. Then the sum on the RHS of the given statement is simply $-2\sum\limits_{i\in S}v_{i}$. Note that $\norm{\pmb x-\pmb y}{1} = -\sum\limits_{i\in I}v_{i} + {\color{brown}\sum\limits_{i\notin I}v_{i}} = -\sum\limits_{i\in I}v_{i} + {\color{brown}0 - \sum\limits_{i\in I}v_{i}}$ which is exactly the required quantity.
+\qed\end{pf}
+
+\begin{lemma}\label{couple}
+Let $\pmb x,\pmb y\in \Delta_{n-1}$ be two probability distributions. For any $i,j\in[n]$, define $$f(i,j) = \begin{cases}
+\min\set{x_{i},y_{j}} & \text{if } i=j\\
+\frac{2\max\set{x_{i}-y_{i},0}\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}} & \text{otherwise}
+\end{cases}.$$ Then $\sum\limits_{i\in[n]}f_{t}(i,j) = y_{j} \fa j\in[n], \sum\limits_{j\in[n]}f_{t}(i,j) = x_{i}\fa i\in[n]$ and $\frac12\norm{\pmb x - \pmb y}{1} = \sum\limits_{i\in [n]}\sum\limits_{j\in [n]}\pmb 1_{i\ne j} f(i,j)$. \textit{Essentially this implies that $f$ is a joint distribution with marginals $\pmb x$ and $\pmb y$.}
+\end{lemma}
+\begin{pf}
+Let $S \sett \set{i\in [n]\st x_{i} \ge \pmb y_{i}}$. This $S$ is simply the complement of $I$ in the proof of \cref{maxelt}. 
+
+So $\sum\limits_{j\in[n]}f(i,j)= \min\set{x_{i},y_{i}} + 2\max\set{x_{i}-y_{i},0}\sum\limits_{j\in[n]\smallsetminus\set{i}}\frac{\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}}$. 
+
+We will only show $\sum\limits_{j\in[n]}f(i,j) = x_{i}\fa i\in[n]$ because the proof for $\sum\limits_{i\in[n]}f(i,j) = y_{j} \fa j\in[n]$ is exactly the same.\\
+If $i\in S$, we have
+\begin{align*}
+\sum\limits_{j\in[n]}f(i,j) 
+&= {\color{blue}\min\set{x_{i},y_{i}}} + 2{\color{brown}\max\set{x_{i}-y_{i},0}}\sum\limits_{j\in[n]\smallsetminus\set{i}}\frac{\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}}\\
+&= {\color{blue}y_{i}} + {\color{brown} (x_{i}-y_{i})}\sum\limits_{j\in[n]\smallsetminus\set{i}}2\frac{\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}} = y_{i} + (x_{i}-y_{i})\cdot 1 = x_{i}
+\end{align*}
+where the second-last equality follows from \cref{maxelt}.
+
+If $i\notin S$, we have
+\begin{align*}
+\sum\limits_{j\in[n]}f(i,j) 
+&= {\color{blue}\min\set{x_{i},y_{i}}} + 2{\color{brown}\max\set{x_{i}-y_{i},0}}\sum\limits_{j\in[n]\smallsetminus\set{i}}\frac{\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}}\\
+&= {\color{blue} x_{i}} + 2\cdot {\color{brown} 0}\cdot\sum\limits_{j\in[n]\smallsetminus\set{i}}\frac{\max\set{y_{j}-x_{j},0}}{\norm{\pmb x - \pmb y}{1}}= x_{i}.
+\end{align*}
+
+Finally we show $\norm{\pmb x - \pmb y}{1} = \sum\limits_{i\in [n]}\sum\limits_{j\in [n]}\pmb 1_{i\ne j} f(i,j)$. Indeed $\sum\limits_{i\in[n]}\sum\limits_{j\in[n]}\pmb 1_{i\ne j}f(i,j) = \sum\limits_{i\in[n]} (x_{i}-\min\set{x_{i},y_{i}}) = \sum\limits_{i\in S} (x_{i}-\min\set{x_{i},y_{i}}) + \sum\limits_{i\notin S} (x_{i}-\min\set{x_{i},y_{i}}) = \sum_{i\in S}(x_{i}-y_{i}) \stackrel{\text{\cref{maxelt}}}{=} \frac12\norm{\pmb y-\pmb x}{1}$
+\qed\end{pf}
+
+
+\begin{cor}\label{cor}
+Let $M$ be the (symmetric) transition matrix of the random walk on a graph $G$ with $n$ vertices. Define $d(t) \sett \sup\limits_{\pmb x,\pmb y\in\Delta_{n-1}}\norm{M^{t}\pmb x-M^{t}\pmb y}{1}$ for any $t\in\N$. Then $d(s+t) \le \frac12d(s)d(t)$.
+\end{cor}
+\begin{pf}
+Fix $s,t\in\N$. Let $\pmb x,\pmb y\in \Delta_{n-1}$. Note that $M^{s}(\Delta_{n-1})\subseteq \Delta_{n-1}$. Use the $f$ in the above lemma by replacing $\pmb x$ (in the lemma) with $M^{s}\pmb x$ and $\pmb y$ with $M^{s}\pmb y$. Note that $\pmb e_{i}^{\top}M^{t+s}\pmb x = \sum\limits_{k=1}^{n}\pmb e_{i}^{\top}M^{t}\pmb e_{k}(M^{s}\pmb x)_{k} = \sum\limits_{k=1}^{n}\pmb e_{i}^{\top}M^{s}\pmb e_{k}\sum\limits_{j=1}^{n}f(k,j) = \sum\limits_{j\in[n]}\sum\limits_{k\in[n]}f(k,j) \pmb e_{i}^{\top}M^{s}\pmb e_{k}$. Similarly, $\pmb e_{i}^{\top}M^{s+t}\pmb y = \sum\limits_{j\in[n]}\sum\limits_{k\in[n]}f(k,j) \pmb e_{i}^{\top}M^{s}\pmb e_{j}$. Therefore 
+\begin{align*}
+\norm{M^{s+t}(\pmb x-\pmb y)}{1} &= \sum_{i} \abs{\sum\limits_{j}\sum\limits_{k} f(k,j)\pmb e_{i}^{\top}M^{s}(\pmb e_{k}-\pmb e_{j})}\\
+&\le \sum_{j,k}\sum_{i} f(k,j) \abs{\pmb e_{i}^{\top}M^{s}(\pmb e_{k}-\pmb e_{j})}\\
+&= \sum_{j,k} f(k,j) \norm{M^{s}\pmb e_{k} - M^{s}\pmb e_{j}}{1}\\
+&= \sum_{j,k} \pmb 1_{j\ne k} f(k,j) \norm{M^{s}\pmb e_{k} - M^{s}\pmb e_{j}}{1}\\
+&\le d(s) \sum_{j,k} \pmb 1_{j\ne k} f(k,j) \stackrel{\text{\cref{couple}}}{=} \frac12 d(s)d(t).
+\end{align*}
+Since this was for arbitrary $\pmb x,\pmb y\in \Delta_{n-1}$, taking $\sup$ gives the desired result.
+\qed\end{pf}
+
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+%\item We recall that the stationary state of $M$ is $\pmb \pi = \frac{1}{n} \begin{bmatrix}
+%1\\
+%\vdots\\
+%1
+%\end{bmatrix}$. Say $\pmb x$ is a probability distribution, i,e, $\pmb x\ge 0, \norm{\pmb x}1=1$, and $\pmb x\ne \pmb \pi$. Say $M$ has eigenbasis $\pmb \pi,\pmb v_{2}, \cdots, \pmb v_{n}$ corresponding to eigenvalues $1>\lambda_{2} \ge \cdots \ge \lambda_{n} (>-1)$. Normalize such that $\norm{\pmb v_{i}}{1}=1\fa i\ge 2$. We have $\abs{\lambda_{2}}<1,\abs{\lambda_{n}}<1$ because $M$ is ergodic. It was already proven that if we express $\pmb x$ in this basis, the coefficient of $\pmb \pi$ in $\pmb x$ is $1$. $\therefore M^{kt_{0}}\pmb x - \pmb \pi = \sum\limits_{i\ge 2}\lambda_{i}^{kt_{0}}a_{i}\pmb v_{i}\implies \norm{M^{kt_{0}}\pmb x - \pmb \pi}{1} \le \sum\limits_{i\ge 2}\abs{\lambda_{i}}^{kt_{0}}\abs{a_{i}}\norm{\pmb v_{i}}1 \le \lambda_{\max}^{kt_{0}} A$ where $\lambda_{\max} = \max\set{\abs{\lambda_{2}}<1,\abs{\lambda_{n}}}$ and $A = \sum\limits_{i\ge 2}\abs{a_{i}}$. But $\pmb x\ne \pi$ so that $A\ne 0$, whence $A>0$. For $k > \frac{-\log A}{\log(2\cdot \lambda_{\max}^{t_{0}})}$ we will have $\norm{M^{kt_{0}}\pmb x - \pmb \pi}{1} \le\lambda_{\max}^{kt_{0}}A < 2^{-k}$.
+\item[(b)] Let $\pmb \pi$ be the stationary distribution. Clearly $\sup\limits_{\pmb x\in \Delta_{n-1}}\norm{M^{t}\pmb x-\pmb \pi}1 \le \sup\limits_{\pmb x,\pmb y\in \Delta_{n-1}}\norm{M^{t}\pmb x-M^{t}\pmb y}1$ since the constraint $\pmb y=\pmb \pi$ only makes the feasible set smaller, thus lowering the maximum value. \Cref{cor} with induction gives $\sup\limits_{\pmb x\in \Delta_{n-1}}\norm{M^{kt_{0}}\pmb x-\pmb \pi}1 \le d(kt_{0}) \le \frac{d(t_{0})}{2^{k}}$ ($d$ is as in \cref{cor}). But $d(t_{0}) = \sup\limits_{\pmb x,\pmb y\in\Delta_{n-1}}\norm{M^{t_{0}}\pmb x-M^{t_{0}}\pmb y}{1} \le \sup\limits_{\pmb x,\pmb y\in\Delta_{n-1}}\left(\norm{M^{t_{0}}\pmb x -\pmb \pi}1+\norm{M^{t_{0}}\pmb y-\pmb \pi}{1}\right) <1$. Therefore $\sup\limits_{\pmb x\in \Delta_{n-1}}\norm{M^{kt_{0}}\pmb x-\pmb \pi}1 \le 2^{-k}$. Note that $d-$regularity was not used.
+\item[(a)]Assume that the graph is $d-$regular. $M$ is the transition matrix of this random walk. Say its eigenvalues are $1=\lambda_{1} > \lambda_{2} \ge \cdots \ge \lambda_{n} (>-1)$. $P=\frac{1}{2}(I+M)$ is the lazy version. We want to bound $\norm{P^{t}(\pmb x-\pmb \pi)}{1}$ where $\pmb \pi$ is the stationary distribution of $M$, hence the stationary distribution of $P$. The eigenvalues of $M$ and $P$ are related as $\lambda_{i} \leftrightarrow \mu_{i}\sett\frac{1+\lambda_{i}}{2}$. Since $M$ is ergodic, $\mu_{2}<1$ and $\mu_{n}>0$. Let $\pmb x\in \Delta_{n-1}$ and denote $\pmb v\sett\pmb x-\pmb \pi$. It's worth noting that $\norm{M^{s}\pmb v}{1} \le \norm{M^{s}}{1}\norm{\pmb v}{1} = \norm{\pmb v}{1} \le \norm{\pmb x}{1}+\norm{\pmb \pi}{1} = 2$ where we used that $\norm {M^{s}}1$ is the maximum of the absolute value column sums which is $1$. Take $t \sett 100t_{0}$.
+\begin{align*}
+\norm{P^{t}\pmb v}1 &= \norm{\frac{1}{2^{t}}\sum_{i=0}^{t} {t \choose i} M^{i}\pmb v}1\\
+&\le\frac{1}{2^{t}} \sum_{i=0}^{t}{t \choose i} \norm{M^{i}\pmb v}1\\
+&= \frac{1}{2^{t}}\sum_{i=0}^{t/4}{t \choose i} \norm{M^{i}\pmb v}1 + \frac{1}{2^{t}}\sum_{25t_{0}<i\le t}{t \choose i} \norm{M^{i}\pmb v}1\\
+&\le 2 \sum_{i=0}^{t/4}{t \choose i}2^{-t} + \frac{1}{2^{t}}\sum_{25t_{0}<i\le t}{t \choose i} \norm{M^{i}\pmb v}1
+\end{align*}
+
+We use the lower-tail Chernoff bound\footnote{$\P{X\le (1-\delta)\mu} \le \exp\set{-\mu\delta^{2}/2}\fa \delta\in(0,1)$} that if $X_{1},\cdots,X_{t}\in \set{0,1}$ are outcomes of a fair coin toss with $X=\sum_{i=1}^{t}X_{i}$ then $\mu=\E{X} = \frac t2$ and $p\sett \sum\limits_{i=0}^{t/4}{t\choose i}2^{-i} = \P{X\le \frac{t}{4} = (1-\frac12)\mu} \le \exp\set{-\frac{\mu \cdot (1/2)^{2}}{2}} = \exp\set{-\frac{t}{16}} = \exp\set{-\frac{100t_{0}}{16}} \stackrel{[\because t_{0}\ge 1]}{\le} \exp\set{-\frac{100t_{0}}{16}} \le e^{-6}$.
+
+Moreover we have (independently) proven in (b) that $\norm{M^{kt_{0}}\pmb x-\pmb \pi}1 \le 2^{-k}$ whence if $i\ge 25t_{0}$ then $\norm{M^{i}(\pmb x-\pmb \pi)} 1 \le \norm{M^{i-25t_{0}}}{1}\norm{M^{25t_{0}}(\pmb x-\pmb \pi)}1 = 1\cdot \norm{M^{25t_{0}}\pmb x-\pmb \pi}1 \le 2^{-25}$
+
+Then we have $\norm{P^{t}\pmb v}{1} \le 2p +2^{-t}\sum\limits_{25t_{0}<i\le t}{t \choose i} \norm{M^{i}\pmb v}1 \le 2p +2^{-t}\sum\limits_{25t_{0}<i\le t}{t \choose i} 2^{-25} = 2p+(1-p)\cdot 2^{-25} = p(2-2^{-25}) + 2^{-25} \le 2e^{-6} + 2^{-25} < \frac18 + \frac18 = \frac14$.
+
+(In fact one can improve the above constant $100$ to $18$ by breaking the sums into $\sum\limits_{i=0}^{t/6}\cdot + \sum\limits_{i>t/6}\cdot$).
+\end{enumerate}
+
+
+
+
+\newpage
+\pb
+Let $M$ be the Markov chain of a $5-$regular undirected graph that is connected. Each node has self-loops with probability $1/2$. We saw in class that $1$ is an
+eigenvalue with eigenvector $\pmb 1$. Show that every other eigenvalue has magnitude at most $1-\frac{1}{10n^{2}}$. What does this imply about the
+mixing time for a random walk on this graph from an arbitrary starting point?
+
+\soln
+
+Let $\cL = 5I-A$ where $A$ is the adjacency matrix of a connected $5-$regular graph (without self loops) $G=([n],E)$. $\cL,A$ have the same eigenvectors. Since $A$ has eigenvalues in $[-5,5]$ with the second highest eigenvalue $<5$ (because connected), the eigenvalues of $\cL$ are in $[0,10]$ where the second smallest eigenvalue (call it $\lambda$) is $>0$. We will first show that $\lambda \ge \frac1{n^{2}}$.
+
+Let $\pmb v\in\R^{n}$ be an eigenvector of $\cL$ with eigenvalue $\lambda>0$ and normalized so that $\sum_{i}v_{i}^{2}=\norm{\pmb v}{2}=1$ and the entry with the highest magnitude is non-negative (by multiplying $\pmb v$ by $-1$ if necessary). Clearly $\pmb v$ satisfies $\sum_{i}v_{i}=0$ because it corresponds to the second lowest eigenvector and the eigenvector for $0$ is parallel to $(1,\cdots,1)$. Thus it must have some positive and some negative entries. Since the norm is $1$, the highest entry of $\pmb v$, say $v_{k}$, must be $\ge \frac{1}{\sqrt n}$. Its lowest entry must be negative, say $v_{t}<0$. Consider a path $k = x_{1} \to x_{2}\to\cdots\to x_{r+1} = t$ in $G$. Then $\left(v_{x_{1}} - v_{x_{2}}\right) +\cdots + \left(v_{x_{r}} - v_{x_{r+1}}\right) = v_{k} - v_{t} > \frac{1}{\sqrt n}$.
+
+Now\footnote{$\pmb v^{\top}\cL\pmb v = 5\sum_{i}v_{i}^{2} - \sum_{i}\sum_{j}\pmb 1_{\set{i,j}\in E}\cdot v_{i}v_{j} = \frac12\sum_{i}\sum_{j}\pmb 1_{\set{i,j}\in E}\cdot(v_{i}^{2}+v_{j}^{2}-2v_{i}v_{j}) = \sum\limits_{\set{i,j}\in E} (v_{i}-v_{j})^{2}$} $\lambda = \pmb v^{\top}\cL\pmb v = \sum\limits_{\set{i,j}\in E} (v_{i}-v_{j})^{2} \ge \left(v_{x_{1}} - v_{x_{2}}\right)^{2} +\cdots + \left(v_{x_{r}} - v_{x_{r+1}}\right)^{2} \stackrel{\text{Cauchy-Schwarz}}{\ge} \\\frac{1}{r} \left(\sum\limits_{i=1}^{r}(v_{x_{i}} - v_{x_{i+1}})\right)^{2} > \frac{1}{nr} \ge \frac{1}{n^{2}}$ where the last inequality follows because $r+1\le n$. 
+
+The second smallest eigenvalue $\lambda$ of $\cL$ corresponds to the second largest eigenvalue $\mu_{2}$ of $A$ with the relation that $\lambda=5-\mu_{2}$ so that $\mu_{2} = 5-\lambda$. The random walk described in the question has the transition matrix $\frac{1}2\left(I+\frac15A\right)$. This matrix has all eigenvalues $\ge 0$ and its second largest eigenvalue is $\tilde\lambda = \frac{1+\mu_{2}/5}{2} = \frac{5+\mu_{2}}{10} = \frac{10-\lambda}{10} = 1-\frac{\lambda}{10} \le 1-\frac{1}{10n^{2}}$.
+
+
+
+
+\newpage
+\pb
+Let $(a_{1},b_{1}),\cdots,(a_{n},b_{n}) \in \F^{2}$ where $\F= GF(q)$ and $q \gg n$. We say that a polynomial $p(x)$ describes $k$ of these pairs if $p(a_{i}) = b_{i}$ for $k$ values of $i$. This question concerns an algorithm that recovers $p$ even
+if $k<n/2$ (in other words, a majority of the values are wrong).
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Show that there exists a bivariate polynomial $Q(z,x)$ of degree at most $\left\lceil\sqrt n\right\rceil+1$ in $z,x$ such that $Q(b_{i},a_{i}) = 0$ for each $1\le i\le n$. Show also that there is an efficient (poly$(n)$ time) algorithm to construct such a $Q$.
+\item Show that if $R(z,x)$ is a bivariate polynomial and $g(x)$ a univariate polynomial then $z-g(x)$ divides $R(z,x)$ iff $R(g(x),x)$ is the $0$ polynomial.
+\item Suppose $p(x)$ is a degree $d$ polynomial that describes $k$ of the points. Show that if $d$ is an integer and $k>(d+1)\left(\left\lceil\sqrt n\right\rceil+1\right)$ then $z-p(x)$ divides the bivariate polynomial $Q$ described in part $(a)$.
+\end{enumerate}
+
+
+\soln
+
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Take degree $D=\left\lceil\sqrt{2 n}\right\rceil$ {\color{red}(I couldn't do $\lceil\sqrt n\rceil+1$)}. To ensure $Q$ has degree $\le D$, each monomial $x^{i}z^{j}$ should satisfy $j+i \le D$. Define $Q(z,x) = \sum\limits_{i=0}^{D}\sum\limits_{j=0}^{D-i} c_{ij}x^{i}z^{j}$. Treat the $c_{ij}$'s as the variables and and we try to solve for the simultaneous system of equations $Q(b_{l},a_{l}) = 0$ ($\fa1\le l\le n$) which are all linear in $c_{ij}$'s. The number of unknown $c_{ij}$ we want to determine is precisely $\sum\limits_{i=0}^{D}(D-i+1) = (D+1)^{2}-\frac{D(D+1)}{2} = \frac{(D+2)(D+1)}{2} > \frac{2n}{2} = n$. Therefore we have more variables than constraints (namely $n$). So the $\set{c_{ij}}$ admit a nontrivial solution, which can be easily found by Gaussian elimination by forming the required matrix obtained from the equations $\sum\limits_{i=0}^{d}\sum\limits_{j=0}^{d-j} c_{ij}x_{l}^{i}z_{l}^{j} = 0$ for $1\le l\le n$.
+
+\item Suppose $z-g(x)\divides R(x,z)$ in $\F[z,x]$. Then $\exists f(x,z)\in \F[z,x]$ such that $R(z,x) = (z-g(x))f(z,x)$. Setting $z=g(x)$ gives $R(g(x),x) =0$.  
+
+Suppose $R(g(x),x) = 0$. Recall that $\F[x]$ is an Euclidean domain and so $\F[z,x]\cong (\F[x])[z]$ is a polynomial ring over a Euclidean domain. In simpler words it means that we can divide (with well defined ``smaller'' remainders) the same way as in $\Z[z]$. The notion of smallness is gives by the degree (in $z$) of the polynomials. So $\exists q,r\in \F[z,x]$ such that $R(z,x) = (z-g(x))q(z,x) + r(z,x)$ where either $r=0$ or $\deg_{z}(r) = 0$. This simply means that $r\in \F[x]$ and we can write $R(z,x) = (z-g(x))q(z,x) + r(x)$. Plugging in $z=g(x)$ gives $0=r(x)$. So $R = (z-g)f$, whence $z-g(x) \divides R(z,x)$.
+\item $\deg p(x)=d$ and define $f(x)\sett Q(p(x),x)$. Then $f$ has $k$ zeroes (among the first coordinates of the data points). Let's compute the degree of $f$. Each term $x^{i}z^{j}=x^{i}p(x)^{j}$ contributes a degree of $i+dj \le i+d(D-i) = dD - (d-1)i \le dD = d\left\lceil\sqrt{2 n}\right\rceil$. If $k>d\left\lceil\sqrt{2 n}\right\rceil$, then $f$ has more roots than its degree whence $f$ is the zero polynomial {\color{red}(again, I could not do it for $k>(d+1)\left(\left\lceil\sqrt n\right\rceil+1\right)$)}. By (b), $z-p(x) \divides Q(z,x)$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+

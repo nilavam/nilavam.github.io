@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  27 OCT 2024 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  16 NOV 2024 20:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**HW2.tex
-(./HW2.tex
+**HW3.tex
+(./HW3.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (../pre.tex
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -1209,15 +1209,8 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 )
 \@quotelevel=\count479
 \@quotereset=\count480
- (./HW2.aux
-
-LaTeX Warning: Label `mincut' multiply defined.
-
-
-LaTeX Warning: Label `mincut@cref' multiply defined.
-
-)
-\openout1 = `HW2.aux'.
+ (./HW3.aux)
+\openout1 = `HW3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
@@ -1296,9 +1289,9 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 36.
 
-(./HW2.out) (./HW2.out)
+(./HW3.out) (./HW3.out)
 \@outlinefile=\write5
-\openout5 = `HW2.out'.
+\openout5 = `HW3.out'.
 
 \c@lstlisting=\count487
 Package caption Info: Begin \AtBeginDocument code.
@@ -1312,12 +1305,12 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `HW2.bcf'.
+\openout4 = `HW3.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'HW2.bbl' not found.
+Package biblatex Info: ... file 'HW3.bbl' not found.
 
-No file HW2.bbl.
+No file HW3.bbl.
 Package biblatex Info: Reference section=0 on input line 36.
 Package biblatex Info: Reference segment=0 on input line 36.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
@@ -1383,6 +1376,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
+Overfull \hbox (10.77513pt too wide) in paragraph at lines 134--135
+[]\T1/bch/m/n/10.95 Finally we show $[][] \OT1/cmr/m/n/10.95 = [] [] [][]\OML/c
+mm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; j\OT1/cmr/m/n/10.95 )
+$\T1/bch/m/n/10.95 . In-deed $[] [] [][]\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95
+ (\OML/cmm/m/it/10.95 i; j\OT1/cmr/m/n/10.95 ) = [](\OML/cmm/m/it/10.95 x[] \OM
+S/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.95 ) =
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1393,6 +1394,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 166.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1401,17 +1407,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [5]
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
-89.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
-File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-)
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-89.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1420,8 +1415,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-]
+[6]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1430,102 +1424,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[8]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[9]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[10]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[11]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[12]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[13] (./HW2.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `HW2.out' has not changed.
+[7] (./HW3.aux)
+Package rerunfilecheck Info: File `HW3.out' has not changed.
 (rerunfilecheck)             Checksum: F2891C20C9B1533B459EAB93E2AA6DB8;390.
-Package logreq Info: Writing requests to 'HW2.run.xml'.
-\openout1 = `HW2.run.xml'.
+Package logreq Info: Writing requests to 'HW3.run.xml'.
+\openout1 = `HW3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37090 strings out of 476025
- 714694 string characters out of 5790017
- 1901388 words of memory out of 5000000
- 56918 multiletter control sequences out of 15000+600000
- 552813 words of font info for 94 fonts, out of 8000000 for 9000
+ 37023 strings out of 476025
+ 713456 string characters out of 5790017
+ 1887388 words of memory out of 5000000
+ 56878 multiletter control sequences out of 15000+600000
+ 556897 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,99p,2183b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,99p,1375b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></us
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on HW2.pdf (13 pages, 270510 bytes).
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW3.pdf (7 pages, 259104 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

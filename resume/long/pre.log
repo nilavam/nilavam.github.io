@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  10 NOV 2024 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  26 AUG 2024 14:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**resume.tex
-(./resume.tex
+**pre.tex
+(./pre.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22> (./pre.tex
+L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo
@@ -741,285 +741,20 @@ bertinusSerif-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 112.
-)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tabto-ltx/tabto.sty
-Package: tabto 2018/12/28  v 1.4  Another tabbing mechanism
-\CurrentLineWidth=\dimen276
-\TabPrevPos=\dimen277
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(./etaremune.sty
-Package: etaremune 2005/06/01 v1.2 Reversed enumerate (HA)
-\c@EM@itemctr=\count308
-\c@EM@etaremunectr=\count309
-) (./resume.aux)
-\openout1 = `resume.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-
-(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count310
-\scratchdimen=\dimen278
-\scratchbox=\box112
-\nofMPsegments=\count311
-\nofMParguments=\count312
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count313
-\MPscratchDim=\dimen279
-\MPnumerator=\count314
-\makeMPintoPDFobject=\count315
-\everyMPtoPDFconversion=\toks39
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
 ))
-Package hyperref Info: Link coloring OFF on input line 14.
+*
+! Emergency stop.
+<*> 
+    
+End of file on the terminal!
 
-(./resume.out) (./resume.out)
-\@outlinefile=\write4
-\openout4 = `resume.out'.
-
-\c@mv@tabular=\count316
-\c@mv@boldtabular=\count317
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 24.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 24.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 25.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 25
-.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 27.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 29.
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 29.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 29.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 29.
-LaTeX Font Info:    Trying to load font information for T1+LibertinusMono-TLF o
-n input line 31.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/libertinus-type1/T1LibertinusMono
--TLF.fd
-File: T1LibertinusMono-TLF.fd 2022/11/07 (autoinst) Font definitions for T1/Lib
-ertinusMono-TLF.
-)
-LaTeX Font Info:    Font shape `T1/LibertinusMono-TLF/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 31.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 47.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 47.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/sc' will be
-(Font)              scaled to size 14.4pt on input line 47.
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 252--255
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 258--261
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 264--267
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 277--280
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 283--286
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 303--306
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 321--324
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 327--330
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 357--360
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 535--536
-[]  
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 544--545
-[]  
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 553--554
-[]  
- []
-
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.0pt on input line 562.
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 562--567
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 570--575
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 578--583
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 586--591
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 597--601
-[]  
- []
-
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 602.
-
-Overfull \hbox (7.14912pt too wide) in alignment at lines 611--626
-[][] 
- []
-
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 637.
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_cb34qf.enc}{/u
-sr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_75t36g.e
-nc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.en
-c}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll
-2u3.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lb
-ts_sfissr.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-ty
-pe1/lbts_opzo24.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/liberti
-nus-type1/lbts_nufysp.enc}]
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 694--694
-[]  
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 701--703
-[] 
- []
-
-
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 731--731
-[]  
- []
-
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
-
-[2] (./resume.aux)
-
-Package rerunfilecheck Warning: File `resume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `resume.out':
-(rerunfilecheck)             Before: C9B33C6AC74BCD55EEA664B5ED7F4F67;1172
-(rerunfilecheck)             After:  8FEDE2FF5AD14728E46C9ED49A7E7EE7;1094.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 25548 strings out of 476025
- 495372 string characters out of 5790017
- 1892388 words of memory out of 5000000
- 45535 multiletter control sequences out of 15000+600000
- 593027 words of font info for 73 fonts, out of 8000000 for 9000
+ 24654 strings out of 476025
+ 478338 string characters out of 5790017
+ 1849388 words of memory out of 5000000
+ 44737 multiletter control sequences out of 15000+600000
+ 517078 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,15n,92p,450b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome
-5Free-Solid.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertin
-us-type1/LibertinusMono-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertinus-type1/Libertin
-usSerif-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/liber
-tinus-type1/LibertinusSerif-Regular.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy9.pfb>
-Output written on resume.pdf (2 pages, 470793 bytes).
-PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 11 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 84i,0n,89p,431b,153s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
