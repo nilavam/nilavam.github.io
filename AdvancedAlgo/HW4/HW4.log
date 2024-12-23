@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  17 NOV 2024 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  6 DEC 2024 22:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**HW3.tex
-(./HW3.tex
+**HW4.tex
+(./HW4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (../pre.tex
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -1207,29 +1207,49 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip102
 \f@nch@O@orf=\skip103
 )
-\@quotelevel=\count479
-\@quotereset=\count480
- (./HW3.aux)
-\openout1 = `HW3.aux'.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count479
+\c@ALG@rem=\count480
+\c@ALG@nested=\count481
+\ALG@tlm=\skip104
+\ALG@thistlm=\skip105
+\c@ALG@Lnr=\count482
+\c@ALG@blocknr=\count483
+\c@ALG@storecount=\count484
+\c@ALG@tmpcounter=\count485
+\ALG@tmplength=\skip106
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+\@quotelevel=\count486
+\@quotereset=\count487
+ (./HW4.aux)
+\openout1 = `HW4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1267,16 +1287,16 @@ LaTeX Font Info:    ... okay on input line 36.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count481
+\scratchcounter=\count488
 \scratchdimen=\dimen340
 \scratchbox=\box125
-\nofMPsegments=\count482
-\nofMParguments=\count483
+\nofMPsegments=\count489
+\nofMParguments=\count490
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count484
+\MPscratchCnt=\count491
 \MPscratchDim=\dimen341
-\MPnumerator=\count485
-\makeMPintoPDFobject=\count486
+\MPnumerator=\count492
+\makeMPintoPDFobject=\count493
 \everyMPtoPDFconversion=\toks54
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1287,13 +1307,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 36.
+Package hyperref Info: Link coloring OFF on input line 40.
 
-(./HW3.out) (./HW3.out)
+(./HW4.out) (./HW4.out)
 \@outlinefile=\write5
-\openout5 = `HW3.out'.
+\openout5 = `HW4.out'.
 
-\c@lstlisting=\count487
+\c@lstlisting=\count494
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
@@ -1305,14 +1325,14 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `HW3.bcf'.
+\openout4 = `HW4.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'HW3.bbl' not found.
+Package biblatex Info: ... file 'HW4.bbl' not found.
 
-No file HW3.bbl.
-Package biblatex Info: Reference section=0 on input line 36.
-Package biblatex Info: Reference segment=0 on input line 36.
+No file HW4.bbl.
+Package biblatex Info: Reference section=0 on input line 40.
+Package biblatex Info: Reference segment=0 on input line 40.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -1325,19 +1345,19 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 43
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -1345,6 +1365,43 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Warning: No \author given.
+
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 5
+7.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1bch.fd
+File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+)
+Overfull \hbox (21.08727pt too wide) in paragraph at lines 57--58
+[]\T1/bch/m/n/10.95 If $\OML/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 0$ \
+T1/bch/m/n/10.95 then $[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^U[]\OT1/cm
+r/m/n/10.95 (\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 B\O
+T1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/
+n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^T \OML
+/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 B\OT1/cmr/m/n/10.9
+5 ) \OMS/cmsy/m/n/10.95 ^^T [] []$\T1/bch/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (52.85826pt too wide) in paragraph at lines 58--59
+[]\T1/bch/m/n/10.95 If $\OML/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 0 \O
+ML/cmm/m/it/10.95 > ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 B\OT1/cmr/m/n/
+10.95 )$ \T1/bch/m/n/10.95 then $[] \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10
+.95 ^^T
+ []
+
+
+Overfull \hbox (29.60396pt too wide) in paragraph at lines 59--60
+[]\T1/bch/m/n/10.95 If $\OT1/cmr/m/n/10.95 0 \OML/cmm/m/it/10.95 > ^^U[]\OT1/cm
+r/m/n/10.95 (\OML/cmm/m/it/10.95 B\OT1/cmr/m/n/10.95 )$ \T1/bch/m/n/10.95 then 
+$[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 A\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 ^^
+U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 + \OML/cmm/m/it
+/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^T ^^@\OML/cmm/m/it/10.95 ^^U
+[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/1
+0.95 ^^T [] []$\T1/bch/m/n/10.95 . 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1367,21 +1424,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [2]
+Overfull \hbox (6.61577pt too wide) in paragraph at lines 100--102
+\U/msb/m/n/10.95 P [] [] \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 N[] [] [] \OMS
+/cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 2 [][] [] []$
+ []
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[3]
-Overfull \hbox (10.77513pt too wide) in paragraph at lines 134--135
-[]\T1/bch/m/n/10.95 Finally we show $[][] \OT1/cmr/m/n/10.95 = [] [] [][]\OML/c
-mm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; j\OT1/cmr/m/n/10.95 )
-$\T1/bch/m/n/10.95 . In-deed $[] [] [][]\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95
- (\OML/cmm/m/it/10.95 i; j\OT1/cmr/m/n/10.95 ) = [](\OML/cmm/m/it/10.95 x[] \OM
-S/cmsy/m/n/10.95 ^^@ [] []\OT1/cmr/m/n/10.95 ) =
+Overfull \hbox (0.89452pt too wide) in paragraph at lines 100--102
+\OML/cmm/m/it/10.95 " \OT1/cmr/m/n/10.95 = []$ \T1/bch/m/n/10.95 so that $\OT1/
+cmr/m/n/10.95 1 \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95
+ " \OMS/cmsy/m/n/10.95 ^^U []$ \T1/bch/m/n/10.95 for large $\OML/cmm/m/it/10.95
+ n$\T1/bch/m/n/10.95 . Take $\OML/cmm/m/it/10.95 t \OT1/cmr/m/n/10.95 = \OML/cm
+m/m/it/10.95 []$\T1/bch/m/n/10.95 . Then $\OT1/cmr/m/n/10.95 2 [][] [] [] \OMS
+/cmsy/m/n/10.95 ^^T
  []
 
 
@@ -1392,11 +1447,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4]
+[3]
 
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 166.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4]
+Overfull \hbox (10.35793pt too wide) in paragraph at lines 176--178
+\U/msb/m/n/10.95 P [] \OT1/cmr/m/n/10.95 + [] \U/msb/m/n/10.95 P [] \OMS/cmsy/m
+/n/10.95 ^^A \U/msb/m/n/10.95 P [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 p [
+] \U/msb/m/n/10.95 P [] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 q [] \U/msb/m/
+n/10.95 P []$\T1/bch/m/n/10.95 . 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1417,6 +1483,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 217.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1424,46 +1495,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7] (./HW3.aux)
-Package rerunfilecheck Info: File `HW3.out' has not changed.
-(rerunfilecheck)             Checksum: F2891C20C9B1533B459EAB93E2AA6DB8;390.
-Package logreq Info: Writing requests to 'HW3.run.xml'.
-\openout1 = `HW3.run.xml'.
+[7] (./HW4.aux)
+Package rerunfilecheck Info: File `HW4.out' has not changed.
+(rerunfilecheck)             Checksum: 6D7198DD758655314577F0B82CAA29D8;312.
+Package logreq Info: Writing requests to 'HW4.run.xml'.
+\openout1 = `HW4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37023 strings out of 476025
- 713456 string characters out of 5790017
- 1887388 words of memory out of 5000000
- 56878 multiletter control sequences out of 15000+600000
- 556897 words of font info for 103 fonts, out of 8000000 for 9000
+ 37583 strings out of 476025
+ 722290 string characters out of 5790017
+ 1884388 words of memory out of 5000000
+ 57422 multiletter control sequences out of 15000+600000
+ 558351 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,99p,1379b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,99p,1192b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HW3.pdf (7 pages, 259052 bytes).
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW4.pdf (7 pages, 274642 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

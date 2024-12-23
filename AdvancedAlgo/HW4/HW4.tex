@@ -1,0 +1,244 @@
+\input{../pre.tex}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{ADVANCED ALGORITHM DESIGN}\\ Homework $3$}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}[runin]
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}%
+  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+%\author{{\Large NILAVA METYA} \\ 
+%\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+%\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+
+\date{\vspace{-0.7in}December $4$, $2024$}
+\newcommand{\pb}{\section{Problem}~\par}
+\newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\newcommand{\fa}{~\forall~}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\algdef{SE}{Begin}{End}{\textbf{begin}}{\textbf{end}}
+\begin{document}
+
+\maketitle
+
+
+\pb
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Let $A,B$ be symmetric, real matrices with eigenvalues $\lambda_{1}(A) \ge \lambda_{2}(A) \ge \cdots \ge \lambda_{n}(A)$ (and similarly for $B$). Prove that for every $k$, $\lambda_{k}(A) + \lambda_{n}(B) \le \lambda_{k}(A+B) \le \lambda_{k}(A)+\lambda_{1}(B)$. Use this claim to establish that $\abs{\lambda_{k}(A+B)-\lambda_{k}(A)}\le \max\set{\lambda_{1}(B),\abs{\lambda_{n}(B)}}$.
+\item Let $A$ be the adjacency matrix of a not necessarily regular graph $G$ with
+$m$ edges and $n$ vertices with eigenvalues $\lambda_{1} \ge \lambda_{2} \cdots \ge \lambda_{n}$. Prove that $\lambda_{1} \ge 2m/n$.
+\end{enumerate}
+
+\soln
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Recall from the Courant-Fisher theorm that $\ds\lambda_{k}(M) = \max_{\substack{S\subseteq \R^{n}\\ \dim S=k}}\min_{\pmb x\in S\smallsetminus\set{0}} \frac{\pmb x^{\top}M\pmb x}{\norm{\pmb x}{2}^{2}}$ for any symmetric real symmetric matrix $M$. Define $f_{M}(\pmb x) \sett \frac{\pmb x^{\top}M\pmb x}{\norm{\pmb x}{2}^{2}}$ (where $\lambda_{i}$ means as usual). In particular, $\lambda_{1}(M) \ge \pmb f_{M}(\pmb x) \ge \lambda_{n}(M)$. Note that $f_{A+B}(\pmb x) = f_{A}(\pmb x) + f_{B}(\pmb x)$. Therefore, $f_{A}(\pmb x) + \lambda_{1}(B)\ge f_{A+B}(\pmb x) \ge f_{A}(\pmb x) + \lambda_{n}(B)$. Taking $\max\min$ with appropriate constraints preserves inequalities, whence $\lambda_{k}(A)+\lambda_{1}(B) \ge \lambda_{k}(A+B)\ge \lambda_{k}(A) + \lambda_{n}(B)$. 
+
+This gives $\lambda_{1}(B)\ge \lambda_{k}(A+B) - \lambda_{k}(A)\ge \lambda_{n}(B)$. \begin{itemize}
+\item If $\lambda_{n}(B)\ge 0$ then $\abs{\lambda_{k}(A+B) - \lambda_{k}(A)} = \lambda_{k}(A+B) - \lambda_{k}(A) \le \lambda_{1}(B) \le \max\set{\lambda_{1}(B),\abs{\lambda_{n}(B)}}$.
+\item If $\lambda_{1}(B)\ge 0 >\lambda_{n}(B)$ then $\abs{\lambda_{k}(A+B) - \lambda_{k}(A)} = \max\set{\lambda_{k}(A+B) - \lambda_{k}(A), \lambda_{k}(A)-\lambda_{k}(A+B)} \le  \max\set{\lambda_{1}(B),-\lambda_{n}(B)} =  \max\set{\lambda_{1}(B),\abs{\lambda_{n}(B)}}$.
+\item If $0>\lambda_{1}(B)$ then $\abs{\lambda_{k}(A+B) - \lambda_{k}(A)} = \lambda_{k}(A) - \lambda_{k}(A+B) \le -\lambda_{n}(B) \le \max\set{\lambda_{1}(B),\abs{\lambda_{n}(B)}}$.
+\end{itemize}
+\item $\ds\lambda_{1}(A) \stackrel{\text{Courant-Fisher}}{=} \max_{\pmb x\ne 0}\frac{\pmb x^{\top}A\pmb x}{\norm{\pmb x}{2}^{2}} \ge \left(\frac{\pmb x^{\top}A\pmb x}{\norm{\pmb x}{2}^{2}}\right)_{\pmb x=\pmb 1} = \frac{\sum\limits_{1\le i,j\le n}A_{ij}}{(\sqrt n)^{2}} = \frac{2m}{n}$ where $\pmb1\in\R^{n}$ has all $1$'s.
+\end{enumerate}
+
+
+
+
+
+
+
+\newpage
+\pb
+Let $R$ be a random symmetric matrix with uniformly random $\pm1$ entries. In this problem, for any $\epsilon\in(0,1)$, let $S_{\epsilon}$ be a finite set of $N_{\epsilon}$ unit vectors in $\R^{n}$ such that for every unit vector $u\in \R^{n}$, there is a vector $\pmb u'\in S$ such that $\norm{\pmb u-\pmb u'}2 \le\epsilon$.
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Prove that for every unit vector $\pmb u$ and $t\ge 0$, $\P{\abs{\pmb u^{\top} R\pmb u}\ge t} \le 2\exp\set{\frac{-t^{2}}{2}}$ .
+\item Prove that $\P{\exists\pmb u\in S_{\epsilon} \text{ s.t.} \abs{\pmb u^{\top}R\pmb u}\ge t} \le 2N_{\epsilon}\exp\set{\frac{-t^{2}}{2}}$.
+\item Prove that for every unit vector $\pmb u$, and any $\pm1$-entry matrix $B, \abs{\pmb u^{\top}B\pmb u}\le n^{C}$ for some $C >0$. What's the smallest $C$ for which you can establish this claim?
+\item In this part, you can assume without proof that for every $\epsilon>0$, there is an $S_{\epsilon}$ of size $N_{\epsilon} \le \left(\frac{c}{\epsilon}\right)^{n}$. Using this and the results of the previous parts, argue that $\P{\norm{R}{2} \ge \cO\left(\sqrt{n\log n}\right)} \le \frac{1}{n}$.
+\item \textit{(Extra credit)} Prove the assumption in part $(d)$. That is, prove that there is an $S_{\epsilon}$ as described in part (2) of size $(c/\epsilon)^{n}$ for some $c>0$.
+\end{enumerate}
+
+\soln
+
+\begin{enumerate}[leftmargin=*, label=(\alph*)]
+\item Note that $\pmb u^{\top}R\pmb u = \sum\limits_{1\le i,j\le n}R_{ij}u_{i}u_{j}$. We will use H\"offding bound\footnote{If $X_{1},\cdots,X_{n}$ are independent with $X_{i}\in [a_{i},b_{i}]$ then $\ds\P{\sum_{i\in [n]}\left(X_{i}-\E{X_{i}}\right)}\le 2\exp\set{\frac{-2t^{2}}{\sum\limits_{i\in[n]}(b_{i}-a_{i})^{2}}}$} with the $n^{2}$ random variables $X_{ij} \sett R_{ij}u_{i}u_{j}$. Note that $\abs{X_{ij}} = \abs{u_{i}u_{j}}$ because $R_{ij}\in \set{\pm 1}$. So $X_{ij}\in [a_{ij},b_{ij}]$ where $a_{ij}\sett -\abs{u_{i}u_{j}}, b_{ij}\sett \abs{u_{i}u_{j}}$. The denominator in the exponential of our H\"ofding bound becomes $\sum\limits_{1\le i,j\le n}(b_{ij}-a_{ij})^{2} = \sum\limits_{1\le i,j\le n}4u_{i}^{2}u_{j}^{2} = 4\sum_{i}u_{i}^{2}\sum_{j}u_{j}^{2} = 4$ because $\norm{\pmb u}{2}^{2}=1$. Noting that $\sum\limits_{i,j}\E{X_{ij}} = \sum\limits_{i,j}u_{i}u_{j}\E{R_{ij}} = 0$ we get,\\
+$\P{\abs{\pmb u^{\top}R\pmb u} \le t} = \P{\abs{\sum\limits_{i,j}X_{ij}}\le t}
+\le 2\exp\set{\frac{-2t^{2}}{\sum\limits_{1\le i,j\le n}(b_{ij}-a_{ij})^{2}}}
+= 2\exp\set{\frac{-2t^{2}}{4}} = 2\exp\set{\frac{-t^{2}}{2}}$.
+\item Let the $(N=)N_{\epsilon}$ vectors in $S_{\epsilon}$ be $u_{1},\cdots, u_{N}$. Then $\P{\exists \pmb u\in S_{\epsilon} \text{ s.t.} \abs{\pmb u^{\top}R\pmb u}\ge t}  =\\ \P{\bigcup\limits_{\pmb u\in S_{\epsilon}} \set{\abs{\pmb u^{\top}R\pmb u}\ge t}}  \stackrel{\text{union bound}}{\le} \sum\limits_{\pmb u\in S_{\epsilon}}\P{\abs{\pmb u^{\top}R\pmb u}\ge t} \le \sum\limits_{\pmb u\in S_{\epsilon}}2\exp\set{\frac{-t^{2}}{2}} = 2N_{\epsilon}\exp\set{\frac{-t^{2}}{2}}$.
+\item Recall that for any $\pmb x\in\R^{n}$ we have $\norm{\pmb x}1 \le \sqrt n\norm{\pmb x}{2}$. If $B\in \set{\pm1}^{n\times n}$ and $\pmb u\in\R^{n}$ has $\norm{\pmb u}2=1$ then $\abs{\pmb u^{\top}B\pmb u} = \abs{\sum\limits_{i,j\in[n]}B_{ij}u_{i}u_{j}}\le \sum\limits_{i,j\in[n]}]\abs{B_{ij}u_{i}u_{j}} = \sum_{i}\abs{u_{i}}\sum_{j}\abs{u_{j}} = \norm{\pmb u}1^{2} \le n\norm{\pmb u}{2}^{2} = n^{1}$. So $C=1$ works.\\
+We will show that this is the best $C$ (by showing that $C=1$ is attained). This is because when $B=\pmb 1\pmb 1^{\top}$  (which is the matrix of all $1$) and $\pmb u = \frac{\pmb 1}{\sqrt n}$ (which is the vector with each entry $1/\sqrt n$) then $\norm{\pmb u}{2} = n\cdot\frac1n = 1$ and $\abs{\pmb u^{\top}B\pmb u} = \abs{\sum\limits_{i,j}u_{i}u_{j}} = n^{2}\cdot\frac{1}{n} = n$.
+\item 
+Let $\mathbb S^{n-1}$ be the collection of all unit vectors in $\R^{n}$. 
+\begin{lemma}
+$\ds\frac{\max\limits_{\pmb u\in S_{\epsilon}}\abs{\pmb u^{\top}R\pmb u}}{1-2\epsilon} \ge \max_{\pmb u\in \mathbb S^{n-1}}\abs{\pmb u^{\top}R\pmb u} = \norm{R}{2}$.
+\end{lemma}
+\begin{pf}
+Say $\pmb x\in\mathbb S^{n-1}$ is an eigenvector for the largest (in magnitude) eigenvalue of $R$. Let this eigenvalue be $\lambda$. So $\norm R2 = \abs\lambda$. But $\exists~ \pmb y\in S_{\epsilon}$ such that $\norm{\pmb y-\pmb x}{2}\le \epsilon$. Then $\abs{\pmb x^{\top}R\pmb x - \pmb y^{\top}R\pmb y} = \abs{\pmb x^{\top}R(\pmb x-\pmb y) - (\pmb y-\pmb x)^{\top}R\pmb y} \le \abs{\pmb x^{\top}R(\pmb x-\pmb y)} + \abs{(\pmb y-\pmb x)^{\top}R\pmb y} \le \norm{\pmb x-\pmb y}{2} \norm R2(\norm {\pmb x} 2 + \norm {\pmb y}2) = 2 \norm R2\norm{\pmb x-\pmb y}2 = 2\epsilon\abs\lambda$. \\
+Thus $\max\limits_{\pmb u\in S_{\epsilon}}\abs{\pmb u^{\top}R\pmb u} \ge \abs{\pmb y^{\top}R\pmb y} \ge \abs{\pmb x^{\top}R\pmb x} - \abs{\pmb x^{\top}R\pmb x - \pmb y^{\top}R\pmb y} \ge \abs\lambda - 2\epsilon\abs\lambda = \abs\lambda(1-2\epsilon)$.
+\qed\end{pf} 
+Then $\ds\P{\norm{R}{2} \ge t} \le \P{\frac{\max\limits_{\pmb u\in S_{\epsilon}}\abs{\pmb u^{\top}R\pmb u}}{1-2\epsilon} \ge t} = \P{\max\limits_{\pmb u\in S_{\epsilon}}\abs{\pmb u^{\top}R\pmb u} \ge t(1-2\epsilon)}= \\\P{\exists u\in S_{\epsilon} \text{ s.t. } \abs{\pmb u^{\top}R\pmb u} \ge t(1-2\epsilon)} \stackrel{\text{(b)}}{\le} 2N_{\epsilon}\exp\set{\frac{-t^{2}(1-2\epsilon)^{2}}{2}} \le 2\left(\frac c\epsilon\right)^{n}\exp\set{\frac{-t^{2}(1-2\epsilon)^{2}}{2}}$ where the first inequality is true because it's more probable for a larger quantity to be $\ge t$. 
+Take $\epsilon = \frac{\log n}{ n}$ so that $1-2\epsilon\ge \frac{1}{2}$ for large $n$. Take $t=\alpha\sqrt{ n\log n}$. Then $\ds 2\left(\frac c\epsilon\right)^{n}\exp\set{\frac{-t^{2}(1-2\epsilon)^{2}}{2}} \le 2\left(\frac{cn}{\log n}\right)^{n}\exp\set{\frac{-\alpha^{2}n\log n}{8}} = 2\left(\frac{cn}{\log n}\right)^{n} n^{\frac{-\alpha^{2}n}{8}}  = 2\left(\frac{c}{n^{\frac{\alpha^{2}}8-1}\log n}\right)^{n} \le \frac1n$ by choosing large constant $\alpha$.
+\item Consider the following algorithm for any given input $\epsilon>0$ to find a set $S_{\epsilon}\subseteq \mathbb S^{n-1}$. 
+\begin{algorithmic}[1]
+\Require $\epsilon>0,$ dimension $n$
+\Ensure a number $N$ and points $\pmb v_{1},\cdots,\pmb v_{N}\in \mathbb S^{n-1}$ such that every point in $\mathbb S^{n-1}$ is $\epsilon-$close to some $\pmb v_{i}$.
+\Begin
+\State $N\gets 1$
+\State $\pmb v_{1} \gets (1,0,\cdots,0)\in\R^{n}$
+\State $S \gets B_{\epsilon}^{o}(\pmb v_{1})\cap \mathbb S^{n-1}$ \Comment{points in $S^{n-1}$ which are at distance $<\epsilon$ from $\pmb v_{1}$}
+\While {$N\geq 1$} 
+    \State $\pmb v_{N} \gets $any point in $\mathbb S^{n-1}\smallsetminus S$
+    \State $S \gets S\cup (B_{\epsilon}(\pmb v_{2})\cap \mathbb S^{n-1})$
+    \If{$S=\mathbb S^{n-1}$} \Comment{check if $\mathbb S^{n-1}$ has been covered}
+    	\State \textbf{break}
+	\Else
+		\State $N \gets N+1$
+	\EndIf
+\EndWhile 
+\State \Return $N,S_{\epsilon} = \set{\pmb v_{1},\cdots,\pmb v_{N}}$
+\End
+\end{algorithmic}
+
+Now we prove that this algorithm actually gives $S_{\epsilon}$ and $N_{\epsilon}$ as desired. In what follows, $B,B^{o}$ will respectively denote closed and open balls.
+
+If the above algorithm terminates with answer $N,S_{\epsilon}$, then $\mathbb S^{n-1}\subseteq \bigcup\limits_{i=1}^{N}B_{\epsilon}^{o}(\pmb v_{i}) \subseteq \bigcup\limits_{i=1}^{N}B_{\epsilon}(\pmb v_{i})$.
+
+\begin{cl}
+The above algorithm terminates.
+\end{cl}
+\begin{pf}
+Suppose the algorithm goes on forever. So we get a sequence of points $\pmb v_{1}, \pmb v_{2},\cdots$ such that $\mathbb S^{n-1}\subseteq \bigcup\limits_{i\in\N}B_{\epsilon}^{o}(\pmb v_{i})$. Since $\mathbb S^{n-1}$ is compact there is a finite $N$ such that $\mathbb S^{n-1}\subseteq \bigcup\limits_{i=1}^{N}B_{\epsilon}^{o}(\pmb v_{i})$. This is a contradiction to our original assumption.\qed
+\end{pf}
+
+Next we note that just by how our algorithm is designed, if $\pmb x,\pmb y\in S_{\epsilon}$ then $\norm{\pmb x-\pmb y}{2}\ge \epsilon$. This is because a new point (line $6$) is always chosen so that it is not in the $\epsilon-$ball around any of the previously chosen points, and distance is symmetric.
+
+Further $S_{\epsilon}$ is maximal in the sense that if $S'\supsetneq S_{\epsilon}$ is a collection of points in $\mathbb S^{n-1}$, there will be two points in $S'$ which are at most $\epsilon-$close to each other. This is by our breaking criterion on line $8$. Simply put, $S_{\epsilon}$ covers $\mathbb S^{n-1}$ with $\epsilon-$balls.
+
+\begin{cl}\label{disj}
+If $\pmb x,\pmb y\in S_{\epsilon}$ are distinct, then $B_{\frac{\epsilon}{2}}^{o}(\pmb x)\cap B_{\frac{\epsilon}{2}}^{o}(\pmb y) \cap \mathbb S^{n-1} = \varnothing$.
+\end{cl}
+\begin{pf}
+Suppose $\pmb p\in \mathbb S^{n-1}\cap B_{\frac{\epsilon}{2}}^{o}(\pmb x)\cap B_{\frac{\epsilon}{2}}^{o}(\pmb y)$ and say $\pmb y$ was picked after $\pmb x$ in the algorithm. Then $\norm{\pmb x-\pmb y}{2}\le \norm{\pmb x-\pmb p}{2} + \norm{\pmb p-\pmb y}{2} \le \epsilon$. Moreover equality here occurs only when $\norm{\pmb p-\pmb x}{2} = \norm{\pmb p-\pmb y}{2}=\frac{\epsilon}{2}$ which means $p\notin B_{\frac\epsilon2}^{o}(\pmb x)$ which is a contradiction. So it must happen that $\norm{\pmb x-\pmb y}2<\epsilon$ which contradicts the constructive step in line $6$ because this indicated that $\pmb y$ was picked in the $\epsilon-$ball around $\pmb x$.\qed
+\end{pf}
+
+\begin{cl}\label{ball}
+If $\pmb x\in \bigcup\limits_{i\in [N]}B_{\epsilon}(\pmb v_{i})\subseteq \R^{n}$ then $\norm{\pmb x}{2}\le1+\frac{\epsilon}{2}$.
+\end{cl}
+\begin{pf}
+Say $\pmb x\in B_{\epsilon}(\pmb v_{i})$ for some $i$. Then 
+$\norm{\pmb x}2 \le \norm{\pmb v}2 + \norm{\pmb x-\pmb v}{2} \le 1+\epsilon.$\qed
+\end{pf}
+
+Denote $V_{n} \sett \vol(\mathbb D^{n}), A_{n} \sett \area(\mathbb S^{n-1})$. These are respectively the $n-$dimensional volume of $D^{n}$ (the solid unit ball with $\mathbb S^{n-1} = \partial \mathbb D^{n}$) and the $(n-1)-$dimensional volume (area) of $\mathbb S^{n-1}$. %It is well known that they are related as $A_{n}=nV_{n}$. 
+By \cref{ball}, $\bigcup\limits_{i\in [N]}B_{\epsilon}(\pmb v_{i})\subseteq \R^{n} \subseteq B_{1+\frac{\epsilon}{2}}(0)$. $\vol(B_{1+\frac{\epsilon}{2}}(0)) = \left(1+\frac{\epsilon}{2}\right)^{n}V_{n}$. So $\vol\left(\bigcup\limits_{i\in [N]}B_{\epsilon}(\pmb v_{i})\right)\le V_{n}\left(1+\frac{\epsilon}{2}\right)^{n}$. \Cref{disj} says the above union is almost disjoint (the intersections form a set of measure $0$). Hence $\vol\left(\bigcup\limits_{i\in [N]}B_{\epsilon}(\pmb v_{i})\right) = \sum\limits_{i=1}^{N}\vol\left(B_{\epsilon}(\pmb v_{i})\right) = \sum\limits_{i=1}^{N}\epsilon^{n}V(n) = NV_{n}\epsilon^{n}$. These prove that $N\epsilon^{n}\le \left(1+\frac\epsilon2\right)^{n}\implies N\le \left(\frac{1}{\epsilon}+\frac{1}{2}\right)^{n} = \left(\frac{(2+\epsilon)/2}{\epsilon}\right)^{n} \le \left(\frac{2}{\epsilon}\right)^{n}$.
+\end{enumerate}
+
+
+
+\newpage
+\pb Let $G$ be a graph on $n$ vertices ($n$ is even) chosen as follows: \begin{enumerate}
+\item Pick an arbitrary S of size $n/2$,
+\item For each pair $i,j$ of vertices such that $i,j \in S$ or $i,j\notin S$, include $\set{i,j}$ in $G$ with probability $p$,
+\item For each pair $i,j$ such that $i \in S,j\notin S$ or $i\notin S,j \in S$, include $\set{i,j}$ in $G$ with probability $q$.
+\end{enumerate}  
+Suppose that $p-q>c$ for some fixed constant $c>0$.
+
+Consider the following algorithm: \begin{enumerate}
+\item pick a vertex $v$, 
+\item Output $\hat S$ obtained by including in $\hat S$ the $n/2$ vertices that have the fewest common neighbors with $v$.
+\end{enumerate}
+Prove that for large $n$, with probability at least $0.99$ over the draw of $G$, $\hat S$ either equals $S$ or $V \smallsetminus S$.
+
+\soln
+For any vertex $v$ in $G=(V=[n],E)$, denote by $N(v)$ the neighbors of $v$ in $G$. Say $n=2k$. Denote $T\sett V\smallsetminus S$. Then $\abs T=\abs S=k$. Let's proceed as the hint suggests.
+
+Assume $v\in S$ WLOG (otherwise replace $S$ with $T$). Let $u$ be an arbitrary vertex. Denote $X_{u} \sett \abs{N(u)\cap N(v)}$. Note that $X_{u} = \sum\limits_{x\in V} \pmb 1[x\in N(u)\cap N(v)] = \sum\limits_{x\in V}\pmb 1_{x\in N(u)}\cdot \pmb 1_{x\in N(v)}$ because the events $\set{x\in N(u)},\set{x\in N(v)}$ are independent. This can be further split as $X_{u} = \sum\limits_{x\in S\smallsetminus\set{u,v}}\pmb 1_{x\in N(u)}\cdot \pmb 1_{x\in N(v)} + \sum\limits_{x\in T\smallsetminus\set{u,v}} \pmb 1_{x\in N(u)}\cdot \pmb 1_{x\in N(v)} \implies \E{X_{u}} = \sum\limits_{x\in S\smallsetminus\set{u,v}}\P{x\in N(u)}\cdot \P{x\in N(v)} + \sum\limits_{x\in T\smallsetminus\set{u,v}} \P{x\in N(u)}\cdot \P{x\in N(v)} = p\sum\limits_{x\in S\smallsetminus\set{u,v}}\P{x\in N(u)} + q\sum\limits_{x\in T\smallsetminus\set{u,v}} \P{x\in N(u)}$.
+\begin{itemize}
+\item Say $u\in S$. Then $\E{X_{u}} = (k-2)p^{2} + kq^{2}$.
+\item Say $u\in T$. Then $\E{X_{u}} = (k-1)pq + (k-1)pq = 2(k-1)pq$.
+\end{itemize}
+Denote $b\sett (k-2)p^{2}+kq^{2}$ and $a\sett 2(k-1)pq$. One observes that $d\sett b-a = (k-1)(p-q)^{2}+q^{2}-p^{2}$. It is important to note that $b\le k(p^{2}+q^{2}) \le 2k$ and $d\ge (k-1)c^{2}$.
+
+{\color{gray}So far we learnt that, in expectation, vertices in $S$ has higher number of common neighbors with $v$ than those in $T$. So if $X_{i}$'s are well concentrated in $(t,\infty)$ for $i\in S$, and $X_{j}$'s are well concentrated in $(-\infty,t)$ where $t\in (a,b)$ (where $t\in(a,b)$) then $X_{i}\ge X_{j}\fa i\in S,j\in T$. So $\hat S$ would be $T$.}
+
+For $i\in S\smallsetminus\set v$ let $A_{i}$ be the event $\set{X_{i} \le t}$. For $j\in T$ let $B_{j}$ be the event $\set{X_{j} \ge t}$. We are interested in the event $E\sett \left(\bigcup\limits_{i\in S\smallsetminus\set v}A_{i}\right) \bigcup \left(\bigcup\limits_{j\in T}B_{j}\right)$. But $\P{E} = \sum\limits_{i\in S\smallsetminus\set v}\P{A_{i}} + \sum\limits_{j\in T}\P{B_{j}} = \sum\limits_{i\in S\smallsetminus\set v}\P{A_{i}} + \sum\limits_{j\in T}\P{B_{j}}$.
+
+We will take $t = \frac{a+b}{2}$ so that $t=b\left(1-\frac{b-a}{2b}\right) = a\left(1+\frac{b-a}{2a}\right)$. Recall the lower and upper tail Chernoff bounds for a random variable $X$ which is a sum of (finitely many) independent $0/1$ random variables:
+\begin{itemize}
+\item $\P{X\le \E{X}(1-\epsilon)} \le \exp\set{-\frac{\epsilon^{2}\E X}{2}}$. Using this for $A_{i}$ (with $i\in S$) gives \begin{align*}
+\P{A_{i}} &= \P{X_{i} \le \frac{a+b}{2}} = \P{X_{i} \le b\left(1-\frac{b-a}{2b}\right)} \\
+&\le \exp\set{-\frac{(b-a)^{2}}{8b}} = \exp\set{-\frac{d^{2}}{8b}} \le \exp\set{-\frac{d^{2}}{12b}}\\
+&\le \exp\set{-\frac{(k-1)^{2}c^{4}}{12\cdot 2k}} \stackrel{\because k\ge 2\implies k-1\ge\frac{2k}{3}}{\le}  \exp\set{\frac{-c^{4}k}{54}}.
+\end{align*}
+\item $\P{X\ge \E{X}(1+\epsilon)} \le \exp\set{-\frac{\epsilon^{2}\E X}{3(1+\epsilon)}}$. Using this for $B_{j}$ (with $j\in T$) gives \begin{align*}
+\P{B_{i}} &= \P{X_{i} \ge \frac{a+b}{2}} = \P{X_{i} \le a\left(1+\frac{b-a}{2a}\right)} \\
+&\le \exp\set{-\frac{(b-a)^{2}}{6(a+b)}} \le \exp\set{-\frac{d^{2}}{12b}}\\
+&\le \exp\set{-\frac{(k-1)^{2}c^{4}}{16\cdot 2k}} \stackrel{\because k\ge 2\implies k-1\ge\frac{2k}{3}}{\le}  \exp\set{\frac{-c^{4}k}{54}}.
+\end{align*}
+\end{itemize}
+
+Therefore $\ds \P{E} \le (n-1)\exp\set{\frac{-c^{4}n}{108}} \le n\exp\set{\frac{-c^{4}n}{108}}$. Let $C \sett \frac{c^{4}}{108}$. We recall that $e^{x} \ge 1+x+x^{2}/2$ for $x\ge 0$. Hence $e^{-x} \le \frac{1}{1+x+x^{2}/2}$ on $\R_{\ge 0}$. Taking $x=Cn>0$ and $\ds n>\frac{200}{C^{2}}$ gives $n\exp\set{-Cn} \le \frac{n}{1+nC+n^{2}C^{2}/2} = \frac{1}{\frac1n + C + nC^{2}/2} \stackrel{\left[\because \frac{1}{n}+C>0\right]}{<} \frac{1}{nC^{2}/2} \frac1{100} = 0.01$, whence $P{E^{c}} \ge 0.99$. Recall that $A_{i}^{c}$ (for $i\in S$) was the event that the number of common neighbors of $i,v$ is $>\frac{a+b}{2}$, $B_{j}^{c}$ (for $j\in T$) was the event that the number of common neighbors of $j,v$ is $<\frac{a+b}{2}$. So $E^{c}$ is the event that every vertex in $S$ has $>\frac{a+b}{2}$ common neighbors with $v$ and every vertex in $T$ has $<\frac{a+b}{2}$ common neighbors with $v$, hence it's a special case with $\hat S=T$ which is a subset of the event that we are interested in. Therefore the chance that, over the draw of $G$, the $n/2$ vertices with fewest common neighbors of $v$ is at least $\P{E^{c}} \ge 0.99$.
+
+
+
+
+
+
+\newpage
+\pb
+In the class, we saw that we can distinguish between a graph $G\sim G(n,1/2)$ and $G\sim G(n,1/2,k)$ (i.e., $G\sim G(n,1/2)$ with an added $k-$clique) in polynomial time if $k\ge c\sqrt n$ for some $c > 0$. 
+
+Find an algorithm that for any $t \in \N$, runs in time $n^{\cO(t)}$ and succeeds in the same goal for $k\ge \sqrt{n/2^{t}}$. (Hint: suppose you were given, in addition, a set $S$ of $t$ vertices in the planted clique if there was one. Can you now reduce the problem to graphs on a smaller number of vertices?)
+\soln
+
+
+
+Let's first present the algorithm to the input graph $G=(V=[n],E)$ which is as follows. {\color{blue}We loop through all $\ds{n\choose {t+1+z}} = n^{\cO(t)}$ subsets of $V$ which are of size $s \sett t+1+z$ and form a clique. For each such subset $S\subseteq V$, take the vertices in $V$ connected to every vertex in $S$ and call it $\cN_{S}$ and take $\cA_{S}$ to be the $\pm1-$adjacency matrix of the subgraph of $G$ induced by $\cN_{S}$. We declare that ``$G$ has a $k-$planted clique'' if $\norm{\cA_{S}}{2}>C\sqrt{\abs{\cN_{S}}}$ (this is the algorithm discussed in class). If this fails for every such subset $S$, we declare that there is ``no planted clique''.}
+
+In the above, we do $n^{\cO(1)}$ (where the $\cO$ is with respect to $t$) computations per $S\subseteq V$ of size $t$. The number of loops is $n^{\cO(t)}$ and checking if $S$ forms a clique takes time of order $t^{2} < n^{2}$. So the total running time of the above algorithm is $n^{\cO(t)}$.
+
+%Choose $\alpha$ such that $\sqrt{\frac n{2^{t}}}-(t+z+1) > c \sqrt{\frac{n-s}{2^{s-1}}}$
+
+
+Let's now analyze why this algorithm works.
+
+
+Let's first do the analysis assuming that the graph $G=(V=[n],E)$ has a $t-$ clique $S\subseteq V$. Now let's look at all those vertices in $V\smallsetminus S$ which are connected to each vertex in $S$ and call it $\cN=\cN_{S}$. Let $\pmb 1_{v\in \cN}$ be the indicator variable that is $1$ if $v\in \cN$, and $0$ otherwise. So $\abs\cN = \sum\limits_{v\in V\smallsetminus S}\pmb 1_{v\in\cN}$. Now $\ds \E{\abs \cN} = \sum_{v\in V\smallsetminus S} \E{\pmb 1_{v\in\cN}} = \sum_{v\in V\smallsetminus S} \P{v\in\cN} = (1+o(1))\frac{n-t}{2^{t}}$. We will see that the size of $\cN$ is well-concentrated around its mean. Note that $\pmb 1_{v\in\cN}$ (for $v\in V\smallsetminus S$) are all independent. Chernoff gives $\P{\abs\cN \ge 2\E{\abs\cN} } \le \exp\set{-\cO\left(\frac{n-t}{2^{t}}\right)}$. So we can take $\abs\cN = \frac{2n}{2^{t}}$ with probability exponentially (in $n$) close to $1$.
+
+Recall that in class we have a constant $C$ from lemma $2$ in lecture $19$ (second last page). Let $z\in\N$ be such that $2^{z}>C$.
+
+
+\begin{itemize}
+\item Say $G\sim G_{n,\frac12,k}$. Then the algorithm reaches some $(t+1+z)-$clique $S$ for which $\cN_{S}$ contains a $(k-s)-$clique (recall $s=t+1+z$). But $k-s > \sqrt{\frac n{2^{t}}}-s > 2C\sqrt{\frac{2(n-s)}{2^{s}}} = 2C\sqrt{\abs \cN_{S}}$ with probability $1-\exp\set{-\cO\left(\frac{n-s}{2^{s}}\right)}$. Therefore the failure chance in this case is inverse exponential in $n$.
+\item Say $G\sim G_{n,\frac12}$. The chance that we get some $S$ such that $\abs{\cN_{S}}$ is $>\frac{2n}{2^{s}}$ is inverse-exponential in $\frac{n}{2^{s}}$. Among the small $\abs{\cN_{S}}'s$, the success probability of the algorithm discussed in class is large because $k-s \ge 2C\sqrt{\abs{\cN_{S}}}$ By the lemma given on Ed discussion, $\P{\cA_{S} \le C\sqrt{\abs{\cN_{S}}}} \le C''\exp\set{-C'n/2^{s}}$. Therefore the chance that some $S$ gives $\norm{\cA_{S}}{2} > C\sqrt{\abs \cN_{S}}$ is (by union bound) $\le C''{n\choose s} \exp\set{-C'n/2^{s}}$. 
+\end{itemize}
+
+
+
+
+
+
+
+\end{document}
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  10 NOV 2024 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  27 NOV 2024 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -849,11 +849,6 @@ LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/sc' will be
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/sc' will be
 (Font)              scaled to size 14.4pt on input line 47.
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 252--255
-[] 
- []
-
-
 Overfull \hbox (0.55678pt too wide) in paragraph at lines 258--261
 [] 
  []
@@ -864,7 +859,7 @@ Overfull \hbox (0.55678pt too wide) in paragraph at lines 264--267
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 277--280
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 270--273
 [] 
  []
 
@@ -874,12 +869,12 @@ Overfull \hbox (0.55678pt too wide) in paragraph at lines 283--286
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 303--306
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 289--292
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 321--324
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 309--312
 [] 
  []
 
@@ -889,61 +884,64 @@ Overfull \hbox (0.55678pt too wide) in paragraph at lines 327--330
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 357--360
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 333--336
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 535--536
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 363--366
+[] 
+ []
+
+
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 541--542
 []  
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 544--545
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 550--551
 []  
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 553--554
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 559--560
 []  
  []
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.0pt on input line 562.
+(Font)              scaled to size 10.0pt on input line 568.
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 562--567
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 568--573
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 570--575
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 576--581
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 578--583
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 584--589
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 586--591
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 592--597
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 597--601
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 603--607
 []  
  []
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 602.
+(Font)              scaled to size 5.0pt on input line 608.
 
-Overfull \hbox (7.14912pt too wide) in alignment at lines 611--626
+Overfull \hbox (7.14912pt too wide) in alignment at lines 617--632
 [][] 
  []
 
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 637.
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 3.60004pt, for example:
@@ -960,17 +958,17 @@ c}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll
 ts_sfissr.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-ty
 pe1/lbts_opzo24.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/liberti
 nus-type1/lbts_nufysp.enc}]
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 694--694
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 700--700
 []  
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 701--703
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 707--709
 [] 
  []
 
 
-Overfull \hbox (0.55678pt too wide) in paragraph at lines 731--731
+Overfull \hbox (0.55678pt too wide) in paragraph at lines 737--737
 []  
  []
 
@@ -980,46 +978,36 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                \setlength{\footskip}{3.60004pt}.
 
 [2] (./resume.aux)
-
-Package rerunfilecheck Warning: File `resume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `resume.out':
-(rerunfilecheck)             Before: C9B33C6AC74BCD55EEA664B5ED7F4F67;1172
-(rerunfilecheck)             After:  8FEDE2FF5AD14728E46C9ED49A7E7EE7;1094.
+Package rerunfilecheck Info: File `resume.out' has not changed.
+(rerunfilecheck)             Checksum: 8FEDE2FF5AD14728E46C9ED49A7E7EE7;1094.
  ) 
 Here is how much of TeX's memory you used:
- 25548 strings out of 476025
- 495372 string characters out of 5790017
- 1892388 words of memory out of 5000000
- 45535 multiletter control sequences out of 15000+600000
- 593027 words of font info for 73 fonts, out of 8000000 for 9000
+ 25545 strings out of 476025
+ 495321 string characters out of 5790017
+ 1894388 words of memory out of 5000000
+ 45533 multiletter control sequences out of 15000+600000
+ 588236 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,15n,92p,450b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome
-5Free-Solid.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertin
-us-type1/LibertinusMono-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertinus-type1/Libertin
-usSerif-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/liber
-tinus-type1/LibertinusSerif-Regular.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy9.pfb>
-Output written on resume.pdf (2 pages, 470793 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
+me5Free-Solid.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libert
+inus-type1/LibertinusMono-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts
+/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-BoldItalic.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertinus-type1/Libert
+inusSerif-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lib
+ertinus-type1/LibertinusSerif-Regular.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy9.pfb>
+Output written on resume.pdf (2 pages, 469875 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 11 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 10 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
