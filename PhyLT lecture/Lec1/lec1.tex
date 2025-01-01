@@ -1,0 +1,90 @@
+\input{../pre.tex}
+%\fontfamily{qcr}\selectfont 
+%\usepackage[backend=bibtex]{biblatex}
+\usepackage[
+backend=biber,
+style=alphabetic,%firstinits,
+citestyle=ieee-alphabetic,
+%natbib=true,
+%uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%\addbibresource{writeup/article/refs.bib}
+%\title{\vspace{-1cm}}
+\title{\textbf{Physics of Learning Theory}\\ Lecture $1$: Probability}
+\usepackage{quiver}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+%\titleformat{\section}[runin]
+%  {\normalfont\Large\bfseries}
+%  {}{0pt}{}%
+%  [\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+%\author{{\Large NILAVA METYA} \\ 
+%\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
+%\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
+\author{Nilava Metya}
+\date{\vspace{-0.7in}February $--$, $2025$}
+%\newcommand{\pb}{\section{Problem}~\par}
+%\newcommand{\soln}{\subsection*{Solution}}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[R]{\thepage}
+\newcommand{\fa}{~\forall~}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+We will recall some probability theory and look at useful \textit{deviation} or \textit{concentration} bounds which are frequently used in analyzing algorithms (in learning theory). Recall that a (real-valued) random variable on a probability space $(\Omega,S,\mathbb P)$ is nothing but a `measurable function' $X:\Omega\to \R$. Here $\Omega$ is the universal or sample space where we think of events in, $S$ is a collection of events in $\Omega$ and $\mathbb P:S\to[0,1]$ assigns probability to each event in $S$. The space of events $S$ is constrained to satisfy some obvious rules like $\Omega$ is an event, if $A$ is an event then so is $\Omega\smallsetminus A$ and that a countable union of events is an event which makes it sensible to work with the concept of assigning probabilities to each event. We will often say that $\P{A}$ is the probability that event $A$ occurs. If $A=\set{a}$ is a singleton, we always write $\P{a}$ instead of $\P{\set{a}}$. The probability function $\mathbb P$ is also constrained to a couple of rules, namely, that the probability of the union of a mutually disjoint collection of events, which is an event, is the same as the sum of the probabilities of each of those events and that the probability that $\Omega$ occurs is $1$. Roughly a random variable is to be thought of as a way of assigning points of the sample space to real numbers which are \textit{really real} and are more tangible to work with, while respecting the rules of $S$. Such a random variable induces a map $X^{-1}:2^{\R}\to S$ by $X^{-1}(A) \sett \set{x\in \Omega\st X(x) \in S}$ for any $A\subseteq \R$, and hence induces a probability on $\R$ given by $\mathbb P_{\R}[A] = \P{X^{-1}(A)}$ where $A$ is any `measurable' subset of $\R$. The random variable being a `measurable function' precisely means that $X^{-1}(A)$ always lies in $S$.
+\[\begin{tikzcd}
+	S & {2^\R} \\
+	{[0,1]}
+	\arrow["{\mathbb P}"', from=1-1, to=2-1]
+	\arrow["{X^{-1}}"', from=1-2, to=1-1]
+	\arrow["{\mathbb P_\R}", dashed, from=1-2, to=2-1]
+\end{tikzcd}\]
+
+\subsection{Mean}
+The average or mean of a random variable $X$, often denoted as $\E X$, $\mu(X)$, or simply $\mu$ when the context is clear,  is $\E X = \int_{\Omega}  X \d\mathbb P $. For the discrete case, which we will mostly be interested in, this boils down to $\E X = \sum\limits_{i\in \Omega}X(i)\P{i}$. Note that if $X$ is an indicator random variable for event $A$, that is, $X=1$ if $A$ occurs and $0$ otherwise, then $\E X = \P A$.
+
+\begin{ex}
+Consider tossing a fair coin. Here $\Omega=\set{\text H, \text T}$. The probability function is $\P{\varnothing}=0, \P{\text H}=\P{\text T}=0.5, \P{\set{\text H,\text T}}=1$. A natural random variable to consider is $X(i) = \pmb 1_{\text H} \sett \begin{cases}1&\text{ if } i=\text H\\0&\text{ if } i=\text T\end{cases}$. The corresponding probability induced on $\R$ is given by $\mathbb P_{\R}[A] = \begin{cases}
+0 &\text{ if } 0\notin A,1\notin A\\
+0.5 &\text{ if } 0\in A,1\notin A\\
+0.5 &\text{ if } 0\notin A,1\in A\\
+1 &\text{ if } 0\in A,1\in A\\
+\end{cases}$. In this case, $\E X = 1\cdot \P{\text H} + 0\cdot \P{\text T} = 0.5$
+\end{ex}
+
+\begin{ex}
+Consider tossing $n$ fair coins sequentially and independently. Here $\Omega=\set{\text H, \text T}^{n}$. So the singleton outcomes are tuples of $\text H,\text T$. The probability function is given by $\P{\pmb x}=2^{-n}$ for any element $x\in {\Omega}$ and then extending by countable additivity of $\mathbb P$. Consider $n$ random variables $X_{1},\cdots,X_{n}$ where $X_{i}(\pmb x) \sett \begin{cases}1&\text{ if } x_{i}= \text H\\0&\text{ if } x_{i}=\text T\end{cases}$. Each $X_{i}$ is the same random variable as the previous example after looking at the $i^{\text{th}}$ coordinate. A natural variable to consider is the total number of heads obtained in one round of tossing, that is $X = X_{1}+\cdots+X_{n}$. The corresponding probability induced on $\R$ is given by $\mathbb P_{\R}[k] = \begin{cases}
+{n\choose k}2^{-n} &\text{ if } k\in \set{0,\cdots,n}\\
+0 &\text{ otherwise}
+\end{cases}$ and extend by countable additivity. Here $\E X = \frac{n}{2}$.
+\end{ex}
+
+One useful result used for calculating expectations of sums of random variables is that if $a,b\in \R$ and $X,Y$ are random variables then $\E{aX+bY}=a\E{X}+b\E{Y}$. It's worthy to note that sums and scalings of random variables are random variables. This result does \textbf{not} depend on `independence' of $X,Y$. Independence plays an important role for the average of products of random variables (which is a random variable). We say random variables $X_{1},\cdots,X_{n}$ are (\textit{mutually}) \textit{independent} if $\P{\bigcap_{i=1}^{n}\set{X_{i}\le a_{i}}} = \prod_{i=1}^{n}\P{X_{i}\le a_{i}}\fa a_{i}\in\R$. This is a stronger notion than \textit{pairwise} independence where we demand that only every pair of them are independent. Note that mutual independence implies pairwise independence. If $X,Y$ are independent then $\E{XY} = \E{X}\E{Y}$. 
+
+For a random variable $X\ge 0$ and $a\in\R$ let $Y$ be the indicator random variable indicating whether $X\ge a$, that is, $Y$ is $1$ if $X\ge a$ and $0$ otherwise. Then clearly $X \ge aY$. Indeed if $X\ge a$ then $Y=1$ so $X\ge aY$ and if $X<a$ then $Y=0$ so that $X \ge 0 = aY$. Expectation preserves inequalities, so $\E{X} \ge a\E{Y} = a\P{X\ge a}$. This establishes
+\begin{thm}[Markov's inequality]\label{thm:markov}
+If $X$ is a non-negative random variable and $a\in\R$ then $\P{X\ge a}\le \dfrac{\E X}{a}$.
+\end{thm}
+
+\subsection{Variance}
+Let's come to deviation now. One natural way to measure \textit{deviation} is to look how on average much a random variable deviates either way from its mean (behavior). To look for deviation in either direction of $\E{X}$ we consider the random variable $(X-\E X)^{2}$. Define the variance of a random variable $X$ as $\Var X \sett \E{(X-\E X)^{2}}$. One useful result to compute variance is that if $X,Y$ are independent then $\Var{aX+bY} = a^{2}\Var{X} + b^{2}\Var{Y}$. This extends to $n$ pairwise independent random variables. Another useful result is $\Var{X} = \E{X^{2}} - \E{X}^{2}$.
+
+Applying \Cref{thm:markov} to $(X-\E X)^{2}\ge 0$ gives 
+\begin{thm}[Chebyshev's inequality]\label{thm:chebyshev}
+If $X$ is a random variable and $a\in\R_{{\ge 0}}$ then $\P{\abs{X-\E{X}}\ge a}\le \dfrac{\Var X}{a^{2}}$.
+\end{thm}
+
+\subsection{Higher moments}
+One might just ask why stop at the second power to measure deviation. What about the random variable $(X-\E X)^{k}$ for $k\ge 2$? These are called higher centeral moments. Note that $\E{(X-\E X)^{k}} = 0$ when $k$ is odd and the distribution of $X$ is symmetric about $\E{X}$. So it makes sense to consider the random variables $\mu_{k} \sett \abs{X-\E X}^{k}$ instead. If we have access to such numbers, we can use the same trick as the proof of Chebyshev's inequality and get $\P{\abs{X-\E X}\ge a} \le \dfrac{\mu_{k}}{a^{k}}$. Knowing all higher moments means that we know something known as the `characteristic function' (not yet defined) of $X$ which uniquely determines $X$. But our aim was the study deviations using small information. Generally, higher moments are not known.
+
+
+
+\end{document}
+

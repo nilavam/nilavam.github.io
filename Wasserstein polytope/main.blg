@@ -1,0 +1,20 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[46] biber-darwin:340> INFO - === Wed Jan  1, 2025, 04:19:24
+[56] Biber.pm:419> INFO - Reading 'main.bcf'
+[109] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[121] Biber.pm:4419> INFO - Processing section 0
+[128] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
+[129] bibtex.pm:1713> INFO - LaTeX decoding ...
+[146] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[211] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[211] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[211] Biber.pm:4239> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[212] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[220] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[223] bbl.pm:763> INFO - Output to main.bbl
+[223] Biber.pm:131> WARN - legacy month field '06--11 Aug' in entry 'WGAN17' is not an integer - this will probably not sort properly.
+[223] Biber.pm:131> WARN - legacy year field '[2020] ©2020' in entry 'Wasserstein2' is not an integer - this will probably not sort properly.
+[223] Biber.pm:131> WARN - article entry 'rootpoly' (ref.bib): Invalid format '2014/05/01' of date field 'date' - ignoring
+[223] Biber.pm:131> WARN - ISBN '1572-9192' in entry 'rootpoly' is invalid - run biber with '--validate_datamodel' for details.
+[223] Biber.pm:133> INFO - WARNINGS: 4

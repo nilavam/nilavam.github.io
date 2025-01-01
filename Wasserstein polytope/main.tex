@@ -1,0 +1,86 @@
+% !TEX TS-program = pdflatexmk
+\input{pre.tex}
+
+\usepackage[
+backend=biber,
+style=alphabetic,giveninits,
+citestyle=ieee-alphabetic,
+natbib=true,
+uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%
+\addbibresource{ref.bib}
+
+\title{Higher order MDS codes}
+\author{s}
+\date{July 2024}
+
+
+\begin{document}
+\begin{abstract}
+We study the combinatorics of the Wasserstein$-1$ metric for various distances.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+The probability simplex 
+$$ \Delta_{n-1}  \sett \set{(p_1, \ldots, p_n) \st \sum_{i=1}^n p_i = 1 \text{ and } p_i \geq 0 \fa i=1, \ldots,n }$$
+consists of probability distributions of a discrete random variable with a state space of size $n$. We  take this state space to be $[n] := \{1, \ldots, n\}$. A {\it statistical model} $\cM$ is a subset of $\Delta_{n-1}$ which represents distributions to which a hypothesized unknown distribution $\pmb\nu$ belongs. Typically, after collecting data $\pmb u=(u_1, \cdots, u_n)$ where $u_i$ is the number of times outcome $i$ is observed, one forms 
+the empirical distribution $\bar{\pmb \mu} = \frac{1}{N} \pmb u$  where $ N = \sum\limits_{i=1}^n u_i$ is the sample size. Note that $\bar{\pmb \mu} \in \Delta_{n-1}$. To estimate the unknown distribution $\pmb \nu$, a standard approach is to locate $\pmb \nu \in \cM$, that is a ``closest" point to $\bar {\pmb\mu}$. For instance, $\pmb\nu$ can be taken to be the maximum likelihood estimator \cite[Chapter 7]{sullivant2018algstat} of $\bar{\pmb \mu}$. In this case, $\pmb \nu$ is the point on $\cM$ that minimizes the Kullback-Leibler divergence from $\bar{\pmb \mu}$ to $\cM$. However, Kullback-Leibler divergence is not a metric, and the maximum likelihood estimator does not minimize a true distance function from $\bar{\pmb\mu}$ to $\cM$.
+
+For the above density estimation problem, one can use a distance minimization approach if the state space $[n]$ is also a metric space. A metric on $[n]$ is a collection of nonnegative real numbers $d_{ij}$ for $i,j \in [n]$ such that $d_{ii} = 0$ for all $i \in [n]$, $d_{ij} = d_{ji}$, and the triangle inequality $d_{ik} \leq d_{ij} + d_{jk}$ holds for all $i,j,k \in [n]$. Sometimes, the metric on $[n]$ is written as an $n\times n$ nonnegative symmetric matrix $d=(d_{ij})_{i,j\in [n]}$. Common examples include the discrete metric (all $d_{ij}=1$), the $L_1$ metric ($d_{ij} = \abs{i-j}$), the $L_0$ metric, and the Hamming distance metric.
+
+For two probability distributions $\pmb \mu$ and $\pmb \nu$ in
+$\Delta_{n-1}$, the optimal value $W_d(\pmb \mu,\pmb \nu)$ of the following linear program is the {\it Wasserstein distance} between $\pmb\mu$ and $\pmb\nu$ based on the metric $(d_{ij})$:
+\begin{equation} \label{eq:Wasserstein program}
+\mbox{maximize} \quad \sum_{i=1}^n (\mu_i - \nu_i)x_i \quad \mbox{subject to} \quad |x_i -
+x_j| \leq d_{ij} \,\, \mbox{for all} \,\, 1 \leq i < j \leq n.
+\end{equation}
+This means we can define $W_{d}(\pmb\mu,\pmb\nu)$ for any pair of vectors $\pmb\mu,\pmb\nu$ satisfying $\pmb 1^{\top}\pmb\mu=\pmb1^{\top}\pmb\nu$.
+One should note that the constraint set of the variable $\pmb x$ in problem \ref{eq:Wasserstein program} is unbounded and that if $\pmb \alpha\in H_{n-1}\sett\set{\pmb x\in\R^{n}\st \pmb 1^{\top}\pmb x=0}$ and $\lambda\in\R$ then $\pmb \alpha^\top(\pmb x+\lambda\pmb 1) = \pmb \alpha^\top\pmb x$. So we can equivalently formulate it as $$W_{d}(\pmb \mu,\pmb\nu) = \max\set{(\pmb \mu - \pmb\nu)^\top\pmb x\st \pmb x\in H_{n-1}, \abs{x_i-x_j}\le d_{ij}\fa i,j}$$ which has a bounded constraint set. The constraint set of this linear program is called the \textit{Lipshitz polytope} $$ P_d = \set{ \pmb x \in H_{n-1} \st \abs{x_i - x_j} \leq d_{ij} \fa~ 1 \leq i < j \leq n } .$$ 
+
+
+The Wasserstein distance $W_d(\pmb\mu,\cM)$ from $\pmb\mu \in \Delta_{n-1}$ to a set $\pmb\cM$ is the infimum of $W_d(\pmb\mu,\pmb\nu)$ as $\pmb\nu$ ranges over $\cM$: 
+\begin{equation} \label{eq: Wasserstein to model}
+W_d(\pmb\mu, \cM) := \min_{\pmb\nu\in \cM} W_d(\pmb\mu, \pmb\nu).  
+\end{equation}
+This has been successfully used to construct a version of Generative Adversarial Networks \cite{WGAN17} where $W_d(\cdot, \cM)$ is used as the loss function. However, for large $n$, computing $W_d(\pmb\mu, \cM)$ exactly is not feasible with the current state of knowledge. If we take $\cM=\set{\pmb\nu}$ we recover the original Wasserstein distance $W_d(\pmb \mu,\pmb \nu) = \min \set{\lambda \geq 0 \st \pmb \nu \in \pmb \mu + \lambda B }.$
+
+In this paper our starting point is \cite{Wasserstein2,ccelik2021wasserstein} to study the combinatorics of the Wasserstein unit ball. Such combinatorics is governs the combinatorial complexity (contrast against algebraic complexity) of problem \ref{eq: Wasserstein to model}. We first recall this approach. 
+
+The Wasserstein distance $W_d$ induced  by the finite metric $d$ on $[n]$ defines a 
+norm on $H_{n-1}$ namely $$\norm{\pmb\alpha}d = \norm{\pmb\alpha}d^{W} = \max\set{\pmb \alpha^{\top}\pmb\mu \st \pmb x\in H_{n-1}, \abs{x_{i}-x_{j}}\le d_{ij}\fa~1\le i<j\le n}.$$ The unit ball of this norm is the polytope
+\begin{equation}\label{eq:conv}B_{d} = \mathrm{conv} \set{ \frac{1}{d_{ij}}(\pmb e_i - \pmb e_j) \, : \, 1 \leq i < j \leq n },\end{equation}
+where $B$ lies in the hyperplane $H_{n-1}$ and is the dual of the {\it Lipshitz polytope} $P_{d}$. It is well known that the $k$ dimensional facets of $P_{d}$ are in on-to-one correspondence with the $k$ codimensional facets of $B_{d}$. In other words, the number of $k$ dimensional facets of $P_{d}$ is equal to the number of $n-2-k$ dimensional facets of $B_{d}$.
+
+\section{Vertices of $B_{d}$ with $d$ induced by a graph}
+
+Consider the discrete metric $d$ on $[n]$. Formally this is given by $d_{ij} = 1\fa~i\ne j$. \cite{rootpoly, ccelik2021wasserstein} prove that the number of $k$ dimensional facets of $B_{d}$ is $\ds{n\choose k+2}(2^{k+2}-2)$. In particular, the number of vertices ($k=0$) is $n(n-1)$. This is the maximum number of possible vertices a Wasserstein ball can have, for any metric $d$, by the description in \Cref{eq:conv}. Here is an alternate way to think about the metric $d$. Consider the complete graph $K_{n}$ on $n$ vertices, labelled with $[n]$, so every vertex is connected to every other vertex by an edge. Then $d_{ij}=1$ is the length of the shortest path to reach $j$ from $i$ on this graph. This graph has precisely $\ds n\choose 2$ edges. Soon it will turn out that the number of vertices of $B_{d}$ being double the number of edges is not a coincidence. Further, based on this example, we propose the following definition.
+
+\begin{defn}[Wasserstein metric based on a graph]
+Let $G = ([n],E,w)$ be a connected weighted undirected graph without self loops that has vertices $[n]$, edges $E$ and non-negative weights given by $w:E^{2}\to\R_{\ge 0}$. If $G$ is unweighted, we simply treat $G$ as a weighted graph with weights of all edges as $1$. Define $d_{ij}$ to be the weighted length of the shortest path from vertex $i$ to $j$. The \textup{Wasserstein metric} $W_{G}$ \textup{based on graph} $G$ is defined to be the Wasserstein metric $W_{d}$ based on $d$. 
+\end{defn}
+
+Corresponding to the abovementioned Wasserstein metric $W_{G}$, its unit ball in $H_{n-1}$ will be denoted by $B_{G}$.
+
+\begin{ex}
+The metric induced by an unweighted line graph on $n$ vertices is said to be the $L_{1}$ metric on $[n]$. Let's look at $n=3$. So $G$ is $1\text{\textemdash}2\text{\textemdash}3$. The corresponding metric is given by $d_{ij}=\abs{i-j}$. According to \Cref{eq:conv}, $B_{G}$ is the convex hull of the points $\ds \pmb u_{\pm} = \pm(1,-1,0), \pmb v_{\pm}=\pm (0,1,-1), \pmb w_{\pm}=\pm(0.5,0,-0.5)$. But $\pmb w_{\pm} = \frac12 \pmb u_{\pm} +\frac12\pmb v_{\pm}$ hence not vertices. The vertices of $B_{G}$ turn out to be exactly $\pmb u_{\pm},\pmb v_{\pm}$; so total $4$ in number. Again observe that the number of vertices of $B_{G}$ is double the number of edges in $G$.
+\end{ex}
+
+Next we will turn towards the key result in this section, namely the phenomenon we observed both for the discrete and $L_{1}$ metric.
+
+\begin{thm}
+Let $G=([n],E)$ be a connect unweighted undirected graph without self loops on $n$ vertices. Then the unit ball $B_{G}$ of the Wasserstein metric induced by $G$ has precisely $\abs E$ vertices.
+\end{thm}
+
+Before starting the proof right away, we present an observation that was key in the examples of discrete and $L_{1}$ metrics. Our graph $G$ is connected, unweighted and undirected. If shortest path from $i$ to $j$ is $i = x_{1} \to x_{2}\to\cdots \to x_{p}=j$ then $d_{ij} = p-1$  and $\ds\frac{\pmb e_{j}-\pmb e_{i}}{d_{ij}} = \frac{\pmb e_{j}-\pmb e_{i}}{p-1} = \frac{1}{p-1} \sum\limits_{t=1}^{p-1}(\pmb e_{t+1}-\pmb e_{t}) = \frac{1}{p-1} \sum\limits_{t=1}^{p-1} \frac{\pmb e_{x_{t+1}}-\pmb e_{x_{t}}}{d_{x_{t}x_{t+1}}}$. In other words, $\ds\frac{\pmb e_{j}-\pmb e_{i}}{d_{ij}}$ is never a vertex of $B_{G}$ because it is a convex combination of some other points in $B_{G}$ corresponding to edges in $G$.
+
+{\color{red}If we want to determine a $d$, for given $n$ and number of vertices $2\alpha$, for which the constraint matrix $M$ satisfies that its rank is $2\alpha$, we want to find a rank $2$ matrix $M$ with the rows being $\frac{\pmb e_{i}-\pmb e_{j}}{d_{ij}}$, such that its rank is $2\alpha$, then equivalently we want to search for a matrix $X=M^{\top}M\succeq 0$ with rank $2\alpha$.}
+
+\newpage
+%\nocite{*}
+\printbibliography
+
+\end{document}

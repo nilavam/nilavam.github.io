@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>screenshots</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<meta name="generator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+	<meta name="originator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+	<meta name="src" content="selfscan.tex"> 
+	<meta name="date" content="2004-10-15 10:44:00"> 
+	<link rel="stylesheet" type="text/css" href="../selfscan.css">
+	<style>
+		.collapsible {
+  			background-color: white;
+  			color: rgb(125,100,150);
+  			cursor: pointer;
+ 			margin-top: -10px;
+ 			margin-bottom: 0px;
+  			width: 40%;
+  			border: none;
+  			text-align: left;
+  			outline: none;
+  			font-size: 17px;
+  			font-family: "Times New Roman", Times, serif;
+		}
+
+		.collapsible:after {
+  			content: '\02795'; /* Unicode character for "plus" sign (+) */
+  			font-size: 13px;
+  			color: #000000;
+  			float: right;
+  			margin-left: 5px;
+		}
+
+		.active:after {
+  			content: "\2796"; /* Unicode character for "minus" sign (-) */
+		}
+		
+		.active, .collapsible:hover {
+  			font-size: 18px;
+		}
+
+		.content {
+  			padding: 0 0px;
+  			max-height: 0;
+  			overflow: hidden;
+  			width: auto;
+  			margin-left: 20px;
+  			background-color: white;
+  			transition: max-height 0.15s ease-out;
+		}
+
+	</style>
+</head>
+
+
+<body style="margin:30px;padding:10px">
+
+	<center>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split1.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split2.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split3.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split4.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split5.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split6.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split7.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split8.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split9.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split10.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split11.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<video width="1280" height="720" muted controls>
+		<source src="clips/split12.mov" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	</center>
+
+
+     <script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+  			coll[i].addEventListener("click", function() {
+    		this.classList.toggle("active");
+    		var content = this.nextElementSibling;
+    		if (content.style.maxHeight){
+      			content.style.maxHeight = null;
+    		} else {
+      		content.style.maxHeight = content.scrollHeight + "px";
+    		} 
+  			});
+		}
+	</script>
+
+</body>
+</html>

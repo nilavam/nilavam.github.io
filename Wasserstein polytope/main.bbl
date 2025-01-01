@@ -1,0 +1,261 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{rootpoly}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c9c9501923b520532e884c6ad0e5df2c}{%
+           family={Cellini},
+           familyi={C\bibinitperiod},
+           given={Paola},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f440d9ea545e4a78d56a9be3c2b7b73a}{%
+           family={Marietti},
+           familyi={M\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \strng{fullhash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \strng{bibnamehash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \strng{authorbibnamehash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \strng{authornamehash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \strng{authorfullhash}{2567bb4cb7563e1deb86b26fdb03199a}
+      \field{labelalpha}{CM14}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the root polytope {\$}{$\backslash$}mathcal{\{}P{\}}{\_}{\{}{$\backslash$}varPhi{\}}{\$}of a finite irreducible crystallographic root system Φ using its relation with the Abelian ideals of a Borel subalgebra of a simple Lie algebra with root system Φ. We determine the hyperplane arrangement corresponding to the faces of cxdimension 2 of {\$}{$\backslash$}mathcal{\{}P{\}}{\_}{\{}{$\backslash$}varPhi{\}}{\$}and analyze its relation with the facets of {\$}{$\backslash$}mathcal{\{}P{\}}{\_}{\{}{$\backslash$}varPhi{\}}{\$}. For Φof type Anor Cn, we show that the orbits of some special subsets of Abelian ideals under the action of the Weyl group parametrize a triangulation of {\$}{$\backslash$}mathcal{\{}P{\}}{\_}{\{}{$\backslash$}varPhi{\}}{\$}. We show that this triangulation restricts to a triangulation of the positive root polytope {\$}{$\backslash$}mathcal{\{}P{\}}{\_}{\{}{$\backslash$}varPhi{\}}\^{}{\{}+{\}}{\$}.}
+      \field{isbn}{1572-9192}
+      \field{journaltitle}{Journal of Algebraic Combinatorics}
+      \field{number}{3}
+      \field{title}{Root polytopes and Abelian ideals}
+      \field{volume}{39}
+      \field{year}{2014}
+      \field{pages}{607\bibrangedash 645}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1007/s10801-013-0458-5
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10801-013-0458-5
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10801-013-0458-5
+      \endverb
+      \warn{\item article entry 'rootpoly' (ref.bib): Invalid format '2014/05/01' of date field 'date' - ignoring}
+    \endentry
+    \entry{WGAN17}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ab4a5e058dea2d852ff02aa4e10045c3}{%
+           family={Arjovsky},
+           familyi={A\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8ef51a0906e47d2b4472c4e714ed598f}{%
+           family={Chintala},
+           familyi={C\bibinitperiod},
+           given={Soumith},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ac762f2592005edf6bad58f566967c6c}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={Léon},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=4428b76e1301b2db58587fb18bb59a38}{%
+           family={Precup},
+           familyi={P\bibinitperiod},
+           given={Doina},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a71fae003da84f44e31d26e868859945}{%
+           family={Teh},
+           familyi={T\bibinitperiod},
+           given={Yee\bibnamedelima Whye},
+           giveni={Y\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{fullhash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{bibnamehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authorbibnamehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authornamehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authorfullhash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{editorbibnamehash}{ee1b5a05452f2afba9cd287be3ce0338}
+      \strng{editornamehash}{ee1b5a05452f2afba9cd287be3ce0338}
+      \strng{editorfullhash}{ee1b5a05452f2afba9cd287be3ce0338}
+      \field{labelalpha}{ACB17}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 34th International Conference on Machine Learning}
+      \field{month}{06--11 Aug}
+      \field{series}{Proceedings of Machine Learning Research}
+      \field{title}{{W}asserstein Generative Adversarial Networks}
+      \field{volume}{70}
+      \field{year}{2017}
+      \field{pages}{214\bibrangedash 223}
+      \range{pages}{10}
+      \verb{file}
+      \verb http://proceedings.mlr.press/v70/arjovsky17a/arjovsky17a.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.mlr.press/v70/arjovsky17a.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.mlr.press/v70/arjovsky17a.html
+      \endverb
+    \endentry
+    \entry{sullivant2018algstat}{book}{}
+      \name{author}{1}{}{%
+        {{hash=99b173f5dcd3c82d43311cbf501a32ba}{%
+           family={Sullivant},
+           familyi={S\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Soc.}%
+      }
+      \strng{namehash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \strng{fullhash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \strng{bibnamehash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \strng{authorbibnamehash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \strng{authornamehash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \strng{authorfullhash}{99b173f5dcd3c82d43311cbf501a32ba}
+      \field{labelalpha}{Sul18}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic statistics}
+      \field{volume}{194}
+      \field{year}{2018}
+    \endentry
+    \entry{ccelik2021wasserstein}{article}{}
+      \name{author}{5}{}{%
+        {{hash=285885c243bc0ade11882098415c3b44}{%
+           family={Çelik},
+           familyi={Ç\bibinitperiod},
+           given={Türkü\bibnamedelima Özlüm},
+           giveni={T\bibinitperiod\bibinitdelim Ö\bibinitperiod}}}%
+        {{hash=3a322d12793d483ca02b42578c62a0b6}{%
+           family={Jamneshan},
+           familyi={J\bibinitperiod},
+           given={Asgar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=778f2fa472048f8ccd100f85511870d9}{%
+           family={Montúfar},
+           familyi={M\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1146827b08c62c2c18700dd73b1dc482}{%
+           family={Sturmfels},
+           familyi={S\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0edcd91a92933690e40586dc0d81c703}{%
+           family={Venturello},
+           familyi={V\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{fullhash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{bibnamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authorbibnamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authornamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authorfullhash}{24968924cfbd11b3a4e21692f132de45}
+      \field{extraname}{1}
+      \field{labelalpha}{ÇJM+21}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of symbolic computation}
+      \field{title}{Wasserstein distance to independence models}
+      \field{volume}{104}
+      \field{year}{2021}
+      \field{pages}{855\bibrangedash 873}
+      \range{pages}{19}
+    \endentry
+    \entry{Wasserstein2}{incollection}{}
+      \name{author}{5}{}{%
+        {{hash=285885c243bc0ade11882098415c3b44}{%
+           family={Çelik},
+           familyi={Ç\bibinitperiod},
+           given={Türkü\bibnamedelima Özlüm},
+           giveni={T\bibinitperiod\bibinitdelim Ö\bibinitperiod}}}%
+        {{hash=3a322d12793d483ca02b42578c62a0b6}{%
+           family={Jamneshan},
+           familyi={J\bibinitperiod},
+           given={Asgar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=778f2fa472048f8ccd100f85511870d9}{%
+           family={Montúfar},
+           familyi={M\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1146827b08c62c2c18700dd73b1dc482}{%
+           family={Sturmfels},
+           familyi={S\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0edcd91a92933690e40586dc0d81c703}{%
+           family={Venturello},
+           familyi={V\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{fullhash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{bibnamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authorbibnamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authornamehash}{24968924cfbd11b3a4e21692f132de45}
+      \strng{authorfullhash}{24968924cfbd11b3a4e21692f132de45}
+      \field{extraname}{2}
+      \field{labelalpha}{ÇJM+20}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Mathematical aspects of computer and information sciences}
+      \field{series}{Lecture Notes in Comput. Sci.}
+      \field{title}{Optimal transport to a variety}
+      \field{volume}{11989}
+      \field{year}{[2020] ©2020}
+      \field{pages}{364\bibrangedash 381}
+      \range{pages}{18}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

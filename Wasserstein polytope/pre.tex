@@ -1,0 +1,248 @@
+\documentclass[12pt]{amsart}
+\usepackage[letterpaper, portrait, left = 1in, right = 1in, top = 1.2in, bottom=1.5in]{geometry} 
+%\usepackage{setspace} \doublespacing
+%\usepackage[letterpaper, portrait, margin=1.3in]{geometry}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{amsmath,amsthm}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage[skip=0.25pt]{caption}
+\usepackage[mathscr]{euscript}
+\usepackage{quiver}
+\setlength{\parindent}{0pt}
+\usepackage{thm-restate}
+\definecolor{vividburgundy}{rgb}{0.62, 0.11, 0.21}
+\usepackage[driverfallback=hypertex,pagebackref=false,colorlinks,citecolor=vividburgundy]{hyperref}
+\usepackage[capitalize]{cleveref}
+%\usepackage[cmintegrals,cmbraces]{newtxmath}
+%\usepackage{ebgaramond-maths}
+
+%\usepackage{fourier}
+%----------FONT OPTIONS----------
+% sans-serif
+%\usepackage[sfdefault]{FiraSans}
+ %\usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+%\usepackage[default]{sourcesanspro}
+
+% serif
+%\usepackage{CormorantGaramond}
+
+%\usepackage{charter}
+\usepackage[T1]{fontenc}
+\usepackage{cleveref}
+\definecolor{dg}{RGB}{10, 100, 10}
+\setlength{\parindent}{0in}
+\renewcommand{\qed}{$\hfill\blacksquare$}
+% \newtheoremstyle{style}{2pt}{1pt}{\normalfont}{}{\bfseries}{\\}{0cm}{}
+% \theoremstyle{style}
+\newtheorem{lemma}{Lemma}[section]
+% \newtheorem{lemma}{Lemma}
+\newtheorem{thm}[lemma]{Theorem}
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{cor}[lemma]{Corollary}
+\newtheorem{conj}[lemma]{Conjecture}
+\newtheorem{cl}[lemma]{Claim}
+\newtheorem{rmk}{Remark}
+\newtheorem{defn}[lemma]{Definition}
+\newtheorem{qs}{Question}
+\newtheoremstyle{styleS}{}{}{\color{dg}}{}{\color{dg}\bfseries}{. }{0cm}{}
+\theoremstyle{styleS}
+\newtheorem*{sol}{Solution}
+\newtheoremstyle{style1}{}{}{\normalfont}{}{\bfseries}{. }{0cm}{}
+\theoremstyle{style1}
+\newtheorem{prob}{Problem}[section]
+\newtheorem*{prb}{Problem}
+\newtheoremstyle{style2}{1pt}{4pt}{\normalfont}{}{\itshape}{. }{0cm}{}
+\theoremstyle{style2}
+\newtheorem{ex}[lemma]{Example}
+\newtheorem*{pf}{Proof}
+
+\newcommand{\norm}[2]{
+\left\lVert #1 \right\rVert_{#2}
+}
+\usepackage{mathrsfs}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\renewcommand{\l}{\ell}
+
+
+\newcommand{\fA}{{\mathfrak{A}}}   \newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}   \newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fE}{{\mathfrak{E}}}   \newcommand{\fF}{{\mathfrak{F}}}
+\newcommand{\fG}{{\mathfrak{G}}}   \newcommand{\fH}{{\mathfrak{H}}}
+\newcommand{\fI}{{\mathfrak{I}}}   \newcommand{\fJ}{{\mathfrak{J}}}
+\newcommand{\fK}{{\mathfrak{K}}}   \newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}   \newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}   \newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}   \newcommand{\fR}{{\mathfrak{R}}}
+\newcommand{\fS}{{\mathfrak{S}}}   \newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}   \newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fW}{{\mathfrak{W}}}   \newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}   \newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\cA}{{\mathcal{A}}}   \newcommand{\cB}{{\mathcal{B}}}
+\newcommand{\cC}{{\mathcal{C}}}   \newcommand{\cD}{{\mathcal{D}}}
+\newcommand{\cE}{{\mathcal{E}}}   \newcommand{\cF}{{\mathcal{F}}}
+\newcommand{\cG}{{\mathcal{G}}}   \newcommand{\cH}{{\mathcal{H}}}
+\newcommand{\cI}{{\mathcal{I}}}   \newcommand{\cJ}{{\mathcal{J}}}
+\newcommand{\cK}{{\mathcal{K}}}   \newcommand{\cL}{{\mathcal{L}}}
+\newcommand{\cM}{{\mathcal{M}}}   \newcommand{\cN}{{\mathcal{N}}}
+\newcommand{\cO}{{\mathcal{O}}}   \newcommand{\cP}{{\mathcal{P}}}
+\newcommand{\cQ}{{\mathcal{Q}}}   \newcommand{\cR}{{\mathcal{R}}}
+\newcommand{\cS}{{\mathcal{S}}}   \newcommand{\cT}{{\mathcal{T}}}
+\newcommand{\cU}{{\mathcal{U}}}   \newcommand{\cV}{{\mathcal{V}}}
+\newcommand{\cW}{{\mathcal{W}}}   \newcommand{\cX}{{\mathcal{X}}}
+\newcommand{\cY}{{\mathcal{Y}}}   \newcommand{\cZ}{{\mathcal{Z}}}
+
+\newcommand{\sA}{{\mathscr{A}}}   \newcommand{\sB}{{\mathscr{B}}}
+\newcommand{\sC}{{\mathscr{C}}}   \newcommand{\sD}{{\mathscr{D}}}
+\newcommand{\sE}{{\mathscr{E}}}   \newcommand{\sF}{{\mathscr{F}}}
+\newcommand{\sG}{{\mathscr{G}}}   \newcommand{\sH}{{\mathscr{H}}}
+\newcommand{\sI}{{\mathscr{I}}}   \newcommand{\sJ}{{\mathscr{J}}}
+\newcommand{\sK}{{\mathscr{K}}}   \newcommand{\sL}{{\mathscr{L}}}
+\newcommand{\sM}{{\mathscr{M}}}   \newcommand{\sN}{{\mathscr{N}}}
+\newcommand{\sO}{{\mathscr{O}}}   \newcommand{\sP}{{\mathscr{P}}}
+\newcommand{\sQ}{{\mathscr{Q}}}   \newcommand{\sR}{{\mathscr{R}}}
+\newcommand{\sS}{{\mathscr{S}}}   \newcommand{\sT}{{\mathscr{T}}}
+\newcommand{\sU}{{\mathscr{U}}}   \newcommand{\sV}{{\mathscr{V}}}
+\newcommand{\sW}{{\mathscr{W}}}   \newcommand{\sX}{{\mathscr{X}}}
+\newcommand{\sY}{{\mathscr{Y}}}   \newcommand{\sZ}{{\mathscr{Z}}}
+
+\newcommand{\ta}{{\tilde{a}}}   \newcommand{\tb}{{\tilde{b}}}
+\newcommand{\tc}{{\tilde{c}}}   \newcommand{\td}{{\tilde{d}}}
+\newcommand{\te}{{\tilde{e}}}   \newcommand{\tf}{{\tilde{f}}}
+\newcommand{\tg}{{\tilde{g}}}   
+\newcommand{\ti}{{\tilde{i}}}   \newcommand{\tj}{{\tilde{j}}}
+\newcommand{\tk}{{\tilde{k}}}   \newcommand{\tl}{{\tilde{l}}}
+\newcommand{\tm}{{\tilde{m}}}   \newcommand{\tn}{{\tilde{n}}}
+		         	\newcommand{\tp}{{\tilde{p}}}
+\newcommand{\tq}{{\tilde{q}}}   \newcommand{\tr}{{\tilde{r}}}
+\newcommand{\ts}{{\tilde{s}}}   
+\newcommand{\tu}{{\tilde{u}}}   \newcommand{\tv}{{\tilde{v}}}
+\newcommand{\tw}{{\tilde{w}}}   \newcommand{\tx}{{\tilde{x}}}
+\newcommand{\ty}{{\tilde{y}}}   \newcommand{\tz}{{\tilde{z}}}
+
+\newcommand{\red}{{\color{red}red}}
+\newcommand{\blue}{{\color{blue}blue}}
+
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand\N{\ensuremath{\mathbb{N}}}
+
+%\newcommand\L{\ensuremath{\mathbb{L}}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand\M{\ensuremath{\mathbb{M}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+\newcommand\F{\ensuremath{\mathbb{F}}}
+\newcommand{\aff}{\ensuremath{\mathbb{A}}}
+\newcommand{\proj}{\ensuremath{\mathbb{P}}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\m}{\ensuremath{\mathfrak{m}}}
+\newcommand{\p}{\ensuremath{\mathfrak{p}}}
+\newcommand{\n}{\ensuremath{\mathfrak{n}}}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+%\newcommand{\st}{\;|\;}
+\newcommand{\st}{%
+  \nonscript\;
+  \ifnum\currentgrouptype=16
+    \;\middle|\;
+  \else
+    \;|\;
+  \fi
+  \nonscript\;}
+\newcommand{\ltr}{\par \noindent \framebox[1\width]{ $\implies$ } \hspace{.2cm}}
+\newcommand{\rtl}{\par \noindent \framebox[1\width]{ $\impliedby$ } \hspace{.2cm} }
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\E}[1]{\mathbb E\left[ #1 \right]}
+\newcommand{\e}[1]{\exp\left( #1 \right)}
+\renewcommand{\P}[1]{\mathbb P\left[ #1 \right]}
+\newcommand{\Var}[1]{\text{Var}\left[ #1 \right]}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand{\ds}{\displaystyle}
+
+\DeclareMathOperator{\sym}{Sym}
+\DeclareMathOperator{\mds}{MDS}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\GL}{GL}
+%\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\orbit}{Or}
+\DeclareMathOperator{\stab}{Stab}
+\DeclareMathOperator{\fix}{Fix}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ord}{Ord}
+\DeclareMathOperator{\mspec}{mSpec}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\frob}{Frob}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\res}{Res}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\area}{area}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\rk}{rank}
+\renewcommand{\d}{\diff}
+\let\oldend\endlinechar
+\renewcommand{\endlinechar}{\oldend}
+\newcommand{\open}{\underset{\text{open}}{\subset}}
+\newcommand{\divides}{\mathbin{|}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sett}{\coloneqq}
+\newcommand*\isomap{%
+  \xrightarrow{\raisebox{-0.9ex}[0ex][0ex]{$\sim$}}%
+}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\fa}{~\forall~}
+%\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titletoc}
+%\titleformat{\section}[runin]
+%{\normalfont\Large\bfseries}
+%{}{0pt}{}%
+%[\ifthenelse{\equal{\thesection}{0}}{\\\vspace*{0pt}}{\space\thesection}]
+\newcommand{\sint}{\sin\theta}
+\newcommand{\cost}{\cos\theta}
+\newcommand{\tant}{\tan\theta}
+\newcommand{\lb}{\left[}
+\newcommand{\rb}{\right]}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\br}[1]{\lb#1\rb}
+\newcommand{\pa}[1]{\lp#1\rp}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+	\pagestyle{fancyplain}
+	\fancyhf{}
+	\fancyhead[C]{\thepage}
