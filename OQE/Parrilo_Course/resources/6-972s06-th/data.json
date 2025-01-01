@@ -1,8 +1,0 @@
-{
-  "title":"6-972s06-th.jpg",
-  "description": "New image Upload",
-  "file": "/courses/6-972-algebraic-techniques-and-semidefinite-optimization-spring-2006/1692d19c750daaa890ad3b1cac98b5ec_6-972s06-th.jpg",
-  "learning_resource_types": [],
-  "resource_type": "Image",
-  "file_type": "image/jpeg",
-  "image_metadata": {"caption":"The discriminant of the polynomial _x_{{\u003c sup \"4\" \u003e}} + 4_ax_{{\u003c sup \"3\" \u003e}} + 6_b_x_{{\u003c sup \"2\" \u003e}} +_ 4_cx_ + 1. The convex set inside the \"bowl\" corresponds to the region of nonnegativity. There is an additional one-dimensional component inside the set. (Image courtesy of Prof. Pablo Parrilo.)","credit":"","image-alt":"Discriminant for a fourth-order polynomial. Inside region is nonnegative."}}
