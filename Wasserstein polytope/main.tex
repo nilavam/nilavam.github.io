@@ -13,7 +13,7 @@ sorting=ynt
 %
 \addbibresource{ref.bib}
 
-\title{Higher order MDS codes}
+\title{Characterizing vertices of waasserstein ball}
 \author{s}
 \date{July 2024}
 
@@ -69,10 +69,10 @@ Corresponding to the abovementioned Wasserstein metric $W_{G}$, its unit ball in
 The metric induced by an unweighted line graph on $n$ vertices is said to be the $L_{1}$ metric on $[n]$. Let's look at $n=3$. So $G$ is $1\text{\textemdash}2\text{\textemdash}3$. The corresponding metric is given by $d_{ij}=\abs{i-j}$. According to \Cref{eq:conv}, $B_{G}$ is the convex hull of the points $\ds \pmb u_{\pm} = \pm(1,-1,0), \pmb v_{\pm}=\pm (0,1,-1), \pmb w_{\pm}=\pm(0.5,0,-0.5)$. But $\pmb w_{\pm} = \frac12 \pmb u_{\pm} +\frac12\pmb v_{\pm}$ hence not vertices. The vertices of $B_{G}$ turn out to be exactly $\pmb u_{\pm},\pmb v_{\pm}$; so total $4$ in number. Again observe that the number of vertices of $B_{G}$ is double the number of edges in $G$.
 \end{ex}
 
-Next we will turn towards the key result in this section, namely the phenomenon we observed both for the discrete and $L_{1}$ metric.
+Next we will turn towards the key result in this section, namely the phenomenon we observed both for the discrete and $L_{1}$ metric. Such results have been studied for weighted graphs in \cite[Theorem 2, \S 3.1]{finitemetric}, however our proof technique is purely combinatorial and constructions are slightly different.
 
 \begin{thm}
-Let $G=([n],E)$ be a connect unweighted undirected graph without self loops on $n$ vertices. Then the unit ball $B_{G}$ of the Wasserstein metric induced by $G$ has precisely $\abs E$ vertices.
+Let $G=([n],E)$ be a connect unweighted undirected graph without self loops on $n$ vertices. Then the unit ball $B_{G}$ of the Wasserstein metric induced by $G$ has precisely $2\abs E$ vertices, namely $\set{\pmb e_{i}-\pmb e_{j}\st \set{i,j}\in E}$.
 \end{thm}
 
 Before starting the proof right away, we present an observation that was key in the examples of discrete and $L_{1}$ metrics. Our graph $G$ is connected, unweighted and undirected. If shortest path from $i$ to $j$ is $i = x_{1} \to x_{2}\to\cdots \to x_{p}=j$ then $d_{ij} = p-1$  and $\ds\frac{\pmb e_{j}-\pmb e_{i}}{d_{ij}} = \frac{\pmb e_{j}-\pmb e_{i}}{p-1} = \frac{1}{p-1} \sum\limits_{t=1}^{p-1}(\pmb e_{t+1}-\pmb e_{t}) = \frac{1}{p-1} \sum\limits_{t=1}^{p-1} \frac{\pmb e_{x_{t+1}}-\pmb e_{x_{t}}}{d_{x_{t}x_{t+1}}}$. In other words, $\ds\frac{\pmb e_{j}-\pmb e_{i}}{d_{ij}}$ is never a vertex of $B_{G}$ because it is a convex combination of some other points in $B_{G}$ corresponding to edges in $G$.

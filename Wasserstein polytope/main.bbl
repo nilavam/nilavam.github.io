@@ -204,6 +204,50 @@
       \field{pages}{855\bibrangedash 873}
       \range{pages}{19}
     \endentry
+    \entry{finitemetric}{article}{}
+      \name{author}{2}{}{%
+        {{hash=cd47ba027768b1dbf9e0c05a9907fae2}{%
+           family={Montrucchio},
+           familyi={M\bibinitperiod},
+           given={Luigi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2b5a6a84b1003cc3ac3c3231805c30f5}{%
+           family={Pistone},
+           familyi={P\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \strng{fullhash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \strng{bibnamehash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \strng{authorbibnamehash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \strng{authornamehash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \strng{authorfullhash}{a15ebacc1bdbe207515432c30d5ff13e}
+      \field{labelalpha}{MP22}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the possible closed-form representations of the K-distance arising in the Kantorovich transport problems on finite metric spaces. Weighted graphs, {\$}{\$}{$\backslash$}ell {\_}1{\$}{\$}-embeddable metrics, and the related {\$}{\$}{\{}{\{}{$\backslash$},{$\backslash$}mathrm{\{}{$\backslash$}text {\{}{\{} CUT{\}}{\}}{\}}{$\backslash$},{\}}{\}}{\$}{\$}norms receive special attention. Following an in-depth analysis of weighted trees and the tree-like spaces, we treat general metric spaces through their spanning trees.}
+      \field{isbn}{2511-249X}
+      \field{journaltitle}{Information Geometry}
+      \field{number}{1}
+      \field{title}{Kantorovich distance on finite metric spaces: Arens--Eells norm and CUT norms}
+      \field{volume}{5}
+      \field{year}{2022}
+      \field{pages}{209\bibrangedash 245}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1007/s41884-021-00050-w
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s41884-021-00050-w
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s41884-021-00050-w
+      \endverb
+      \warn{\item article entry 'finitemetric' (ref.bib): Invalid format '2022/07/01' of date field 'date' - ignoring}
+    \endentry
     \entry{Wasserstein2}{incollection}{}
       \name{author}{5}{}{%
         {{hash=285885c243bc0ade11882098415c3b44}{%
