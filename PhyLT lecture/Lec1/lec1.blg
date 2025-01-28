@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'lec1.blg'
+[47] biber-darwin:340> INFO - === Tue Jan 28, 2025, 15:06:10
+[59] Biber.pm:419> INFO - Reading 'lec1.bcf'
+[111] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[122] Biber.pm:4419> INFO - Processing section 0
+[130] Biber.pm:4610> INFO - Looking for bibtex file 'ref.bib' for section 0
+[130] bibtex.pm:1713> INFO - LaTeX decoding ...
+[133] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[162] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[162] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[162] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[162] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[167] bbl.pm:660> INFO - Writing 'lec1.bbl' with encoding 'UTF-8'
+[168] bbl.pm:763> INFO - Output to lec1.bbl
+[168] Biber.pm:131> WARN - legacy month field 'Winter' in entry 'lecture' is not an integer - this will probably not sort properly.
+[168] Biber.pm:133> INFO - WARNINGS: 1

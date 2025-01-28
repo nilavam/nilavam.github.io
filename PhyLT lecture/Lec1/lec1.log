@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  27 JAN 2025 01:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  28 JAN 2025 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1074,13 +1074,9 @@ File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count473
 \c@bbx:relatedtotal=\count474
 ))
-Package biblatex Info: Trying to load citation style 'ieee-alphabetic'...
-Package biblatex Info: ... file 'ieee-alphabetic.cbx' found.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex-ieee/ieee-alphabetic.cbx
-File: ieee-alphabetic.cbx 2021/12/06 v1.3f biblatex citation style
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
+
 (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/cbx/alphabetic.cbx
 File: alphabetic.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
@@ -1093,7 +1089,7 @@ Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
-))
+)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
@@ -1240,24 +1236,24 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
  (./lec1.aux)
 \openout1 = `lec1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1315,7 +1311,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 50.
 
 (./lec1.out) (./lec1.out)
 \@outlinefile=\write5
@@ -1337,11 +1333,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `lec1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'lec1.bbl' not found.
+Package biblatex Info: ... file 'lec1.bbl' found.
 
-No file lec1.bbl.
-Package biblatex Info: Reference section=0 on input line 43.
-Package biblatex Info: Reference segment=0 on input line 43.
+(./lec1.bbl)
+Package biblatex Info: Reference section=0 on input line 50.
+Package biblatex Info: Reference segment=0 on input line 50.
+
 (/usr/local/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -1354,19 +1351,19 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 46
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 53
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -1387,7 +1384,7 @@ ocal/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 71.
+(amsmath)                 on input line 78.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1407,24 +1404,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
-Underfull \hbox (badness 7256) in paragraph at lines 107--112
+Underfull \hbox (badness 7256) in paragraph at lines 114--119
 [] [] []$\T1/bch/m/n/12 . The RHS looks like
  []
 
 
-Overfull \hbox (40.82457pt too wide) in paragraph at lines 107--112
+Overfull \hbox (40.82457pt too wide) in paragraph at lines 114--119
 []$\T1/bch/m/n/12 . 
  []
 
 <bernouli.png, id=77, 49.4774pt x 42.31967pt>
 File: bernouli.png Graphic file (type png)
 <use bernouli.png>
-Package pdftex.def Info: bernouli.png  used on input line 118.
+Package pdftex.def Info: bernouli.png  used on input line 125.
 (pdftex.def)             Requested size: 211.38832pt x 180.83832pt.
 <rademacher.png, id=79, 48.06252pt x 41.10947pt>
 File: rademacher.png Graphic file (type png)
 <use rademacher.png>
-Package pdftex.def Info: rademacher.png  used on input line 122.
+Package pdftex.def Info: rademacher.png  used on input line 129.
 (pdftex.def)             Requested size: 211.38832pt x 180.86525pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1435,14 +1432,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4 <./bernouli.png> <./rademacher.png>]
-Underfull \hbox (badness 7869) in paragraph at lines 148--148
+Underfull \hbox (badness 7869) in paragraph at lines 155--155
 []\T1/bch/m/n/12 At our cur-rent dis-cus-sion stage, sub-
  []
 
 <compare.png, id=90, 55.18198pt x 40.00694pt>
 File: compare.png Graphic file (type png)
 <use compare.png>
-Package pdftex.def Info: compare.png  used on input line 149.
+Package pdftex.def Info: compare.png  used on input line 156.
 (pdftex.def)             Requested size: 216.81pt x 157.21558pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1471,7 +1468,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-Overfull \hbox (11.65373pt too wide) in paragraph at lines 188--188
+Overfull \hbox (11.65373pt too wide) in paragraph at lines 195--195
 []\T1/bch/m/n/12 Let me take a small de-tour and in-tro-duce a trick I learnt i
 n my CS courses. Let $\OML/cmm/m/it/12 X[]; []  ; X[] \OMS/cmsy/m/n/12 2
  []
@@ -1522,6 +1519,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 
+Package biblatex Warning: Month out of range or not an integer
+(biblatex)                at entry 'lecture' on input line 326.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+26.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1529,7 +1535,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13] (./lec1.aux)
+[13{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+}] (./lec1.aux)
 Package rerunfilecheck Info: File `lec1.out' has not changed.
 (rerunfilecheck)             Checksum: 6B02958F41F6A588D72DDB5D11839814;1317.
 Package logreq Info: Writing requests to 'lec1.run.xml'.
@@ -1537,13 +1544,13 @@ Package logreq Info: Writing requests to 'lec1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37788 strings out of 476025
- 726681 string characters out of 5790017
+ 38026 strings out of 476025
+ 731607 string characters out of 5790017
  1871388 words of memory out of 5000000
- 57619 multiletter control sequences out of 15000+600000
- 556324 words of font info for 97 fonts, out of 8000000 for 9000
+ 57850 multiletter control sequences out of 15000+600000
+ 561460 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,15n,99p,1879b,961s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,99p,1879b,1281s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/
@@ -1560,11 +1567,12 @@ ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on lec1.pdf (13 pages, 486594 bytes).
+/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on lec1.pdf (13 pages, 518085 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

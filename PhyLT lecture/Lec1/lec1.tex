@@ -1,18 +1,25 @@
+% !TEX TS-program = pdflatexmk
 \input{../pre.tex}
 \usepackage{wrapfig}
 \setlength{\columnsep}{0.7cm}
 %\fontfamily{qcr}\selectfont 
 %\usepackage[backend=bibtex]{biblatex}
-\usepackage[
-backend=biber,
-style=alphabetic,%firstinits,
-citestyle=ieee-alphabetic,
+
+%\usepackage[
+%backend=biber,
+%style=alphabetic,giveninits,
+%citestyle=ieee-alphabetic,
 %natbib=true,
 %uniquelist=false,
-maxnames=10,
-sorting=ynt
+%maxnames=10,
+%sorting=ynt
+%]{biblatex}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
 ]{biblatex}
-%\addbibresource{writeup/article/refs.bib}
+\addbibresource{ref.bib}
 %\title{\vspace{-1cm}}
 \title{\textbf{Physics of Learning Theory}\\ Lecture $1$ \\
 Probability and Learning Theory review}
@@ -315,7 +322,8 @@ The last two claims show that $\ds X\sett\bigcup\limits_{i\in [N]}B_{r/2}(\pmb v
 
 
 
-
+\nocite{*}
+\printbibliography
 
 
 

@@ -56,7 +56,6 @@
       <file>standard.bbx</file>
       <file>alphabetic.bbx</file>
       <file>alphabetic.cbx</file>
-      <file>ieee-alphabetic.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
@@ -78,6 +77,9 @@
     </provides>
     <requires type="dynamic">
       <file>lec1.bcf</file>
+    </requires>
+    <requires type="editable">
+      <file>ref.bib</file>
     </requires>
   </external>
 </requests>
