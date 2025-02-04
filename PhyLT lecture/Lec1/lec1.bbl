@@ -19,40 +19,44 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{lecture}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=5bd4a91e09b499d15e82bc929acf1e34}{%
-           family={Ma},
-           familyi={M\bibinitperiod},
-           given={Tengyu},
-           giveni={T\bibinitperiod}}}%
+    \entry{JL}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7ddf283c4fbbed10234ac444cb8f581a}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={William\bibnamedelima B.},
+           giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=cf4de3a2525fc4f04f6287aea5ce124c}{%
+           family={Lindenstrauss},
+           familyi={L\bibinitperiod},
+           given={Joram},
+           giveni={J\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Stanford}%
-      }
-      \strng{namehash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \strng{fullhash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \strng{bibnamehash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \strng{authorbibnamehash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \strng{authornamehash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \strng{authorfullhash}{5bd4a91e09b499d15e82bc929acf1e34}
-      \field{labelalpha}{Ma21}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \strng{namehash}{f25336c78118bd992dfa8522eb89904d}
+      \strng{fullhash}{f25336c78118bd992dfa8522eb89904d}
+      \strng{bibnamehash}{f25336c78118bd992dfa8522eb89904d}
+      \strng{authorbibnamehash}{f25336c78118bd992dfa8522eb89904d}
+      \strng{authornamehash}{f25336c78118bd992dfa8522eb89904d}
+      \strng{authorfullhash}{f25336c78118bd992dfa8522eb89904d}
+      \field{labelalpha}{JL84}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{Winter}
-      \field{title}{Lecture notes on Machine Learning Theory}
-      \field{year}{2021}
-      \true{nocite}
+      \field{journaltitle}{Contemporary mathematics}
+      \field{title}{Extensions of Lipschitz mappings into Hilbert space}
+      \field{volume}{26}
+      \field{year}{1984}
+      \field{pages}{189\bibrangedash 206}
+      \range{pages}{18}
       \verb{urlraw}
-      \verb https://docs.google.com/viewer?url=https://raw.githubusercontent.com/tengyuma/cs229m_notes/main/master.pdf
+      \verb https://api.semanticscholar.org/CorpusID:117819162
       \endverb
       \verb{url}
-      \verb https://docs.google.com/viewer?url=https://raw.githubusercontent.com/tengyuma/cs229m_notes/main/master.pdf
+      \verb https://api.semanticscholar.org/CorpusID:117819162
       \endverb
     \endentry
-    \entry{Wainwright_2019}{book}{}
+    \entry{Wai}{book}{}
       \name{author}{1}{}{%
         {{hash=7eb03239453694f59946ad6008e9f0ab}{%
            family={Wainwright},

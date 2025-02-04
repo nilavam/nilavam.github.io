@@ -1,6 +1,5 @@
 % !TEX TS-program = pdflatexmk
 \input{../pre.tex}
-\usepackage{comment}
 \usepackage{wrapfig}
 \setlength{\columnsep}{0.7cm}
 %\fontfamily{qcr}\selectfont 
@@ -22,8 +21,8 @@ style=alphabetic,
 ]{biblatex}
 \addbibresource{ref.bib}
 %\title{\vspace{-1cm}}
-\title{\textbf{Physics of Learning Theory}\\ Lecture $1$ \\
-Probability Review: Concentration bounds}
+\title{\textbf{Physics of Learning Theory}\\ Lecture $2$ \\
+Introduction to Learning Theory}
 \usepackage{quiver}
 \usepackage[nobottomtitles*]{titlesec}
 \usepackage{titletoc}
@@ -35,7 +34,7 @@ Probability Review: Concentration bounds}
 %\href{mailto:nilava.metya@rutgers.edu}{nilava.metya@rutgers.edu}\\
 %\href{mailto:nm8188@princeton.edu}{nm8188@princeton.edu}}
 \author{Nilava Metya}
-\date{\vspace{-0.7in}January $29$, $2025$}
+\date{\vspace{-0.7in}February $5$, $2025$}
 %\newcommand{\pb}{\section{Problem}~\par}
 %\newcommand{\soln}{\subsection*{Solution}}
 \usepackage{pdfpages}
@@ -52,119 +51,15 @@ Probability Review: Concentration bounds}
 
 \maketitle
 
-\section{Introduction}
-We will recall some probability theory and look at useful \textit{deviation} or \textit{concentration} bounds which are frequently used in analyzing algorithms (in learning theory). Recall that a (real-valued) random variable on a probability space $(\Omega,S,\mathbb P)$ is nothing but a `measurable function' $X:\Omega\to \R$. Here $\Omega$ is the universal or sample space where we think of events in, $S$ is a collection of events in $\Omega$ and $\mathbb P:S\to[0,1]$ assigns probability to each event in $S$. The space of events $S$ is constrained to satisfy some obvious rules like $\Omega$ is an event, if $A$ is an event then so is $\Omega\smallsetminus A$ and that a countable union of events is an event which makes it sensible to work with the concept of assigning probabilities to each event. We will often say that $\P{A}$ is the probability that event $A$ occurs. If $A=\set{a}$ is a singleton, we always write $\P{a}$ instead of $\P{\set{a}}$. The probability function $\mathbb P$ is also constrained to a couple of rules, namely, that the probability of the union of a mutually disjoint collection of events, which is an event, is the same as the sum of the probabilities of each of those events and that the probability that $\Omega$ occurs is $1$. Roughly a random variable is to be thought of as a way of assigning points of the sample space to real numbers which are \textit{really real} and are more tangible to work with, while respecting the rules of $S$. Such a random variable induces a map $X^{-1}:2^{\R}\to S$ by $X^{-1}(A) \sett \set{x\in \Omega\st X(x) \in S}$ for any $A\subseteq \R$, and hence induces a probability on $\R$ given by $\mathbb P_{\R}[A] = \P{X^{-1}(A)}$ where $A$ is any `measurable' subset of $\R$. The random variable being a `measurable function' precisely means that $X^{-1}(A)$ always lies in $S$.
-\[\begin{tikzcd}
-	S & {2^\R} \\
-	{[0,1]}
-	\arrow["{\mathbb P}"', from=1-1, to=2-1]
-	\arrow["{X^{-1}}"', from=1-2, to=1-1]
-	\arrow["{\mathbb P_\R}", dashed, from=1-2, to=2-1]
-\end{tikzcd}\]
+\section{Variations and applications of the Hoeffding bound}
 
-\subsection{Mean}
-The average or mean of a random variable $X$, often denoted as $\E X$, $\mu(X)$, or simply $\mu$ when the context is clear,  is $\E X = \int_{\Omega}  X \d\mathbb P $. For the discrete case, which we will mostly be interested in, this boils down to $\E X = \sum\limits_{i\in \Omega}X(i)\P{i}$. Note that if $X$ is an indicator random variable for event $A$, that is, $X=1$ if $A$ occurs and $0$ otherwise, then $\E X = \P A$.
-
-\begin{ex}
-Consider tossing a fair coin. Here $\Omega=\set{\text H, \text T}$. The probability function is $\P{\varnothing}=0, \P{\text H}=\P{\text T}=0.5, \P{\set{\text H,\text T}}=1$. A natural random variable to consider is $X(i) = \pmb 1_{\text H} \sett \begin{cases}1&\text{ if } i=\text H\\0&\text{ if } i=\text T\end{cases}$. The corresponding probability induced on $\R$ is given by $\mathbb P_{\R}[A] = \begin{cases}
-0 &\text{ if } 0\notin A,1\notin A\\
-0.5 &\text{ if } 0\in A,1\notin A\\
-0.5 &\text{ if } 0\notin A,1\in A\\
-1 &\text{ if } 0\in A,1\in A\\
-\end{cases}$. In this case, $\E X = 1\cdot \P{\text H} + 0\cdot \P{\text T} = 0.5$
-\end{ex}
-
-\begin{ex}
-Consider tossing $n$ fair coins sequentially and independently. Here $\Omega=\set{\text H, \text T}^{n}$. So the singleton outcomes are tuples of $\text H,\text T$. The probability function is given by $\P{\pmb x}=2^{-n}$ for any element $x\in {\Omega}$ and then extending by countable additivity of $\mathbb P$. Consider $n$ random variables $X_{1},\cdots,X_{n}$ where $X_{i}(\pmb x) \sett \begin{cases}1&\text{ if } x_{i}= \text H\\0&\text{ if } x_{i}=\text T\end{cases}$. Each $X_{i}$ is the same random variable as the previous example after looking at the $i^{\text{th}}$ coordinate. A natural variable to consider is the total number of heads obtained in one round of tossing, that is $X = X_{1}+\cdots+X_{n}$. The corresponding probability induced on $\R$ is given by $\mathbb P_{\R}[k] = \begin{cases}
-{n\choose k}2^{-n} &\text{ if } k\in \set{0,\cdots,n}\\
-0 &\text{ otherwise}
-\end{cases}$ and extend by countable additivity. Here $\E X = \frac{n}{2}$.
-\end{ex}
-
-One useful result used for calculating expectations of sums of random variables is that if $a,b\in \R$ and $X,Y$ are random variables then $\E{aX+bY}=a\E{X}+b\E{Y}$. It's worthy to note that sums and scalings of random variables are random variables. This result does \textbf{not} depend on `independence' of $X,Y$. Independence plays an important role for the average of products of random variables (which is a random variable). We say random variables $X_{1},\cdots,X_{n}$ are (\textit{mutually}) \textit{independent} if $\P{\bigcap_{i=1}^{n}\set{X_{i}\le a_{i}}} = \prod_{i=1}^{n}\P{X_{i}\le a_{i}}\fa a_{i}\in\R$. This is a stronger notion than \textit{pairwise} independence where we demand that only every pair of them are independent. Note that mutual independence implies pairwise independence. If $X,Y$ are independent then $\E{XY} = \E{X}\E{Y}$. 
-
-For a random variable $X\ge 0$ and $a\in\R$ let $Y$ be the indicator random variable indicating whether $X\ge a$, that is, $Y$ is $1$ if $X\ge a$ and $0$ otherwise. Then clearly $X \ge aY$. Indeed if $X\ge a$ then $Y=1$ so $X\ge aY$ and if $X<a$ then $Y=0$ so that $X \ge 0 = aY$. Expectation preserves inequalities, so $\E{X} \ge a\E{Y} = a\P{X\ge a}$. This establishes
-\begin{thm}[Markov's inequality]\label{thm:markov}
-If $X$ is a non-negative random variable and $a\in\R$ then $\P{X\ge a}\le \dfrac{\E X}{a}$.
-\end{thm}
-
-\subsection{Variance}
-Let's come to deviation now. One natural way to measure \textit{deviation} is to look how on average much a random variable deviates either way from its mean (behavior). To look for deviation in either direction of $\E{X}$ we consider the random variable $(X-\E X)^{2}$. Define the variance of a random variable $X$ as $\Var X \sett \E{(X-\E X)^{2}}$. One useful result to compute variance is that if $X,Y$ are independent then $\Var{aX+bY} = a^{2}\Var{X} + b^{2}\Var{Y}$. This extends to $n$ pairwise independent random variables. Another useful result is $\Var{X} = \E{X^{2}} - \E{X}^{2}$.
-
-Applying \Cref{thm:markov} to $(X-\E X)^{2}\ge 0$ gives 
-\begin{thm}[Chebyshev's inequality]\label{thm:chebyshev}
-If $X$ is a random variable and $a\in\R_{{\ge 0}}$ then $\P{\abs{X-\E{X}}\ge a}\le \dfrac{\Var X}{a^{2}}$.
-\end{thm}
-
-
-
-\subsection{Higher moments}
-One might just ask why stop at the second power to measure deviation. What about the random variable $(X-\E X)^{k}$ for $k\ge 2$? These are called higher centeral moments. Note that $\E{(X-\E X)^{k}} = 0$ when $k$ is odd and the distribution of $X$ is symmetric about $\E{X}$. So it makes sense to consider the random variables $X_{k}\sett \abs{X-\E X}^{k}$ instead. If we have access to such numbers, we can use the same trick as the proof of Chebyshev's inequality and get $\P{\abs{X-\E X}\ge a} \le \dfrac{\mu_{k}}{a^{k}}$. Knowing all higher moments means that we know something known as the `characteristic function' (not yet defined) of $X$ which uniquely determines $X$. But our aim was the study deviations using small information. Generally, higher moments are not known. 
-
-Here's a small trick to optimally apply Markov to a non-homogeneous function. Let's just take the `best polynomial' ever known. It's non-homogeneous, positive, monotonic (but not \textit{monotonous}) and has values at all points. We want to study the concentration of $e^{X-\mu}$. Take $f(x) = e^{x} \ge 0$. Chebyshev's inequality do this for $f=x^{2}$ but this was homegeneous so scaling the random variables had no effect on the inequalities obtained. Consider the random variable $Y_{t} = f(t(X-\mu))$ where $t$ is a real variable. Then applying Markov on $\ds \abs{Y_{t}} = Y_{t}$ gives $\P{Y_{t} = e^{t(X-\mu)} \ge e^{ta}} \le \frac{\E{Y_{t}}}{e^{ta}}\fa t\ge 0, a\in\R$. This is equivalent to $\P{X-\mu\ge a} \le \frac{\E{e^{t(X-\mu)}}}{e^{ta}}$. Since this is true for every $t\ge 0$, we conclude that $\ds\P{X \ge a+\mu} \le \inf_{t\ge 0}\frac{\E{e^{t(X-\mu)}}}{e^{ta}}$. One issue with this argument is that $M_{X}(t) \sett \E{\exp(tX)}$ may not always exist. Let's say they exist for $t\in [0,b]$ for some $b\ge 0$ (sanity check: $b=0$ always works). Then we can modify our inequality to $\ds\P{X\ge a+\mu} \le \inf_{t\in[0,b]}\frac{\E{e^{tX}}}{e^{t(a+\mu)}}$. The \textit{moment generating function} (mgf, in short) of a random variable $X$ is $M_{X}(t) = \E{\exp(tX)}$.
-
-
-\begin{multicols}{2}
-
-
-\begin{ex}[Bernouli]
-Say $X$ takes values $0,1$ with probability $\frac12$ each. Then $M_{X}(t) = \E{\exp(tX)} = \frac12 \exp t + \frac12$ always exists. Our above inequality takes the form $\ds\P{X \ge a} \le \frac12\inf_{t\ge 0}\frac{\exp t + 1}{e^{ta}}$. If $a \le \frac12$ then the RHS is $1$ at $t=0$. If $\frac12 < a < 1$ then the RHS is $\frac{1}{2(1-a)^{1-a}a^{a}}$ at $t = \ln(a)-\ln(1-a)$. Taking $a\to 1^{-}$ gives that if $a=1$, the RHS is $\frac12$ attained at $''t = +\infty''$ (can also be checked directly by plugging in $a=1$ directly). If $a>1$ the RHS is $0$ again at $''t = +\infty''$.\end{ex}
-\vfill
-
-\begin{ex}[Rademacher]\label{rade}
-Say $X$ takes values $\pm1$ with probability $\frac12$ each. Such a random variable is called a \textit{Rademacher random variable}. Then $M_{X}(t) = \E{\exp(tX)} = \frac12(e^{t} + e^{-t})$ always exists. Our above inequality takes the form $\ds\P{X \ge a} \le \frac12\inf_{t\ge 0}\frac{e^{t} + e^{-t}}{e^{ta}}$. The RHS looks like $\begin{cases}
-1 &\text{ at } t^{*}=0  \text{ if } a\le 0\\
-\sqrt{\frac{1}{(1-a)^{1-a}(1+a)^{1+a}}} &\text{ at } t^{*}=\frac12\ln\left(\frac{1+a}{1-a}\right)  \text{ if } a \in (0,1]\\
-0 &\text{ at } t^{*}=\infty  \text{ if } a > 1
-\end{cases}$.
-\end{ex}
-\end{multicols}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\linewidth]{bernouli}~~~~~~~~~~
-%\end{wrapfigure}
-%\begin{wrapfigure}{c}{0.7\linewidth}
-%\centering
-\includegraphics[width=0.45\linewidth]{rademacher}
-\end{figure}
-
-\subsection{Sub-Gaussian random variables}
-
-
-Now let's apply it to our favorite distribution -- the Gaussian. Recall that the Gaussian distribution $Z$ with mean $\mu$ and variance $\sigma^{2}$ has the density $\ds f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(\frac{-(x-\mu)^{2}}{2\sigma^{2}}\right).$ The moment generating function of this Gaussian is $M(t) = \exp\left(\mu t + \frac{\sigma^{2}t^{2}}{2}\right)$ and exists $\fa t\in\R$. Substituting this into our `moment-based Markov inequality' gives $\ds\P{Z\ge \mu+a} \le \inf_{t\ge 0} \exp\left(\frac{\sigma^{2}t^{2}}{2}-at\right) = \exp\left(-\frac{a^{2}}{2\sigma^{2}}\right)$. This means $\P{\abs{Z-\mu} \ge a} \le 2 \exp\left(-\frac{a^{2}}{2\sigma^{2}}\right)$ for any $a\ge 0$. 
-
-This calculation let's us study the deviation of a large class of random variables, if this class is defined properly. If we revisit the calculation done for the Gaussian, we see that the only necessary property of any random variable $X$ that can get the same bound is the existence of some $\sigma^{2}$ such that we can get a similar function as an upper bound on the mgf of $X$. More precisely, we demand that there exist a real number $\sigma > 0$ such that $\E{\exp(t(X-\E X))} \le \exp\left(\frac{t^{2}\sigma^{2}}{2}\right)\fa t\in\R$. Alternately, instead of using the proof and calculation details, one might suggest to study those class of random variables whose deviations are bounded by those of the Gaussian. They turn out to be the same.
-
-\begin{defn}
-A random variable $X$ with mean $\mu$ is said to be \textit{sub-Gaussian} if there is a constant $c>0$ and a Gaussian $Z\sim \cN(0,\tau^{2})$ such that $\P{\abs {X-\mu}\ge a} \le c~\P{\abs Z \ge a}\fa a\ge 0$.
-
-Alternately, a random variable $X$ with mean $\mu$ is said to be \textit{sub-Gaussian} if there exists $\sigma>0$ such that $\E{\exp(t(X-\E X))} \le \exp\left(\frac{t^{2}\sigma^{2}}{2}\right)\fa t\in\R$. This $\sigma^{2}$ is said to be the sub-Gaussian parameter and acts as a proxy for variance.
-\end{defn}
-
-This is quite a nice class because sub-Gaussianity is preserved under linear combinations. In particular, if $X_{1},X_{2}$ are independent sub-Gaussians with parameters $\sigma_{1}^{2},\sigma_{2}^{2}$ respectively then $X_{1}+X_{2}$ is also a sub-Gaussian with parameter $\sigma_{1}^{2}+\sigma_{2}^{2}$. In other words, the variance proxies add up just like the Gaussian. Using this property we immediately get
-
-
+Recall the Hoeffding bound.
 \begin{thm}[Hoeffding]
 If $\set{X_{i}}_{i=1}^{m}$ are independent sub-Gaussians with means $\set{\mu_{i}}_{i=1}^{m}$ and variance proxies $\set{\sigma^{2}}_{i=1}^{m}$ respectively. Then 
 $\ds\P{\sum_{i=1}^{m}(X_{i}-\mu_{i}) \ge t} \le \exp\set{-\frac{t^{2}}{2\sum_{i}\sigma_{i}^{2}}}$ for all $t\ge 0$.
 \end{thm}
 
-\begin{center}
-\begin{tabular}{@{}l r}
-\begin{minipage}[b]{0.5\textwidth}
-At our current discussion stage, sub-Gaussians seem quite useless. But, a lot of the `good' random variables we see are actually sub-Gaussian. In fact if $X$ is a bounded random variable taking values in $[a,b]$ then $X$ is sub-Gaussian with parameter $\left(\frac{b-a}{2}\right)^{2}$. Here's a comparison of the bounds obtained with {\color{blue}fine analysis as in \Cref{rade}}  vs {\color{red}what the Hoeffding bound gives us}. Notice the smoothness difference.\end{minipage}&
-\includegraphics[width=3in]{compare} 
-\end{tabular}
-\end{center}
-
-\begin{cor}
-Let $X_{1},\cdots,X_{n}$ be independent bounded random variables such that $X_{i}\in[a_{i},b_{i}]$ (almost surely) and sample mean $\overline X$. Then $\ds\P{\overline X - \E{\overline X} \ge t} \le \exp\set{-\frac{2n^{2}t^{2}}{\sum_{i}(b_{i}-a_{i})^{2}}}$ for all $t\ge 0$.
-\end{cor}
-
-\subsection{Variations and applications of the Hoeffding bound}
-The first variation is obtained by replacing the sum $\ds\sum_{i=1}^{k}X_{i}$ with its sample mean $\ds\frac 1k\sum_{i=1}^{k}X_{i}$.
+The first variation is obtained by replacing $\ds\sum_{i=1}^{k}X_{i}$ with its sample mean $\ds\frac 1k\sum_{i=1}^{k}X_{i}$ and recalling that if $X\in[a,b]$ almost surely then $X$ is sub-Gaussian with parameter $\sigma = \frac{b-a}{2}$.
 
 \begin{cor}\label{cor:avehoeffding}
 Let $X_{1},\cdots,X_{n}$ be independent bounded random variables such that $X_{i}\in[a_{i},b_{i}]$ (almost surely) and sample mean $\overline X$. Then $\ds\P{\overline X - \E{\overline X} \ge t} \le \exp\set{-\frac{2n^{2}t^{2}}{\sum_{i}(b_{i}-a_{i})^{2}}}$ for all $t\ge 0$.
@@ -202,16 +97,13 @@ Suppose we designed a randomized algorithm $f$ to answer a $0/1$ question and on
 Let's run the algorithm $n$ times on $x$ and let the outputs be $X_{1},\cdots, X_{k}\in \set{0,1}$. Suppose the actual answer of $x$ on the actual question was $a\in \set{0,1}$ ($a$ is not random, but $X_{i}$'s are). Our reported answer is $Y=\pmb 1_{\overline X \ge \frac12}$. This is also a random variable and we will show that the probability of $Y$ not being $a$ is very small. Note that $X_{i}$ are all Bernouli$((1+a)/3)$, so Hoeffding bound is good enough. \Cref{cor:symmtail} gives a the same tail bound on $\P{\overline X\ge\frac12}$ and $\P{\overline X\le\frac12}$ (corresponding to the `bad' event $\set{Y\ne a}$ for $a=0,1$ respectively). Thus $\P{Y\ne a} \le \exp\set{-2k((1-2a)/6)^{2}} = \exp\set{-k/18}$ irrespective of whether $a$ is $0$ or $1$. Hence $k\ge 18\ln n$ trials gives us a confidence of $\ge 1-\frac1n$.
 \end{ex}
 
-\begin{ex}[Johnson-Lindenstrauss lemma \cite{JL}]
+\begin{ex}[Johnson-Lindenstrauss lemma]
 Say we are a dimension $d$, a probability parameter $\delta\in(0,1/2)$, fault tolerance $\epsilon\in(0,1)$, a positive integer $m > \frac{-\ln \delta}{\epsilon^{2}}$ and any vector $\pmb x\in \R^{d}$. We pick a matrix $M \in \R^{m\times d}$ whose entries are independent $\cN(0,1)$'s and consider $\Pi = \frac{1}{\sqrt m}M$. Then 
 %$\Pi$ is $(1+\epsilon)-$biLipschitz (with the $\l_{2}$ norms on $\R^{m},\R^{d}$) with probability $1-\delta$. That is, 
-$\ds \P{(1-\epsilon)\norm{\pmb x}{2} \le \norm{\Pi \pmb x}{2} \le (1+\epsilon)\norm{\pmb x}{2}} \ge 1-\delta$. This is known as the famous Johnson-Lindenstrauss dimensionality reduction. In fact, if we are given $n$ points $\pmb x_{1},\cdots, \pmb x_{n}\in \R^{d}$, by a union bound argument (because the above was for one $\pmb x$) we can show that for $m = \cO(\ln(n/\delta)/\epsilon^{2})$, all the distances $\norm{\pmb x_{i}-\pmb x_{j}}{2}$ are preserved under a random such $\Pi$ with probability $1-\delta$. For instance, with probability $0.99$, we can reduce the dimension to $m = \cO(\ln n/\epsilon^{2})$, upto $\epsilon$ error. In other words, the existence of such a $\Pi$ has positive probability for small enough $\delta$. Since the $\Pi$'s were combinatorial (i.e., chosen from a finite set), we conclude that such a dimension-reducing $\Pi$ always exists. 
+$\ds \P{(1-\epsilon)\norm{\pmb x}{2} \le \norm{\Pi \pmb x}{2} \le (1+\epsilon)\norm{\pmb x}{2}} \ge 1-\delta$. This is known as the famous Johnson-Lindenstrauss dimensionality reduction. In fact, if we are given $n$ points $\pmb x_{1},\cdots, \pmb x_{n}\in \R^{d}$, by a union bound argument (because the above was for one $\pmb x$) we can show that for $m = \cO(\ln(n/\delta)/\epsilon^{2})$, all the distances $\norm{\pmb x_{i}-\pmb x_{j}}{2}$ are preserved under a random such $\Pi$ with probability $1-\delta$. For instance, with probability $0.99$, we can reduce the dimension to $m = \cO(\ln n/\epsilon^{2})$ upto $\epsilon$ error. In other words, the existence of such a $\Pi$ has positive probability for small enough $\delta$. Since the $\Pi$'s were combinatorial (i.e., chosen from a finite set), we conclude that such a dimension-reducing $\Pi$ always exists.
 \end{ex}
 
-We end with a variation of the Hoeffding bound and its relation to the geometry of (convex) bodies in $\R^{n}$. Suppose we have mean zero random variables $X_{1},\cdots,X_{n}$ with $X_{i}\in\set{-a_{i},a_{i}}$ satisfying $\sum_{i}a_{i}^{2}=1$. Then $\E{\sum_{i} X = 0}$. (The two-sided tail version of) Hoeffding bound gives $\P{\abs {\sum_{i}X_{i}} \ge t} \le 2\exp\set{-\frac{t^{2}}{4\sum_{i}a_{i}^{2}}} = 2 \exp\set{-t^{2}/4}$. In other words, if $\pmb a$ is a fixed vector with $\norm{\pmb a}2=1$ and $\pmb Y = (Y_{1},\cdots,Y_{n})\in \set{\pm1}^{n}$ is chosen uniformly at random (so each $Y_{i}$ is an independent Rademacher), then $\P{\abs{\inner{\pmb a}{\pmb Y}} \ge t} \le 2 \exp\set{-t^{2}/4}$. A geometric interpretation is as follows. We call $C_{n}\sett \set{\pm1}^{n}$ as the boolean cube. $\abs{\inner{\pmb a}{\pmb Y}}$ measures the distance of $\pmb Y$ from the hyperplane through $\pmb 0$ perpendicular to $\pmb a$. The above bound just says that at least $1-2e^{-t^{2}/4}$ fraction of the volume of $C_{n}$ lies within distance $t$ from this hyperplane. This is the starting point of the realm of the vast area called \textit{isoperimetric inequalities}.
- 
 
-\begin{comment}
 \section{Supervised Learning}
 \paragraph{The setup.} In supervised learning, we are to design a \textit{learner} that learns the `labels' of certain `objects' or `data' and then we can use it to \textit{predict} unlabelled objects. An example could be a coin-sorting machine that understands (with human help) the sizes of various coins (data) and what size associates with what denomination (labels), and then when this model is released as a commercial product, the machine can speed up the process of sorting coins into different labelled stacks. 
 \\
@@ -282,7 +174,14 @@ The `nearness' of the prototype $\theta_{i}$'s is made rigorous through what is 
 Let $\epsilon>0$ and $S$ a subset of a metric space $(X,d)$. The closed ball of radius $r$ around $x\in X$ will be denoted by $D_{r}(x) = \set{y\in X\st d(x,y)\le r}$. An \textit{$r-$net of $S$} is a subset $T_{r}\subseteq S$ such that for each $x\in S$ there is some $y\in T_{r}$ satisfying $d(x,y)\le r$. In other words, $S \subseteq \bigcup\limits_{x\in T_{r}}D_{r}(x)$.
 \end{defn}
 
-Now we need to find an $r-$net of $\Theta$ which is not only finite, but also not too large in size, otherwise the union bound + Hoeffding trick would not work. We are in luck because there is an $r-$net of $\Theta = \set{\theta\in\R^{p} \st \norm \theta2\le B}$ of size $\ds\le\left(\frac{3B}{r}\right)^{p}$. We'll prove this later.
+Now we need to find an $r-$net of $\Theta$ which is not only finite, but also not too large in size, otherwise the union bound + Hoeffding trick would not work. We are in luck because there is an $r-$net of considerable size. A detailed proof of this can be found in \Cref{pf:rnet}.
+
+\begin{lemma}\label{lem:rnet}
+$\Theta = \set{\theta\in\R^{p} \st \norm \theta2\le B}$ has an $r-$net of size $\ds\le\left(\frac{3B}{r}\right)^{p}$. 
+\end{lemma}
+\begin{proof}
+Greedy.
+\end{proof}
 
 Now let's make the idea of ``nearby $\theta$'s give nearly the same loss'' precise, which will be an added assumption on the loss function. Recall that the loss of $h_{\theta}$ on $(x,y)$ is $\l(h_{\theta}(x),y)$. This value actually depends on three things, namely $\theta,x,y$. We would like that for the same data point $(x,y)$, changing the parameters of the model only a little bit does not change the loss by much. That is, for any $(x,y)$, if we change the parameters only slightly, the change in the penalty is controlled. This is captured by something called Lipschitz-ness. A Lipschitz function is continuous, but not necessarily differentiable. All we can say is that Lipschitz functions are almost everywhere differentiable.
 \begin{defn}[$\kappa-$Lipschitz]
@@ -308,20 +207,24 @@ Then $\ds \P{\abs{L(\theta)-\hat L(\theta)} < \cO\left(\sqrt{\frac{p \max\set{1,
 Suppose we are given an hypothesis class $\cH$ parameterized by $\Theta=\set{\theta \in\R^{p}\st \norm \theta2\le B}$, a loss function $\l$ taking values in $[0,1]$ and $\kappa-$Lipschitz on model parameters $\theta$, $\delta\in(0,0.5)$ and an (additive) error tolerance $\epsilon>0$. Then it is enough to have a training sample set of size $\ds n = \cO\left(\frac{\ln(2/\delta) + p \max\set{1,\ln(18B\kappa/\epsilon)}}{2\epsilon^{2}}\right)$ to guarantee $\abs{L(\theta)-\hat L(\theta)} < \epsilon\fa \theta\in \Theta$ with probability at least $1 - \delta$.
 \end{cor}
 
-\newpage 
-We end with an upper bound for an $r-$net of $\Theta$ for $r\le B$. In what follows, $B,B^{o}$ will respectively denote closed and open balls. 
+\newpage
+\appendix
+\section{Appendix}
+\renewcommand{\thesection}{\Alph{section}}
+\subsection{Proof of \Cref{lem:rnet}}\label{pf:rnet}
+\begin{proof}In what follows, $\cB,\cB^{o}$ will respectively denote closed and open balls. 
 
-Consider the following algorithm for any given $r>0$ to find a set $T_{r}\subseteq \Theta$. 
+Consider the following algorithm for any given $r>0$ to find a set $T_{r}\subseteq \Theta = \set{\theta\in\R^{p}\st \norm\theta2\le B}$. 
 \begin{algorithmic}[1]
-\Require $r>0,$ dimension $p$
+\Require $r>0,$ dimension $p$, radius $B$ (of $\Theta$).
 \Ensure a number $N$ and points $\pmb v_{1},\cdots,\pmb v_{N}\in \Theta$ such that every point in $\Theta$ is $r-$close to some $\pmb v_{i}$.
 \Begin
 \State $N\gets 1$
 \State $\pmb v_{1} \gets (1,0,\cdots,0)\in\Theta$
-\State $T \gets B_{r}^{o}(\pmb v_{1})\cap \Theta$ \Comment{points in $\Theta$ which are at distance $<\epsilon$ from $\pmb v_{1}$}
+\State $T \gets \cB_{r}^{o}(\pmb v_{1})\cap \Theta$ \Comment{points in $\Theta$ which are at distance $<\epsilon$ from $\pmb v_{1}$}
 \While {$N\geq 1$} 
     \State $\pmb v_{N} \gets $any point in $\Theta\smallsetminus T$
-    \State $T \gets T\cup (B_{r}(\pmb v_{2})\cap \Theta)$
+    \State $T \gets T\cup (\cB_{r}(\pmb v_{2})\cap \Theta)$
     \If{$S=\Theta$} \Comment{check if $\Theta$ has been covered}
     	\State \textbf{break}
 	\Else
@@ -333,38 +236,38 @@ Consider the following algorithm for any given $r>0$ to find a set $T_{r}\subset
 \end{algorithmic}
 
 Now we prove that this algorithm actually gives $T_{r}$ and size $N$ as desired. 
-If the above algorithm terminates with answer $N,T_{r}$, then $\Theta\subseteq \bigcup\limits_{i=1}^{N}B_{r}^{o}(\pmb v_{i}) \subseteq \bigcup\limits_{i=1}^{N}B_{r}(\pmb v_{i})$.
+If the above algorithm terminates with answer $N,T_{r}$, then $\Theta\subseteq \bigcup\limits_{i=1}^{N}\cB_{r}^{o}(\pmb v_{i}) \subseteq \bigcup\limits_{i=1}^{N}\cB_{r}(\pmb v_{i})$.
 
 \begin{cl}
 The above algorithm terminates.
 \end{cl}
 \begin{proof}
-Suppose the algorithm goes on forever. So we get a sequence of points $\pmb v_{1}, \pmb v_{2},\cdots$ such that $\Theta \subseteq \bigcup\limits_{i\in\N}B_{r}^{o}(\pmb v_{i})$. Since $\Theta$ is compact there is a finite $N$ such that $\Theta\subseteq \bigcup\limits_{i=1}^{N}B_{r}^{o}(\pmb v_{i})$. This is a contradiction to our original assumption.
+Suppose the algorithm goes on forever. So we get a sequence of points $\pmb v_{1}, \pmb v_{2},\cdots$ such that $\Theta \subseteq \bigcup\limits_{i\in\N}\cB_{r}^{o}(\pmb v_{i})$. Since $\Theta$ is compact there is a finite $N$ such that $\Theta\subseteq \bigcup\limits_{i=1}^{N}\cB_{r}^{o}(\pmb v_{i})$. This is a contradiction to our original assumption.
 \end{proof}
 
 Next we note that just by how our algorithm is designed, if $\pmb x,\pmb y\in T_{r}$ then $\norm{\pmb x-\pmb y}{2}\ge r$. This is because a new point (line $6$) is always chosen so that it is not in the $r-$ball around any of the previously chosen points, and distance is symmetric.
 
-Further $T_{r}$ is maximal in the sense that if $T'\supsetneq T_{r}$ is a collection of points in $\Theta$, there will be two points in $T'$ which are at most $r-$close to each other. This is by our breaking criterion on line $8$. Simply put, $T_{r}$ covers $\Theta$ with $\epsilon-$balls.
+Further $T_{r}$ is maximal in the sense that if $T'\supsetneq T_{r}$ is a collection of points in $\Theta$, there will be two points in $T'$ which are at most $r-$close to each other. This is by our breaking criterion on line $8$. Simply put, $T_{r}$ covers $\Theta$ with $r-$balls.
 
 \begin{cl}\label{disj}
-If $\pmb x,\pmb y\in T_{r}$ are distinct, then $B_{\frac{r}{2}}^{o}(\pmb x)\cap B_{\frac{r}{2}}^{o}(\pmb y) \cap \Theta = \varnothing$.
+If $\pmb x,\pmb y\in T_{r}$ are distinct, then $\cB_{\frac{r}{2}}^{o}(\pmb x)\cap \cB_{\frac{r}{2}}^{o}(\pmb y) \cap \Theta = \varnothing$.
 \end{cl}
 \begin{proof}
-Suppose $\pmb p\in \Theta\cap B_{\frac{r}{2}}^{o}(\pmb x)\cap B_{\frac{r}{2}}^{o}(\pmb y)$ and say $\pmb y$ was picked after $\pmb x$ in the algorithm. Then $\norm{\pmb x-\pmb y}{2}\le \norm{\pmb x-\pmb p}{2} + \norm{\pmb p-\pmb y}{2} \le r$. Moreover equality here occurs only when $\norm{\pmb p-\pmb x}{2} = \norm{\pmb p-\pmb y}{2}=\frac{r}{2}$ which means $p\notin B_{\frac r2}^{o}(\pmb x)$ which is a contradiction. So it must happen that $\norm{\pmb x-\pmb y}2<r$ which contradicts the constructive step in line $6$ because this indicated that $\pmb y$ was picked in the $r-$ball around $\pmb x$.
+Suppose $\pmb p\in \Theta\cap \cB_{\frac{r}{2}}^{o}(\pmb x)\cap \cB_{\frac{r}{2}}^{o}(\pmb y)$ and say $\pmb y$ was picked after $\pmb x$ in the algorithm. Then $\norm{\pmb x-\pmb y}{2}\le \norm{\pmb x-\pmb p}{2} + \norm{\pmb p-\pmb y}{2} \le r$. Moreover equality here occurs only when $\norm{\pmb p-\pmb x}{2} = \norm{\pmb p-\pmb y}{2}=\frac{r}{2}$ which means $\pmb p\notin \cB_{\frac r2}^{o}(\pmb x)$ which is a contradiction. So it must happen that $\norm{\pmb x-\pmb y}2<r$ which contradicts the constructive step in line $6$ because this indicated that $\pmb y$ was picked in the $r-$ball around $\pmb x$.
 \end{proof}
 
 \begin{cl}\label{ball}
-For any $t\ge 0$, if $\pmb x\in \bigcup\limits_{i\in [N]}B_{t}(\pmb v_{i})\subseteq \R^{n}$ then $\norm{\pmb x}{2}\le B+t$.
+For any $t\ge 0$, if $\pmb x\in \bigcup\limits_{i\in [N]}\cB_{t}(\pmb v_{i})\subseteq \R^{n}$ then $\norm{\pmb x}{2}\le B+t$.
 \end{cl}
 \begin{proof}
-Say $\pmb x\in B_{t}(\pmb v_{i})$ for some $i$. Then 
+Say $\pmb x\in \cB_{t}(\pmb v_{i})$ for some $i$. Then 
 $\norm{\pmb x}2 \le \norm{\pmb v}2 + \norm{\pmb x-\pmb v}{2} \le B+t.$
 \end{proof}
 
-The last two claims show that $\ds X\sett\bigcup\limits_{i\in [N]}B_{r/2}(\pmb v_{i})$ is an almost disjoint union and is contained in the closed ball of radius $B+\frac r2$. The volume of a ball of radius $t$ in $\R^{p}$ is $c_{p}t^{p}$ where $c_{p}$ is a constant depending only on $p$. Thus $N(r/2)^{p} \le (B+r/2)^{p}$ whence $N\le \left(\frac{2B}{r}+1\right)^{p} \le \left(\frac{3B}{r}\right)^{p}$ whenever $r\le B$.
+The last two claims show that $\ds X\sett\bigcup\limits_{i\in [N]}\cB_{r/2}(\pmb v_{i})$ is an almost disjoint union and is contained in the closed ball of radius $B+\frac r2$. The volume of a ball of radius $t$ in $\R^{p}$ is $c_{p}t^{p}$ where $c_{p}$ is a constant depending only on $p$. Thus $N(r/2)^{p} \le (B+r/2)^{p}$ whence $N\le \left(\frac{2B}{r}+1\right)^{p} \le \left(\frac{3B}{r}\right)^{p}$ whenever $r\le B$.
+\end{proof}
 
 
-\end{comment}
 
 
 

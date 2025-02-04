@@ -1,0 +1,4 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'lec2.blg'
+[49] biber-darwin:340> INFO - === Tue Feb  4, 2025, 14:46:52
+[60] Biber.pm:419> INFO - Reading 'lec2.bcf'
