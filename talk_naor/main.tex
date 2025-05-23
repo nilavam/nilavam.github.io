@@ -1,0 +1,164 @@
+% !TEX TS-program = pdflatexmk
+\input{pre.tex}
+
+\usepackage[
+backend=biber,
+style=alphabetic,giveninits,
+citestyle=ieee-alphabetic,
+natbib=true,
+uniquelist=false,
+maxnames=10,
+sorting=ynt
+]{biblatex}
+%
+\addbibresource{ref.bib}
+\allowdisplaybreaks
+\title{Pisier's $K-$convexity Inequality: an exposition}
+\author{Nilava Metya}
+
+\date{April 2025}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+We aim to show the bound $K(X) \lesssim \log(1+d_{BM}(X,\l_{2}^{m}))$ on the $K-$convexity constant $K(X)$ of an $m-$dimensional Banach space $(X,\norm{\cdot}{X})$.
+
+\section{Preliminaries}
+\subsection*{Rademacher Projection}
+Consider the cube $E^{n} = \set{\pm 1}^{n}$ with the uniform measure $\mu$. Then $L_{2}(E^{n},\mu)$ is a Hilbert space whose orthonormal basis is the set $\set{w_{A} \st A\subseteq n}$ of Walsch functions as described next. The Rademacher functions $r_{i}:E^{n}\to \set{\pm1}$ are given by $r_{i}(\pmb \epsilon) = r_{i}(\epsilon_{1},\cdots,\epsilon_{n}) \sett \epsilon_{i}$. For any subset $A\subseteq [n]$ define the Walsch function $w_{A}:E^{n}\to\set{\pm1}$ as $w_{A}(\pmb \epsilon) \sett \prod\limits_{i\in A}r_{i}(\pmb\epsilon)$ with the agreement that $w_{\varnothing} \equiv 1$. Any function $f: E^{n}\to X$ (with $\left(X,\norm{\cdot}{X}\right)$ a Banach space) can be written as $f(\pmb x) = \sum\limits_{A\subseteq[n]} \hat f(A) w_{A}(\pmb x)\fa \pmb x\in E^{n}$ where the Fourier coefficients $\hat f(A)\in X$ are determined by $\hat f(A) = \sum\limits_{\pmb \epsilon\in E^{n}}w_{A}(\pmb \epsilon) f(\pmb \epsilon) \mu(\pmb \epsilon) = \frac1{2^{n}}\sum\limits_{\pmb \epsilon\in E^{n}}w_{A}(\pmb \epsilon) f(\pmb \epsilon) $. The Rademacher projection is the operator $Rad_{n}: L_{2}(E^{n}; X) \to L_{2}(E^{n}; X)$ defined by $Rad_{n}(f) \sett \left(\pmb x\mapsto \sum\limits_{i \in [n]} \hat f\left(\set i\right) w_{\set i}(\pmb x) = \sum\limits_{i \in [n]} \hat f\left(\set i\right) x_{i}\right)$. Note that $L_{2}(E^{n};X)$ is the space of all $X-$valued functions on $E^{n}$ with the norm $\norm{f}{L_{2}(E^{n};X)} = \sqrt{\frac1{2^{n}}\sum\limits_{\pmb x\in E^{n}} f(\pmb x)}$. The $K-$convexity constant of $X$ is $$K(X) = \sup_{n} \norm{Rad_{n}}{L_{2}(E^{n}; X) \to L_{2}(E^{n}; X)}$$ and we say $X$ is $K-$convex if $K(X) < \infty$.
+
+\subsection*{Convolutions} We will consider $E^{n}$ as a group, for Fourier analysis, with coordinate-wise multiplication. That is, if $\pmb x=(x_{1},\cdots,x_{n}), \pmb y=(y_{1},\cdots,y_{n})\in E^{n}$ then $\pmb x\pmb y = (x_{1}y_{1},\cdots,x_{n},y_{n})$. The identity is simply $\pmb 1$, the all-ones vector, and the inverse of $\pmb x\in E^{n}$ is itself. Convolution is a powerful tool when it comes to Fourier analysis. Fix a Banach space $(X,\norm{\cdot}{})$. The convolution of $f:E^{n}\to X$ and $h:E^{n}\to \R$ is given by $$f\ast h (\pmb x)\sett \mathbb E_{\pmb \epsilon}\left[f(\pmb x \pmb \epsilon)h(\pmb \epsilon)\right] = \frac{1}{2^{n}} \sum_{\pmb \epsilon\in E^{n}}f(\pmb x \pmb \epsilon)h(\pmb \epsilon).$$
+Note that the expectation is taken with respect to the uniform measure on the boolean cube. The fact that $\pmb x\pmb \epsilon \stackrel{D}{=} \pmb \epsilon$, for a fixed $\pmb x\in E^{n}$, allows us to write $f\ast h(\pmb x) = \mathbb E_{\pmb \epsilon}\left[f(\pmb \epsilon)h(\pmb x\pmb \epsilon)\right]$. The intuition that $Rad_{n}$ is the `linear' part is captured by the fact that $Rad_{n}f = f\ast \l$ where $\l \sett \sum\limits_{i=1}^{n} w_{\set i}$. Indeed, $\ds f\ast \l(\pmb x) = \sum_{i\in[n]} \underbrace{\sum_{\pmb \epsilon\in E^{n}}\frac{f(\pmb \epsilon)\epsilon_{i}}{2^{n}}}_{\hat f(\set i)}x_{i} = \sum_{i\in [n]} \hat f(\set i)x_{i} = Rad_{n}(f)(\pmb x)$.
+
+An interesting way that that Fourier analysis interacts with convolutions is that it is the natural way for preserving multiplicative structure, in the sense that $\ds f*g(\pmb x) = \sum_{A\subseteq n} \hat f(A)\hat g(A)w_{A}(\pmb x)$. In other words, $\widehat{f*g}(A) = \hat f(A)\hat g(A)$. This is due to the orthonormality of the Walsch characters. We will also use the following fact about `sub-multiplicativity of norms' under convolutions, which has been proved in \Cref{proof:1}.
+
+\begin{lemma}\label{lem:221}
+Let $f:E^{n}\to X, h:E^{n}\to \R$. Then $$\norm{f\ast h}{L_{2}(E^{n};X)} \le \norm{f}{L_{2}(E^{n};X)}\norm{h}{L_{1}(E^{n})}.$$
+\end{lemma}
+
+\subsection*{A highly nonlinear approximation to $\l$} Recall the `almost moving delta mass' with real parameter $t$: $\ds\alpha(\pmb x) = \alpha(t,\pmb x) \sett \prod_{i=1}^{n}(1+tx_{i}) = \sum_{A\subseteq [n]} t^{\abs A}w_{A}(\pmb x)$. The large powers of $t$ works in our favour to help ignore the terms larger than $1$. However, we will play around a bit with $\alpha$ to get precisely what we need. Consider the function $\phi_{r} (\theta) \sett \frac{2r-1}{r} \frac{\sin(r\theta)}{\sin^{2}\theta}$ on $[0,2\pi]$. Consider $\Gamma_{r} \sett \set{\frac{k\cdot2\pi}{4r}\st k\in [0,4r-1]\cap \Z}$ and $\Delta_{r} = \Gamma_{r}\smallsetminus \set{0,\pi}$ each equipped with the uniform measure, where $r$ is an odd integer parameter to be decided later. As well as the function $g_{r}(\pmb x) = \mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\alpha\left(\frac{\sin\theta}{2},\pmb x\right)\right]$. Expanding we get 
+$$g_{r}(\pmb x) = 2\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\alpha\left(\frac{\sin\theta}{2},\pmb x\right)\right] = 2\sum_{A\subseteq [n]}\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\left(\frac{\sin\theta}{2}\right)^{\abs A}\right] w_{A}(\pmb x).$$
+So $\hat g_{r}(A) = 2\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\left(\frac{\sin\theta}{2}\right)^{\abs A}\right]$.
+
+The following facts, proven in \Cref{proof:2}, help showing that $g$ linearly approximates $g_{1}$:
+\begin{prop}\label{prop:measure}
+\begin{enumerate}[label=(\alph*)] 
+\item\label{weight} $\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\sin^{k}\theta\right] = \delta_{k,1}$ for $0\le k\le r$.
+\item\label{ubound} $\mathbb E_{\theta\sim \Delta_{r}}\left[\abs{\phi_{r}(\theta)}\right] \le 4r$.
+\end{enumerate}
+\end{prop}
+
+\begin{cor}\label{cor:small}
+$\hat g_{r}(A) = \delta_{k,1}$ if $0\le \abs A\le r$ and $\abs{\hat g_{r}(A)}\le\frac{4r}{2^r}$ if $\abs A > r$.
+\end{cor}
+\begin{proof}
+The equality case directly follows from \cref{prop:measure}$\ref{weight}$.\\
+Now say $\abs A > r$. Then $\abs{\hat g_{r}(A)} \le \frac{2}{2^{\abs A}}\E{\abs{\phi_{r}(\theta)}} \le \frac{2}{2^{r+1}}\cdot 4r = \frac{4r}{2^{r}}$ by \cref{prop:measure}\ref{ubound}.
+\end{proof}
+
+\begin{cor}
+$\norm{g_{r}}{L_{1}(E^{n})} = \mathbb E_{\pmb \epsilon}\left[\abs{g_{r}(\pmb\epsilon)}\right] \le 8r$.
+\end{cor}
+\begin{proof}
+\begin{align*}
+\frac12\mathbb E_{\pmb \epsilon} \left[\abs{g_{r}(\pmb \epsilon)}\right] &\le \mathbb E_{\pmb \epsilon}\mathbb E_{\theta\sim\Delta_{r}}\left[\abs{\phi_{r}(\theta)\prod_{i=1}^{n}\left(1+\frac{\sin\theta}{2}\epsilon_{i}\right)}\right]\\
+&= \mathbb E_{\theta\sim\Delta_{r}}\mathbb E_{\pmb \epsilon} \left[\abs{\phi_{r}(\theta)}\prod_{i=1}^{n}\left(1+\frac{\sin\theta}{2}\epsilon_{i}\right)\right] \qquad\qquad \because 1+\frac{\sin\theta}{2}\epsilon_{i} > 0\\
+&= \mathbb E_{\theta\sim\Delta_{r}}\left[\abs{\phi_{r}(\theta)}\prod_{i=1}^{n}\mathbb E_{\pmb \epsilon} \left(1+\frac{\sin\theta}{2}\epsilon_{i}\right)\right]\\
+&= \mathbb E_{\theta\sim\Delta_{r}}\left[\abs{\phi_{r}(\theta)}\right] \stackrel{\text{\cref{prop:measure}}\ref{ubound}}{\le} 4r.
+\end{align*}
+\end{proof}
+
+\subsection*{Banach-Mazur distance}
+
+\begin{defn}
+If $E,F$ are isomorphic Banach spaces, their Banach-Mazur distance is $$d(E,F) = d_{BM}(E,F) \sett \inf\set{\norm T{}\cdot\norm{T^{-1}}{}\st T: E\stackrel{\sim}{\to} F}.$$
+\end{defn}
+
+For finite dimensional Banach spaces $X$, we want to look at their distances\footnote{warning: $d_{BM}$ is not an honest metric} from a Hilbert space $H$ of the same dimension which will be used for bounding norms of convolutions. We will be specially interested in $H=\l_{2}^m$ where $m\sett \dim X$. 
+
+Let $f:E^{n}\to X, h:E^{n}\to \R$. Consider the Fourier representation $h = \sum_{A} \hat h(A) w_{A}$. Fix any Hilbert space $H$ isomorphic to $X$, and let $D \sett d_{BM}(X,H)$. For any $\epsilon>0, \exists ~ T = T_{\epsilon} : X\stackrel{\sim}{\to}H$ such that $\norm{T}{}\norm{T^{-1}}{} \le (1+\epsilon)D$. Note that $f\ast h = \sum_{A} \hat f(A) \hat h(A) w_{A}$ with $\hat f(A)\in X, \hat h(A)\in \R$ and $w_{A}:E^{n}\to \set{\pm 1}$ are the Walsch functions, $\fa A\subseteq [n]$. So $T(f\ast h) = \sum_{A} T(\hat f_{A})\hat h(A)w_{A}$. We thus have
+\begin{align*}
+\norm{f\ast h}{L_{2}(E^{n};X)} &= \norm{T^{-1}\circ T\circ (f\ast h)}{L_{2}(E^{n};X)}\\
+&\le \norm{T^{-1}}{}\norm{T(f\ast h)}{L_{2}(E^{n};H)}\\
+&= \norm{T^{-1}}{} \sqrt{\sum_{A} \norm{\hat h(A) T(\hat f(A))}{H}^{2}}\\
+&= \norm{T^{-1}}{} \sqrt{\sum_{A} \abs{\hat h(A)}\norm{ T(\hat f(A))}{H}^{2}}\\
+&\le \norm{T^{-1}}{}\left(\max_{A\subseteq[n]}\abs{\hat h(A)} \right) \sqrt{\sum_{A} \norm{ T(\hat f(A))}{H}^{2}}\\
+&= \left(\max_{A\subseteq[n]}\abs{\hat h(A)} \right)\norm{T^{-1}}{} \norm{T(f)}{L_{2}(E_{2}^{n};H)}\\
+&\le \left(\max_{A\subseteq[n]}\abs{\hat h(A)} \right)\norm{T^{-1}}{} \norm T{}\norm{f}{L_{2}(E_{2}^{n};X)}\\
+&\le (1+\epsilon)D\left(\max_{A\subseteq[n]}\abs{\hat h(A)} \right)\norm{f}{L_{2}(E_{2}^{n};X)}.
+\end{align*}
+
+Since this is true $\fa \epsilon>0$, we conclude that 
+\begin{lemma}\label{lem:fourierbound}
+Let $f:E^{n}\to X, h:E^{n}\to \R$, where $X$ is $m-$dimensional, and consider the Fourier representation $h = \sum_{A} \hat h(A) w_{A}$. Then $$\norm{f\ast h}{L_{2}(E^{n};X)} \le d(X,\l_{2}^{m})\left(\max_{A\subseteq[n]}\abs{\hat h(A)} \right)\norm{f}{L_{2}(E_{2}^{n};X)}.$$
+\end{lemma}
+
+
+\section{The Final Proof}
+
+We have established $\ds g_{r} = \sum_{A}\hat g(A)w_{A} = \sum_{i\in[n]} w_{\set i} + \sum_{\abs A > r} \hat g(A) w_{A}$ with $\abs {\hat g(A)} \le \frac{4r}{2^{r}}$ (small) for $\abs A > r$. Letting $\psi_{r}\sett \sum_{\abs A > r} \hat g(A) w_{A}$, we have $g_{r} = \l + \psi_{r}$. We note that $\hat\psi_{r}(A) = \begin{cases}
+0 & \text{ if } \abs A \le r\\
+\hat g(A) & \text{ if } r < \abs A \le n
+\end{cases}$. Thus, $g_{r}$ and $\l$ are `close' functions. Now let's start bounding $\norm{f\ast \l}{L_{2}(E^{n};X)}$. Let $D\sett d(X,\l_{2}^{\dim X})$.
+
+Firstly note that 
+\begin{align*}
+\norm{f\ast \l}{L_{2}(E^{n};X)} &= \norm{f\ast (g_{r}-\psi_{r})}{L_{2}(E^{n};X)}\\
+&\le \norm{f\ast g_{r}}{L_{2}(E^{n};X)} + \norm{f\ast \psi_{r}}{L_{2}(E^{n};X)} \\
+&\le \underset{\left[\text{\cref{lem:221}}\right]}{\norm{f}{L_{2}(E^{n};X)}\norm{g_{r}}{L_{1}(E^{n})}} + \underset{\left[\text{\cref{lem:fourierbound}}\right]}{D \left(\max_{A\subseteq[n]}\abs{\hat \psi_{r}(A)} \right)\norm{f}{L_{2}(E_{2}^{n};X)}}\\
+&= \left(\norm{g_{r}}{L_{1}(E^{n})} + D \left(\max_{A\subseteq[n]}\abs{\hat \psi_{r}(A)} \right)\right)\norm{f}{L_{2}(E_{2}^{n};X)}\\
+&\le \left(\underset{\left[\text{\cref{cor:small}}\right]}{8r} + D\cdot \underset{\left[\text{\cref{cor:small}}\right]}{4r\cdot2^{-r}}\right)\norm{f}{L_{2}(E_{2}^{n};X)}\\
+&= 8r\left(1+D\cdot 2^{-(r+1)}\right)\norm{f}{L_{2}(E_{2}^{n};X)}.
+\end{align*}
+To complete the proof, choose $r$ to be an odd number such that $2^{r-1}\le D + 1 \le 2^{r}$ so that $8r(1+D\cdot 2^{-(1+r)}) \le 8\left(\lg(1+D) + 1\right)\left(1+\frac{D}{2(D+1)}\right) \lesssim \lg(1+D)$ thus proving that $\norm{Rad_{n}}{L_{2}(E^{n};X) \to L_{2}(E^{n};X)} \lesssim \lg(1+D)\fa n$. This means $K(X) \lesssim \lg(1+d(X,\l_{2}^{\dim X}))$.
+
+To get a more quantitative bound, we can use John's theorem which states that $d(X,\l_{2}^{\dim X}) \le \sqrt{\dim X}$, thus giving $K(X)\lesssim \log \dim X$.
+
+
+
+\newpage
+\appendix
+\section{}\label{app}
+
+\subsection{Proof of \Cref{lem:221}}\label{proof:1}
+We want to show $\ds \norm{f\ast h}{L_{2}(E^{n};X)} \le \norm{f}{L_{2}(E^{n};X)}\norm{h}{L_{1}(E^{n})}$.
+\begin{align*}
+\norm{f\ast h}{L_{2}(E^{n};X)}^{2} &= \int_{E^{n}} \norm{f\ast h(\pmb x)}{X}^{2}\d\pmb x\\
+&= \int_{E^{n}} \norm{\mathbb E_{\pmb\epsilon}\left[h(\pmb\epsilon)f(\pmb x\pmb\epsilon)\right]}{X}^{2}\d\pmb x\\
+&= \int_{E^{n}} \left(\mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\norm{f(\pmb x\pmb\epsilon)}X\right]\right)^{2}\d\pmb x\\
+&= \int_{E^{n}} \left(\mathbb E_{\pmb\epsilon}\left[\sqrt{\abs{h(\pmb\epsilon)}}\cdot \sqrt{\abs{h(\pmb\epsilon)}}\norm{f(\pmb x\pmb\epsilon)}X\right]\right)^{2}\d\pmb x\\
+&\stackrel{\text{Cauchy-Schwarz}}{\le} 
+\int_{E^{n}} \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\right]\cdot \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\norm{f(\pmb x\pmb\epsilon)}X^{2}\right]\d\pmb x\\
+&= \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\right]\cdot \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\int_{E^{n}}\norm{f(\pmb x\pmb\epsilon)}X^{2}\d\pmb x\right]\\
+&= \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\right]\cdot \mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\int_{E^{n}}\norm{f(\pmb x)}X^{2}\d\pmb x\right]\\
+&= \left(\mathbb E_{\pmb\epsilon}\left[\abs{h(\pmb\epsilon)}\right]\right)^{2} \int_{E^{n}}\norm{f(\pmb x)}X^{2}\d\pmb x\\
+&= \norm{h}{L_{1}(E^{n})}^{2} \norm{f}{L_{2}(E^{2};X)}^{2}.
+\end{align*}\hfill\qed
+
+\subsection{Proof of \Cref{prop:measure}}\label{proof:2}
+\begin{enumerate}[label=(\alph*)]
+\item We first want to show $\ds\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\sin^{k}\theta\right] = \delta_{k,1}$ for $0\le k\le r$.
+
+\begin{itemize}
+\item Say $k=0$. $\phi(\theta) = -\phi(2\pi-\theta)$ and since the expectation is taken with respect to the uniform measure and for every $\theta\in \Delta_{r}$, we also have $2\pi-\theta\in \Delta_{r}$, the statement is true for $k=0$.
+\item Say $k=1$. We will show $\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\sin\theta\right] = 1$ by inducting on odd $r$. For now, just consider the sum \begin{align*}
+\sum_{\theta\in\Delta_{r}}\frac{\sin(r\theta)}{\sin\theta} &= \sum_{\theta\in\Delta_{r}}\frac{e^{ir\theta} - e^{-ir\theta}}{e^{i\theta}-e^{-i\theta}}
+= \sum_{\theta\in\Delta_{r}} \sum_{j=0}^{r-1} e^{ij\theta}\cdot e^{-i(r-1-j)\theta}\\
+&= \sum_{\theta\in\Delta_{r}} \sum_{j=0}^{r-1} e^{i(2j-r+1)\theta} 
+= \sum_{j=0}^{r-1}\sum_{\theta\in\Delta_{r}} e^{i(2j-r+1)\theta}\\
+&= \sum_{j=0}^{r-1} \left(\sum_{\theta\in\Gamma_{r}} e^{i(2j-r+1)\theta} - 1 - \cos((\underbrace{2j-r+1}_{\text{even}})\pi) \right)\\
+&= \sum_{j=0}^{r-1} \left(\sum_{\theta\in\Gamma_{r}} e^{i(2j-r+1)\theta} - 2 \right) = \sum_{j=0}^{r-1} \sum_{\theta\in\Gamma_{r}} e^{i(2j-r+1)\theta} - 2r.
+\end{align*} 
+Recall that for any integer $x$, $\sum_{\theta\in \Gamma_{r}}e^{ix\theta} = 4r\cdot \pmb 1[x \equiv 0\pmod{4r}]$ because $\Gamma_{r}$ divides $2\pi$ into $4r$ equally spaced angles, whence the above sum becomes $4r-2r=2r$. Thus, $\ds\mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\sin\theta\right] = \frac{1}{4r-2}\cdot \frac{2r-1}{r}\sum_{\theta\in\Delta_{r}}\frac{\sin(r\theta)}{\sin\theta} = 1$.
+\item For $k\ge 2$ we consider $q=k-2 \in [0,r-2]\cap \Z$ and are interested in $\ds \mathbb E_{\theta\sim \Delta_{r}}\left[\phi_{r}(\theta)\sin^{k}\theta\right] = \frac{1}{2r}\sum_{\theta\in\Delta_{r}}\sin(r\theta)\sin^{q}\theta = \frac{1}{2r}\sum_{\theta\in\Gamma_{r}}\sin(r\theta)\sin^{q}\theta$. Let's instead look at $\ds\sum_{\theta\in\Gamma_{r}}\sin(r\theta)\sin^{q}\theta = \sum_{\theta\in\Gamma_{r}}\lp\frac{e^{ir\theta}-e^{-ir\theta}}{2i}\rp\lp\frac{e^{i\theta}-e^{-i\theta}}{2i}\rp^{q}$. For each $\theta\in \Gamma_{r}$, a typical term in the expansion of the power looks like (upto constants in $\C$) $e^{i\theta(2j-q)}$ for $j=0,1,\cdots,q$. Combining with the first bracket gives a typical term like $e^{i\theta(2j-q \pm r)}$. $2j-q \pm r$ is always in $[-2r,2r]$ so all terms on expansion, after $\ds\sum_{\theta\in\Gamma_{r}}$ are $0$, unless $2j-q \pm r=0$ for some $0\le j \le q \le r-2$. If $2j-q-r = 0$ then $0 \ge 2j-2q = r+q > 0$, a contradiction. If $2j-q+r = 0$ then $0 \le j = q-r < 0$, a contradiction again. Hence all terms have their exponent nonzero modulo $4r$, hence zero. 
+\end{itemize}
+\item Next we come to showing $\ds\mathbb E_{\theta\sim \Delta_{r}}\left[\abs{\phi_{r}(\theta)}\right] \le 4r$. Recall that $\phi_{r}(\theta) = \frac{2r-1}{r} \frac{\sin(r\theta)}{\sin^{2}\theta}$ where $\theta$ takes the values $\frac{2\pi k}{4r}$ for $k\in [4r-1]\smallsetminus\set{2r}$. By the symmetry of $\theta$ in all four coordinates to account for the fact that we only want to look at $\abs{\sin^{2}\theta}$, we have $$\mathbb E_{\theta\sim \Delta_{r}}\left[\abs{\phi_{r}(\theta)}\right] \le \frac{4}{4r-2}\cdot\frac{2r-1}{r}\sum_{k=1}^{r}\frac{1}{\sin^{2}\left(\frac{2\pi k}{4r}\right)} \le \frac{2}{r}\sum_{k=1}^{r}\frac{r^{2}}{j^{2}} \le 2r\cdot \frac{\pi^{2}}{6} \le 4r$$ where we used the inequality $\sin t \ge \frac2\pi t$ for $0\le t\le \frac\pi2$.
+\end{enumerate}
+%\nocite{*}
+%\printbibliography
+
+\end{document}
