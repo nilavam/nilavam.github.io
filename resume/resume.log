@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  13 JUL 2025 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  9 DEC 2025 21:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -904,17 +904,17 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 295--298
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 336--341
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 335--338
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 341--346
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 341--344
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 346--349
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 353--358
 [] 
  []
 
@@ -934,21 +934,16 @@ c}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_tll
 ts_nufysp.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/libertinus-ty
 pe1/lbts_sfissr.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/liberti
 nus-type1/lbts_opzo24.enc}]
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 357--360
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 358--361
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 369--372
 [] 
  []
 
 Excluding 'comment' comment.
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 449--452
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 455--458
-[] 
- []
-
-
 Overfull \hbox (0.52402pt too wide) in paragraph at lines 461--464
 [] 
  []
@@ -968,30 +963,23 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 479--482
 [] 
  []
 
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 485--488
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 491--494
+[] 
+ []
+
 Excluding 'comment' comment.
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 561--562
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 586--587
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 570--571
-[]  
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 579--580
-[]  
- []
-
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.95pt on input line 588.
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 588--589
-[]  
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 596--597
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 595--596
 []  
  []
 
@@ -1000,32 +988,29 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 604--605
 []  
  []
 
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
+(Font)              scaled to size 10.95pt on input line 613.
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 612--613
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 613--614
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 621--622
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 629--630
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 637--638
 []  
  []
 
 Excluding 'comment' comment.
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 656--659
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 662--665
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 668--671
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 675--678
-[] 
- []
-
-
 Overfull \hbox (0.52402pt too wide) in paragraph at lines 681--684
 [] 
  []
@@ -1036,7 +1021,27 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 687--690
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 701--712
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 693--696
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 700--703
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 706--709
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 712--715
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 726--737
 [][] 
  []
 
@@ -1046,14 +1051,8 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
 [2] (./resume.aux)
-
-Package rerunfilecheck Warning: File `resume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `resume.out':
-(rerunfilecheck)             Before: 1BBEF93A079AC4BBAF3FD43F4EE97A23;1419
-(rerunfilecheck)             After:  3303A383C4DE9090858400EF89D5EA40;1497.
+Package rerunfilecheck Info: File `resume.out' has not changed.
+(rerunfilecheck)             Checksum: 3303A383C4DE9090858400EF89D5EA40;1497.
  ) 
 Here is how much of TeX's memory you used:
  25606 strings out of 476025
@@ -1076,7 +1075,7 @@ nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy6.pfb>
-Output written on resume.pdf (2 pages, 458589 bytes).
+Output written on resume.pdf (2 pages, 457855 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
