@@ -4,6 +4,7 @@
 \usepackage{etaremune}
 %\usepackage{makecell}
 \usepackage{xcolor}
+\usepackage[symbol]{footmisc}
 \definecolor{grey}{rgb}{0.4,0.4,0.4}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=1pt, line width=1.1pt] (char) {#1};}}
@@ -40,13 +41,13 @@
 
 
 \section{Introduction}
-I identify as an applied mathematician. My research encompasses applying techniques from algebra and geometry to algorithmic problems in \textit{optimization} and \textit{machine learning}, especially those that require being robust to uncertain data. More specifically, I like to borrow tools from algebra, convex geometry, Banach space theory and probability.
+I identify as an applied mathematician. My research encompasses applying techniques from algebra and geometry to algorithmic and statistical problems in \textit{optimization} and \textit{machine learning} from a structural perspective. More specifically, I like to borrow tools from algebra, convex geometry, Banach space theory and probability.
 \vspace{\gap}
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubheading
 {Rutgers, the State University of New Jersey - New Brunswick}{Sep '22 -- (expected) '27}
-{\begin{minipage}{15cm} \color{grey}\textbf{Doctor of Philosophy in Mathematics}  $|$ \textbf{CGPA: $4.0/4.0$}\\
+{\begin{minipage}{15cm} \color{grey}\textbf{Doctor of Philosophy in Mathematics}  \\
 $\phantom{\qquad}$(passed written qualifying exams in first attempt just before program started) \end{minipage}
 }{Piscataway, New Jersey, USA}
 \vspace{-5pt}
@@ -162,7 +163,7 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 
 
 %-----------INTERNSHIPS-----------
-\section{Publications/Preprints}
+\section{Current and Upcoming Research}
 %\resumeSubHeadingListStart
 
 %\resumeProjectHeading
@@ -187,9 +188,29 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 
 
 \begin{etaremune}[leftmargin=13pt]
-\item {\color{grey}\textbf{N Metya}, A Sinha}. \href{https://arxiv.org/abs/2505.02347}{Temporal robustness in discrete time linear dynamical systems}. \\
+\item {\footnote{Alphabetical.}\color{grey}\textbf{N Metya}, S Mukherjee}. {Optimization to fairness for a convolution of two dice. 2026+.} \textit{Upcoming}\vspace{-5pt}
+
+\item {\footnotemark[\value{footnote}]\color{grey}\textbf{N Metya}, A Sengupta}. {Improved constructions for higher order MDS codes. 2026+.} \textit{Upcoming}\vspace{-5pt}
+
+\item {\color{grey}\textbf{N Metya}, O Leong, Y S Soh}. {Convex optimization over the space of convex bodies. 2026+.} \textit{Upcoming}\vspace{-5pt}
+
+\item {\color{grey}\textbf{N Metya}}. {ML degrees via chordal completion. 2026+.} \textit{Upcoming}\vspace{-5pt}
+
+\item {\footnotemark[\value{footnote}]\color{grey}\textbf{N Metya}, J Saunderson.} {A new Hyperbolic Chernoff bound. 2026+.} \textit{Upcoming}\vspace{-5pt}
+
+
+\item {\footnotemark[\value{footnote}]\color{grey}S Gaungly, \textbf{N Metya}, A Morozov, A Sengupta}. \href{https://openreview.net/pdf?id=x1PXM6FjVo}{Activation Functions Control Finite-Width Concentration in Wide Neural Networks. 2026.} \\
+\textit{4th Workshop on High-dimensional Learning Dynamics at ICML 2026}\vspace{-5pt}
+
+
+\item {\color{grey}M Smart, S Gaungly, \textbf{N Metya}, A Morozov, A Sengupta}. \href{https://arxiv.org/pdf/2605.29351}{Attention as In-Context Empirical Bayes: A Two-Stage View via Particle Dynamics. 2026.} \\
+\textit{ICML 2026 Workshop on Foundations of Deep Generative Models}\vspace{-5pt}
+
+\item {\color{grey}\textbf{N Metya}, A Sinha}. \href{https://arxiv.org/abs/2505.02347}{Temporal robustness in discrete time linear dynamical systems. 2025.} \\
 \textit{Submitted}\vspace{-5pt}
-\item {\color{grey}G DePaul, S Ho\c{s}ten, \textbf{N Metya}, I Nometa}. \href{https://arxiv.org/abs/2402.09626}{Degrees of the Wasserstein distance to small toric models}. \\
+
+
+\item {\footnotemark[\value{footnote}]\color{grey}G DePaul, S Ho\c{s}ten, \textbf{N Metya}, I Nometa}. \href{https://arxiv.org/abs/2402.09626}{Degrees of the Wasserstein distance to small toric models. 2024.} \\
 \textit{Journal of Algebraic Statistics} 
 \end{etaremune}
 
@@ -239,17 +260,27 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 %}}
 %\resumeItemListEnd 
 %\resumeSubHeadingListEnd
-
+\begin{comment}
 \section{Ongoing projects}
 \resumeSubHeadingListStart
 
+\resumeProjectHeading
+{\textbf{Anti-diffusion from an empirical Bayes POV} (with S. Ganguly, A. Morozov, M. Smart, A.Sengupta)}
+{}
+{}
+\vspace{\mygap}
+\resumeProjectHeading
+{\textbf{Feature kernel concentration for subWeibull tails} (with S. Ganguly, A. Morozov, A.Sengupta)}
+{}
+{}
+\vspace{\mygap}
 \resumeProjectHeading
 {\textbf{Bilinear robustness in RL} (with Arunesh Sinha)}
 {}
 {}
 \vspace{\mygap}
 \resumeProjectHeading
-{\textbf{Harmonic analysis and optimization over orbitopes} (with Yong Sheng Soh)}
+{\textbf{Convex body gradient flow} (with Yong Sheng Soh)}
 {}
 {}
 \vspace{\mygap}
@@ -269,11 +300,22 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 {}
 \vspace{\mygap}
 \resumeSubHeadingListEnd
+\end{comment}
 
 
 \section{Academic Visits}
 \resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{School of Computing, National University of Singapore} $|$ \textit{Prof Jonathan Scarlett}}
+{May-Aug '26}
+{}{}
+\vspace{\mygap}
+\resumeProjectHeading
+{\textbf{Department of Mathematics, National University of Singapore} $|$ \textit{Prof Yong Sheng Soh}}
+{May-Aug '26}
+{}{}
 
+\vspace{\mygap}
 \resumeProjectHeading
 {\textbf{School of Computing, National University of Singapore} $|$ \textit{Prof Jonathan Scarlett}}
 {May-Aug '25}
@@ -296,6 +338,14 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 %{Apr '24}
 %{}
 %\vspace{\mygap}
+
+\resumeProjectHeading
+{\textbf{Annual Summer School on Mathematical Aspects of Data Science} $|$ \textit{Summer School} $|$ NUS, Singapore}
+{Jul '26}
+{}
+\vspace{\mygap}
+
+
 
 \resumeProjectHeading
 {\textbf{Princeton Machine Learning Theory Summer School} $|$ \textit{Summer School} $|$ Princeton}
@@ -423,17 +473,31 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 \resumeProjectHeading
 {\textbf{Workshop leader for Calculus II} $|$ Rutgers}
 {Sep -- Dec '23, Jan -- Apr '24}
-\vspace{-15pt}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Instructor -- PhD written qualifying exam in Algebra} $|$ Rutgers University}
+{Jun -- Aug '23}
+\vspace{-20pt}
 
 \resumeProjectHeading
 {\textbf{Head Counselor at \href{https://promys-india.org}{PROMYS India}} $|$ IISc Bangalore}
 {May -- Jun '23}
-\vspace{-15pt}
+\vspace{-20pt}
+
+\resumeProjectHeading
+{\textbf{Counselor at \href{https://promys.org}{PROMYS}} $|$ Boston University }
+{Jul -- Aug '20, '21}
+\vspace{-20pt}
 
 \resumeProjectHeading
 {\textbf{Grader} $|$ Rutgers University}
 {}
 {\resumeItemListStart
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Information Theoretic methods in Complexity Theory}} }}{\hfill Sep -- Dec '26}
+\resumeItem {\hspace{0.2in}\emph{\color{grey}
+\emph{\textbf{Graduate Algebra I}} }}{\hfill Sep -- Dec '25}
 \resumeItem {\hspace{0.2in}\emph{\color{grey}
 \emph{\textbf{Linear Algebra and Applications}} }}{\hfill Jan -- Apr '25}
 \resumeItem {\hspace{0.2in}\emph{\color{grey}
@@ -476,12 +540,9 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 \resumeItem {\hspace{0.2in}\emph{\color{grey}
 \emph{\textbf{Functional Programming in Haskell}}\hspace{5mm}  BSc and MSc Comp. Sci. 1st year \hspace{3.4mm}  {\textbf{Prof S P Suresh}}}}{\hfill Dec '20 -- Mar '21}
 \resumeItemListEnd }
-\vspace{-10pt}
+%\vspace{-10pt}
 
-\resumeProjectHeading
-{\textbf{Counselor at \href{https://promys.org}{PROMYS}} $|$ Boston University }
-{Jul -- Aug '20, '21}
-%\vspace{-15pt}
+
 
 %\resumeProjectHeading
 %{\textbf{Counselor at \href{https://promys.org}{PROMYS}} $|$ Boston University }
@@ -705,7 +766,7 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 %\vspace{\mygap}
 
 \resumeProjectHeading
-{\textbf{Coffee Hour (departmental socializing)} $|$ \textit{Coordinator} $|$ Rutgers Math Department}
+{\textbf{Coffee Hour (departmental socializing)} $|$ \textit{Coordinator and Volunteer} $|$ Rutgers Math Department}
 {Jan '25 - }
 {}
 \vspace{\mygap}
@@ -715,13 +776,6 @@ $\phantom{\qquad}$Position: \textbf{First} in school ($\sim180$ students) \end{m
 {Jan '25 - }
 {}
 \vspace{\mygap}
-
-\resumeProjectHeading
-{\textbf{Written Qualifying Exams: Algebra} $|$ \textit{Instructor} $|$ Rutgers Math Department}
-{Jun - Aug '23}
-{}
-\vspace{\mygap}
-
 
 \resumeProjectHeading
 {\textbf{Algebra `N' Geometry Learning Seminar (ANGeLS)} $|$ \textit{Organizer} $|$ Rutgers Math Department}
