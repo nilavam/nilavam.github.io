@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  18 OCT 2026 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.5)  27 OCT 2026 04:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -948,62 +948,67 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 257--258
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 265--266
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 266--267
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 273--274
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 274--275
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 281--282
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 282--283
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 289--290
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 290--291
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 297--298
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 298--299
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 360--365
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 306--307
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 369--372
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 365--370
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 375--378
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 370--375
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 381--384
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 375--380
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 388--393
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 380--382
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 393--398
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 386--391
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 398--400
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 391--394
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 404--409
 [] 
  []
 
@@ -1013,17 +1018,7 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 409--412
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 417--420
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 423--426
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 429--432
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 427--430
 [] 
  []
 
@@ -1048,6 +1043,11 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 453--456
  []
 
 
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 459--462
+[] 
+ []
+
+
 Overfull \hbox (0.52402pt too wide) in paragraph at lines 465--468
 [] 
  []
@@ -1058,22 +1058,17 @@ Overfull \hbox (0.52402pt too wide) in paragraph at lines 471--474
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 511--513
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 483--486
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 516--518
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 489--492
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 521--523
-[] 
- []
-
-
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 526--528
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 529--531
 [] 
  []
 
@@ -1083,92 +1078,145 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
 [2]
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 531--532
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 534--536
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 539--541
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 544--546
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 549--550
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 559--560
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 577--578
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 712--713
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 730--733
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 736--739
+[] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 743--744
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 721--722
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 752--753
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 730--731
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 761--762
 []  
  []
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/it' will be
-(Font)              scaled to size 10.95pt on input line 739.
+(Font)              scaled to size 10.95pt on input line 770.
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 739--740
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 770--771
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 747--748
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 778--779
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 755--756
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 786--787
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 763--764
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 794--795
 []  
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 774--778
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 805--809
 []  
  []
 
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 795.
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 4.08003pt, for example:
 (fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
 [3]
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 806--809
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 837--840
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 812--815
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 843--846
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 818--821
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 849--852
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 824--827
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 855--858
 [] 
  []
 
 
-Overfull \hbox (0.52402pt too wide) in paragraph at lines 830--833
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 861--864
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 873--884
+Underfull \hbox (badness 10000) in alignment at lines 904--915
 [][] 
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 922--923
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 930--931
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 938--939
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 946--947
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 954--955
+[]  
+ []
+
+
+Overfull \hbox (0.52402pt too wide) in paragraph at lines 962--963
+[]  
  []
 
 
@@ -1178,14 +1226,14 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [4] (./cv.aux)
 Package rerunfilecheck Info: File `cv.out' has not changed.
-(rerunfilecheck)             Checksum: 9DDE08110F05D327EAF0BE9780CAC32C;1385.
+(rerunfilecheck)             Checksum: F940BFA0E55981DF38C68D5D6902C14C;1480.
  ) 
 Here is how much of TeX's memory you used:
- 25798 strings out of 476025
- 500788 string characters out of 5790017
- 1881388 words of memory out of 5000000
+ 25799 strings out of 476025
+ 500779 string characters out of 5790017
+ 1882388 words of memory out of 5000000
  45754 multiletter control sequences out of 15000+600000
- 601564 words of font info for 87 fonts, out of 8000000 for 9000
+ 596773 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,15n,92p,446b,776s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1221,10 +1269,10 @@ s/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy6.pfb>
-Output written on cv.pdf (4 pages, 469080 bytes).
+Output written on cv.pdf (4 pages, 470994 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
